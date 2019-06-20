@@ -40,6 +40,8 @@ private slots:
 
     void on_saveButton_clicked();
 
+    void on_POInput_returnPressed();
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );

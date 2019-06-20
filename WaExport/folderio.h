@@ -21,7 +21,8 @@ public:
     FolderIO();
     void copyFile(QString source, QString destination, QString destinationName);
     void createDirectory(QString directory);
-    bool checkForDirect(QString directory);
+    bool checkForDirect(QString mainDirectory, QString directory);
+    bool createIndexFile(QString destDirec,QString poNum, QString customer);
 };
 
 #endif // FOLDERIO_H

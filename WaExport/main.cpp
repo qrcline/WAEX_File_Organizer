@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include <QApplication>
-
+#pragma once
 int main(int argc, char *argv[])
 {
     #pragma comment(lib, "shell32")
