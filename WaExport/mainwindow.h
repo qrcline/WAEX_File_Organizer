@@ -42,12 +42,37 @@ private slots:
 
     void on_POInput_returnPressed();
 
+    void on_mexP_Invoice_upload_clicked();
+
+    void on_mexP_Phyto_upload_clicked();
+
+    void on_mexP_ShipperConf_upload_clicked();
+
+    void on_mexP_CarrierConf_upload_clicked();
+
+    void on_mexP_Passing_upload_clicked();
+
+    void on_mexP_SaleConf_upload_clicked();
+
+    void on_mexP_SignedSale_upload_clicked();
+
+    void on_mexP_Pedimento_upload_clicked();
+
+    void on_mexP_ProduceInv_upload_clicked();
+
+    void on_mexP_Payable_Shipper_upload_clicked();
+
+    void on_mexP_Payables_Carriers_upload_clicked();
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );
     QString mainDirectory=nullptr;
+    void openFolder();
 
 
+    void updateWindow();
+    void uploadFile(std::string fileDialog1, std::string fileDialog2, QString destFileName);
 };
 
 #endif // MAINWINDOW_H

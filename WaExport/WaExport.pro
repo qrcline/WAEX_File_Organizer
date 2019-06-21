@@ -31,7 +31,9 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    folderio.h
+    folderio.h \
+    dirent-master/include/dirent.h \
+    dirent.h
 
 FORMS += \
         mainwindow.ui
