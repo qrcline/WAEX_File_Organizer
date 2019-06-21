@@ -64,6 +64,30 @@ private slots:
 
     void on_mexP_Payables_Carriers_upload_clicked();
 
+    void on_mexP_Spreadsheets_stateChanged(int arg1);
+
+    void on_mexP_Invoice_stateChanged(int arg1);
+
+    void on_mexP_Phyto_stateChanged(int arg1);
+
+    void on_mexP_ShipperConf_stateChanged(int arg1);
+
+    void on_mexP_CarrierConf_stateChanged(int arg1);
+
+    void on_mexP_Passing_stateChanged(int arg1);
+
+    void on_mexP_SaleConf_stateChanged(int arg1);
+
+    void on_mexP_SignedSale_stateChanged(int arg1);
+
+    void on_mexP_Pedimento_stateChanged(int arg1);
+
+    void on_mexP_ProduceInv_stateChanged(int arg1);
+
+    void on_mexP_Payable_Shipper_stateChanged(int arg1);
+
+    void on_mexP_Payables_Carriers_stateChanged(int arg1);
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );

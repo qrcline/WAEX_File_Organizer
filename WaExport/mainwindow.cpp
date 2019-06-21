@@ -93,6 +93,10 @@ void MainWindow::updateWindow()
     else ui->noticeSignedSaleConf->setText("No");
 
 
+    //Fill in the notes section
+   ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+
+
 }
 
 
@@ -132,12 +136,15 @@ void MainWindow::openFolder()
         openDirectory(mainDirectory+"/"+ui->POInput->text());
     }
     ui->PoLabel->setText(ui->POInput->text());
+    updateWindow();
 }
 
 //Changes the selection of the shipment
 void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 {
-    ui->stackedSelection->setCurrentIndex(ui->comboBox->currentIndex());
+    //ui->stackedSelection->setCurrentIndex(ui->comboBox->currentIndex());
+    updateWindow();
+
 }
 
 
@@ -269,5 +276,119 @@ void MainWindow::on_mexP_Payable_Shipper_upload_clicked()
 void MainWindow::on_mexP_Payables_Carriers_upload_clicked()
 {
     uploadFile("Open Payables Carrier","Payables Carrier (*.pdf)","PayablesCarrier.pdf");
+    updateWindow();
+}
+
+
+/////////////////////////////
+/// \brief MainWindow::on_mexP_Spreadsheets_stateChanged
+/// \param arg1
+///////Check boxes/////////////////////////
+/// /////////////////////////////////
+void MainWindow::on_mexP_Spreadsheets_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Spreadsheets_upload->setEnabled(false);
+    else
+        ui->mexP_Spreadsheets_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Invoice_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Invoice_upload->setEnabled(false);
+    else
+        ui->mexP_Invoice_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Phyto_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Phyto_upload->setEnabled(false);
+    else
+        ui->mexP_Phyto_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_ShipperConf_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_ShipperConf_upload->setEnabled(false);
+    else
+        ui->mexP_ShipperConf_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_CarrierConf_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_CarrierConf_upload->setEnabled(false);
+    else
+        ui->mexP_CarrierConf_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Passing_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Passing_upload->setEnabled(false);
+    else
+        ui->mexP_Passing_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_SaleConf_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_SaleConf_upload->setEnabled(false);
+    else
+        ui->mexP_SaleConf_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_SignedSale_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_SignedSale_upload->setEnabled(false);
+    else
+        ui->mexP_SignedSale_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Pedimento_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Pedimento_upload->setEnabled(false);
+    else
+        ui->mexP_Pedimento_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_ProduceInv_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_ProduceInv_upload->setEnabled(false);
+    else
+        ui->mexP_ProduceInv_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Payable_Shipper_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Payable_Shipper_upload->setEnabled(false);
+    else
+        ui->mexP_Payable_Shipper_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->mexP_Payables_Carriers_upload->setEnabled(false);
+    else
+        ui->mexP_Payables_Carriers_upload->setEnabled(true);
     updateWindow();
 }

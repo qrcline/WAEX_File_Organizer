@@ -11,6 +11,8 @@
 #include <dirent.h>
 #include <sys/types.h>
 #include <sstream>
+#include <QFile>
+#include <QTextCodec>
 
 FolderIO::FolderIO()
 {
@@ -127,7 +129,7 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     *Ouputs:
     *   bool- True if the file was created sucessfully
     */
-    std::string filePath = destDirec.toStdString() + "/"+poNum.toStdString()+".waex.index"; //Creates the file to be created at the file path
+    std::string filePath = destDirec.toStdString() + "/waex.index"; //Creates the file to be created at the file path
     const char *path = filePath.c_str(); //Encodes into char pointer
     std::ofstream outfile(path);		//Creates the file
     if(outfile.fail())
@@ -141,8 +143,7 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     outfile << "Customer:*"+customer.toStdString() << std::endl;
     //outfile << "Date created:*"+QDate::currentDate(dd.MM.yyyy).toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
-    outfile<<"Notes: "<<std::endl;
-    outfile<<notes.toStdString()<<std::endl;
+    outfile<<"Notes:"<<notes.toStdString()<<std::endl;
 
 
 
@@ -168,6 +169,18 @@ bool FolderIO::doesFileExist(QString fileToCheck,std::vector<std::string> filesV
             return true;
     }
     return false;
+}
+
+QString FolderIO::getNotes(QString directory)
+{
+    QFile file(directory);
+       if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+           return nullptr;
+        QByteArray indexFile= file.readAll();
+       // std::cout <<"NOTES SECTION:"+indexFile.toStdString()<<std::endl;
+        QString fileString =QString::fromStdString(indexFile.toStdString());
+        int found= fileString.indexOf("Notes:");
+        return fileString.mid(found+6,fileString.length());
 }
 
 
