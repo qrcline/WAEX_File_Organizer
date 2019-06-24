@@ -119,9 +119,6 @@
       <property name="inputMask">
        <string/>
       </property>
-      <property name="maxLength">
-       <number>9</number>
-      </property>
       <property name="placeholderText">
        <string>PO#</string>
       </property>
@@ -198,7 +195,7 @@
        <item>
         <widget class="QLabel" name="PoLabel">
          <property name="text">
-          <string>TextLabel</string>
+          <string>NULL</string>
          </property>
         </widget>
        </item>

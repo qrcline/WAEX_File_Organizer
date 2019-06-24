@@ -24,7 +24,6 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->WAEX_logo_2->setPixmap(waexPix);
 
 
-    ui->POInput->setCursorPosition(2);
 
     //THis is a test
     //ui->mexP_Spreadsheets->setChecked(false);
@@ -48,7 +47,11 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateWindow()
 {//This function refreshes the window
+
     FolderIO fIo;
+    if(mainDirectory==nullptr||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
+        return;
+
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
     num=fIo.doesFileExist("Spreadsheets",filesVec);
@@ -117,38 +120,48 @@ void    MainWindow::openDirectory(QString input)
 
 void MainWindow::openFolder()
 {
+     std::cout<<"Checkpoint:1"<<std::endl;
     FolderIO fIo;
 
     if(mainDirectory==nullptr) //If the maindirectory isn't selected ask user to select it
     {
+         std::cout<<"Checkpoint:2"<<std::endl;
         std::cout<<"Error folder not selected"<<std::endl;
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {
+             std::cout<<"Checkpoint:3"<<std::endl;
             mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
         }
+        //return;
     }
     else if (!fIo.checkForDirect(mainDirectory,ui->POInput->text())) //If the main directory is selected check the PO# that is input
     {
+         std::cout<<"Checkpoint:4"<<std::endl;
         std::cout<<"This directory doe not exist"<<std::endl;
-        if(ui->POInput->text()==""||ui->POInput->text().length()!=9)
+        if(ui->POInput->text()=="")
         {
             QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
         }
         else
-        {
-            if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
+        {std::cout<<"Checkpoint:5"<<std::endl;
+
+
+
+           if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 std::cout<<"Yes was selected"<<std::endl;
                 //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+ui->POInput->text().toStdString()<<std::endl;
                 fIo.createDirectory(mainDirectory+"/"+ui->POInput->text());
             }
         }
+        std::cout<<"End of open file"<<std::endl;
 
     }
 
     //Opens the designated file
     else
     {
+        std::cout<<"Checkpoint:6"<<std::endl;
         openDirectory(mainDirectory+"/"+ui->POInput->text());
     }
     ui->PoLabel->setText(ui->POInput->text());
@@ -169,6 +182,7 @@ void MainWindow::on_openFolder_clicked()
 {
 
     openFolder();
+    updateWindow();
 }
 
 
@@ -200,12 +214,25 @@ void MainWindow::on_saveButton_clicked()
 
         updateWindow();
     }
+    else if (mainDirectory==nullptr)
+    {
+        if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
+        {
+             std::cout<<"Checkpoint:3"<<std::endl;
+            mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
+        }
+    }
+    else if (ui->POInput->text()!="" )
+    {
+         QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
+    }
 
 
 }
 
 void MainWindow::on_POInput_returnPressed()
 {
+
     openFolder();
     updateWindow();
 }
@@ -226,8 +253,7 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
     //Checks if the file exists already in the directory
     if (QFile::exists(mainDirectory+"/"+ui->POInput->text()+"/"+destFileName))
     {
-        QMessageBox::information(0,"Error","Error: This file is already loaded.");
-        return;
+
     }
     //copy Syntax
     //copy(from,to,dest name)
@@ -424,5 +450,5 @@ void MainWindow::on_reloadButton_clicked()
 
 void MainWindow::on_POInput_editingFinished()
 {
-    updateWindow();
+    //updateWindow();
 }
