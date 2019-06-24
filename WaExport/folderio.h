@@ -24,7 +24,7 @@ public:
     void createDirectory(QString directory);
     bool checkForDirect(QString mainDirectory, QString directory);
     bool createIndexFile(QString destDirec,QString poNum, QString customer,QString notes);
-    bool doesFileExist(QString filetToCheck,std::vector<std::string> filesVec );
+    int doesFileExist(QString filetToCheck,std::vector<std::string> filesVec );
     std::ostringstream list_files(QString path);
     std::vector<std::string> list_files_vector(QString path);
     QString getNotes(QString directory);

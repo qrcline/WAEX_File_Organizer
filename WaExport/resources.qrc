@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/pictures">
         <file>waExportHeaderLogo.png</file>
+        <file>reload.png</file>
     </qresource>
 </RCC>

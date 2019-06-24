@@ -22,6 +22,12 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
+
+
+    ui->POInput->setCursorPosition(2);
+
+    //THis is a test
+    //ui->mexP_Spreadsheets->setChecked(false);
 }
 
 QString MainWindow::getMainDirectory()
@@ -44,52 +50,54 @@ void MainWindow::updateWindow()
 {//This function refreshes the window
     FolderIO fIo;
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
-    if(fIo.doesFileExist("Spreadsheets.xlsx",filesVec))
-        ui->noticeSpreadsheets->setText("YES");
+    int num=0;
+    num=fIo.doesFileExist("Spreadsheets",filesVec);
+    if(num>0)
+        ui->noticeSpreadsheets->setText("YES X"+QString::number(num));
     else ui->noticeSpreadsheets->setText("No");
 
-    if(fIo.doesFileExist("CarrierConf.pdf",filesVec))
-        ui->noticeCarrierConf->setText("YES");
+    if((num=fIo.doesFileExist("CarrierConf",filesVec))>0)
+        ui->noticeCarrierConf->setText("YES X"+QString::number(num));
     else ui->noticeCarrierConf->setText("No");
 
-    if(fIo.doesFileExist("Invoice.pdf",filesVec))
-        ui->noticeInvoice->setText("YES");
+    if((num=fIo.doesFileExist("Invoice",filesVec))>0)
+        ui->noticeInvoice->setText("YES X"+QString::number(num));
     else ui->noticeInvoice->setText("No");
 
-    if(fIo.doesFileExist("Passing.pdf",filesVec))
-        ui->noticePassing->setText("YES");
+    if((num=fIo.doesFileExist("Passing",filesVec))>0)
+        ui->noticePassing->setText("YES X"+QString::number(num));
     else ui->noticePassing->setText("No");
 
-    if(fIo.doesFileExist("PayablesCarrier.pdf",filesVec))
-        ui->noticePayableCarriers->setText("YES");
+    if((num=fIo.doesFileExist("PayablesCarrier",filesVec))>0)
+        ui->noticePayableCarriers->setText("YES X"+QString::number(num));
     else ui->noticePayableCarriers->setText("No");
 
-    if(fIo.doesFileExist("PayablesShipper.pdf",filesVec))
-        ui->noticePayableShipper->setText("YES");
+    if((num=fIo.doesFileExist("PayablesShipper",filesVec))>0)
+        ui->noticePayableShipper->setText("YES X"+QString::number(num));
     else ui->noticePayableShipper->setText("No");
 
-    if(fIo.doesFileExist("Pedimento.pdf",filesVec))
-        ui->noticePedimento->setText("YES");
+    if((num=fIo.doesFileExist("Pedimento",filesVec))>0)
+        ui->noticePedimento->setText("YES X"+QString::number(num));
     else ui->noticePedimento->setText("No");
 
-    if(fIo.doesFileExist("Phyto.pdf",filesVec))
-        ui->noticePhyto->setText("YES");
+    if((num=fIo.doesFileExist("Phyto",filesVec))>0)
+        ui->noticePhyto->setText("YES X"+QString::number(num));
     else ui->noticePhyto->setText("No");
 
-    if(fIo.doesFileExist("ProduceInv.pdf",filesVec))
-        ui->noticeProduceInv->setText("YES");
+    if((num=fIo.doesFileExist("ProduceInv",filesVec))>0)
+        ui->noticeProduceInv->setText("YES X"+QString::number(num));
     else ui->noticeProduceInv->setText("No");
 
-    if(fIo.doesFileExist("SaleConf.pdf",filesVec))
-        ui->noticeSaleConf->setText("YES");
+    if((num=fIo.doesFileExist("SaleConf",filesVec))>0)
+        ui->noticeSaleConf->setText("YES X"+QString::number(num));
     else ui->noticeSaleConf->setText("No");
 
-    if(fIo.doesFileExist("ShipperConf.pdf",filesVec))
-        ui->noticeShipperConf->setText("YES");
+    if((num=fIo.doesFileExist("ShipperConf",filesVec))>0)
+        ui->noticeShipperConf->setText("YES X"+QString::number(num));
     else ui->noticeShipperConf->setText("No");
 
-    if(fIo.doesFileExist("SignedSaleConf.pdf",filesVec))
-        ui->noticeSignedSaleConf->setText("YES");
+    if((num=fIo.doesFileExist("SignedSaleConf",filesVec))>0)
+        ui->noticeSignedSaleConf->setText("YES X"+QString::number(num));
     else ui->noticeSignedSaleConf->setText("No");
 
 
@@ -122,12 +130,20 @@ void MainWindow::openFolder()
     else if (!fIo.checkForDirect(mainDirectory,ui->POInput->text())) //If the main directory is selected check the PO# that is input
     {
         std::cout<<"This directory doe not exist"<<std::endl;
-        if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
+        if(ui->POInput->text()==""||ui->POInput->text().length()!=9)
         {
-            std::cout<<"Yes was selected"<<std::endl;
-            //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+ui->POInput->text().toStdString()<<std::endl;
-            fIo.createDirectory(mainDirectory+"/"+ui->POInput->text());
+            QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
         }
+        else
+        {
+            if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
+            {
+                std::cout<<"Yes was selected"<<std::endl;
+                //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+ui->POInput->text().toStdString()<<std::endl;
+                fIo.createDirectory(mainDirectory+"/"+ui->POInput->text());
+            }
+        }
+
     }
 
     //Opens the designated file
@@ -151,6 +167,7 @@ void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
 //open folder of the specified PO# or creates it if it does not exist
 void MainWindow::on_openFolder_clicked()
 {
+
     openFolder();
 }
 
@@ -159,6 +176,9 @@ void MainWindow::on_actionOpen_triggered()
 {
     mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
     std::cout<<mainDirectory.toStdString()<<std::endl;
+    if(mainDirectory!=nullptr)
+        ui->notesArea->setEnabled(true);
+
     //myModel->openFile(fileName);
 }
 
@@ -171,12 +191,16 @@ void MainWindow::on_saveButton_clicked()
     //fIo.createIndexFile("hello","hello","hello");
     //fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test");
 
-    if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesArea->toPlainText())))
+    if(mainDirectory!=nullptr && ui->POInput->text()!="")
     {
-        std::cout<<"Index file creation failed"<<std::endl;
+        if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesArea->toPlainText())))
+        {
+            std::cout<<"Index file creation failed"<<std::endl;
+        }
+
+        updateWindow();
     }
 
-    updateWindow();
 
 }
 
@@ -390,5 +414,15 @@ void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
         ui->mexP_Payables_Carriers_upload->setEnabled(false);
     else
         ui->mexP_Payables_Carriers_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_reloadButton_clicked()
+{
+    updateWindow();
+}
+
+void MainWindow::on_POInput_editingFinished()
+{
     updateWindow();
 }

@@ -88,6 +88,10 @@ private slots:
 
     void on_mexP_Payables_Carriers_stateChanged(int arg1);
 
+    void on_reloadButton_clicked();
+
+    void on_POInput_editingFinished();
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );

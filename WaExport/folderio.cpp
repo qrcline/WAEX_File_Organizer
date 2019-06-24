@@ -152,30 +152,30 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     return true;
 }
 
-bool FolderIO::doesFileExist(QString fileToCheck,std::vector<std::string> filesVec)
+int FolderIO::doesFileExist(QString fileToCheck,std::vector<std::string> filesVec)
 {
     /*Checks if a fileToChekc exists in checkDirec
      *Inputs:
      *  QString checkDirec-the directory to check in
      *  QString fileToChekc-the file to check for
      *Outputs:
-     *  bool:True if the file exists in the directory
+     *  int:0 if the file does not exist, or returns the number of files
      */
-
+    int count=0;
     for (auto i = filesVec.begin(); i != filesVec.end(); ++i)
     {
 
-        if((*i)==fileToCheck.toStdString().c_str())
-            return true;
+        if((*i).substr(0,fileToCheck.length())==fileToCheck.toStdString().c_str())
+            count+=1;
     }
-    return false;
+    return count;
 }
 
 QString FolderIO::getNotes(QString directory)
 {
     QFile file(directory);
        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-           return nullptr;
+           return "";
         QByteArray indexFile= file.readAll();
        // std::cout <<"NOTES SECTION:"+indexFile.toStdString()<<std::endl;
         QString fileString =QString::fromStdString(indexFile.toStdString());
