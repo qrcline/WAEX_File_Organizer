@@ -22,6 +22,10 @@ FolderIO::FolderIO()
 //Copies a file from one directory to another and changes the name
 void FolderIO::copyFile(QString source, QString destination, QString destinationName)
 {
+
+    //TODO: fix finding the file extension
+    QString extension=source.right(source.lastIndexOf('.'));
+    std::cout<<"The extension is: "+extension.toStdString()<<std::endl;
     QFile::copy(source, destination+"/"+destinationName);//This copies the file with the new destination name
 }
 
