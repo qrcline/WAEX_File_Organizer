@@ -145,6 +145,10 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     outfile << "This is an index file for WAEX filing system.\nThis file should not be edited directely by the user." << std::endl;
     outfile << "PO#:*"+poNum.toStdString() << std::endl;
     outfile << "Customer:*"+customer.toStdString() << std::endl;
+    outfile<<"Required files: "<<std::endl;
+    //Output the files that are required based on what is checked
+    //This will be a list of the names of the files
+
     //outfile << "Date created:*"+QDate::currentDate(dd.MM.yyyy).toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
     //std::cout<< list_files(destDirec+"/").str();
