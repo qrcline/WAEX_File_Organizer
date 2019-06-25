@@ -22,11 +22,15 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
+    ui->progressBar_save_createFile->hide();
 
 
 
     //THis is a test
     //ui->mexP_Spreadsheets->setChecked(false);
+    ui->comboBox->setCurrentIndex(0);
+    ui->comboBox->setCurrentIndex(1);
+    ui->comboBox->setCurrentIndex(0);
 }
 
 QString MainWindow::getMainDirectory()
@@ -103,9 +107,68 @@ void MainWindow::updateWindow()
         ui->noticeSignedSaleConf->setText("YES X"+QString::number(num));
     else ui->noticeSignedSaleConf->setText("No");
 
+    if((num=fIo.doesFileExist("CaftaNafta",filesVec))>0)
+        ui->CaftaNafta_notice->setText("YES X"+QString::number(num));
+    else ui->CaftaNafta_notice->setText("No");
+
+    if((num=fIo.doesFileExist("CertOrigin",filesVec))>0)
+        ui->CertOrigin_notice->setText("YES X"+QString::number(num));
+    else ui->CertOrigin_notice->setText("No");
+
+    if((num=fIo.doesFileExist("CustomerPO",filesVec))>0)
+        ui->CustomerPO_notice->setText("YES X"+QString::number(num));
+    else ui->CustomerPO_notice->setText("No");
+
+    if((num=fIo.doesFileExist("ExpInvima",filesVec))>0)
+        ui->ExpInvima_notice->setText("YES X"+QString::number(num));
+    else ui->ExpInvima_notice->setText("No");
+
+    if((num=fIo.doesFileExist("FacturaComercial",filesVec))>0)
+        ui->FacturaComercial_notice->setText("YES X"+QString::number(num));
+    else ui->FacturaComercial_notice->setText("No");
+
+    if((num=fIo.doesFileExist("FreightContract",filesVec))>0)
+        ui->FreightContract_notice->setText("YES X"+QString::number(num));
+    else ui->FreightContract_notice->setText("No");
+
+    if((num=fIo.doesFileExist("Harris",filesVec))>0)
+        ui->Harris_notice->setText("YES X"+QString::number(num));
+    else ui->Harris_notice->setText("No");
+
+    if((num=fIo.doesFileExist("HarEmails",filesVec))>0)
+        ui->HarrisEmails_notice->setText("YES X"+QString::number(num));
+    else ui->HarrisEmails_notice->setText("No");
+
+    if((num=fIo.doesFileExist("ListaEmpaque",filesVec))>0)
+        ui->ListadeEmpaque_notice->setText("YES X"+QString::number(num));
+    else ui->ListadeEmpaque_notice->setText("No");
+
+    if((num=fIo.doesFileExist("OtherEmails",filesVec))>0)
+        ui->OtherEmails_notice->setText("YES X"+QString::number(num));
+    else ui->OtherEmails_notice->setText("No");
+
+    if((num=fIo.doesFileExist("PayablesHarris",filesVec))>0)
+        ui->Payables_Harris_notice->setText("YES X"+QString::number(num));
+    else ui->Payables_Harris_notice->setText("No");
+
+    if((num=fIo.doesFileExist("PayablesSW",filesVec))>0)
+        ui->Payables_ShipperWarehouse_notice->setText("YES X"+QString::number(num));
+    else ui->Payables_ShipperWarehouse_notice->setText("No");
+
+    if((num=fIo.doesFileExist("PayablesTransloader",filesVec))>0)
+        ui->Payables_Transloader_notice->setText("YES X"+QString::number(num));
+    else ui->Payables_Transloader_notice->setText("No");
+
+    if((num=fIo.doesFileExist("PayablesTruckFreight",filesVec))>0)
+        ui->payables_TruckFreight_notice->setText("YES X"+QString::number(num));
+    else ui->payables_TruckFreight_notice->setText("No");
+
+    if((num=fIo.doesFileExist("Transloader",filesVec))>0)
+        ui->Transloader_notice->setText("YES X"+QString::number(num));
+    else ui->Transloader_notice->setText("No");
 
     //Fill in the notes section
-   ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+    ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
 
 
 }
@@ -120,67 +183,48 @@ void    MainWindow::openDirectory(QString input)
 
 void MainWindow::openFolder()
 {
-     std::cout<<"Checkpoint:1"<<std::endl;
     FolderIO fIo;
 
     if(mainDirectory==nullptr) //If the maindirectory isn't selected ask user to select it
     {
-         std::cout<<"Checkpoint:2"<<std::endl;
-        std::cout<<"Error folder not selected"<<std::endl;
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {
-             std::cout<<"Checkpoint:3"<<std::endl;
             mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
         }
         //return;
     }
     else if (!fIo.checkForDirect(mainDirectory,ui->POInput->text())) //If the main directory is selected check the PO# that is input
     {
-         std::cout<<"Checkpoint:4"<<std::endl;
         std::cout<<"This directory doe not exist"<<std::endl;
         if(ui->POInput->text()=="")
         {
             QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
         }
         else
-        {std::cout<<"Checkpoint:5"<<std::endl;
-
-
-
-           if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
+        {
+            if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 std::cout<<"Yes was selected"<<std::endl;
                 //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+ui->POInput->text().toStdString()<<std::endl;
                 fIo.createDirectory(mainDirectory+"/"+ui->POInput->text());
             }
         }
-        std::cout<<"End of open file"<<std::endl;
-
     }
 
     //Opens the designated file
     else
     {
-        std::cout<<"Checkpoint:6"<<std::endl;
         openDirectory(mainDirectory+"/"+ui->POInput->text());
     }
     ui->PoLabel->setText(ui->POInput->text());
     updateWindow();
 }
 
-//Changes the selection of the shipment
-void MainWindow::on_comboBox_currentIndexChanged(const QString &arg1)
-{
-    //ui->stackedSelection->setCurrentIndex(ui->comboBox->currentIndex());
-    updateWindow();
-
-}
 
 
 //open folder of the specified PO# or creates it if it does not exist
 void MainWindow::on_openFolder_clicked()
 {
-
     openFolder();
     updateWindow();
 }
@@ -191,9 +235,7 @@ void MainWindow::on_actionOpen_triggered()
     mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
     std::cout<<mainDirectory.toStdString()<<std::endl;
     if(mainDirectory!=nullptr)
-        ui->notesArea->setEnabled(true);
-
-    //myModel->openFile(fileName);
+    ui->notesArea->setEnabled(true);
 }
 
 
@@ -201,9 +243,8 @@ void MainWindow::on_actionOpen_triggered()
 void MainWindow::on_saveButton_clicked()
 {
     std::cout<<"Save Button Pushed- Initiating Save"<<std::endl;
+    ui->progressBar_save_createFile->show();
     FolderIO fIo;
-    //fIo.createIndexFile("hello","hello","hello");
-    //fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test");
 
     if(mainDirectory!=nullptr && ui->POInput->text()!="")
     {
@@ -211,28 +252,24 @@ void MainWindow::on_saveButton_clicked()
         {
             std::cout<<"Index file creation failed"<<std::endl;
         }
-
         updateWindow();
+        return;
     }
     else if (mainDirectory==nullptr)
     {
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {
-             std::cout<<"Checkpoint:3"<<std::endl;
             mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
         }
     }
     else if (ui->POInput->text()!="" )
     {
-         QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
+        QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
     }
-
-
 }
 
 void MainWindow::on_POInput_returnPressed()
 {
-
     openFolder();
     updateWindow();
 }
@@ -246,88 +283,189 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
 {
     //Get the excell file location
     std::string fileD2=fileDialog2+";; All Files(*)";
-    QString filePath= QFileDialog::getOpenFileName(this,
-                                                   tr(fileDialog1.c_str()), "",
-                                                   tr(fileD2.c_str()));
+    QString filePath= QFileDialog::getOpenFileName(this,tr(fileDialog1.c_str()), "",tr(fileD2.c_str()));
 
-    //Checks if the file exists already in the directory
-    if (QFile::exists(mainDirectory+"/"+ui->POInput->text()+"/"+destFileName))
-    {
+   //Checks if the file exists already in the directory
+    FolderIO fIo;
+    std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
+    int num=0;
+    num=fIo.doesFileExist(destFileName,filesVec);
+//    if (QFile::exists(mainDirectory+"/"+ui->POInput->text()+"/"+destFileName))
+//    {
 
-    }
+//    }
     //copy Syntax
     //copy(from,to,dest name)
-    FolderIO fIo;
-    fIo.copyFile(filePath,mainDirectory+"/"+ui->POInput->text(),destFileName);
+
+    fIo.copyFile(filePath,mainDirectory+"/"+ui->POInput->text(),destFileName+"_"+QString::number((num+1)));
     updateWindow();
 }
 
 void MainWindow::on_mexP_Spreadsheets_upload_clicked()
 {
-    uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets.xlsx");
+    uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
     updateWindow();
 }
 
 void MainWindow::on_mexP_Invoice_upload_clicked()
 {
-    uploadFile("Open Invoice","Invoice PDF (*.pdf)","Invoice.pdf");
+    uploadFile("Open Invoice","Invoice PDF (*.pdf)","Invoice");
     updateWindow();
 }
 
 void MainWindow::on_mexP_Phyto_upload_clicked()
 {
-    uploadFile("Open Phyto","Phyto PDF (*.pdf)","Phyto.pdf");
+    uploadFile("Open Phyto","Phyto PDF (*.pdf)","Phyto");
     updateWindow();
 }
 
 void MainWindow::on_mexP_ShipperConf_upload_clicked()
 {
-    uploadFile("Open Shipper Confirmation","Shipper Confirmation PDF (*.pdf)","ShipperConf.pdf");
+    uploadFile("Open Shipper Confirmation","Shipper Confirmation PDF (*.pdf)","ShipperConf");
     updateWindow(); }
 
 void MainWindow::on_mexP_CarrierConf_upload_clicked()
 {
-    uploadFile("Open Carrrier Confirmation","Carrier Confirmation (*.pdf)","CarrierConf.pdf");
+    uploadFile("Open Carrrier Confirmation","Carrier Confirmation (*.pdf)","CarrierConf");
     updateWindow(); }
 
 void MainWindow::on_mexP_Passing_upload_clicked()
 {
-    uploadFile("Open Passing","Passing Confirmation (*.pdf)","Passing.pdf");
+    uploadFile("Open Passing","Passing Confirmation (*.pdf)","Passing");
     updateWindow();
 }
 
 void MainWindow::on_mexP_SaleConf_upload_clicked()
 {
-    uploadFile("Open Sale Confirmation","Sale Confirmation (*.pdf)","SaleConf.pdf");
+    uploadFile("Open Sale Confirmation","Sale Confirmation (*.pdf)","SaleConf");
     updateWindow();
 }
 
 void MainWindow::on_mexP_SignedSale_upload_clicked()
 {
-    uploadFile("Open Signed Sale Confirmation"," Signed Sale Confirmation (*.pdf)","SignedSaleConf.pdf");
+    uploadFile("Open Signed Sale Confirmation"," Signed Sale Confirmation (*.pdf)","SignedSaleConf");
     updateWindow(); }
 
 void MainWindow::on_mexP_Pedimento_upload_clicked()
 {
-    uploadFile("Open Pedimento","Pedimento (*.pdf)","Pedimento.pdf");
+    uploadFile("Open Pedimento","Pedimento (*.pdf)","Pedimento");
     updateWindow(); }
 
 void MainWindow::on_mexP_ProduceInv_upload_clicked()
 {
-    uploadFile("Open Produce Invoice","Produce Invoice (*.pdf)","ProduceInv.pdf");
+    uploadFile("Open Produce Invoice","Produce Invoice (*.pdf)","ProduceInv");
     updateWindow(); }
 
 void MainWindow::on_mexP_Payable_Shipper_upload_clicked()
 {
-    uploadFile("Open Payables Shipper","Payables Shipper (*.pdf)","PayablesShipper.pdf");
+    uploadFile("Open Payables Shipper","Payables Shipper (*.pdf)","PayablesShipper");
     updateWindow();
 }
 
 void MainWindow::on_mexP_Payables_Carriers_upload_clicked()
 {
-    uploadFile("Open Payables Carrier","Payables Carrier (*.pdf)","PayablesCarrier.pdf");
+    uploadFile("Open Payables Carrier","Payables Carrier (*.pdf)","PayablesCarrier");
     updateWindow();
 }
+
+void MainWindow::on_ExpInvima_Upload_clicked()
+{
+
+    uploadFile("Open Exportacion/INVIMA","Exportacion/INVIMA (*.pdf)","ExpInvima");
+    updateWindow();
+}
+
+void MainWindow::on_receipts_upload_clicked()
+{
+    uploadFile("Open receipts","Receipts (*.pdf)","Receipt");
+    updateWindow();
+}
+
+void MainWindow::on_FacturaComercial_upload_clicked()
+{
+    uploadFile("Open Factura Comercial","Factura Comercial (*.pdf)","FacturaComercial");
+    updateWindow();
+}
+
+void MainWindow::on_ListadeEmpaque_upload_clicked()
+{
+    uploadFile("Open Lista de Empaque","Lista de Empaque (*.pdf)","ListaEmpaque");
+    updateWindow();
+}
+
+void MainWindow::on_CertOrigin_upload_clicked()
+{
+    uploadFile("Open Certification of Origin","Certification of Origin (*.pdf)","CertOrigin");
+    updateWindow();
+}
+
+void MainWindow::on_CaftaNafta_upload_clicked()
+{
+    uploadFile("Open CAFTA/NAFTA","CAFTA/NAFTA (*.pdf)","CaftaNafta");
+    updateWindow();
+}
+
+void MainWindow::on_FreightContract_upload_clicked()
+{
+    uploadFile("Open Freight Contract","Freight Contract (*.pdf)","FreightContract");
+    updateWindow();
+}
+
+void MainWindow::on_Transloader_upload_clicked()
+{
+    uploadFile("Open Transloader","Transloader (*.pdf)","Transloader");
+    updateWindow();
+}
+
+void MainWindow::on_Harris_upload_clicked()
+{
+    uploadFile("Open Harris","Harris (*.pdf)","Harris");
+    updateWindow();
+}
+
+void MainWindow::on_HarrisEmails_upload_clicked()
+{
+    uploadFile("Open Harris Emails","Harris Emails (*.pdf)","HarEmails");
+    updateWindow();
+}
+
+void MainWindow::on_CustomerPO_upload_clicked()
+{
+    uploadFile("Open CustomerPO","CustomerPO (*.pdf)","CustomerPO");
+    updateWindow();
+}
+
+void MainWindow::on_OtherEmails_upload_clicked()
+{
+    uploadFile("Open Other Emails","Other Emails (*.pdf)","OtherEmails");
+    updateWindow();
+}
+
+void MainWindow::on_Payables_Transloader_upload_clicked()
+{
+    uploadFile("Open Payables Transloader","Payables Transloader (*.pdf)","PayablesTransloader");
+    updateWindow();
+}
+
+void MainWindow::on_payables_TruckFreight_upload_clicked()
+{
+    uploadFile("Open Payables Truck Freight","Payables Truck Freight (*.pdf)","PayablesTruckFreight");
+    updateWindow();
+}
+
+void MainWindow::on_Payables_Harris_upload_clicked()
+{
+    uploadFile("Open Payables Harris","Payables Harris (*.pdf)","PayablesHarris");
+    updateWindow();
+
+}
+
+void MainWindow::on_Payables_ShipperWarehouse_upload_clicked()
+{
+    uploadFile("Open Payables Shipper/Warehouse","Open Payables Shipper/Warehouse (*.pdf)","PayablesSW");
+    updateWindow();
+}
+
 
 
 /////////////////////////////
@@ -443,6 +581,154 @@ void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
     updateWindow();
 }
 
+void MainWindow::on_ExpInvima_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->ExpInvima_Upload->setEnabled(false);
+    else
+        ui->ExpInvima_Upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_FacturaComercial_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->FacturaComercial_upload->setEnabled(false);
+    else
+        ui->FacturaComercial_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_ListadeEmpaque_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->ListadeEmpaque_upload->setEnabled(false);
+    else
+        ui->ListadeEmpaque_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_CertOrigin_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->CertOrigin_upload->setEnabled(false);
+    else
+        ui->CertOrigin_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_CaftaNafta_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->CaftaNafta_upload->setEnabled(false);
+    else
+        ui->CaftaNafta_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_FreightContract_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->FreightContract_upload->setEnabled(false);
+    else
+        ui->FreightContract_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_Transloader_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->Transloader_upload->setEnabled(false);
+    else
+        ui->Transloader_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_Harris_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->Harris_upload->setEnabled(false);
+    else
+        ui->Harris_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_HarrisEmails_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->HarrisEmails_upload->setEnabled(false);
+    else
+        ui->HarrisEmails_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_CustomerPO_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->CustomerPO_upload->setEnabled(false);
+    else
+        ui->CustomerPO_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_OtherEmails_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->OtherEmails_upload->setEnabled(false);
+    else
+        ui->OtherEmails_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_Payables_Transloader_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->Payables_Transloader_upload->setEnabled(false);
+    else
+        ui->Payables_Transloader_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_payables_TruckFreight_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->payables_TruckFreight_upload->setEnabled(false);
+    else
+        ui->payables_TruckFreight_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_Payables_Harris_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->Payables_Harris_upload->setEnabled(false);
+    else
+        ui->Payables_Harris_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_Payables_ShipperWarehouse_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->Payables_ShipperWarehouse_upload->setEnabled(false);
+    else
+        ui->Payables_ShipperWarehouse_upload->setEnabled(true);
+    updateWindow();
+}
+
+void MainWindow::on_receipts_stateChanged(int arg1)
+{
+    if(arg1==0)
+        ui->receipts_upload->setEnabled(false);
+    else
+        ui->receipts_upload->setEnabled(true);
+    updateWindow();
+}
+
+
+
+
+
 void MainWindow::on_reloadButton_clicked()
 {
     updateWindow();
@@ -452,3 +738,112 @@ void MainWindow::on_POInput_editingFinished()
 {
     //updateWindow();
 }
+
+
+void MainWindow::uncheckAll()
+{
+    //Mexico & US Files
+    ui->mexP_Spreadsheets->setChecked(false);
+    ui->mexP_Invoice->setChecked(false);
+    ui->mexP_Phyto->setChecked(false);
+    ui->mexP_ShipperConf->setChecked(false);
+    ui->mexP_CarrierConf->setChecked(false);
+    ui->mexP_Passing->setChecked(false);
+    ui->mexP_SaleConf->setChecked(false);
+    ui->mexP_SignedSale->setChecked(false);
+    ui->mexP_Pedimento->setChecked(false);
+    ui->mexP_ProduceInv->setChecked(false);
+    ui->mexP_Payable_Shipper->setChecked(false);
+    ui->mexP_Payables_Carriers->setChecked(false);
+
+    //Overseas
+    ui->ExpInvima->setChecked(false);
+    ui->FacturaComercial->setChecked(false);
+    ui->ListadeEmpaque->setChecked(false);
+    ui->CertOrigin->setChecked(false);
+    ui->CaftaNafta->setChecked(false);
+    ui->FreightContract->setChecked(false);
+    ui->Transloader->setChecked(false);
+    ui->Harris->setChecked(false);
+    ui->HarrisEmails->setChecked(false);
+    ui->CustomerPO->setChecked(false);
+    ui->OtherEmails->setChecked(false);
+    ui->Payables_Transloader->setChecked(false);
+    ui->payables_TruckFreight->setChecked(false);
+    ui->Payables_Harris->setChecked(false);
+    ui->Payables_ShipperWarehouse->setChecked(false);
+
+}
+void MainWindow::on_comboBox_currentIndexChanged(int index)
+{
+    //std::cout<<"Combo box:" +QString::number(index).toStdString()<<std::endl;
+    //ui->mexP_Spreadsheets_upload->setChecked(true);
+    switch(index) {
+        case 0 : uncheckAll();
+                    ui->mexP_Spreadsheets->setChecked(true);
+                    ui->mexP_Invoice->setChecked(true);
+                    ui->mexP_Phyto->setChecked(true);
+                    ui->mexP_ShipperConf->setChecked(true);
+                    ui->mexP_CarrierConf->setChecked(true);
+                    ui->mexP_Passing->setChecked(true);
+                    ui->mexP_SaleConf->setChecked(true);
+                    ui->mexP_SignedSale->setChecked(true);
+                    ui->mexP_Pedimento->setChecked(true);
+                    ui->mexP_ProduceInv->setChecked(true);
+                    ui->mexP_Payable_Shipper->setChecked(true);
+                    ui->mexP_Payables_Carriers->setChecked(true);
+                 break;
+        case 1 : uncheckAll();
+                    ui->mexP_Spreadsheets->setChecked(true);
+                    ui->mexP_Invoice->setChecked(true);
+                    ui->mexP_ShipperConf->setChecked(true);
+                    ui->mexP_CarrierConf->setChecked(true);
+                    ui->mexP_SaleConf->setChecked(true);
+                    ui->mexP_SignedSale->setChecked(true);
+                    ui->mexP_Payable_Shipper->setChecked(true);
+                    ui->mexP_Payables_Carriers->setChecked(true);
+                 break;
+        case 2 : uncheckAll();
+                    ui->mexP_Spreadsheets->setChecked(true);
+                    ui->mexP_Invoice->setChecked(true);
+                    ui->mexP_Phyto->setChecked(true);
+                    ui->mexP_ShipperConf->setChecked(true);
+                    ui->mexP_CarrierConf->setChecked(true);
+                    ui->mexP_Passing->setChecked(true);
+                    ui->mexP_SaleConf->setChecked(true);
+                    ui->mexP_SignedSale->setChecked(true);
+                    ui->mexP_Pedimento->setChecked(true);
+                    ui->mexP_Payable_Shipper->setChecked(true);
+                    ui->mexP_Payables_Carriers->setChecked(true);
+                 break;
+        case 3 : uncheckAll();
+                    ui->mexP_Spreadsheets->setChecked(true);
+                    ui->mexP_Invoice->setChecked(true);
+                    ui->mexP_Phyto->setChecked(true);
+                    ui->mexP_ShipperConf->setChecked(true);
+                    ui->mexP_Passing->setChecked(true);
+                    ui->ExpInvima->setChecked(true);
+                    ui->FacturaComercial->setChecked(true);
+                    ui->ListadeEmpaque->setChecked(true);
+                    ui->CertOrigin->setChecked(true);
+                    ui->CaftaNafta->setChecked(true);
+                    ui->FreightContract->setChecked(true);
+                    ui->Transloader->setChecked(true);
+                    ui->Harris->setChecked(true);
+                    ui->HarrisEmails->setChecked(true);
+                    ui->CustomerPO->setChecked(true);
+                    ui->OtherEmails->setChecked(true);
+                    ui->Payables_Transloader->setChecked(true);
+                    ui->payables_TruckFreight->setChecked(true);
+                    ui->Payables_Harris->setChecked(true);
+                    ui->Payables_ShipperWarehouse->setChecked(true);
+
+                 break;
+    }
+
+}
+
+
+
+
+

@@ -23,6 +23,7 @@
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
@@ -53,43 +54,46 @@ public:
     QLabel *PoLabel;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
-    QPushButton *mexP_ProduceInv_upload;
-    QCheckBox *mexP_SaleConf;
-    QPushButton *mexP_SignedSale_upload;
-    QPushButton *mexP_Invoice_upload;
-    QCheckBox *mexP_Phyto;
-    QPushButton *mexP_Passing_upload;
-    QCheckBox *mexP_ShipperConf;
-    QCheckBox *mexP_SignedSale;
     QPushButton *mexP_Payable_Shipper_upload;
-    QPushButton *mexP_Payables_Carriers_upload;
-    QCheckBox *mexP_Pedimento;
-    QPushButton *mexP_Spreadsheets_upload;
-    QPushButton *mexP_Pedimento_upload;
-    QCheckBox *mexP_Payable_Shipper;
-    QPushButton *mexP_Phyto_upload;
-    QCheckBox *mexP_ProduceInv;
-    QPushButton *mexP_ShipperConf_upload;
-    QCheckBox *mexP_Spreadsheets;
-    QPushButton *mexP_CarrierConf_upload;
-    QCheckBox *mexP_Passing;
-    QCheckBox *mexP_Invoice;
-    QCheckBox *mexP_CarrierConf;
-    QCheckBox *mexP_Payables_Carriers;
-    QLabel *noticeSpreadsheets;
-    QPushButton *mexP_SaleConf_upload;
-    QLabel *label_4;
-    QLabel *noticeInvoice;
-    QLabel *noticePhyto;
-    QLabel *noticeShipperConf;
-    QLabel *noticeCarrierConf;
-    QLabel *noticePassing;
     QLabel *noticeSaleConf;
+    QLabel *noticeProduceInv;
+    QPushButton *mexP_Payables_Carriers_upload;
+    QLabel *noticeSpreadsheets;
+    QLabel *noticeShipperConf;
+    QCheckBox *mexP_SignedSale;
+    QLabel *label_4;
+    QPushButton *mexP_Passing_upload;
+    QLabel *noticePayableShipper;
+    QLabel *noticePhyto;
+    QPushButton *mexP_SignedSale_upload;
+    QPushButton *mexP_ShipperConf_upload;
+    QPushButton *mexP_SaleConf_upload;
+    QLabel *noticeCarrierConf;
+    QCheckBox *mexP_SaleConf;
+    QCheckBox *mexP_Passing;
+    QCheckBox *mexP_Payables_Carriers;
+    QCheckBox *mexP_ProduceInv;
+    QPushButton *mexP_Spreadsheets_upload;
     QLabel *noticeSignedSaleConf;
     QLabel *noticePedimento;
-    QLabel *noticeProduceInv;
-    QLabel *noticePayableShipper;
+    QCheckBox *mexP_Phyto;
+    QCheckBox *mexP_ShipperConf;
+    QPushButton *mexP_ProduceInv_upload;
+    QCheckBox *mexP_Pedimento;
+    QCheckBox *mexP_Invoice;
+    QCheckBox *mexP_Payable_Shipper;
+    QPushButton *mexP_Invoice_upload;
+    QPushButton *mexP_CarrierConf_upload;
+    QLabel *noticeInvoice;
     QLabel *noticePayableCarriers;
+    QPushButton *mexP_Pedimento_upload;
+    QCheckBox *mexP_CarrierConf;
+    QCheckBox *mexP_Spreadsheets;
+    QLabel *noticePassing;
+    QPushButton *mexP_Phyto_upload;
+    QCheckBox *receipts;
+    QPushButton *receipts_upload;
+    QLabel *receipts_notice;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
     QCheckBox *HarrisEmails;
@@ -139,6 +143,7 @@ public:
     QLabel *FreightContract_notice;
     QPushButton *ListadeEmpaque_upload;
     QCommandLinkButton *reloadButton;
+    QProgressBar *progressBar_save_createFile;
     QWidget *runArchiveCheck;
     QLabel *WAEX_logo_2;
     QMenuBar *menuBar;
@@ -180,7 +185,7 @@ public:
         notesArea->setGeometry(QRect(690, 240, 461, 241));
         saveButton = new QPushButton(createFile);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
-        saveButton->setGeometry(QRect(1069, 510, 101, 31));
+        saveButton->setGeometry(QRect(1050, 490, 101, 31));
         POInput = new QLineEdit(createFile);
         POInput->setObjectName(QString::fromUtf8("POInput"));
         POInput->setGeometry(QRect(30, 40, 113, 21));
@@ -217,55 +222,42 @@ public:
 
         gridLayoutWidget = new QWidget(createFile);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 110, 281, 381));
+        gridLayoutWidget->setGeometry(QRect(10, 110, 301, 408));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
         gridLayout->setObjectName(QString::fromUtf8("gridLayout"));
         gridLayout->setContentsMargins(0, 0, 0, 0);
-        mexP_ProduceInv_upload = new QPushButton(gridLayoutWidget);
-        mexP_ProduceInv_upload->setObjectName(QString::fromUtf8("mexP_ProduceInv_upload"));
+        mexP_Payable_Shipper_upload = new QPushButton(gridLayoutWidget);
+        mexP_Payable_Shipper_upload->setObjectName(QString::fromUtf8("mexP_Payable_Shipper_upload"));
 
-        gridLayout->addWidget(mexP_ProduceInv_upload, 10, 1, 1, 1);
+        gridLayout->addWidget(mexP_Payable_Shipper_upload, 11, 1, 1, 1);
 
-        mexP_SaleConf = new QCheckBox(gridLayoutWidget);
-        mexP_SaleConf->setObjectName(QString::fromUtf8("mexP_SaleConf"));
-        mexP_SaleConf->setFont(font);
-        mexP_SaleConf->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_SaleConf->setChecked(true);
+        noticeSaleConf = new QLabel(gridLayoutWidget);
+        noticeSaleConf->setObjectName(QString::fromUtf8("noticeSaleConf"));
 
-        gridLayout->addWidget(mexP_SaleConf, 7, 0, 1, 1);
+        gridLayout->addWidget(noticeSaleConf, 7, 2, 1, 1);
 
-        mexP_SignedSale_upload = new QPushButton(gridLayoutWidget);
-        mexP_SignedSale_upload->setObjectName(QString::fromUtf8("mexP_SignedSale_upload"));
+        noticeProduceInv = new QLabel(gridLayoutWidget);
+        noticeProduceInv->setObjectName(QString::fromUtf8("noticeProduceInv"));
 
-        gridLayout->addWidget(mexP_SignedSale_upload, 8, 1, 1, 1);
+        gridLayout->addWidget(noticeProduceInv, 10, 2, 1, 1);
 
-        mexP_Invoice_upload = new QPushButton(gridLayoutWidget);
-        mexP_Invoice_upload->setObjectName(QString::fromUtf8("mexP_Invoice_upload"));
+        mexP_Payables_Carriers_upload = new QPushButton(gridLayoutWidget);
+        mexP_Payables_Carriers_upload->setObjectName(QString::fromUtf8("mexP_Payables_Carriers_upload"));
+        mexP_Payables_Carriers_upload->setEnabled(true);
 
-        gridLayout->addWidget(mexP_Invoice_upload, 2, 1, 1, 1);
+        gridLayout->addWidget(mexP_Payables_Carriers_upload, 17, 1, 1, 1);
 
-        mexP_Phyto = new QCheckBox(gridLayoutWidget);
-        mexP_Phyto->setObjectName(QString::fromUtf8("mexP_Phyto"));
-        mexP_Phyto->setFont(font);
-        mexP_Phyto->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_Phyto->setChecked(true);
+        noticeSpreadsheets = new QLabel(gridLayoutWidget);
+        noticeSpreadsheets->setObjectName(QString::fromUtf8("noticeSpreadsheets"));
 
-        gridLayout->addWidget(mexP_Phyto, 3, 0, 1, 1);
+        gridLayout->addWidget(noticeSpreadsheets, 1, 2, 1, 1);
 
-        mexP_Passing_upload = new QPushButton(gridLayoutWidget);
-        mexP_Passing_upload->setObjectName(QString::fromUtf8("mexP_Passing_upload"));
+        noticeShipperConf = new QLabel(gridLayoutWidget);
+        noticeShipperConf->setObjectName(QString::fromUtf8("noticeShipperConf"));
 
-        gridLayout->addWidget(mexP_Passing_upload, 6, 1, 1, 1);
-
-        mexP_ShipperConf = new QCheckBox(gridLayoutWidget);
-        mexP_ShipperConf->setObjectName(QString::fromUtf8("mexP_ShipperConf"));
-        mexP_ShipperConf->setFont(font);
-        mexP_ShipperConf->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_ShipperConf->setChecked(true);
-
-        gridLayout->addWidget(mexP_ShipperConf, 4, 0, 1, 1);
+        gridLayout->addWidget(noticeShipperConf, 4, 2, 1, 1);
 
         mexP_SignedSale = new QCheckBox(gridLayoutWidget);
         mexP_SignedSale->setObjectName(QString::fromUtf8("mexP_SignedSale"));
@@ -275,73 +267,53 @@ public:
 
         gridLayout->addWidget(mexP_SignedSale, 8, 0, 1, 1);
 
-        mexP_Payable_Shipper_upload = new QPushButton(gridLayoutWidget);
-        mexP_Payable_Shipper_upload->setObjectName(QString::fromUtf8("mexP_Payable_Shipper_upload"));
+        label_4 = new QLabel(gridLayoutWidget);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
 
-        gridLayout->addWidget(mexP_Payable_Shipper_upload, 11, 1, 1, 1);
+        gridLayout->addWidget(label_4, 0, 2, 1, 1);
 
-        mexP_Payables_Carriers_upload = new QPushButton(gridLayoutWidget);
-        mexP_Payables_Carriers_upload->setObjectName(QString::fromUtf8("mexP_Payables_Carriers_upload"));
-        mexP_Payables_Carriers_upload->setEnabled(true);
+        mexP_Passing_upload = new QPushButton(gridLayoutWidget);
+        mexP_Passing_upload->setObjectName(QString::fromUtf8("mexP_Passing_upload"));
 
-        gridLayout->addWidget(mexP_Payables_Carriers_upload, 17, 1, 1, 1);
+        gridLayout->addWidget(mexP_Passing_upload, 6, 1, 1, 1);
 
-        mexP_Pedimento = new QCheckBox(gridLayoutWidget);
-        mexP_Pedimento->setObjectName(QString::fromUtf8("mexP_Pedimento"));
-        mexP_Pedimento->setFont(font);
-        mexP_Pedimento->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_Pedimento->setChecked(true);
+        noticePayableShipper = new QLabel(gridLayoutWidget);
+        noticePayableShipper->setObjectName(QString::fromUtf8("noticePayableShipper"));
 
-        gridLayout->addWidget(mexP_Pedimento, 9, 0, 1, 1);
+        gridLayout->addWidget(noticePayableShipper, 11, 2, 1, 1);
 
-        mexP_Spreadsheets_upload = new QPushButton(gridLayoutWidget);
-        mexP_Spreadsheets_upload->setObjectName(QString::fromUtf8("mexP_Spreadsheets_upload"));
+        noticePhyto = new QLabel(gridLayoutWidget);
+        noticePhyto->setObjectName(QString::fromUtf8("noticePhyto"));
 
-        gridLayout->addWidget(mexP_Spreadsheets_upload, 1, 1, 1, 1);
+        gridLayout->addWidget(noticePhyto, 3, 2, 1, 1);
 
-        mexP_Pedimento_upload = new QPushButton(gridLayoutWidget);
-        mexP_Pedimento_upload->setObjectName(QString::fromUtf8("mexP_Pedimento_upload"));
+        mexP_SignedSale_upload = new QPushButton(gridLayoutWidget);
+        mexP_SignedSale_upload->setObjectName(QString::fromUtf8("mexP_SignedSale_upload"));
 
-        gridLayout->addWidget(mexP_Pedimento_upload, 9, 1, 1, 1);
-
-        mexP_Payable_Shipper = new QCheckBox(gridLayoutWidget);
-        mexP_Payable_Shipper->setObjectName(QString::fromUtf8("mexP_Payable_Shipper"));
-        mexP_Payable_Shipper->setFont(font);
-        mexP_Payable_Shipper->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_Payable_Shipper->setChecked(true);
-
-        gridLayout->addWidget(mexP_Payable_Shipper, 11, 0, 1, 1);
-
-        mexP_Phyto_upload = new QPushButton(gridLayoutWidget);
-        mexP_Phyto_upload->setObjectName(QString::fromUtf8("mexP_Phyto_upload"));
-
-        gridLayout->addWidget(mexP_Phyto_upload, 3, 1, 1, 1);
-
-        mexP_ProduceInv = new QCheckBox(gridLayoutWidget);
-        mexP_ProduceInv->setObjectName(QString::fromUtf8("mexP_ProduceInv"));
-        mexP_ProduceInv->setFont(font);
-        mexP_ProduceInv->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_ProduceInv->setChecked(true);
-
-        gridLayout->addWidget(mexP_ProduceInv, 10, 0, 1, 1);
+        gridLayout->addWidget(mexP_SignedSale_upload, 8, 1, 1, 1);
 
         mexP_ShipperConf_upload = new QPushButton(gridLayoutWidget);
         mexP_ShipperConf_upload->setObjectName(QString::fromUtf8("mexP_ShipperConf_upload"));
 
         gridLayout->addWidget(mexP_ShipperConf_upload, 4, 1, 1, 1);
 
-        mexP_Spreadsheets = new QCheckBox(gridLayoutWidget);
-        mexP_Spreadsheets->setObjectName(QString::fromUtf8("mexP_Spreadsheets"));
-        mexP_Spreadsheets->setFont(font);
-        mexP_Spreadsheets->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_Spreadsheets->setChecked(true);
+        mexP_SaleConf_upload = new QPushButton(gridLayoutWidget);
+        mexP_SaleConf_upload->setObjectName(QString::fromUtf8("mexP_SaleConf_upload"));
 
-        gridLayout->addWidget(mexP_Spreadsheets, 1, 0, 1, 1);
+        gridLayout->addWidget(mexP_SaleConf_upload, 7, 1, 1, 1);
 
-        mexP_CarrierConf_upload = new QPushButton(gridLayoutWidget);
-        mexP_CarrierConf_upload->setObjectName(QString::fromUtf8("mexP_CarrierConf_upload"));
+        noticeCarrierConf = new QLabel(gridLayoutWidget);
+        noticeCarrierConf->setObjectName(QString::fromUtf8("noticeCarrierConf"));
 
-        gridLayout->addWidget(mexP_CarrierConf_upload, 5, 1, 1, 1);
+        gridLayout->addWidget(noticeCarrierConf, 5, 2, 1, 1);
+
+        mexP_SaleConf = new QCheckBox(gridLayoutWidget);
+        mexP_SaleConf->setObjectName(QString::fromUtf8("mexP_SaleConf"));
+        mexP_SaleConf->setFont(font);
+        mexP_SaleConf->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_SaleConf->setChecked(true);
+
+        gridLayout->addWidget(mexP_SaleConf, 7, 0, 1, 1);
 
         mexP_Passing = new QCheckBox(gridLayoutWidget);
         mexP_Passing->setObjectName(QString::fromUtf8("mexP_Passing"));
@@ -351,22 +323,6 @@ public:
 
         gridLayout->addWidget(mexP_Passing, 6, 0, 1, 1);
 
-        mexP_Invoice = new QCheckBox(gridLayoutWidget);
-        mexP_Invoice->setObjectName(QString::fromUtf8("mexP_Invoice"));
-        mexP_Invoice->setFont(font);
-        mexP_Invoice->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_Invoice->setChecked(true);
-
-        gridLayout->addWidget(mexP_Invoice, 2, 0, 1, 1);
-
-        mexP_CarrierConf = new QCheckBox(gridLayoutWidget);
-        mexP_CarrierConf->setObjectName(QString::fromUtf8("mexP_CarrierConf"));
-        mexP_CarrierConf->setFont(font);
-        mexP_CarrierConf->setCursor(QCursor(Qt::PointingHandCursor));
-        mexP_CarrierConf->setChecked(true);
-
-        gridLayout->addWidget(mexP_CarrierConf, 5, 0, 1, 1);
-
         mexP_Payables_Carriers = new QCheckBox(gridLayoutWidget);
         mexP_Payables_Carriers->setObjectName(QString::fromUtf8("mexP_Payables_Carriers"));
         mexP_Payables_Carriers->setFont(font);
@@ -375,50 +331,18 @@ public:
 
         gridLayout->addWidget(mexP_Payables_Carriers, 17, 0, 1, 1);
 
-        noticeSpreadsheets = new QLabel(gridLayoutWidget);
-        noticeSpreadsheets->setObjectName(QString::fromUtf8("noticeSpreadsheets"));
+        mexP_ProduceInv = new QCheckBox(gridLayoutWidget);
+        mexP_ProduceInv->setObjectName(QString::fromUtf8("mexP_ProduceInv"));
+        mexP_ProduceInv->setFont(font);
+        mexP_ProduceInv->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_ProduceInv->setChecked(true);
 
-        gridLayout->addWidget(noticeSpreadsheets, 1, 2, 1, 1);
+        gridLayout->addWidget(mexP_ProduceInv, 10, 0, 1, 1);
 
-        mexP_SaleConf_upload = new QPushButton(gridLayoutWidget);
-        mexP_SaleConf_upload->setObjectName(QString::fromUtf8("mexP_SaleConf_upload"));
+        mexP_Spreadsheets_upload = new QPushButton(gridLayoutWidget);
+        mexP_Spreadsheets_upload->setObjectName(QString::fromUtf8("mexP_Spreadsheets_upload"));
 
-        gridLayout->addWidget(mexP_SaleConf_upload, 7, 1, 1, 1);
-
-        label_4 = new QLabel(gridLayoutWidget);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-
-        gridLayout->addWidget(label_4, 0, 2, 1, 1);
-
-        noticeInvoice = new QLabel(gridLayoutWidget);
-        noticeInvoice->setObjectName(QString::fromUtf8("noticeInvoice"));
-
-        gridLayout->addWidget(noticeInvoice, 2, 2, 1, 1);
-
-        noticePhyto = new QLabel(gridLayoutWidget);
-        noticePhyto->setObjectName(QString::fromUtf8("noticePhyto"));
-
-        gridLayout->addWidget(noticePhyto, 3, 2, 1, 1);
-
-        noticeShipperConf = new QLabel(gridLayoutWidget);
-        noticeShipperConf->setObjectName(QString::fromUtf8("noticeShipperConf"));
-
-        gridLayout->addWidget(noticeShipperConf, 4, 2, 1, 1);
-
-        noticeCarrierConf = new QLabel(gridLayoutWidget);
-        noticeCarrierConf->setObjectName(QString::fromUtf8("noticeCarrierConf"));
-
-        gridLayout->addWidget(noticeCarrierConf, 5, 2, 1, 1);
-
-        noticePassing = new QLabel(gridLayoutWidget);
-        noticePassing->setObjectName(QString::fromUtf8("noticePassing"));
-
-        gridLayout->addWidget(noticePassing, 6, 2, 1, 1);
-
-        noticeSaleConf = new QLabel(gridLayoutWidget);
-        noticeSaleConf->setObjectName(QString::fromUtf8("noticeSaleConf"));
-
-        gridLayout->addWidget(noticeSaleConf, 7, 2, 1, 1);
+        gridLayout->addWidget(mexP_Spreadsheets_upload, 1, 1, 1, 1);
 
         noticeSignedSaleConf = new QLabel(gridLayoutWidget);
         noticeSignedSaleConf->setObjectName(QString::fromUtf8("noticeSignedSaleConf"));
@@ -430,24 +354,124 @@ public:
 
         gridLayout->addWidget(noticePedimento, 9, 2, 1, 1);
 
-        noticeProduceInv = new QLabel(gridLayoutWidget);
-        noticeProduceInv->setObjectName(QString::fromUtf8("noticeProduceInv"));
+        mexP_Phyto = new QCheckBox(gridLayoutWidget);
+        mexP_Phyto->setObjectName(QString::fromUtf8("mexP_Phyto"));
+        mexP_Phyto->setFont(font);
+        mexP_Phyto->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_Phyto->setChecked(true);
 
-        gridLayout->addWidget(noticeProduceInv, 10, 2, 1, 1);
+        gridLayout->addWidget(mexP_Phyto, 3, 0, 1, 1);
 
-        noticePayableShipper = new QLabel(gridLayoutWidget);
-        noticePayableShipper->setObjectName(QString::fromUtf8("noticePayableShipper"));
+        mexP_ShipperConf = new QCheckBox(gridLayoutWidget);
+        mexP_ShipperConf->setObjectName(QString::fromUtf8("mexP_ShipperConf"));
+        mexP_ShipperConf->setFont(font);
+        mexP_ShipperConf->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_ShipperConf->setChecked(true);
 
-        gridLayout->addWidget(noticePayableShipper, 11, 2, 1, 1);
+        gridLayout->addWidget(mexP_ShipperConf, 4, 0, 1, 1);
+
+        mexP_ProduceInv_upload = new QPushButton(gridLayoutWidget);
+        mexP_ProduceInv_upload->setObjectName(QString::fromUtf8("mexP_ProduceInv_upload"));
+
+        gridLayout->addWidget(mexP_ProduceInv_upload, 10, 1, 1, 1);
+
+        mexP_Pedimento = new QCheckBox(gridLayoutWidget);
+        mexP_Pedimento->setObjectName(QString::fromUtf8("mexP_Pedimento"));
+        mexP_Pedimento->setFont(font);
+        mexP_Pedimento->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_Pedimento->setChecked(true);
+
+        gridLayout->addWidget(mexP_Pedimento, 9, 0, 1, 1);
+
+        mexP_Invoice = new QCheckBox(gridLayoutWidget);
+        mexP_Invoice->setObjectName(QString::fromUtf8("mexP_Invoice"));
+        mexP_Invoice->setFont(font);
+        mexP_Invoice->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_Invoice->setChecked(true);
+
+        gridLayout->addWidget(mexP_Invoice, 2, 0, 1, 1);
+
+        mexP_Payable_Shipper = new QCheckBox(gridLayoutWidget);
+        mexP_Payable_Shipper->setObjectName(QString::fromUtf8("mexP_Payable_Shipper"));
+        mexP_Payable_Shipper->setFont(font);
+        mexP_Payable_Shipper->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_Payable_Shipper->setChecked(true);
+
+        gridLayout->addWidget(mexP_Payable_Shipper, 11, 0, 1, 1);
+
+        mexP_Invoice_upload = new QPushButton(gridLayoutWidget);
+        mexP_Invoice_upload->setObjectName(QString::fromUtf8("mexP_Invoice_upload"));
+
+        gridLayout->addWidget(mexP_Invoice_upload, 2, 1, 1, 1);
+
+        mexP_CarrierConf_upload = new QPushButton(gridLayoutWidget);
+        mexP_CarrierConf_upload->setObjectName(QString::fromUtf8("mexP_CarrierConf_upload"));
+
+        gridLayout->addWidget(mexP_CarrierConf_upload, 5, 1, 1, 1);
+
+        noticeInvoice = new QLabel(gridLayoutWidget);
+        noticeInvoice->setObjectName(QString::fromUtf8("noticeInvoice"));
+
+        gridLayout->addWidget(noticeInvoice, 2, 2, 1, 1);
 
         noticePayableCarriers = new QLabel(gridLayoutWidget);
         noticePayableCarriers->setObjectName(QString::fromUtf8("noticePayableCarriers"));
 
         gridLayout->addWidget(noticePayableCarriers, 17, 2, 1, 1);
 
+        mexP_Pedimento_upload = new QPushButton(gridLayoutWidget);
+        mexP_Pedimento_upload->setObjectName(QString::fromUtf8("mexP_Pedimento_upload"));
+
+        gridLayout->addWidget(mexP_Pedimento_upload, 9, 1, 1, 1);
+
+        mexP_CarrierConf = new QCheckBox(gridLayoutWidget);
+        mexP_CarrierConf->setObjectName(QString::fromUtf8("mexP_CarrierConf"));
+        mexP_CarrierConf->setFont(font);
+        mexP_CarrierConf->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_CarrierConf->setChecked(true);
+
+        gridLayout->addWidget(mexP_CarrierConf, 5, 0, 1, 1);
+
+        mexP_Spreadsheets = new QCheckBox(gridLayoutWidget);
+        mexP_Spreadsheets->setObjectName(QString::fromUtf8("mexP_Spreadsheets"));
+        mexP_Spreadsheets->setFont(font);
+        mexP_Spreadsheets->setCursor(QCursor(Qt::PointingHandCursor));
+        mexP_Spreadsheets->setChecked(true);
+
+        gridLayout->addWidget(mexP_Spreadsheets, 1, 0, 1, 1);
+
+        noticePassing = new QLabel(gridLayoutWidget);
+        noticePassing->setObjectName(QString::fromUtf8("noticePassing"));
+
+        gridLayout->addWidget(noticePassing, 6, 2, 1, 1);
+
+        mexP_Phyto_upload = new QPushButton(gridLayoutWidget);
+        mexP_Phyto_upload->setObjectName(QString::fromUtf8("mexP_Phyto_upload"));
+
+        gridLayout->addWidget(mexP_Phyto_upload, 3, 1, 1, 1);
+
+        receipts = new QCheckBox(gridLayoutWidget);
+        receipts->setObjectName(QString::fromUtf8("receipts"));
+        receipts->setFont(font);
+        receipts->setCursor(QCursor(Qt::PointingHandCursor));
+        receipts->setChecked(true);
+
+        gridLayout->addWidget(receipts, 18, 0, 1, 1);
+
+        receipts_upload = new QPushButton(gridLayoutWidget);
+        receipts_upload->setObjectName(QString::fromUtf8("receipts_upload"));
+        receipts_upload->setEnabled(true);
+
+        gridLayout->addWidget(receipts_upload, 18, 1, 1, 1);
+
+        receipts_notice = new QLabel(gridLayoutWidget);
+        receipts_notice->setObjectName(QString::fromUtf8("receipts_notice"));
+
+        gridLayout->addWidget(receipts_notice, 18, 2, 1, 1);
+
         gridLayoutWidget_2 = new QWidget(createFile);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(290, 45, 347, 471));
+        gridLayoutWidget_2->setGeometry(QRect(310, 60, 347, 471));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -738,6 +762,11 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/pictures/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         reloadButton->setIcon(icon);
+        progressBar_save_createFile = new QProgressBar(createFile);
+        progressBar_save_createFile->setObjectName(QString::fromUtf8("progressBar_save_createFile"));
+        progressBar_save_createFile->setGeometry(QRect(1000, 530, 151, 16));
+        progressBar_save_createFile->setValue(0);
+        progressBar_save_createFile->setTextVisible(false);
         tabWidget->addTab(createFile, QString());
         runArchiveCheck = new QWidget();
         runArchiveCheck->setObjectName(QString::fromUtf8("runArchiveCheck"));
@@ -792,43 +821,46 @@ public:
         WAEX_logo->setText(QString());
         label->setText(QApplication::translate("MainWindow", "Notes PO# :", nullptr));
         PoLabel->setText(QApplication::translate("MainWindow", "NULL", nullptr));
-        mexP_ProduceInv_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_SaleConf->setText(QApplication::translate("MainWindow", "Sale Conf", nullptr));
-        mexP_SignedSale_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Invoice_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Phyto->setText(QApplication::translate("MainWindow", "Phyto", nullptr));
-        mexP_Passing_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_ShipperConf->setText(QApplication::translate("MainWindow", "Shipper Conf", nullptr));
-        mexP_SignedSale->setText(QApplication::translate("MainWindow", "Signed Sale Conf.", nullptr));
         mexP_Payable_Shipper_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Payables_Carriers_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Pedimento->setText(QApplication::translate("MainWindow", "Pedimento", nullptr));
-        mexP_Spreadsheets_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Pedimento_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Payable_Shipper->setText(QApplication::translate("MainWindow", "Payables-Shipper", nullptr));
-        mexP_Phyto_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_ProduceInv->setText(QApplication::translate("MainWindow", "Produce Inv. ", nullptr));
-        mexP_ShipperConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Spreadsheets->setText(QApplication::translate("MainWindow", "Spreadsheets", nullptr));
-        mexP_CarrierConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Passing->setText(QApplication::translate("MainWindow", "Passing", nullptr));
-        mexP_Invoice->setText(QApplication::translate("MainWindow", "Invoice", nullptr));
-        mexP_CarrierConf->setText(QApplication::translate("MainWindow", "Carrier Conf", nullptr));
-        mexP_Payables_Carriers->setText(QApplication::translate("MainWindow", "Payables-Carriers", nullptr));
-        noticeSpreadsheets->setText(QApplication::translate("MainWindow", "No", nullptr));
-        mexP_SaleConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        label_4->setText(QApplication::translate("MainWindow", "Uploaded?", nullptr));
-        noticeInvoice->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticePhyto->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticeShipperConf->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticeCarrierConf->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticePassing->setText(QApplication::translate("MainWindow", "No", nullptr));
         noticeSaleConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticeProduceInv->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Payables_Carriers_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        noticeSpreadsheets->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticeShipperConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_SignedSale->setText(QApplication::translate("MainWindow", "Signed Sale Conf.", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "Uploaded?", nullptr));
+        mexP_Passing_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        noticePayableShipper->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticePhyto->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_SignedSale_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_ShipperConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_SaleConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        noticeCarrierConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_SaleConf->setText(QApplication::translate("MainWindow", "Sale Conf", nullptr));
+        mexP_Passing->setText(QApplication::translate("MainWindow", "Passing", nullptr));
+        mexP_Payables_Carriers->setText(QApplication::translate("MainWindow", "Payables-Carriers", nullptr));
+        mexP_ProduceInv->setText(QApplication::translate("MainWindow", "Produce Inv. ", nullptr));
+        mexP_Spreadsheets_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
         noticeSignedSaleConf->setText(QApplication::translate("MainWindow", "No", nullptr));
         noticePedimento->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticeProduceInv->setText(QApplication::translate("MainWindow", "No", nullptr));
-        noticePayableShipper->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Phyto->setText(QApplication::translate("MainWindow", "Phyto", nullptr));
+        mexP_ShipperConf->setText(QApplication::translate("MainWindow", "Shipper Conf", nullptr));
+        mexP_ProduceInv_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_Pedimento->setText(QApplication::translate("MainWindow", "Pedimento", nullptr));
+        mexP_Invoice->setText(QApplication::translate("MainWindow", "Invoice", nullptr));
+        mexP_Payable_Shipper->setText(QApplication::translate("MainWindow", "Payables-Shipper", nullptr));
+        mexP_Invoice_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_CarrierConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        noticeInvoice->setText(QApplication::translate("MainWindow", "No", nullptr));
         noticePayableCarriers->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Pedimento_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_CarrierConf->setText(QApplication::translate("MainWindow", "Carrier Conf", nullptr));
+        mexP_Spreadsheets->setText(QApplication::translate("MainWindow", "Spreadsheets", nullptr));
+        noticePassing->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Phyto_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        receipts->setText(QApplication::translate("MainWindow", "Receipts", nullptr));
+        receipts_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        receipts_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
         HarrisEmails->setText(QApplication::translate("MainWindow", "Harris Emails", nullptr));
         CertOrigin_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
         FreightContract_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));

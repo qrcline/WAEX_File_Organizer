@@ -30,7 +30,7 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_comboBox_currentIndexChanged(const QString &arg1);
+
 
     void on_openFolder_clicked();
     void openDirectory(QString );
@@ -92,6 +92,74 @@ private slots:
 
     void on_POInput_editingFinished();
 
+    void on_ExpInvima_stateChanged(int arg1);
+
+    void on_FacturaComercial_stateChanged(int arg1);
+
+    void on_ListadeEmpaque_stateChanged(int arg1);
+
+    void on_CertOrigin_stateChanged(int arg1);
+
+    void on_CaftaNafta_stateChanged(int arg1);
+
+    void on_FreightContract_stateChanged(int arg1);
+
+    void on_Transloader_stateChanged(int arg1);
+
+    void on_Harris_stateChanged(int arg1);
+
+    void on_HarrisEmails_stateChanged(int arg1);
+
+    void on_CustomerPO_stateChanged(int arg1);
+
+    void on_OtherEmails_stateChanged(int arg1);
+
+    void on_Payables_Transloader_stateChanged(int arg1);
+
+    void on_payables_TruckFreight_stateChanged(int arg1);
+
+    void on_Payables_Harris_stateChanged(int arg1);
+
+    void on_Payables_ShipperWarehouse_stateChanged(int arg1);
+
+
+
+    void on_comboBox_currentIndexChanged(int index);
+
+    void on_receipts_stateChanged(int arg1);
+
+    void on_ExpInvima_Upload_clicked();
+
+    void on_receipts_upload_clicked();
+
+    void on_FacturaComercial_upload_clicked();
+
+    void on_ListadeEmpaque_upload_clicked();
+
+    void on_CertOrigin_upload_clicked();
+
+    void on_CaftaNafta_upload_clicked();
+
+    void on_FreightContract_upload_clicked();
+
+    void on_Transloader_upload_clicked();
+
+    void on_Harris_upload_clicked();
+
+    void on_HarrisEmails_upload_clicked();
+
+    void on_CustomerPO_upload_clicked();
+
+    void on_OtherEmails_upload_clicked();
+
+    void on_Payables_Transloader_upload_clicked();
+
+    void on_payables_TruckFreight_upload_clicked();
+
+    void on_Payables_Harris_upload_clicked();
+
+    void on_Payables_ShipperWarehouse_upload_clicked();
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );
@@ -101,6 +169,7 @@ private:
 
     void updateWindow();
     void uploadFile(std::string fileDialog1, std::string fileDialog2, QString destFileName);
+    void uncheckAll();
 };
 
 #endif // MAINWINDOW_H

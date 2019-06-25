@@ -92,8 +92,8 @@
      <widget class="QPushButton" name="saveButton">
       <property name="geometry">
        <rect>
-        <x>1069</x>
-        <y>510</y>
+        <x>1050</x>
+        <y>490</y>
         <width>101</width>
         <height>31</height>
        </rect>
@@ -206,90 +206,53 @@
        <rect>
         <x>10</x>
         <y>110</y>
-        <width>281</width>
-        <height>381</height>
+        <width>301</width>
+        <height>408</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
-       <item row="10" column="1">
-        <widget class="QPushButton" name="mexP_ProduceInv_upload">
+       <item row="11" column="1">
+        <widget class="QPushButton" name="mexP_Payable_Shipper_upload">
          <property name="text">
           <string>Choose File</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
-        <widget class="QCheckBox" name="mexP_SaleConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
+       <item row="7" column="2">
+        <widget class="QLabel" name="noticeSaleConf">
          <property name="text">
-          <string>Sale Conf</string>
+          <string>No</string>
          </property>
-         <property name="checked">
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLabel" name="noticeProduceInv">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="1">
+        <widget class="QPushButton" name="mexP_Payables_Carriers_upload">
+         <property name="enabled">
           <bool>true</bool>
          </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QPushButton" name="mexP_SignedSale_upload">
          <property name="text">
           <string>Choose File</string>
          </property>
         </widget>
        </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="mexP_Invoice_upload">
+       <item row="1" column="2">
+        <widget class="QLabel" name="noticeSpreadsheets">
          <property name="text">
-          <string>Choose File</string>
+          <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
-        <widget class="QCheckBox" name="mexP_Phyto">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
+       <item row="4" column="2">
+        <widget class="QLabel" name="noticeShipperConf">
          <property name="text">
-          <string>Phyto</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="mexP_Passing_upload">
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="mexP_ShipperConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Shipper Conf</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
+          <string>No</string>
          </property>
         </widget>
        </item>
@@ -311,95 +274,38 @@
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
-        <widget class="QPushButton" name="mexP_Payable_Shipper_upload">
+       <item row="0" column="2">
+        <widget class="QLabel" name="label_4">
+         <property name="text">
+          <string>Uploaded?</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="mexP_Passing_upload">
          <property name="text">
           <string>Choose File</string>
          </property>
         </widget>
        </item>
-       <item row="17" column="1">
-        <widget class="QPushButton" name="mexP_Payables_Carriers_upload">
-         <property name="enabled">
-          <bool>true</bool>
+       <item row="11" column="2">
+        <widget class="QLabel" name="noticePayableShipper">
+         <property name="text">
+          <string>No</string>
          </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="noticePhyto">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="mexP_SignedSale_upload">
          <property name="text">
           <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="0">
-        <widget class="QCheckBox" name="mexP_Pedimento">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Pedimento</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="mexP_Spreadsheets_upload">
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QPushButton" name="mexP_Pedimento_upload">
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QCheckBox" name="mexP_Payable_Shipper">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Payables-Shipper</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="mexP_Phyto_upload">
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QCheckBox" name="mexP_ProduceInv">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Produce Inv. </string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -410,8 +316,22 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
-        <widget class="QCheckBox" name="mexP_Spreadsheets">
+       <item row="7" column="1">
+        <widget class="QPushButton" name="mexP_SaleConf_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLabel" name="noticeCarrierConf">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="mexP_SaleConf">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -421,17 +341,10 @@
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="text">
-          <string>Spreadsheets</string>
+          <string>Sale Conf</string>
          </property>
          <property name="checked">
           <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QPushButton" name="mexP_CarrierConf_upload">
-         <property name="text">
-          <string>Choose File</string>
          </property>
         </widget>
        </item>
@@ -447,42 +360,6 @@
          </property>
          <property name="text">
           <string>Passing</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="0">
-        <widget class="QCheckBox" name="mexP_Invoice">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Invoice</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="mexP_CarrierConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Carrier Conf</string>
          </property>
          <property name="checked">
           <bool>true</bool>
@@ -507,66 +384,28 @@
          </property>
         </widget>
        </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="noticeSpreadsheets">
+       <item row="10" column="0">
+        <widget class="QCheckBox" name="mexP_ProduceInv">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Produce Inv. </string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="7" column="1">
-        <widget class="QPushButton" name="mexP_SaleConf_upload">
+       <item row="1" column="1">
+        <widget class="QPushButton" name="mexP_Spreadsheets_upload">
          <property name="text">
           <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Uploaded?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="noticeInvoice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="noticePhyto">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="noticeShipperConf">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="noticeCarrierConf">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QLabel" name="noticePassing">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QLabel" name="noticeSaleConf">
-         <property name="text">
-          <string>No</string>
          </property>
         </widget>
        </item>
@@ -584,15 +423,119 @@
          </property>
         </widget>
        </item>
-       <item row="10" column="2">
-        <widget class="QLabel" name="noticeProduceInv">
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="mexP_Phyto">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Phyto</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="11" column="2">
-        <widget class="QLabel" name="noticePayableShipper">
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="mexP_ShipperConf">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Shipper Conf</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QPushButton" name="mexP_ProduceInv_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QCheckBox" name="mexP_Pedimento">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Pedimento</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="mexP_Invoice">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Invoice</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="0">
+        <widget class="QCheckBox" name="mexP_Payable_Shipper">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Payables-Shipper</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="mexP_Invoice_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="mexP_CarrierConf_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="noticeInvoice">
          <property name="text">
           <string>No</string>
          </property>
@@ -605,13 +548,105 @@
          </property>
         </widget>
        </item>
+       <item row="9" column="1">
+        <widget class="QPushButton" name="mexP_Pedimento_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="mexP_CarrierConf">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Carrier Conf</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="mexP_Spreadsheets">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Spreadsheets</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLabel" name="noticePassing">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="mexP_Phyto_upload">
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="0">
+        <widget class="QCheckBox" name="receipts">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Receipts</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="1">
+        <widget class="QPushButton" name="receipts_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="18" column="2">
+        <widget class="QLabel" name="receipts_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="gridLayoutWidget_2">
       <property name="geometry">
        <rect>
-        <x>290</x>
-        <y>45</y>
+        <x>310</x>
+        <y>60</y>
         <width>347</width>
         <height>471</height>
        </rect>
@@ -1133,6 +1168,22 @@
       <property name="icon">
        <iconset resource="resources.qrc">
         <normaloff>:/pictures/reload.png</normaloff>:/pictures/reload.png</iconset>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="progressBar_save_createFile">
+      <property name="geometry">
+       <rect>
+        <x>1000</x>
+        <y>530</y>
+        <width>151</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
       </property>
      </widget>
     </widget>

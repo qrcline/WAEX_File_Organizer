@@ -23,10 +23,10 @@ FolderIO::FolderIO()
 void FolderIO::copyFile(QString source, QString destination, QString destinationName)
 {
 
-    //TODO: fix finding the file extension
-    QString extension=source.right(source.lastIndexOf('.'));
+    //Copies a file and keeps the source file extension
+    QString extension=source.mid(source.lastIndexOf('.'),source.length()-source.lastIndexOf('.'));
     std::cout<<"The extension is: "+extension.toStdString()<<std::endl;
-    QFile::copy(source, destination+"/"+destinationName);//This copies the file with the new destination name
+    QFile::copy(source, destination+"/"+destinationName+extension);//This copies the file with the new destination name
 }
 
 void FolderIO::createDirectory(QString directory)
@@ -107,14 +107,14 @@ bool FolderIO::checkForDirect(QString mainDirectory,QString directory)
     //Output: bool-True if the directroy exists in the mainDirectory
 
     MainWindow mainwindow;
-    std::cout<<"Entering direct check main Direct:"<<mainDirectory.toStdString()<<std::endl;
+    //std::cout<<"Entering direct check main Direct:"<<mainDirectory.toStdString()<<std::endl;
     std::vector<std::string> path=get_directories(mainDirectory.toStdString());
     for (auto i = path.begin(); i != path.end(); ++i)
     {
 
         QString checkDirec= mainDirectory+'\\'+directory;
         checkDirec.replace("/","\\");
-        std::cout << *i << ' '<<checkDirec.toStdString()<<std::endl;
+        //std::cout << *i << ' '<<checkDirec.toStdString()<<std::endl;
         if((*i)==checkDirec.toStdString().c_str())
             return true;
     }
@@ -147,6 +147,7 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     outfile << "Customer:*"+customer.toStdString() << std::endl;
     //outfile << "Date created:*"+QDate::currentDate(dd.MM.yyyy).toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
+    //std::cout<< list_files(destDirec+"/").str();
     outfile<<"Notes:"<<notes.toStdString()<<std::endl;
 
 
