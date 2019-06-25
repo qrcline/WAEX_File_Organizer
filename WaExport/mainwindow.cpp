@@ -60,9 +60,16 @@ void MainWindow::updateWindow()
     int num=0;
     num=fIo.doesFileExist("Spreadsheets",filesVec);
     if(num>0)
+    {
         ui->noticeSpreadsheets->setText("YES X"+QString::number(num));
-    else ui->noticeSpreadsheets->setText("No");
+        filesRequired[0]="Spreadsheets";
+    }
 
+    else
+    {
+        ui->noticeSpreadsheets->setText("No");
+        filesRequired[0]=nullptr;
+    }
     if((num=fIo.doesFileExist("CarrierConf",filesVec))>0)
         ui->noticeCarrierConf->setText("YES X"+QString::number(num));
     else ui->noticeCarrierConf->setText("No");
@@ -238,7 +245,11 @@ void MainWindow::on_actionOpen_triggered()
     ui->notesArea->setEnabled(true);
 }
 
+std::vector<std::string> MainWindow::getRequiredFiles()
+{
+      std::vector<std::string> fileVector;
 
+}
 
 void MainWindow::on_saveButton_clicked()
 {

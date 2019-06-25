@@ -165,11 +165,13 @@ private:
     //void openDirectory(QString );
     QString mainDirectory=nullptr;
     void openFolder();
+    QString filesRequired [30]={NULL};
 
 
     void updateWindow();
     void uploadFile(std::string fileDialog1, std::string fileDialog2, QString destFileName);
     void uncheckAll();
+    std::vector<std::string> getRequiredFiles();
 };
 
 #endif // MAINWINDOW_H
