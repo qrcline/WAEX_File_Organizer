@@ -178,6 +178,11 @@ void MainWindow::updateWindow()
         ui->Transloader_notice->setText("YES X"+QString::number(num));
     else ui->Transloader_notice->setText("No");
 
+
+    if((num=fIo.doesFileExist("Receipt",filesVec))>0)
+        ui->receipts_notice->setText("YES X"+QString::number(num));
+    else ui->receipts_notice->setText("No");
+
     //Fill in the notes section
     ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
 
@@ -295,7 +300,7 @@ std::ostringstream MainWindow::getRequiredFiles()
          if(ui->mexP_Payables_Carriers->isChecked())
              fileStream<<"PayablesCarrier"<<std::endl;
          if(ui->receipts->isChecked())
-             fileStream<<"Receipts"<<std::endl;
+             fileStream<<"Receipt"<<std::endl;
          if(ui->ExpInvima->isChecked())
              fileStream<<"ExpInvima"<<std::endl;
          if(ui->FacturaComercial->isChecked())
@@ -334,7 +339,7 @@ std::ostringstream MainWindow::getRequiredFiles()
 void MainWindow::on_saveButton_clicked()
 {
     std::cout<<"Save Button Pushed- Initiating Save"<<std::endl;
-    ui->progressBar_save_createFile->show();
+   // ui->progressBar_save_createFile->show();
     FolderIO fIo;
 
     //Fetches the required fields based on the check boxes

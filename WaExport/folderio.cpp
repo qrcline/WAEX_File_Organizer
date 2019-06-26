@@ -144,7 +144,7 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     //Write what you want to the file
     outfile << "This is an index file for WAEX filing system.\nThis file should not be edited directely by the user." << std::endl<<std::endl;
     outfile << "PO#:"+poNum.toStdString() << std::endl;
-    outfile << "Customer:"+customer.toStdString() << std::endl;
+    //outfile << "Customer:"+customer.toStdString() << std::endl;
 
     //Output the files that are required based on what is checked
     //This will be a list of the names of the files
@@ -182,7 +182,7 @@ int FolderIO::doesFileExist(QString fileToCheck,std::vector<std::string> filesVe
 }
 
 QString FolderIO::getNotes(QString directory)
-{
+{   //Returs a QString of the notes from the WAEX.index file
     QFile file(directory);
        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
            return "";
@@ -195,6 +195,7 @@ QString FolderIO::getNotes(QString directory)
 
 QString FolderIO::getTemplate(QString directory)
 {
+
     QFile file(directory);
        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
            return "";
