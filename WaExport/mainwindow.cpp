@@ -11,6 +11,7 @@
 #include <QTextStream>
 #include "filesystem"
 #include "folderio.h"
+#include <sstream>
 
 
 
@@ -62,7 +63,7 @@ void MainWindow::updateWindow()
     if(num>0)
     {
         ui->noticeSpreadsheets->setText("YES X"+QString::number(num));
-        filesRequired[0]="Spreadsheets";
+
     }
 
     else
@@ -245,10 +246,69 @@ void MainWindow::on_actionOpen_triggered()
     ui->notesArea->setEnabled(true);
 }
 
-std::vector<std::string> MainWindow::getRequiredFiles()
+std::ostringstream MainWindow::getRequiredFiles()
 {
-      std::vector<std::string> fileVector;
+      std::ostringstream fileStream;
+         fileStream<<"Template:"+ui->comboBox->currentIndex()<<std::endl;
+         if(ui->mexP_Spreadsheets->isChecked())
+             fileStream<<"Spreadsheets"<<std::endl;
+         if(ui->mexP_Invoice->isChecked())
+             fileStream<<"Invoice"<<std::endl;
+         if(ui->mexP_Phyto->isChecked())
+             fileStream<<"Phyto"<<std::endl;
+         if(ui->mexP_ShipperConf->isChecked())
+             fileStream<<"ShipperConf"<<std::endl;
+         if(ui->mexP_CarrierConf->isChecked())
+             fileStream<<"CarrierConf"<<std::endl;
+         if(ui->mexP_Passing->isChecked())
+             fileStream<<"Passing"<<std::endl;
+         if(ui->mexP_SaleConf->isChecked())
+             fileStream<<"SaleConf"<<std::endl;
+         if(ui->mexP_SignedSale->isChecked())
+             fileStream<<"SignedSaleConf"<<std::endl;
+         if(ui->mexP_Pedimento->isChecked())
+             fileStream<<"Pedimento"<<std::endl;
+         if(ui->mexP_ProduceInv->isChecked())
+             fileStream<<"ProduceInv"<<std::endl;
+         if(ui->mexP_Payable_Shipper->isChecked())
+             fileStream<<"PayablesShipper"<<std::endl;
+         if(ui->mexP_Payables_Carriers->isChecked())
+             fileStream<<"PayablesCarrier"<<std::endl;
+         if(ui->receipts->isChecked())
+             fileStream<<"Receipts"<<std::endl;
+         if(ui->ExpInvima->isChecked())
+             fileStream<<"ExpInvima"<<std::endl;
+         if(ui->FacturaComercial->isChecked())
+             fileStream<<"FacturaComercial"<<std::endl;
+         if(ui->ListadeEmpaque->isChecked())
+             fileStream<<"ListaEmpaque"<<std::endl;
+         if(ui->CertOrigin->isChecked())
+             fileStream<<"CertOrigin"<<std::endl;
+         if(ui->CaftaNafta->isChecked())
+             fileStream<<"CaftaNafta"<<std::endl;
+         if(ui->FreightContract->isChecked())
+             fileStream<<"FreightContract"<<std::endl;
+         if(ui->Transloader->isChecked())
+             fileStream<<"Transloader"<<std::endl;
+         if(ui->Harris->isChecked())
+             fileStream<<"Harris"<<std::endl;
+         if(ui->HarrisEmails->isChecked())
+             fileStream<<"HarEmails"<<std::endl;
+         if(ui->CustomerPO->isChecked())
+             fileStream<<"CustomerPO"<<std::endl;
+         if(ui->OtherEmails->isChecked())
+             fileStream<<"OtherEmails"<<std::endl;
+         if(ui->Payables_Transloader->isChecked())
+             fileStream<<"PayablesTransloader"<<std::endl;
+         if(ui->payables_TruckFreight->isChecked())
+             fileStream<<"PayablesTruckFreight"<<std::endl;
+         if(ui->Payables_Harris->isChecked())
+             fileStream<<"PayablesHarris"<<std::endl;
+         if(ui->Payables_ShipperWarehouse->isChecked())
+             fileStream<<"PayablesSW"<<std::endl;
 
+
+    return fileStream;
 }
 
 void MainWindow::on_saveButton_clicked()
@@ -257,9 +317,12 @@ void MainWindow::on_saveButton_clicked()
     ui->progressBar_save_createFile->show();
     FolderIO fIo;
 
+    //Fetches the required fields based on the check boxes
+
+
     if(mainDirectory!=nullptr && ui->POInput->text()!="")
     {
-        if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesArea->toPlainText())))
+        if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesArea->toPlainText(),getRequiredFiles())))
         {
             std::cout<<"Index file creation failed"<<std::endl;
         }
@@ -301,13 +364,8 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
     num=fIo.doesFileExist(destFileName,filesVec);
-//    if (QFile::exists(mainDirectory+"/"+ui->POInput->text()+"/"+destFileName))
-//    {
 
-//    }
-    //copy Syntax
     //copy(from,to,dest name)
-
     fIo.copyFile(filePath,mainDirectory+"/"+ui->POInput->text(),destFileName+"_"+QString::number((num+1)));
     updateWindow();
 }

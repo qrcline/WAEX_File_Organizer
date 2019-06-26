@@ -122,7 +122,7 @@ bool FolderIO::checkForDirect(QString mainDirectory,QString directory)
 }
 
 
-bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer,QString notes)
+bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer,QString notes,std::ostringstream requiredFiles)
 {
 
    /*Creates the index file that is used for checking/ indexinf of the folder
@@ -144,8 +144,8 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     //Write what you want to the file
     outfile << "This is an index file for WAEX filing system.\nThis file should not be edited directely by the user." << std::endl;
     outfile << "PO#:*"+poNum.toStdString() << std::endl;
-    outfile << "Customer:*"+customer.toStdString() << std::endl;
-    outfile<<"Required files: "<<std::endl;
+    outfile << "Customer:"+customer.toStdString() << std::endl;
+    outfile<<requiredFiles.str()<<std::endl;
     //Output the files that are required based on what is checked
     //This will be a list of the names of the files
 
