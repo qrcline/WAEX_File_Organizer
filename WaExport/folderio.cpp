@@ -148,7 +148,9 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
 
     //Output the files that are required based on what is checked
     //This will be a list of the names of the files
-    outfile<<requiredFiles.str()<<std::endl;
+    outfile<<"/REQSTART/"<<std::endl;
+    outfile<<requiredFiles.str();
+    outfile<<"/REQEND/"<<std::endl;
 
     //outfile << "Date created:*"+QDate::currentDate().toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
