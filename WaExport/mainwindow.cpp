@@ -195,6 +195,7 @@ void MainWindow::updateWindow()
 void    MainWindow::openDirectory(QString input)
 {
     long result = (long)ShellExecute(0, 0, reinterpret_cast<const WCHAR*>(input.utf16()), 0, 0, SW_NORMAL);
+
 }
 
 void MainWindow::openFolder()
