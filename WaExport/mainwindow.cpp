@@ -57,6 +57,9 @@ void MainWindow::updateWindow()
     if(mainDirectory==nullptr||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
         return;
 
+
+
+
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
     num=fIo.doesFileExist("Spreadsheets",filesVec);
@@ -225,6 +228,21 @@ void MainWindow::openFolder()
         openDirectory(mainDirectory+"/"+ui->POInput->text());
     }
     ui->PoLabel->setText(ui->POInput->text());
+
+    //Grabbing the template from the file
+    QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+ui->POInput->text()+"/waex.index");
+    std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
+    if(tempTemplate=="Mex Produce")
+        ui->comboBox->setCurrentIndex(0);
+    if(tempTemplate=="Domestic")
+        ui->comboBox->setCurrentIndex(1);
+    if(tempTemplate=="Mex Direct")
+        ui->comboBox->setCurrentIndex(2);
+    if(tempTemplate=="Overseas")
+        ui->comboBox->setCurrentIndex(3);
+
+
+
     updateWindow();
 }
 
@@ -249,7 +267,9 @@ void MainWindow::on_actionOpen_triggered()
 std::ostringstream MainWindow::getRequiredFiles()
 {
       std::ostringstream fileStream;
-         fileStream<<"Template:"+ui->comboBox->currentIndex()<<std::endl;
+      ui->comboBox->currentIndex();
+      std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
+         fileStream<<"Template:"+ui->comboBox->currentText().toStdString()+"/TEND"<<std::endl;
          if(ui->mexP_Spreadsheets->isChecked())
              fileStream<<"Spreadsheets"<<std::endl;
          if(ui->mexP_Invoice->isChecked())

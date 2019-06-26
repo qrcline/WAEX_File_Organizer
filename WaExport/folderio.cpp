@@ -142,17 +142,18 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     }
 
     //Write what you want to the file
-    outfile << "This is an index file for WAEX filing system.\nThis file should not be edited directely by the user." << std::endl;
-    outfile << "PO#:*"+poNum.toStdString() << std::endl;
+    outfile << "This is an index file for WAEX filing system.\nThis file should not be edited directely by the user." << std::endl<<std::endl;
+    outfile << "PO#:"+poNum.toStdString() << std::endl;
     outfile << "Customer:"+customer.toStdString() << std::endl;
-    outfile<<requiredFiles.str()<<std::endl;
+
     //Output the files that are required based on what is checked
     //This will be a list of the names of the files
+    outfile<<requiredFiles.str()<<std::endl;
 
-    //outfile << "Date created:*"+QDate::currentDate(dd.MM.yyyy).toString() << std::endl;
+    //outfile << "Date created:*"+QDate::currentDate().toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
     //std::cout<< list_files(destDirec+"/").str();
-    outfile<<"Notes:"<<notes.toStdString()<<std::endl;
+    outfile<<std::endl<<"Notes:"<<notes.toStdString()<<std::endl;
 
 
 
@@ -190,6 +191,18 @@ QString FolderIO::getNotes(QString directory)
         QString fileString =QString::fromStdString(indexFile.toStdString());
         int found= fileString.indexOf("Notes:");
         return fileString.mid(found+6,fileString.length());
+}
+
+QString FolderIO::getTemplate(QString directory)
+{
+    QFile file(directory);
+       if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+           return "";
+       QByteArray indexFile= file.readAll();
+      // std::cout <<"NOTES SECTION:"+indexFile.toStdString()<<std::endl;
+       QString fileString =QString::fromStdString(indexFile.toStdString());
+       int found= fileString.indexOf("Template:");
+       return fileString.mid(found+9,fileString.indexOf("/TEND")-(found+9));
 }
 
 
