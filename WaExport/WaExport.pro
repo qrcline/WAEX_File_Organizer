@@ -27,13 +27,15 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    folderio.cpp
+    folderio.cpp \
+    archivecheck.cpp
 
 HEADERS += \
         mainwindow.h \
     folderio.h \
     dirent-master/include/dirent.h \
-    dirent.h
+    dirent.h \
+    archivecheck.h
 
 FORMS += \
         mainwindow.ui

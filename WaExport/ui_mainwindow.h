@@ -16,8 +16,10 @@
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QCommandLinkButton>
+#include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
+#include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
@@ -27,6 +29,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
+#include <QtWidgets/QTableView>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -146,6 +149,17 @@ public:
     QProgressBar *progressBar_save_createFile;
     QWidget *runArchiveCheck;
     QLabel *WAEX_logo_2;
+    QLabel *workingDirectory;
+    QLabel *label_3;
+    QPushButton *pushButton;
+    QTableView *tableView;
+    QLabel *label_6;
+    QWidget *widget;
+    QFormLayout *formLayout;
+    QLabel *label_7;
+    QLabel *workingDirectory_2;
+    QLabel *label_8;
+    QLabel *workingDirectory_3;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -774,6 +788,59 @@ public:
         WAEX_logo_2->setObjectName(QString::fromUtf8("WAEX_logo_2"));
         WAEX_logo_2->setGeometry(QRect(855, 5, 321, 111));
         WAEX_logo_2->setScaledContents(true);
+        workingDirectory = new QLabel(runArchiveCheck);
+        workingDirectory->setObjectName(QString::fromUtf8("workingDirectory"));
+        workingDirectory->setGeometry(QRect(110, 30, 399, 16));
+        label_3 = new QLabel(runArchiveCheck);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(0, 30, 111, 16));
+        label_3->setFont(font);
+        pushButton = new QPushButton(runArchiveCheck);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(20, 60, 91, 21));
+        tableView = new QTableView(runArchiveCheck);
+        tableView->setObjectName(QString::fromUtf8("tableView"));
+        tableView->setGeometry(QRect(260, 130, 911, 401));
+        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
+        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        tableView->verticalHeader()->setVisible(false);
+        label_6 = new QLabel(runArchiveCheck);
+        label_6->setObjectName(QString::fromUtf8("label_6"));
+        label_6->setGeometry(QRect(66, 100, 71, 21));
+        QFont font1;
+        font1.setUnderline(true);
+        label_6->setFont(font1);
+        label_6->setAlignment(Qt::AlignCenter);
+        widget = new QWidget(runArchiveCheck);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(30, 130, 131, 41));
+        formLayout = new QFormLayout(widget);
+        formLayout->setSpacing(6);
+        formLayout->setContentsMargins(11, 11, 11, 11);
+        formLayout->setObjectName(QString::fromUtf8("formLayout"));
+        formLayout->setContentsMargins(0, 0, 0, 0);
+        label_7 = new QLabel(widget);
+        label_7->setObjectName(QString::fromUtf8("label_7"));
+        label_7->setFont(font);
+
+        formLayout->setWidget(0, QFormLayout::LabelRole, label_7);
+
+        workingDirectory_2 = new QLabel(widget);
+        workingDirectory_2->setObjectName(QString::fromUtf8("workingDirectory_2"));
+
+        formLayout->setWidget(0, QFormLayout::FieldRole, workingDirectory_2);
+
+        label_8 = new QLabel(widget);
+        label_8->setObjectName(QString::fromUtf8("label_8"));
+        label_8->setFont(font);
+
+        formLayout->setWidget(1, QFormLayout::LabelRole, label_8);
+
+        workingDirectory_3 = new QLabel(widget);
+        workingDirectory_3->setObjectName(QString::fromUtf8("workingDirectory_3"));
+
+        formLayout->setWidget(1, QFormLayout::FieldRole, workingDirectory_3);
+
         tabWidget->addTab(runArchiveCheck, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -794,7 +861,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -910,6 +977,14 @@ public:
         reloadButton->setText(QString());
         tabWidget->setTabText(tabWidget->indexOf(createFile), QApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
+        workingDirectory->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Working Directory:", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Run Check", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "Summary", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Total Errors:", nullptr));
+        workingDirectory_2->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "Files Affected", nullptr));
+        workingDirectory_3->setText(QApplication::translate("MainWindow", "NULL", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
