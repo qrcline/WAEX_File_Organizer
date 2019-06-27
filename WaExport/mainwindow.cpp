@@ -336,15 +336,6 @@ std::ostringstream MainWindow::getRequiredFiles()
              fileStream<<"Spreadsheets"<<std::endl;
          if(ui->Transloader->isChecked())
              fileStream<<"Transloader"<<std::endl;
-
-
-
-
-
-
-
-
-
           fileStream<<"/REQEND/"<<std::endl;
 
 
@@ -957,7 +948,7 @@ void MainWindow::on_archiveCheckButton_clicked()
     //runs the archive check
     std::cout<<"Archive check started"<<std::endl;
 
-    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory);
+    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory,ui);
     QString response=acheck->checkForArchive();
     if(response=="ERROR/1")
     {
@@ -966,7 +957,7 @@ void MainWindow::on_archiveCheckButton_clicked()
 
 
 
-
+    ui->archivePBar->setValue(100);
     std::cout<<"Archive check finished"<<std::endl;
 }
 

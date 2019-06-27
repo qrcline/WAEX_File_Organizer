@@ -30,6 +30,7 @@ public:
     QString getNotes(QString directory);
     QString getTemplate(QString directory);
     std::vector<std::string> get_directories(const std::string &mainDirec);
+    std::vector<std::string> get_reqFiles(QString mainDirec);
 };
 
 #endif // FOLDERIO_H

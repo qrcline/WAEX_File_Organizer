@@ -208,6 +208,34 @@ QString FolderIO::getTemplate(QString directory)
        return fileString.mid(found+9,fileString.indexOf("/TEND")-(found+9));
 }
 
+std::vector<std::string> FolderIO::get_reqFiles(QString mainDirec)
+{
+    std::vector<std::string> requiredFiles;
+    QFile file(mainDirec+"/waex.index");
+       if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
+          std::cout<<"Errro opening file"<<std::endl;
+//       while(file.readLine()!="/REQSTART/")
+//           std::cout<<"Next"<<std::endl;
+       file.readLine();
+        file.readLine();
+         file.readLine();
+          file.readLine();
+           file.readLine();
+            file.readLine();
+            QString temp;
 
+           //TODO:
+           while(1)
+               temp =file.readLine();
+               if(temp=="/REQEND/")
+                   return requiredFiles;
+               else
+               {
+                   requiredFiles.push_back(temp.toStdString());
+               }
+
+
+        std::cout<<file.readLine().toStdString()<<std::endl;
+}
 
 

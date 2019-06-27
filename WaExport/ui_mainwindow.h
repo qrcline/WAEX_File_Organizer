@@ -154,6 +154,7 @@ public:
     QPushButton *archiveCheckButton;
     QTableView *tableView;
     QLabel *label_6;
+    QProgressBar *archivePBar;
     QWidget *widget;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -811,6 +812,11 @@ public:
         font1.setUnderline(true);
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
+        archivePBar = new QProgressBar(runArchiveCheck);
+        archivePBar->setObjectName(QString::fromUtf8("archivePBar"));
+        archivePBar->setGeometry(QRect(210, 50, 118, 23));
+        archivePBar->setValue(0);
+        archivePBar->setInvertedAppearance(false);
         widget = new QWidget(runArchiveCheck);
         widget->setObjectName(QString::fromUtf8("widget"));
         widget->setGeometry(QRect(30, 130, 131, 41));
@@ -861,7 +867,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

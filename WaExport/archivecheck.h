@@ -20,13 +20,14 @@
 class ArchiveCheck
 {
 public:
-    ArchiveCheck(QString directory);
+    ArchiveCheck(QString directory,Ui::MainWindow* ui);
 
 
 public slots:
     QString checkForArchive();
 private:
     QString directory=nullptr;
+    Ui::MainWindow* uiPointer;
 
 
 protected:
