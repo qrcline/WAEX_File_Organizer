@@ -42,7 +42,7 @@ void FolderIO::createDirectory(QString directory)
     }
 }
 
-std::vector<std::string> get_directories(const std::string& mainDirec)
+std::vector<std::string> FolderIO::get_directories(const std::string& mainDirec)
 {
     //Returns a vector of all the directories in the mainDirec
     //Input: mainDirec- the directory to search in
@@ -148,9 +148,9 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
 
     //Output the files that are required based on what is checked
     //This will be a list of the names of the files
-    outfile<<"/REQSTART/"<<std::endl;
+    //outfile<<"/REQSTART/"<<std::endl;
     outfile<<requiredFiles.str();
-    outfile<<"/REQEND/"<<std::endl;
+    //outfile<<"/REQEND/"<<std::endl;
 
     //outfile << "Date created:*"+QDate::currentDate().toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
@@ -207,5 +207,7 @@ QString FolderIO::getTemplate(QString directory)
        int found= fileString.indexOf("Template:");
        return fileString.mid(found+9,fileString.indexOf("/TEND")-(found+9));
 }
+
+
 
 

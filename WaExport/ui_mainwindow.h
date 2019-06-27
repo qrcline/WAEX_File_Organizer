@@ -151,7 +151,7 @@ public:
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
     QLabel *label_3;
-    QPushButton *pushButton;
+    QPushButton *archiveCheckButton;
     QTableView *tableView;
     QLabel *label_6;
     QWidget *widget;
@@ -795,9 +795,9 @@ public:
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(0, 30, 111, 16));
         label_3->setFont(font);
-        pushButton = new QPushButton(runArchiveCheck);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(20, 60, 91, 21));
+        archiveCheckButton = new QPushButton(runArchiveCheck);
+        archiveCheckButton->setObjectName(QString::fromUtf8("archiveCheckButton"));
+        archiveCheckButton->setGeometry(QRect(20, 60, 91, 21));
         tableView = new QTableView(runArchiveCheck);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(260, 130, 911, 401));
@@ -861,7 +861,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -979,7 +979,7 @@ public:
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QApplication::translate("MainWindow", "NULL", nullptr));
         label_3->setText(QApplication::translate("MainWindow", "Working Directory:", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Run Check", nullptr));
+        archiveCheckButton->setText(QApplication::translate("MainWindow", "Run Check", nullptr));
         label_6->setText(QApplication::translate("MainWindow", "Summary", nullptr));
         label_7->setText(QApplication::translate("MainWindow", "Total Errors:", nullptr));
         workingDirectory_2->setText(QApplication::translate("MainWindow", "NULL", nullptr));

@@ -33,7 +33,6 @@ SOURCES += \
 HEADERS += \
         mainwindow.h \
     folderio.h \
-    dirent-master/include/dirent.h \
     dirent.h \
     archivecheck.h
 

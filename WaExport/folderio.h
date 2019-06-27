@@ -29,6 +29,7 @@ public:
     std::vector<std::string> list_files_vector(QString path);
     QString getNotes(QString directory);
     QString getTemplate(QString directory);
+    std::vector<std::string> get_directories(const std::string &mainDirec);
 };
 
 #endif // FOLDERIO_H

@@ -12,6 +12,7 @@
 #include "filesystem"
 #include "folderio.h"
 #include <sstream>
+#include <archivecheck.h>
 
 
 
@@ -268,6 +269,7 @@ void MainWindow::on_actionOpen_triggered()
     std::cout<<mainDirectory.toStdString()<<std::endl;
     if(mainDirectory!=nullptr)
     ui->notesArea->setEnabled(true);
+    ui->workingDirectory->setText(mainDirectory);
 }
 
 std::ostringstream MainWindow::getRequiredFiles()
@@ -276,62 +278,74 @@ std::ostringstream MainWindow::getRequiredFiles()
       ui->comboBox->currentIndex();
       std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
          fileStream<<"Template:"+ui->comboBox->currentText().toStdString()+"/TEND"<<std::endl;
-         if(ui->mexP_Spreadsheets->isChecked())
-             fileStream<<"Spreadsheets"<<std::endl;
-         if(ui->mexP_Invoice->isChecked())
-             fileStream<<"Invoice"<<std::endl;
-         if(ui->mexP_Phyto->isChecked())
-             fileStream<<"Phyto"<<std::endl;
-         if(ui->mexP_ShipperConf->isChecked())
-             fileStream<<"ShipperConf"<<std::endl;
+         fileStream<<"/REQSTART/"<<std::endl;
+
+         if(ui->CaftaNafta->isChecked())
+             fileStream<<"CaftaNafta"<<std::endl;
          if(ui->mexP_CarrierConf->isChecked())
              fileStream<<"CarrierConf"<<std::endl;
-         if(ui->mexP_Passing->isChecked())
-             fileStream<<"Passing"<<std::endl;
-         if(ui->mexP_SaleConf->isChecked())
-             fileStream<<"SaleConf"<<std::endl;
-         if(ui->mexP_SignedSale->isChecked())
-             fileStream<<"SignedSaleConf"<<std::endl;
-         if(ui->mexP_Pedimento->isChecked())
-             fileStream<<"Pedimento"<<std::endl;
-         if(ui->mexP_ProduceInv->isChecked())
-             fileStream<<"ProduceInv"<<std::endl;
-         if(ui->mexP_Payable_Shipper->isChecked())
-             fileStream<<"PayablesShipper"<<std::endl;
-         if(ui->mexP_Payables_Carriers->isChecked())
-             fileStream<<"PayablesCarrier"<<std::endl;
-         if(ui->receipts->isChecked())
-             fileStream<<"Receipt"<<std::endl;
+         if(ui->CertOrigin->isChecked())
+             fileStream<<"CertOrigin"<<std::endl;
+         if(ui->CustomerPO->isChecked())
+             fileStream<<"CustomerPO"<<std::endl;
          if(ui->ExpInvima->isChecked())
              fileStream<<"ExpInvima"<<std::endl;
          if(ui->FacturaComercial->isChecked())
              fileStream<<"FacturaComercial"<<std::endl;
-         if(ui->ListadeEmpaque->isChecked())
-             fileStream<<"ListaEmpaque"<<std::endl;
-         if(ui->CertOrigin->isChecked())
-             fileStream<<"CertOrigin"<<std::endl;
-         if(ui->CaftaNafta->isChecked())
-             fileStream<<"CaftaNafta"<<std::endl;
          if(ui->FreightContract->isChecked())
              fileStream<<"FreightContract"<<std::endl;
-         if(ui->Transloader->isChecked())
-             fileStream<<"Transloader"<<std::endl;
-         if(ui->Harris->isChecked())
-             fileStream<<"Harris"<<std::endl;
          if(ui->HarrisEmails->isChecked())
              fileStream<<"HarEmails"<<std::endl;
-         if(ui->CustomerPO->isChecked())
-             fileStream<<"CustomerPO"<<std::endl;
+         if(ui->Harris->isChecked())
+             fileStream<<"Harris"<<std::endl;
+         if(ui->mexP_Invoice->isChecked())
+             fileStream<<"Invoice"<<std::endl;
+         if(ui->ListadeEmpaque->isChecked())
+             fileStream<<"ListaEmpaque"<<std::endl;
          if(ui->OtherEmails->isChecked())
              fileStream<<"OtherEmails"<<std::endl;
+         if(ui->mexP_Passing->isChecked())
+             fileStream<<"Passing"<<std::endl;
+         if(ui->mexP_Payables_Carriers->isChecked())
+             fileStream<<"PayablesCarrier"<<std::endl;
+         if(ui->Payables_Harris->isChecked())
+             fileStream<<"PayablesHarris"<<std::endl;
+         if(ui->mexP_Payable_Shipper->isChecked())
+             fileStream<<"PayablesShipper"<<std::endl;
+         if(ui->Payables_ShipperWarehouse->isChecked())
+             fileStream<<"PayablesSW"<<std::endl;
          if(ui->Payables_Transloader->isChecked())
              fileStream<<"PayablesTransloader"<<std::endl;
          if(ui->payables_TruckFreight->isChecked())
              fileStream<<"PayablesTruckFreight"<<std::endl;
-         if(ui->Payables_Harris->isChecked())
-             fileStream<<"PayablesHarris"<<std::endl;
-         if(ui->Payables_ShipperWarehouse->isChecked())
-             fileStream<<"PayablesSW"<<std::endl;
+         if(ui->mexP_Pedimento->isChecked())
+             fileStream<<"Pedimento"<<std::endl;
+         if(ui->mexP_Phyto->isChecked())
+             fileStream<<"Phyto"<<std::endl;
+         if(ui->mexP_ProduceInv->isChecked())
+             fileStream<<"ProduceInv"<<std::endl;
+         if(ui->receipts->isChecked())
+             fileStream<<"Receipt"<<std::endl;
+         if(ui->mexP_SaleConf->isChecked())
+             fileStream<<"SaleConf"<<std::endl;
+         if(ui->mexP_ShipperConf->isChecked())
+             fileStream<<"ShipperConf"<<std::endl;
+         if(ui->mexP_SignedSale->isChecked())
+             fileStream<<"SignedSaleConf"<<std::endl;
+         if(ui->mexP_Spreadsheets->isChecked())
+             fileStream<<"Spreadsheets"<<std::endl;
+         if(ui->Transloader->isChecked())
+             fileStream<<"Transloader"<<std::endl;
+
+
+
+
+
+
+
+
+
+          fileStream<<"/REQEND/"<<std::endl;
 
 
     return fileStream;
@@ -937,6 +951,25 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
     }
 
 }
+
+void MainWindow::on_archiveCheckButton_clicked()
+{
+    //runs the archive check
+    std::cout<<"Archive check started"<<std::endl;
+
+    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory);
+    QString response=acheck->checkForArchive();
+    if(response=="ERROR/1")
+    {
+        std::cout<<response.toStdString()<<std::endl;
+    }
+
+
+
+
+    std::cout<<"Archive check finished"<<std::endl;
+}
+
 
 
 

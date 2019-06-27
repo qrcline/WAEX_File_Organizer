@@ -160,6 +160,10 @@ private slots:
 
     void on_Payables_ShipperWarehouse_upload_clicked();
 
+
+
+    void on_archiveCheckButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     //void openDirectory(QString );
@@ -175,3 +179,4 @@ private:
 };
 
 #endif // MAINWINDOW_H
+
