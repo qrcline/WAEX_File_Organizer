@@ -216,26 +216,38 @@ std::vector<std::string> FolderIO::get_reqFiles(QString mainDirec)
           std::cout<<"Errro opening file"<<std::endl;
 //       while(file.readLine()!="/REQSTART/")
 //           std::cout<<"Next"<<std::endl;
-       file.readLine();
-        file.readLine();
-         file.readLine();
-          file.readLine();
-           file.readLine();
-            file.readLine();
-            QString temp;
 
-           //TODO:
-           while(1)
-               temp =file.readLine();
-               if(temp=="/REQEND/")
-                   return requiredFiles;
-               else
+        QTextStream in(&file);
+       in.readLine();
+       in.readLine();
+       in.readLine();
+       in.readLine();
+       in.readLine();
+       in.readLine();
+
+       QString temp;
+
+           while(!in.atEnd())
+           {
+               temp =in.readLine();
+               if(temp.toStdString()=="/REQEND/")
                {
-                   requiredFiles.push_back(temp.toStdString());
+                   //std::cout<<"Return Section"<<std::endl;
+                   return requiredFiles;
                }
 
+               else
+               {
+                   //std::cout<<temp.toStdString()<<std::endl;
+                   requiredFiles.push_back(temp.toStdString());
+               }
+           }
 
-        std::cout<<file.readLine().toStdString()<<std::endl;
+
+
+
+
+        std::cout<<"End Required Files"<<std::endl;
 }
 
 
