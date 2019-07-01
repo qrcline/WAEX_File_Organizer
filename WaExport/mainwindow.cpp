@@ -957,7 +957,7 @@ void MainWindow::on_archiveCheckButton_clicked()
 
 
 
-    ui->archivePBar->setValue(100);
+
     std::cout<<"Archive check finished"<<std::endl;
 }
 

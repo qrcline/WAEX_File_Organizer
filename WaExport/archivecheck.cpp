@@ -16,6 +16,7 @@
 #include <QTextCodec>
 #include <chrono>
 #include <thread>
+#include <QFileInfo>
 
 ArchiveCheck::ArchiveCheck(QString directoryinput,Ui::MainWindow* ui)
 {
@@ -23,6 +24,12 @@ ArchiveCheck::ArchiveCheck(QString directoryinput,Ui::MainWindow* ui)
     uiPointer=ui;
 }
 
+
+bool fileExists(QString path) {
+    QFileInfo check_file(path);
+    // check if path exists and if yes: Is it really a file and no directory?
+    return check_file.exists() && check_file.isFile();
+}
 
 QString ArchiveCheck::checkForArchive()
 {
@@ -32,67 +39,56 @@ QString ArchiveCheck::checkForArchive()
     std::vector<std::string> foldersToCheck=fIo.get_directories(directory.toStdString());
     std::cout<<foldersToCheck.size()<<std::endl;
 
+    //Setup the file to write errors/missing files to
+    std::string filePath = directory.toStdString() + "/errors.csv"; //Creates the file to be created at the file path
+    const char *path = filePath.c_str(); //Encodes into char pointer
+    std::ofstream outfile(path);		//Creates the file
+    if(outfile.fail())
+    {
+        return false;
+    }
+    outfile<<"PO#,Missing files->"<<std::endl;
 
-    //       for(int i=0; i<=100;i+=5)
-    //       {
-    //            uiPointer->archivePBar->setValue(i);
-    //            Sleep(100);
-    //       }
-
-    auto temp=foldersToCheck.size();
-    float step =100/temp;
-    std::cout<<"The step is: "<<step<<std::endl;
+    uiPointer->archivePBar->setRange(0,foldersToCheck.size());
+    int step=0;
 
     //Main loop that interates over the PO# files
     for(unsigned int i=0;i<foldersToCheck.size();i++)
     {
         std::cout<<foldersToCheck[i]<<std::endl ;
-        step+=step;
-        uiPointer->archivePBar->setValue(step);
+        step++;
+        uiPointer->archivePBar->setValue(step);//Sets the progress bar
+
+        //Vector that will store the required files in a vector
         std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]));
-        //Gets the files in a specific PO#file
-        std::vector<std::string> filesReturn=fIo.list_files_vector((directory+"/"+QString::fromStdString(foldersToCheck[i])));
 
+        //Gets the files(Folders) in a specific PO#file
+        //QString file=directory+"/"+QString::fromStdString(foldersToCheck[i]);
+        std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
 
-        //Iterates over the files in the directory
-        if(filesReturn.size()==0)
+       QString missingFiles;
+        for(int i=0; i<filesReq.size();i++)
         {
-            totalErrors+=filesReq.size();
-        }
-
-
-        else
-        {
-            int offSet=0;
-            int x=0;
-            for(unsigned int z=0;z<filesReturn.size();z++)
+            if(fIo.doesFileExist(QString::fromStdString(filesReq[i]),filesReturn)==0)
             {
-                std::cout<<"Entering the check for files"<<totalErrors<<std::endl;
-
-                if(filesReq[x]==filesReturn[z])
-                {
-                    x++;
-                }
-                else //If the two don't match
-                {
-                    totalErrors++;
-                    if(z>0)
-                    {
-                        if(filesReq[x-1]==filesReturn[z])
-                        {
-                            // z++;
-                            totalErrors--;
-                        }
-                    }
-                }
+                missingFiles.push_back(QString::fromStdString(filesReq[i])+",");
+                totalErrors++;
             }
+
         }
+        QString po=QString::fromStdString(foldersToCheck[i]);
+        po.remove(directory);
+        outfile<<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list of
+        if(totalErrors>0)
+            folderErrors++;
 
 
     }
     std::cout<<"Total Errors:"<<totalErrors<<std::endl;
 
+    outfile.close();
 
-    return "Sucess";
+
+    return "Archive check complete," +QString::number(totalErrors)+" total errors in "+QString::number(folderErrors)+" files.";
 
 }
