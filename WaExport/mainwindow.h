@@ -15,6 +15,7 @@
 #include <QFile>
 #include <QTextStream>
 #include "folderio.h"
+#include <mytablemodel.h>
 
 namespace Ui {
 class MainWindow;
@@ -166,6 +167,7 @@ private slots:
 
 private:
     Ui::MainWindow *ui;
+    myTableModel *tableModel;
     //void openDirectory(QString );
     QString mainDirectory=nullptr;
     void openFolder();

@@ -155,7 +155,7 @@ public:
     QTableView *tableView;
     QLabel *label_6;
     QProgressBar *archivePBar;
-    QWidget *widget;
+    QWidget *layoutWidget1;
     QFormLayout *formLayout;
     QLabel *label_7;
     QLabel *workingDirectory_2;
@@ -817,32 +817,32 @@ public:
         archivePBar->setGeometry(QRect(210, 50, 118, 23));
         archivePBar->setValue(0);
         archivePBar->setInvertedAppearance(false);
-        widget = new QWidget(runArchiveCheck);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(30, 130, 131, 41));
-        formLayout = new QFormLayout(widget);
+        layoutWidget1 = new QWidget(runArchiveCheck);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(30, 130, 131, 41));
+        formLayout = new QFormLayout(layoutWidget1);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget1);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_7);
 
-        workingDirectory_2 = new QLabel(widget);
+        workingDirectory_2 = new QLabel(layoutWidget1);
         workingDirectory_2->setObjectName(QString::fromUtf8("workingDirectory_2"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, workingDirectory_2);
 
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget1);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_8);
 
-        workingDirectory_3 = new QLabel(widget);
+        workingDirectory_3 = new QLabel(layoutWidget1);
         workingDirectory_3->setObjectName(QString::fromUtf8("workingDirectory_3"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, workingDirectory_3);

@@ -16,11 +16,14 @@
 
 
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+  tableModel(new myTableModel(this))
 {
     ui->setupUi(this);
+    ui->tableView->setModel(tableModel);
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
@@ -948,7 +951,7 @@ void MainWindow::on_archiveCheckButton_clicked()
     //runs the archive check
     std::cout<<"Archive check started"<<std::endl;
 
-    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory,ui);
+    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory,ui,tableModel);
     QString response=acheck->checkForArchive();
     if(response=="ERROR/1")
     {

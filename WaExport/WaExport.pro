@@ -28,13 +28,15 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     folderio.cpp \
-    archivecheck.cpp
+    archivecheck.cpp \
+    mytablemodel.cpp
 
 HEADERS += \
         mainwindow.h \
     folderio.h \
     dirent.h \
-    archivecheck.h
+    archivecheck.h \
+    mytablemodel.h
 
 FORMS += \
         mainwindow.ui

@@ -20,7 +20,7 @@
 class ArchiveCheck
 {
 public:
-    ArchiveCheck(QString directory,Ui::MainWindow* ui);
+    ArchiveCheck(QString directory,Ui::MainWindow* ui,myTableModel* tableModel);
 
 
 public slots:
@@ -28,6 +28,7 @@ public slots:
 private:
     QString directory=nullptr;
     Ui::MainWindow* uiPointer;
+    myTableModel* tableModelPointer;
 
 
 protected:
