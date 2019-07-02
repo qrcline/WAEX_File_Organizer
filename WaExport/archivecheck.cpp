@@ -61,9 +61,11 @@ QString ArchiveCheck::checkForArchive()
     {   int errors=0;
         QString po=QString::fromStdString(foldersToCheck[i]);
         errorData.clear(); //Clear the vector
+        po.remove(0,directory.length()+1);
         errorData.push_back(po); //Add the po# to the vector, this vector is sent to the table model
         std::cout<<foldersToCheck[i]<<std::endl ;
-        uiPointer->archivePBar->setValue(step++);//Sets the progress bar
+        step++;
+        uiPointer->archivePBar->setValue(step);//Sets the progress bar
 
         //Vector that will store the required files in a vector
         std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]));
@@ -86,7 +88,11 @@ QString ArchiveCheck::checkForArchive()
         }
         if(errors>maxErrosForFile)
             maxErrosForFile=errors;
-       po= po.remove(directory);
+
+       //directory.replace("/","\\");
+
+
+       std::cout<<"The directory: "<<directory.toStdString()<<std::endl;
         outfile<<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
         if(totalErrors>0)
             folderErrors++;

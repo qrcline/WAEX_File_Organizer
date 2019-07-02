@@ -161,6 +161,8 @@ public:
     QLabel *workingDirectory_2;
     QLabel *label_8;
     QLabel *workingDirectory_3;
+    QLabel *label_9;
+    QLabel *label_10;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -804,6 +806,7 @@ public:
         tableView->setGeometry(QRect(260, 130, 911, 401));
         tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableView->horizontalHeader()->setVisible(false);
         tableView->verticalHeader()->setVisible(false);
         label_6 = new QLabel(runArchiveCheck);
         label_6->setObjectName(QString::fromUtf8("label_6"));
@@ -847,6 +850,16 @@ public:
 
         formLayout->setWidget(1, QFormLayout::FieldRole, workingDirectory_3);
 
+        label_9 = new QLabel(runArchiveCheck);
+        label_9->setObjectName(QString::fromUtf8("label_9"));
+        label_9->setGeometry(QRect(270, 110, 61, 16));
+        QFont font2;
+        font2.setPointSize(12);
+        label_9->setFont(font2);
+        label_10 = new QLabel(runArchiveCheck);
+        label_10->setObjectName(QString::fromUtf8("label_10"));
+        label_10->setGeometry(QRect(360, 110, 131, 21));
+        label_10->setFont(font2);
         tabWidget->addTab(runArchiveCheck, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -991,6 +1004,8 @@ public:
         workingDirectory_2->setText(QApplication::translate("MainWindow", "NULL", nullptr));
         label_8->setText(QApplication::translate("MainWindow", "Files Affected", nullptr));
         workingDirectory_3->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "PO#", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Missing Files ->", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi
