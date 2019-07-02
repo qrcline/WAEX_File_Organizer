@@ -99,7 +99,7 @@ QString ArchiveCheck::checkForArchive()
         tableModelPointer->setColumnCount(maxErrosForFile);
         tableModelPointer->addCheckData(errorData); //Adds the missing files to the
 
-
+        //Sleep(10);
 
     }
     //std::cout<<"Total Errors:"<<totalErrors<<std::endl;
