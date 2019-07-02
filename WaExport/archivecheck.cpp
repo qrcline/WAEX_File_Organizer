@@ -36,6 +36,7 @@ QString ArchiveCheck::checkForArchive()
 {
     int folderErrors=0;
     int totalErrors=0;
+    int maxErrosForFile=0;
     std::vector<QString> errorData;
     FolderIO fIo;
     std::vector<std::string> foldersToCheck=fIo.get_directories(directory.toStdString());
@@ -56,7 +57,7 @@ QString ArchiveCheck::checkForArchive()
 
     //Main loop that interates over the PO# files
     for(unsigned int i=0;i<foldersToCheck.size();i++)
-    {
+    {   int errors=0;
         QString po=QString::fromStdString(foldersToCheck[i]);
         errorData.clear(); //Clear the vector
         errorData.push_back(po); //Add the po# to the vector, this vector is sent to the table model
@@ -70,23 +71,27 @@ QString ArchiveCheck::checkForArchive()
         std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
 
        QString missingFiles;//QString of the missing files, will be written to the csv file
-        for(int i=0; i<filesReq.size();i++)
+        for(unsigned int z=0; z<filesReq.size();z++)
         {
-            if(fIo.doesFileExist(QString::fromStdString(filesReq[i]),filesReturn)==0)
+            if(fIo.doesFileExist(QString::fromStdString(filesReq[z]),filesReturn)==0)
             {
-                missingFiles.push_back(QString::fromStdString(filesReq[i])+",");
-                errorData.push_back(QString::fromStdString(filesReq[i]));
+                missingFiles.push_back(QString::fromStdString(filesReq[z])+",");
+                errorData.push_back(QString::fromStdString(filesReq[z]));
 
                 totalErrors++;
+                errors++;
             }
 
         }
-       ;
+        if(errors>maxErrosForFile)
+            maxErrosForFile=errors;
        po= po.remove(directory);
         outfile<<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
         if(totalErrors>0)
             folderErrors++;
+        tableModelPointer->setColumnCount(maxErrosForFile);
         tableModelPointer->addCheckData(errorData); //Adds the missing files to the
+
 
 
     }
