@@ -17,6 +17,7 @@ public:
     void setColumnCount(int count);
     QVariant data(const QModelIndex &index, int role) const;
     void addCheckData(std::vector<QString>);
+    void resetTable();
 private:
 
     std::vector<std::vector<QString>>tableData; //The vector that stores the archive check data

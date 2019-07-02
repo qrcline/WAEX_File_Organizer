@@ -49,9 +49,9 @@ QVariant myTableModel::data(const QModelIndex &index, int role) const
 {
     if(role== Qt::DisplayRole)
     {
-        if(index.row()>=0&&index.row()<tableData.size())
+        if(index.row()<tableData.size())
         {
-            if(index.column()<=tableData.at(index.row()).size())
+            if(index.column()<tableData.at(index.row()).size())
             {
                 return tableData.at(index.row()).at(index.column());
             }
@@ -71,4 +71,9 @@ void myTableModel::addCheckData(std::vector<QString>data)
 {
     tableData.push_back(data);
     emit layoutChanged();
+}
+
+void myTableModel::resetTable()
+{
+    tableData.clear();
 }

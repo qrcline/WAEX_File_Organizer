@@ -34,6 +34,7 @@ bool fileExists(QString path) {
 
 QString ArchiveCheck::checkForArchive()
 {
+    tableModelPointer->resetTable();//Clear the tableData vector
     int folderErrors=0;
     int totalErrors=0;
     int maxErrosForFile=0;

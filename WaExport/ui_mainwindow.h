@@ -802,8 +802,8 @@ public:
         tableView = new QTableView(runArchiveCheck);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(260, 130, 911, 401));
-        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOn);
-        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+        tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
+        tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->verticalHeader()->setVisible(false);
         label_6 = new QLabel(runArchiveCheck);
         label_6->setObjectName(QString::fromUtf8("label_6"));
