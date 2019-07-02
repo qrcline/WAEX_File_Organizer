@@ -165,12 +165,16 @@ private slots:
 
     void on_archiveCheckButton_clicked();
 
+
+
+    void on_tableView_doubleClicked(const QModelIndex &index);
+
 private:
     Ui::MainWindow *ui;
     myTableModel *tableModel;
     //void openDirectory(QString );
     QString mainDirectory=nullptr;
-    void openFolder();
+    void openFolder(QString folderText);
     QString filesRequired [30]={NULL};
 
 
@@ -181,4 +185,7 @@ private:
 };
 
 #endif // MAINWINDOW_H
+
+
+
 

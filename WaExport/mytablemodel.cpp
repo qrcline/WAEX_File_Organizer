@@ -77,3 +77,8 @@ void myTableModel::resetTable()
 {
     tableData.clear();
 }
+
+QString myTableModel::getPo(int row)
+{
+    return tableData.at(row).at(0);
+}

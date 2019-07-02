@@ -202,7 +202,7 @@ void    MainWindow::openDirectory(QString input)
 
 }
 
-void MainWindow::openFolder()
+void MainWindow::openFolder(QString folderText)
 {
     FolderIO fIo;
 
@@ -214,10 +214,10 @@ void MainWindow::openFolder()
         }
         //return;
     }
-    else if (!fIo.checkForDirect(mainDirectory,ui->POInput->text())) //If the main directory is selected check the PO# that is input
+    else if (!fIo.checkForDirect(mainDirectory,folderText)) //If the main directory is selected check the PO# that is input
     {
         std::cout<<"This directory doe not exist"<<std::endl;
-        if(ui->POInput->text()=="")
+        if(folderText=="")
         {
             QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
         }
@@ -226,8 +226,8 @@ void MainWindow::openFolder()
             if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 std::cout<<"Yes was selected"<<std::endl;
-                //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+ui->POInput->text().toStdString()<<std::endl;
-                fIo.createDirectory(mainDirectory+"/"+ui->POInput->text());
+                //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
+                fIo.createDirectory(mainDirectory+"/"+folderText);
             }
         }
     }
@@ -235,12 +235,12 @@ void MainWindow::openFolder()
     //Opens the designated file
     else
     {
-        openDirectory(mainDirectory+"/"+ui->POInput->text());
+        openDirectory(mainDirectory+"/"+folderText);
     }
-    ui->PoLabel->setText(ui->POInput->text());
+    ui->PoLabel->setText(folderText);
 
     //Grabbing the template from the file
-    QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+ui->POInput->text()+"/waex.index");
+    QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
     std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
     if(tempTemplate=="Mex Produce")
         ui->comboBox->setCurrentIndex(0);
@@ -261,7 +261,7 @@ void MainWindow::openFolder()
 //open folder of the specified PO# or creates it if it does not exist
 void MainWindow::on_openFolder_clicked()
 {
-    openFolder();
+    openFolder(ui->POInput->text());
     updateWindow();
 }
 
@@ -378,7 +378,7 @@ void MainWindow::on_saveButton_clicked()
 
 void MainWindow::on_POInput_returnPressed()
 {
-    openFolder();
+    openFolder(ui->POInput->text());
     updateWindow();
 }
 
@@ -965,7 +965,14 @@ void MainWindow::on_archiveCheckButton_clicked()
 }
 
 
-
+void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
+{
+    openFolder(tableModel->getPo(index.row()));
+    ui->POInput->setText(tableModel->getPo(index.row()));
+    ui->tabWidget->setCurrentIndex(0);
+     updateWindow();
+    std::cout<<QString::number(index.row()).toStdString()+"--"+tableModel->getPo(index.row()).toStdString()<<std::endl;
+}
 
 
 

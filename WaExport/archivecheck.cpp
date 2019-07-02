@@ -41,7 +41,7 @@ QString ArchiveCheck::checkForArchive()
     std::vector<QString> errorData;
     FolderIO fIo;
     std::vector<std::string> foldersToCheck=fIo.get_directories(directory.toStdString());
-    std::cout<<foldersToCheck.size()<<std::endl;
+    //std::cout<<foldersToCheck.size()<<std::endl;
 
     //Setup the file to write errors/missing files to
     std::string filePath = directory.toStdString() + "/errors.csv"; //Creates the file to be created at the file path
@@ -63,7 +63,7 @@ QString ArchiveCheck::checkForArchive()
         errorData.clear(); //Clear the vector
         po.remove(0,directory.length()+1);
         errorData.push_back(po); //Add the po# to the vector, this vector is sent to the table model
-        std::cout<<foldersToCheck[i]<<std::endl ;
+        //std::cout<<foldersToCheck[i]<<std::endl ;
         step++;
         uiPointer->archivePBar->setValue(step);//Sets the progress bar
 
@@ -92,7 +92,7 @@ QString ArchiveCheck::checkForArchive()
        //directory.replace("/","\\");
 
 
-       std::cout<<"The directory: "<<directory.toStdString()<<std::endl;
+       //std::cout<<"The directory: "<<directory.toStdString()<<std::endl;
         outfile<<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
         if(totalErrors>0)
             folderErrors++;
@@ -102,7 +102,7 @@ QString ArchiveCheck::checkForArchive()
 
 
     }
-    std::cout<<"Total Errors:"<<totalErrors<<std::endl;
+    //std::cout<<"Total Errors:"<<totalErrors<<std::endl;
 
     outfile.close();
 
