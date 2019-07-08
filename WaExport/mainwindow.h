@@ -182,6 +182,7 @@ private:
     void uploadFile(std::string fileDialog1, std::string fileDialog2, QString destFileName);
     void uncheckAll();
     std::ostringstream getRequiredFiles();
+    void updateWindowT(int num);
 };
 
 #endif // MAINWINDOW_H

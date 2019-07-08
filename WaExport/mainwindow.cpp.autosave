@@ -977,6 +977,9 @@ void MainWindow::on_archiveCheckButton_clicked()
 
 void MainWindow::updateWindowT(int num)
 {
+    std::thread t1(updateWindow);
+    
+        t1.join();
    updateWindow();
 }
 
