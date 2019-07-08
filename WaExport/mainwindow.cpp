@@ -977,7 +977,10 @@ void MainWindow::on_archiveCheckButton_clicked()
 
 void MainWindow::updateWindowT(int num)
 {
-   updateWindow();
+    //std::thread t1(updateWindow);
+
+        //t1.join();
+   //updateWindow();
 }
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
@@ -985,8 +988,9 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     openFolder(tableModel->getPo(index.row()));
     ui->POInput->setText(tableModel->getPo(index.row()));
     ui->tabWidget->setCurrentIndex(0);
-    std::thread t1(MainWindow::updateWindow);
-    t1.join();
+    updateWindow();
+    //std::thread t1(MainWindow::updateWindow);
+    //t1.join();
     std::cout<<QString::number(index.row()).toStdString()+"--"+tableModel->getPo(index.row()).toStdString()<<std::endl;
 }
 
