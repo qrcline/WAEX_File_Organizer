@@ -162,6 +162,7 @@ public:
     QLabel *ACheck_FilesAffected;
     QLabel *label_9;
     QLabel *label_10;
+    QPushButton *archiveCheckButton_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QToolBar *mainToolBar;
@@ -870,6 +871,10 @@ public:
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(360, 110, 131, 21));
         label_10->setFont(font2);
+        archiveCheckButton_2 = new QPushButton(runArchiveCheck);
+        archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
+        archiveCheckButton_2->setEnabled(false);
+        archiveCheckButton_2->setGeometry(QRect(20, 200, 171, 21));
         tabWidget->addTab(runArchiveCheck, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -1019,6 +1024,7 @@ public:
         ACheck_FilesAffected->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Missing Files ->", nullptr));
+        archiveCheckButton_2->setText(QCoreApplication::translate("MainWindow", "Open Archive Check Excel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
     } // retranslateUi

@@ -167,6 +167,8 @@ private slots:
 
     void on_tableView_doubleClicked(const QModelIndex &index);
 
+    void on_archiveCheckButton_2_clicked();
+
 private:
     Ui::MainWindow *ui;
     myTableModel *tableModel;

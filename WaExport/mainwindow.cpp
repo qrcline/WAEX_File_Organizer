@@ -1000,7 +1000,7 @@ void MainWindow::on_archiveCheckButton_clicked()
     ui->ACheck_TotalErrors->setNum(totalErrors);
     ui->ACheck_FilesAffected->setNum(filesAffected);
 
-
+    ui->archiveCheckButton_2->setEnabled(true);
 
     std::cout<<"Archive check finished"<<std::endl;
 }
@@ -1026,3 +1026,10 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 
 
 
+
+void MainWindow::on_archiveCheckButton_2_clicked()
+{
+    //Opens the errors.csv for the user to view
+    std::string openFile=mainDirectory.toStdString()+"/errors.csv";
+    system(openFile.c_str());
+}
