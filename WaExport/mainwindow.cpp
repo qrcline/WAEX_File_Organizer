@@ -276,6 +276,7 @@ void MainWindow::on_actionOpen_triggered()
     if(mainDirectory!=nullptr)
     ui->notesArea->setEnabled(true);
     ui->workingDirectory->setText(mainDirectory);
+    ui->workingDirectory_CreateFile->setText(mainDirectory);
 }
 
 std::ostringstream MainWindow::getRequiredFiles()

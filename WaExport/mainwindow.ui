@@ -35,7 +35,7 @@
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1123,6 +1123,9 @@
       </layout>
      </widget>
      <widget class="QCommandLinkButton" name="reloadButton">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>240</x>
@@ -1173,7 +1176,7 @@
        <string>Working Directory:</string>
       </property>
      </widget>
-     <widget class="QLabel" name="workingDirectory_4">
+     <widget class="QLabel" name="workingDirectory_CreateFile">
       <property name="geometry">
        <rect>
         <x>140</x>
@@ -1217,6 +1220,21 @@
        <string>Notes PO# :</string>
       </property>
      </widget>
+     <zorder>comboBox</zorder>
+     <zorder>notesArea</zorder>
+     <zorder>saveButton</zorder>
+     <zorder>POInput</zorder>
+     <zorder>label_2</zorder>
+     <zorder>openFolder</zorder>
+     <zorder>WAEX_logo</zorder>
+     <zorder>gridLayoutWidget</zorder>
+     <zorder>gridLayoutWidget_2</zorder>
+     <zorder>progressBar_save_createFile</zorder>
+     <zorder>label_11</zorder>
+     <zorder>workingDirectory_CreateFile</zorder>
+     <zorder>PoLabel</zorder>
+     <zorder>label</zorder>
+     <zorder>reloadButton</zorder>
     </widget>
     <widget class="QWidget" name="runArchiveCheck">
      <attribute name="title">
@@ -1241,8 +1259,8 @@
      <widget class="QLabel" name="workingDirectory">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>30</y>
+        <x>140</x>
+        <y>10</y>
         <width>399</width>
         <height>16</height>
        </rect>
@@ -1254,8 +1272,8 @@
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>30</y>
+        <x>30</x>
+        <y>10</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -1452,7 +1470,7 @@
     <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
-    <bool>false</bool>
+    <bool>true</bool>
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

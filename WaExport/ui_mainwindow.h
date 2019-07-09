@@ -18,7 +18,6 @@
 #include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
-#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -51,10 +50,6 @@ public:
     QLabel *label_2;
     QPushButton *openFolder;
     QLabel *WAEX_logo;
-    QWidget *layoutWidget;
-    QHBoxLayout *horizontalLayout;
-    QLabel *label;
-    QLabel *PoLabel;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QPushButton *mexP_Payable_Shipper_upload;
@@ -147,6 +142,10 @@ public:
     QPushButton *ListadeEmpaque_upload;
     QCommandLinkButton *reloadButton;
     QProgressBar *progressBar_save_createFile;
+    QLabel *label_11;
+    QLabel *workingDirectory_CreateFile;
+    QLabel *PoLabel;
+    QLabel *label;
     QWidget *runArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -155,7 +154,7 @@ public:
     QTableView *tableView;
     QLabel *label_6;
     QProgressBar *archivePBar;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget;
     QFormLayout *formLayout;
     QLabel *label_7;
     QLabel *workingDirectory_2;
@@ -195,7 +194,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(30, 70, 111, 22));
+        comboBox->setGeometry(QRect(30, 80, 111, 22));
         comboBox->setFont(font);
         notesArea = new QTextEdit(createFile);
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
@@ -205,41 +204,22 @@ public:
         saveButton->setGeometry(QRect(1050, 490, 101, 31));
         POInput = new QLineEdit(createFile);
         POInput->setObjectName(QString::fromUtf8("POInput"));
-        POInput->setGeometry(QRect(30, 40, 113, 21));
+        POInput->setGeometry(QRect(30, 50, 113, 21));
         POInput->setFont(font);
         label_2 = new QLabel(createFile);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 20, 47, 13));
+        label_2->setGeometry(QRect(30, 30, 47, 13));
         label_2->setFont(font);
         openFolder = new QPushButton(createFile);
         openFolder->setObjectName(QString::fromUtf8("openFolder"));
-        openFolder->setGeometry(QRect(160, 40, 80, 21));
+        openFolder->setGeometry(QRect(160, 50, 80, 21));
         WAEX_logo = new QLabel(createFile);
         WAEX_logo->setObjectName(QString::fromUtf8("WAEX_logo"));
         WAEX_logo->setGeometry(QRect(855, 5, 321, 111));
         WAEX_logo->setScaledContents(true);
-        layoutWidget = new QWidget(createFile);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(690, 220, 161, 18));
-        horizontalLayout = new QHBoxLayout(layoutWidget);
-        horizontalLayout->setSpacing(6);
-        horizontalLayout->setContentsMargins(11, 11, 11, 11);
-        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setFont(font);
-
-        horizontalLayout->addWidget(label);
-
-        PoLabel = new QLabel(layoutWidget);
-        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
-
-        horizontalLayout->addWidget(PoLabel);
-
         gridLayoutWidget = new QWidget(createFile);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(10, 110, 301, 408));
+        gridLayoutWidget->setGeometry(QRect(10, 120, 301, 408));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -775,7 +755,8 @@ public:
 
         reloadButton = new QCommandLinkButton(createFile);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
-        reloadButton->setGeometry(QRect(240, 30, 31, 41));
+        reloadButton->setEnabled(true);
+        reloadButton->setGeometry(QRect(240, 40, 31, 41));
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/pictures/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         reloadButton->setIcon(icon);
@@ -784,7 +765,36 @@ public:
         progressBar_save_createFile->setGeometry(QRect(1000, 530, 151, 16));
         progressBar_save_createFile->setValue(0);
         progressBar_save_createFile->setTextVisible(false);
+        label_11 = new QLabel(createFile);
+        label_11->setObjectName(QString::fromUtf8("label_11"));
+        label_11->setGeometry(QRect(30, 10, 111, 16));
+        label_11->setFont(font);
+        workingDirectory_CreateFile = new QLabel(createFile);
+        workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
+        workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
+        PoLabel = new QLabel(createFile);
+        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
+        PoLabel->setGeometry(QRect(776, 221, 281, 16));
+        label = new QLabel(createFile);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(691, 221, 70, 16));
+        label->setFont(font);
         tabWidget->addTab(createFile, QString());
+        comboBox->raise();
+        notesArea->raise();
+        saveButton->raise();
+        POInput->raise();
+        label_2->raise();
+        openFolder->raise();
+        WAEX_logo->raise();
+        gridLayoutWidget->raise();
+        gridLayoutWidget_2->raise();
+        progressBar_save_createFile->raise();
+        label_11->raise();
+        workingDirectory_CreateFile->raise();
+        PoLabel->raise();
+        label->raise();
+        reloadButton->raise();
         runArchiveCheck = new QWidget();
         runArchiveCheck->setObjectName(QString::fromUtf8("runArchiveCheck"));
         WAEX_logo_2 = new QLabel(runArchiveCheck);
@@ -793,10 +803,10 @@ public:
         WAEX_logo_2->setScaledContents(true);
         workingDirectory = new QLabel(runArchiveCheck);
         workingDirectory->setObjectName(QString::fromUtf8("workingDirectory"));
-        workingDirectory->setGeometry(QRect(110, 30, 399, 16));
+        workingDirectory->setGeometry(QRect(140, 10, 399, 16));
         label_3 = new QLabel(runArchiveCheck);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(0, 30, 111, 16));
+        label_3->setGeometry(QRect(30, 10, 111, 16));
         label_3->setFont(font);
         archiveCheckButton = new QPushButton(runArchiveCheck);
         archiveCheckButton->setObjectName(QString::fromUtf8("archiveCheckButton"));
@@ -817,35 +827,35 @@ public:
         label_6->setAlignment(Qt::AlignCenter);
         archivePBar = new QProgressBar(runArchiveCheck);
         archivePBar->setObjectName(QString::fromUtf8("archivePBar"));
-        archivePBar->setGeometry(QRect(210, 50, 118, 23));
+        archivePBar->setGeometry(QRect(210, 50, 151, 23));
         archivePBar->setValue(0);
         archivePBar->setInvertedAppearance(false);
-        layoutWidget1 = new QWidget(runArchiveCheck);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(30, 130, 131, 41));
-        formLayout = new QFormLayout(layoutWidget1);
+        layoutWidget = new QWidget(runArchiveCheck);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(30, 130, 131, 41));
+        formLayout = new QFormLayout(layoutWidget);
         formLayout->setSpacing(6);
         formLayout->setContentsMargins(11, 11, 11, 11);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        label_7 = new QLabel(layoutWidget1);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_7);
 
-        workingDirectory_2 = new QLabel(layoutWidget1);
+        workingDirectory_2 = new QLabel(layoutWidget);
         workingDirectory_2->setObjectName(QString::fromUtf8("workingDirectory_2"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, workingDirectory_2);
 
-        label_8 = new QLabel(layoutWidget1);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_8);
 
-        workingDirectory_3 = new QLabel(layoutWidget1);
+        workingDirectory_3 = new QLabel(layoutWidget);
         workingDirectory_3->setObjectName(QString::fromUtf8("workingDirectory_3"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, workingDirectory_3);
@@ -871,6 +881,7 @@ public:
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
         MainWindow->addToolBar(Qt::TopToolBarArea, mainToolBar);
+        MainWindow->insertToolBarBreak(mainToolBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
         MainWindow->setStatusBar(statusBar);
@@ -880,7 +891,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -905,8 +916,6 @@ public:
         label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
         openFolder->setText(QCoreApplication::translate("MainWindow", "Open Folder", nullptr));
         WAEX_logo->setText(QString());
-        label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
-        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         mexP_Payable_Shipper_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         noticeSaleConf->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         noticeProduceInv->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
@@ -994,6 +1003,10 @@ public:
         FreightContract_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         ListadeEmpaque_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         reloadButton->setText(QString());
+        label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
+        workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
