@@ -14,6 +14,7 @@
 #include "folderio.h"
 #include <sstream>
 #include <archivecheck.h>
+#include <QSettings>
 
 #include <thread>
 
@@ -39,6 +40,17 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setCurrentIndex(0);
     ui->comboBox->setCurrentIndex(1);
     ui->comboBox->setCurrentIndex(0);
+
+    //Grab the settings
+    QSettings setting("WAEX","Organizer");
+    setting.beginGroup("MainWindow");
+    mainDirectory=setting.value("workDirec","NULL").toString();
+    setting.endGroup();
+    //Set working directory labels
+    ui->workingDirectory->setText(mainDirectory);
+    ui->workingDirectory_CreateFile->setText(mainDirectory);
+
+    //updateWindow();
 }
 
 QString MainWindow::getMainDirectory()
@@ -61,7 +73,7 @@ void MainWindow::updateWindow()
 {//This function refreshes the window
 
     FolderIO fIo;
-    if(mainDirectory==nullptr||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
+    if(mainDirectory=="NULL"||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
         return;
 
 
@@ -209,7 +221,7 @@ void MainWindow::openFolder(QString folderText)
 {
     FolderIO fIo;
 
-    if(mainDirectory==nullptr) //If the maindirectory isn't selected ask user to select it
+    if(mainDirectory=="NULL") //If the maindirectory isn't selected ask user to select it
     {
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {
@@ -257,6 +269,18 @@ void MainWindow::openFolder(QString folderText)
 
 
     updateWindow();
+}
+
+void MainWindow::closeEvent(QCloseEvent *bar)
+{
+    QSettings setting("WAEX","Organizer");
+    setting.beginGroup("MainWindow");
+    setting.setValue("workDirec",mainDirectory);
+    setting.endGroup();
+
+
+
+    QWidget::closeEvent(bar);
 }
 
 
@@ -367,7 +391,7 @@ void MainWindow::on_saveButton_clicked()
         updateWindow();
         return;
     }
-    else if (mainDirectory==nullptr)
+    else if (mainDirectory=="NULL")
     {
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {
@@ -952,7 +976,7 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
 
 void MainWindow::on_archiveCheckButton_clicked()
 {
-    if(mainDirectory==nullptr) //If the maindirectory isn't selected ask user to select it
+    if(mainDirectory=="NULL") //If the maindirectory isn't selected ask user to select it
     {
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
         {

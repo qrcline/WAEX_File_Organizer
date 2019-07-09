@@ -123,8 +123,6 @@ private slots:
 
     void on_Payables_ShipperWarehouse_stateChanged(int arg1);
 
-
-
     void on_comboBox_currentIndexChanged(int index);
 
     void on_receipts_stateChanged(int arg1);
@@ -173,9 +171,10 @@ private:
     Ui::MainWindow *ui;
     myTableModel *tableModel;
     //void openDirectory(QString );
-    QString mainDirectory=nullptr;
+    QString mainDirectory="NULL";
     void openFolder(QString folderText);
     QString filesRequired [30]={NULL};
+    void closeEvent(QCloseEvent *bar);
 
 
     void updateWindow();
