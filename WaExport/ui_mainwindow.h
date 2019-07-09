@@ -157,9 +157,9 @@ public:
     QWidget *layoutWidget;
     QFormLayout *formLayout;
     QLabel *label_7;
-    QLabel *workingDirectory_2;
+    QLabel *ACheck_TotalErrors;
     QLabel *label_8;
-    QLabel *workingDirectory_3;
+    QLabel *ACheck_FilesAffected;
     QLabel *label_9;
     QLabel *label_10;
     QMenuBar *menuBar;
@@ -844,10 +844,10 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_7);
 
-        workingDirectory_2 = new QLabel(layoutWidget);
-        workingDirectory_2->setObjectName(QString::fromUtf8("workingDirectory_2"));
+        ACheck_TotalErrors = new QLabel(layoutWidget);
+        ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, workingDirectory_2);
+        formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalErrors);
 
         label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
@@ -855,10 +855,10 @@ public:
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_8);
 
-        workingDirectory_3 = new QLabel(layoutWidget);
-        workingDirectory_3->setObjectName(QString::fromUtf8("workingDirectory_3"));
+        ACheck_FilesAffected = new QLabel(layoutWidget);
+        ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
-        formLayout->setWidget(1, QFormLayout::FieldRole, workingDirectory_3);
+        formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_FilesAffected);
 
         label_9 = new QLabel(runArchiveCheck);
         label_9->setObjectName(QString::fromUtf8("label_9"));
@@ -1014,9 +1014,9 @@ public:
         archiveCheckButton->setText(QCoreApplication::translate("MainWindow", "Run Check", nullptr));
         label_6->setText(QCoreApplication::translate("MainWindow", "Summary", nullptr));
         label_7->setText(QCoreApplication::translate("MainWindow", "Total Errors:", nullptr));
-        workingDirectory_2->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        ACheck_TotalErrors->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         label_8->setText(QCoreApplication::translate("MainWindow", "Files Affected", nullptr));
-        workingDirectory_3->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        ACheck_FilesAffected->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         label_9->setText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Missing Files ->", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));

@@ -32,7 +32,7 @@ bool fileExists(QString path) {
     return check_file.exists() && check_file.isFile();
 }
 
-QString ArchiveCheck::checkForArchive()
+QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOutput)
 {
     tableModelPointer->resetTable();//Clear the tableData vector
     int folderErrors=0;
@@ -105,8 +105,10 @@ QString ArchiveCheck::checkForArchive()
     //std::cout<<"Total Errors:"<<totalErrors<<std::endl;
 
     outfile.close();
+    filesAffectedOutput=folderErrors;
+    totalErrorsOutput=totalErrors;
 
 
-    return "Archive check complete," +QString::number(totalErrors)+" total errors in "+QString::number(folderErrors)+" files.";
+    return "Archive check complete, " +QString::number(totalErrors)+" total errors in "+QString::number(folderErrors)+" files.";
 
 }

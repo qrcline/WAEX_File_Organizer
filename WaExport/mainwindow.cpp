@@ -988,12 +988,17 @@ void MainWindow::on_archiveCheckButton_clicked()
     std::cout<<"Archive check started"<<std::endl;
 
     ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory,ui,tableModel);
-    QString response=acheck->checkForArchive();
+    int totalErrors=0;
+    int filesAffected=0;
+    QString response=acheck->checkForArchive(totalErrors,filesAffected);
+
     if(response=="ERROR/1")
     {
         std::cout<<response.toStdString()<<std::endl;
     }
-
+    std::cout<<response.toStdString()<<std::endl;
+    ui->ACheck_TotalErrors->setNum(totalErrors);
+    ui->ACheck_FilesAffected->setNum(filesAffected);
 
 
 

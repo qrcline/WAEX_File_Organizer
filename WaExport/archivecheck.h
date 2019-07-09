@@ -24,7 +24,7 @@ public:
 
 
 public slots:
-    QString checkForArchive();
+    QString checkForArchive(int&totalErrors,int&filesAffected);
 private:
     QString directory=nullptr;
     Ui::MainWindow* uiPointer;
