@@ -1031,5 +1031,6 @@ void MainWindow::on_archiveCheckButton_2_clicked()
 {
     //Opens the errors.csv for the user to view
     std::string openFile=mainDirectory.toStdString()+"/errors.csv";
+    openFile="\""+openFile+"\"";
     system(openFile.c_str());
 }
