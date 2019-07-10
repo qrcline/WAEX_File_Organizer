@@ -15,6 +15,7 @@
 #include <sstream>
 #include <archivecheck.h>
 #include <QSettings>
+#include <QtCore>
 
 #include <thread>
 
@@ -71,6 +72,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateWindow()
 {//This function refreshes the window
+    QElapsedTimer timer;
+       timer.start();
 
     FolderIO fIo;
     if(mainDirectory=="NULL"||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
@@ -205,6 +208,8 @@ void MainWindow::updateWindow()
     //Fill in the notes section
     ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
 
+    std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
+
 
 }
 
@@ -266,8 +271,6 @@ void MainWindow::openFolder(QString folderText)
     if(tempTemplate=="Overseas")
         ui->comboBox->setCurrentIndex(3);
 
-
-
     updateWindow();
 }
 
@@ -277,9 +280,6 @@ void MainWindow::closeEvent(QCloseEvent *bar)
     setting.beginGroup("MainWindow");
     setting.setValue("workDirec",mainDirectory);
     setting.endGroup();
-
-
-
     QWidget::closeEvent(bar);
 }
 
@@ -289,7 +289,7 @@ void MainWindow::closeEvent(QCloseEvent *bar)
 void MainWindow::on_openFolder_clicked()
 {
     openFolder(ui->POInput->text());
-    updateWindow();
+    //updateWindow();
 }
 
 
@@ -407,7 +407,7 @@ void MainWindow::on_saveButton_clicked()
 void MainWindow::on_POInput_returnPressed()
 {
     openFolder(ui->POInput->text());
-    updateWindow();
+    //updateWindow();
 }
 
 
@@ -610,7 +610,7 @@ void MainWindow::on_mexP_Spreadsheets_stateChanged(int arg1)
         ui->mexP_Spreadsheets_upload->setEnabled(false);
     else
         ui->mexP_Spreadsheets_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_Invoice_stateChanged(int arg1)
@@ -619,7 +619,7 @@ void MainWindow::on_mexP_Invoice_stateChanged(int arg1)
         ui->mexP_Invoice_upload->setEnabled(false);
     else
         ui->mexP_Invoice_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_Phyto_stateChanged(int arg1)
@@ -628,7 +628,7 @@ void MainWindow::on_mexP_Phyto_stateChanged(int arg1)
         ui->mexP_Phyto_upload->setEnabled(false);
     else
         ui->mexP_Phyto_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_ShipperConf_stateChanged(int arg1)
@@ -637,7 +637,7 @@ void MainWindow::on_mexP_ShipperConf_stateChanged(int arg1)
         ui->mexP_ShipperConf_upload->setEnabled(false);
     else
         ui->mexP_ShipperConf_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_mexP_CarrierConf_stateChanged(int arg1)
@@ -646,7 +646,7 @@ void MainWindow::on_mexP_CarrierConf_stateChanged(int arg1)
         ui->mexP_CarrierConf_upload->setEnabled(false);
     else
         ui->mexP_CarrierConf_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_Passing_stateChanged(int arg1)
@@ -655,7 +655,7 @@ void MainWindow::on_mexP_Passing_stateChanged(int arg1)
         ui->mexP_Passing_upload->setEnabled(false);
     else
         ui->mexP_Passing_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_SaleConf_stateChanged(int arg1)
@@ -664,7 +664,7 @@ void MainWindow::on_mexP_SaleConf_stateChanged(int arg1)
         ui->mexP_SaleConf_upload->setEnabled(false);
     else
         ui->mexP_SaleConf_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_SignedSale_stateChanged(int arg1)
@@ -673,7 +673,7 @@ void MainWindow::on_mexP_SignedSale_stateChanged(int arg1)
         ui->mexP_SignedSale_upload->setEnabled(false);
     else
         ui->mexP_SignedSale_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_Pedimento_stateChanged(int arg1)
@@ -682,7 +682,7 @@ void MainWindow::on_mexP_Pedimento_stateChanged(int arg1)
         ui->mexP_Pedimento_upload->setEnabled(false);
     else
         ui->mexP_Pedimento_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_ProduceInv_stateChanged(int arg1)
@@ -691,7 +691,7 @@ void MainWindow::on_mexP_ProduceInv_stateChanged(int arg1)
         ui->mexP_ProduceInv_upload->setEnabled(false);
     else
         ui->mexP_ProduceInv_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_mexP_Payable_Shipper_stateChanged(int arg1)
@@ -700,7 +700,7 @@ void MainWindow::on_mexP_Payable_Shipper_stateChanged(int arg1)
         ui->mexP_Payable_Shipper_upload->setEnabled(false);
     else
         ui->mexP_Payable_Shipper_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
@@ -709,7 +709,7 @@ void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
         ui->mexP_Payables_Carriers_upload->setEnabled(false);
     else
         ui->mexP_Payables_Carriers_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_ExpInvima_stateChanged(int arg1)
@@ -718,7 +718,7 @@ void MainWindow::on_ExpInvima_stateChanged(int arg1)
         ui->ExpInvima_Upload->setEnabled(false);
     else
         ui->ExpInvima_Upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_FacturaComercial_stateChanged(int arg1)
@@ -727,7 +727,7 @@ void MainWindow::on_FacturaComercial_stateChanged(int arg1)
         ui->FacturaComercial_upload->setEnabled(false);
     else
         ui->FacturaComercial_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_ListadeEmpaque_stateChanged(int arg1)
@@ -736,7 +736,7 @@ void MainWindow::on_ListadeEmpaque_stateChanged(int arg1)
         ui->ListadeEmpaque_upload->setEnabled(false);
     else
         ui->ListadeEmpaque_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_CertOrigin_stateChanged(int arg1)
@@ -745,7 +745,7 @@ void MainWindow::on_CertOrigin_stateChanged(int arg1)
         ui->CertOrigin_upload->setEnabled(false);
     else
         ui->CertOrigin_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_CaftaNafta_stateChanged(int arg1)
@@ -754,7 +754,7 @@ void MainWindow::on_CaftaNafta_stateChanged(int arg1)
         ui->CaftaNafta_upload->setEnabled(false);
     else
         ui->CaftaNafta_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_FreightContract_stateChanged(int arg1)
@@ -763,7 +763,7 @@ void MainWindow::on_FreightContract_stateChanged(int arg1)
         ui->FreightContract_upload->setEnabled(false);
     else
         ui->FreightContract_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_Transloader_stateChanged(int arg1)
@@ -772,7 +772,7 @@ void MainWindow::on_Transloader_stateChanged(int arg1)
         ui->Transloader_upload->setEnabled(false);
     else
         ui->Transloader_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_Harris_stateChanged(int arg1)
@@ -781,7 +781,7 @@ void MainWindow::on_Harris_stateChanged(int arg1)
         ui->Harris_upload->setEnabled(false);
     else
         ui->Harris_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_HarrisEmails_stateChanged(int arg1)
@@ -790,7 +790,7 @@ void MainWindow::on_HarrisEmails_stateChanged(int arg1)
         ui->HarrisEmails_upload->setEnabled(false);
     else
         ui->HarrisEmails_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_CustomerPO_stateChanged(int arg1)
@@ -799,7 +799,7 @@ void MainWindow::on_CustomerPO_stateChanged(int arg1)
         ui->CustomerPO_upload->setEnabled(false);
     else
         ui->CustomerPO_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_OtherEmails_stateChanged(int arg1)
@@ -808,7 +808,7 @@ void MainWindow::on_OtherEmails_stateChanged(int arg1)
         ui->OtherEmails_upload->setEnabled(false);
     else
         ui->OtherEmails_upload->setEnabled(true);
-    updateWindow();
+   //updateWindow();
 }
 
 void MainWindow::on_Payables_Transloader_stateChanged(int arg1)
@@ -817,7 +817,7 @@ void MainWindow::on_Payables_Transloader_stateChanged(int arg1)
         ui->Payables_Transloader_upload->setEnabled(false);
     else
         ui->Payables_Transloader_upload->setEnabled(true);
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_payables_TruckFreight_stateChanged(int arg1)
@@ -826,7 +826,7 @@ void MainWindow::on_payables_TruckFreight_stateChanged(int arg1)
         ui->payables_TruckFreight_upload->setEnabled(false);
     else
         ui->payables_TruckFreight_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_Payables_Harris_stateChanged(int arg1)
@@ -835,7 +835,7 @@ void MainWindow::on_Payables_Harris_stateChanged(int arg1)
         ui->Payables_Harris_upload->setEnabled(false);
     else
         ui->Payables_Harris_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_Payables_ShipperWarehouse_stateChanged(int arg1)
@@ -844,7 +844,7 @@ void MainWindow::on_Payables_ShipperWarehouse_stateChanged(int arg1)
         ui->Payables_ShipperWarehouse_upload->setEnabled(false);
     else
         ui->Payables_ShipperWarehouse_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 void MainWindow::on_receipts_stateChanged(int arg1)
@@ -853,7 +853,7 @@ void MainWindow::on_receipts_stateChanged(int arg1)
         ui->receipts_upload->setEnabled(false);
     else
         ui->receipts_upload->setEnabled(true);
-    updateWindow();
+   // updateWindow();
 }
 
 
@@ -1015,10 +1015,11 @@ void MainWindow::updateWindowT(int num)
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 {
-    openFolder(tableModel->getPo(index.row()));
+
     ui->POInput->setText(tableModel->getPo(index.row()));
     ui->tabWidget->setCurrentIndex(0);
-    updateWindow();
+    openFolder(tableModel->getPo(index.row()));
+    //updateWindow();
     //std::thread t1(MainWindow::updateWindow);
     //t1.join();
     std::cout<<QString::number(index.row()).toStdString()+"--"+tableModel->getPo(index.row()).toStdString()<<std::endl;
@@ -1033,4 +1034,5 @@ void MainWindow::on_archiveCheckButton_2_clicked()
     std::string openFile=mainDirectory.toStdString()+"/errors.csv";
     openFile="\""+openFile+"\"";
     system(openFile.c_str());
+    //system("exit");
 }

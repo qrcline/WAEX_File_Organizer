@@ -59,19 +59,20 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
     //Main loop that interates over the PO# files
     for(unsigned int i=0;i<foldersToCheck.size();i++)
     {   int errors=0;
+        //Vector that will store the required files in a vector
+        std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]));
+        //Gets the files(Folders) in a specific PO#file
+        std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
+        //Gets the folder to check
         QString po=QString::fromStdString(foldersToCheck[i]);
         errorData.clear(); //Clear the vector
         po.remove(0,directory.length()+1);
         errorData.push_back(po); //Add the po# to the vector, this vector is sent to the table model
         //std::cout<<foldersToCheck[i]<<std::endl ;
-        step++;
+        step++;//Increase step for progress bar
         uiPointer->archivePBar->setValue(step);//Sets the progress bar
 
-        //Vector that will store the required files in a vector
-        std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]));
 
-        //Gets the files(Folders) in a specific PO#file
-        std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
 
        QString missingFiles;//QString of the missing files, will be written to the csv file
         for(unsigned int z=0; z<filesReq.size();z++)
