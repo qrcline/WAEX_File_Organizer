@@ -255,7 +255,44 @@ void MainWindow::updateChecked()
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Pedimento"))
          ui->mexP_Pedimento->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "ProduceInv"))
-         ui->mexP_Invoice->setChecked(true);
+         ui->mexP_ProduceInv->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesShipper"))
+         ui->mexP_Payable_Shipper->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesCarrier"))
+         ui->mexP_Payables_Carriers->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Receipts"))
+         ui->receipts->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "ExpInvima"))
+         ui->ExpInvima->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "FacturaComercial"))
+         ui->FacturaComercial->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "ListaEmpaque"))
+         ui->ListadeEmpaque->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "CertOrigin"))
+         ui->CertOrigin->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "CaftaNafta"))
+         ui->CaftaNafta->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "FreightContract"))
+         ui->FreightContract->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Transloader"))
+         ui->Transloader->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Harris"))
+         ui->Harris->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "HarEmails"))
+         ui->HarrisEmails->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "CustomerPO"))
+         ui->CustomerPO->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "OtherEmails"))
+         ui->OtherEmails->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTransloader"))
+         ui->Payables_Transloader->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTruckFreight"))
+         ui->payables_TruckFreight->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesHarris"))
+         ui->Payables_ShipperWarehouse->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesSW"))
+         ui->Payables_ShipperWarehouse->setChecked(true);
+    ui->comboBox->setEnabled(false);
 }
 
 
@@ -266,8 +303,10 @@ void    MainWindow::openDirectory(QString input)
 
 }
 
-void MainWindow::openFolder(QString folderText)
+void MainWindow::openFolder(QString folderText,bool winEx)
 {
+    //if winEx true open the folder in windows explorer
+    //Else dont open in explorer and just load the file
     FolderIO fIo;
 
     if(mainDirectory=="NULL") //If the maindirectory isn't selected ask user to select it
@@ -290,6 +329,7 @@ void MainWindow::openFolder(QString folderText)
             if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
             {
                 std::cout<<"Yes was selected"<<std::endl;
+                ui->comboBox->setEnabled(true);
                 //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
                 fIo.createDirectory(mainDirectory+"/"+folderText);
             }
@@ -299,23 +339,26 @@ void MainWindow::openFolder(QString folderText)
     //Opens the designated file
     else
     {
+        if(winEx)
         openDirectory(mainDirectory+"/"+folderText);
+        //Grabbing the template from the file
+        QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
+
+        std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
+        if(tempTemplate=="Mex Produce")
+            ui->comboBox->setCurrentIndex(0);
+        if(tempTemplate=="Domestic")
+            ui->comboBox->setCurrentIndex(1);
+        if(tempTemplate=="Mex Direct")
+            ui->comboBox->setCurrentIndex(2);
+        if(tempTemplate=="Overseas")
+            ui->comboBox->setCurrentIndex(3);
+        updateChecked();
     }
     ui->PoLabel->setText(folderText);
 
-    //Grabbing the template from the file
-    QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
 
-    std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
-    if(tempTemplate=="Mex Produce")
-        ui->comboBox->setCurrentIndex(0);
-    if(tempTemplate=="Domestic")
-        ui->comboBox->setCurrentIndex(1);
-    if(tempTemplate=="Mex Direct")
-        ui->comboBox->setCurrentIndex(2);
-    if(tempTemplate=="Overseas")
-        ui->comboBox->setCurrentIndex(3);
-    updateChecked();
+
     updateWindow();
 }
 
@@ -333,7 +376,7 @@ void MainWindow::closeEvent(QCloseEvent *bar)
 //open folder of the specified PO# or creates it if it does not exist
 void MainWindow::on_openFolder_clicked()
 {
-    openFolder(ui->POInput->text());
+    openFolder(ui->POInput->text(),true);
     //updateWindow();
 }
 
@@ -451,7 +494,7 @@ void MainWindow::on_saveButton_clicked()
 
 void MainWindow::on_POInput_returnPressed()
 {
-    openFolder(ui->POInput->text());
+    openFolder(ui->POInput->text(),false);
     //updateWindow();
 }
 
@@ -1084,7 +1127,7 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
 
     ui->POInput->setText(tableModel->getPo(index.row()));
     ui->tabWidget->setCurrentIndex(0);
-    openFolder(tableModel->getPo(index.row()));
+    openFolder(tableModel->getPo(index.row()),false);
     //updateWindow();
     //std::thread t1(MainWindow::updateWindow);
     //t1.join();

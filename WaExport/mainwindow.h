@@ -179,7 +179,7 @@ private:
     myTableModel *tableModel;
     //void openDirectory(QString );
     QString mainDirectory="NULL";
-    void openFolder(QString folderText);
+    void openFolder(QString folderText,bool winEx);
     QString filesRequired [30]={NULL};
     void closeEvent(QCloseEvent *bar);
 
