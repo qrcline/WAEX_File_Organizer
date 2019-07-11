@@ -245,7 +245,6 @@ std::vector<std::string> FolderIO::get_reqFiles(QString mainDirec)
         std::cout<<"End Required Files"<<std::endl;
 }
 
-
 bool FolderIO::createLink(QString source, QString destination)
 {
  destination=destination+"-Shortcut.lnk";
