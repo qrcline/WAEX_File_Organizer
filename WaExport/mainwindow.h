@@ -30,6 +30,11 @@ public:
     QString getMainDirectory();
     ~MainWindow();
 
+protected:
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+protected slots:
+    void mouseMoveEvent(QMouseEvent *event);
 private slots:
 
 
@@ -184,6 +189,7 @@ private:
     void uncheckAll();
     std::ostringstream getRequiredFiles();
     void updateWindowT(int num);
+    void createShortcut(std::string fileDialog1, std::string fileDialog2, QString destFileName);
 };
 
 #endif // MAINWINDOW_H

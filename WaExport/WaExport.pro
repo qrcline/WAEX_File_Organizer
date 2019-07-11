@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    dragdrop.cpp \
         main.cpp \
         mainwindow.cpp \
     folderio.cpp \
@@ -32,6 +33,7 @@ SOURCES += \
     mytablemodel.cpp
 
 HEADERS += \
+    dragdrop.h \
         mainwindow.h \
     folderio.h \
     dirent.h \

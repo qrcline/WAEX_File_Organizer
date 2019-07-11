@@ -31,6 +31,7 @@ public:
     QString getTemplate(QString directory);
     std::vector<std::string> get_directories(const std::string &mainDirec);
     std::vector<std::string> get_reqFiles(QString mainDirec);
+    bool createLink(QString source, QString destination);
 };
 
 #endif // FOLDERIO_H

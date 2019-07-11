@@ -242,12 +242,14 @@ std::vector<std::string> FolderIO::get_reqFiles(QString mainDirec)
                    requiredFiles.push_back(temp.toStdString());
                }
            }
-
-
-
-
-
         std::cout<<"End Required Files"<<std::endl;
+}
+
+
+bool FolderIO::createLink(QString source, QString destination)
+{
+ destination=destination+"-Shortcut.lnk";
+ return QFile:: link ( source, destination );
 }
 
 

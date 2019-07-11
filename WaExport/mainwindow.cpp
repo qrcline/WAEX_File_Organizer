@@ -54,6 +54,23 @@ MainWindow::MainWindow(QWidget *parent) :
     //updateWindow();
 }
 
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+
+};
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+
+};
+
+
+void MainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+
+};
+
+
 QString MainWindow::getMainDirectory()
 {
     return mainDirectory;
@@ -432,9 +449,30 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
     updateWindow();
 }
 
+void MainWindow:: createShortcut(std::string fileDialog1,std::string fileDialog2,QString destFileName )
+{
+    //Get the excell file location
+    std::string fileD2=fileDialog2+";; All Files(*)";
+    QString filePath= QFileDialog::getOpenFileName(this,tr(fileDialog1.c_str()), "",tr(fileD2.c_str()));
+
+   //Checks if the file exists already in the directory
+    FolderIO fIo;
+    std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
+    int num=0;
+    num=fIo.doesFileExist(destFileName,filesVec);
+
+    //copy(from,to,dest name)
+    //fIo.copyFile(filePath,mainDirectory+"/"+ui->POInput->text(),destFileName+"_"+QString::number((num+1)));
+    fIo.createLink(filePath,mainDirectory+"/"+ui->POInput->text()+"/"+destFileName);
+    updateWindow();
+}
+
+
+
 void MainWindow::on_mexP_Spreadsheets_upload_clicked()
 {
-    uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
+   //uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
+    createShortcut("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
     updateWindow();
 }
 
