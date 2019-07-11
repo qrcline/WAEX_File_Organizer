@@ -230,6 +230,33 @@ void MainWindow::updateWindow()
 
 }
 
+void MainWindow::updateChecked()
+{
+    uncheckAll();
+    FolderIO fIo;
+    std::vector<std::string> reqFiles=fIo.get_reqFiles(mainDirectory+"/"+ui->POInput->text());
+
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Spreadsheets"))
+         ui->mexP_Spreadsheets->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Invoice"))
+         ui->mexP_Invoice->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Phyto"))
+         ui->mexP_Phyto->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "ShipperConf"))
+         ui->mexP_ShipperConf->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "CarrierConf"))
+         ui->mexP_CarrierConf->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Passing"))
+         ui->mexP_Passing->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "SaleConf"))
+         ui->mexP_SaleConf->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "SignedSaleConf"))
+         ui->mexP_SignedSale->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Pedimento"))
+         ui->mexP_Pedimento->setChecked(true);
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "ProduceInv"))
+         ui->mexP_Invoice->setChecked(true);
+}
 
 
 //This funtion opens a directory in windows File Explorer
@@ -278,6 +305,7 @@ void MainWindow::openFolder(QString folderText)
 
     //Grabbing the template from the file
     QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
+
     std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
     if(tempTemplate=="Mex Produce")
         ui->comboBox->setCurrentIndex(0);
@@ -287,7 +315,7 @@ void MainWindow::openFolder(QString folderText)
         ui->comboBox->setCurrentIndex(2);
     if(tempTemplate=="Overseas")
         ui->comboBox->setCurrentIndex(3);
-
+    updateChecked();
     updateWindow();
 }
 

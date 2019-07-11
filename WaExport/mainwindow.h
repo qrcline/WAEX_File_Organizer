@@ -190,6 +190,7 @@ private:
     std::ostringstream getRequiredFiles();
     void updateWindowT(int num);
     void createShortcut(std::string fileDialog1, std::string fileDialog2, QString destFileName);
+    void updateChecked();
 };
 
 #endif // MAINWINDOW_H
