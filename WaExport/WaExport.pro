@@ -27,6 +27,8 @@ CONFIG += c++11
 SOURCES += \
     aboutwindow.cpp \
     dragdrop.cpp \
+    helpcenter.cpp \
+    helpcenterd.cpp \
         main.cpp \
         mainwindow.cpp \
     folderio.cpp \
@@ -36,6 +38,8 @@ SOURCES += \
 HEADERS += \
     aboutwindow.h \
     dragdrop.h \
+    helpcenter.h \
+    helpcenterd.h \
         mainwindow.h \
     folderio.h \
     dirent.h \
@@ -44,6 +48,8 @@ HEADERS += \
 
 FORMS += \
         aboutwindow.ui \
+        helpcenter.ui \
+        helpcenterd.ui \
         mainwindow.ui
 
 # Default rules for deployment.

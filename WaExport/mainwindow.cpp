@@ -18,6 +18,9 @@
 #include <QtCore>
 #include <thread>
 #include <aboutwindow.h>
+#include <helpcenter.h>
+#include <helpcenter.h>
+
 
 
 
@@ -1152,5 +1155,12 @@ void MainWindow::on_actionAbout_triggered()
     aboutWindow.setModal(true);
     aboutWindow.exec();
 
+
+}
+
+void MainWindow::on_actionHelp_Center_triggered()
+{
+    helpP = new HelpCenter();
+    helpP->show();
 
 }

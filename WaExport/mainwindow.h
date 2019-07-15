@@ -16,6 +16,7 @@
 #include <QTextStream>
 #include "folderio.h"
 #include <mytablemodel.h>
+#include <helpcenter.h>
 
 namespace Ui {
 class MainWindow;
@@ -176,8 +177,11 @@ private slots:
 
     void on_actionAbout_triggered();
 
+    void on_actionHelp_Center_triggered();
+
 private:
     Ui::MainWindow *ui;
+    HelpCenter *helpP;
     myTableModel *tableModel;
     //void openDirectory(QString );
     QString mainDirectory="NULL";

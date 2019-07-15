@@ -1,4 +1,5 @@
 #include "mainwindow.h"
+#include "helpcenter.h"
 #include <QApplication>
 #pragma once
 int main(int argc, char *argv[])
@@ -7,6 +8,8 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
     MainWindow w;
     w.show();
+
+
 
 
 
