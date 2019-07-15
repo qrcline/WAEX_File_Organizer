@@ -19,7 +19,8 @@
 #include <thread>
 #include <aboutwindow.h>
 #include <helpcenter.h>
-#include <helpcenter.h>
+#include <settingd.h>
+
 
 
 
@@ -1163,4 +1164,11 @@ void MainWindow::on_actionHelp_Center_triggered()
     helpP = new HelpCenter();
     helpP->show();
 
+}
+
+void MainWindow::on_actionSettings_2_triggered()
+{
+    settingD settingD;
+    settingD.setModal(true);
+    settingD.exec();
 }

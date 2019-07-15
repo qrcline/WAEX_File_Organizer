@@ -28,29 +28,29 @@ SOURCES += \
     aboutwindow.cpp \
     dragdrop.cpp \
     helpcenter.cpp \
-    helpcenterd.cpp \
         main.cpp \
         mainwindow.cpp \
     folderio.cpp \
     archivecheck.cpp \
-    mytablemodel.cpp
+    mytablemodel.cpp \
+    settingd.cpp
 
 HEADERS += \
     aboutwindow.h \
     dragdrop.h \
     helpcenter.h \
-    helpcenterd.h \
         mainwindow.h \
     folderio.h \
     dirent.h \
     archivecheck.h \
-    mytablemodel.h
+    mytablemodel.h \
+    settingd.h
 
 FORMS += \
         aboutwindow.ui \
         helpcenter.ui \
-        helpcenterd.ui \
-        mainwindow.ui
+        mainwindow.ui \
+        settingd.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

@@ -179,6 +179,10 @@ private slots:
 
     void on_actionHelp_Center_triggered();
 
+   // void on_actionSettings_triggered();
+
+    void on_actionSettings_2_triggered();
+
 private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;
@@ -200,6 +204,7 @@ private:
 };
 
 #endif // MAINWINDOW_H
+
 
 
 

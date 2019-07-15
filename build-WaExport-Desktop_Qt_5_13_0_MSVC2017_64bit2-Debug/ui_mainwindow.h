@@ -42,6 +42,7 @@ public:
     QAction *actionOpen;
     QAction *actionHelp_Center;
     QAction *actionAbout;
+    QAction *actionSettings_2;
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *createFile;
@@ -190,6 +191,8 @@ public:
         actionHelp_Center->setObjectName(QString::fromUtf8("actionHelp_Center"));
         actionAbout = new QAction(MainWindow);
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
+        actionSettings_2 = new QAction(MainWindow);
+        actionSettings_2->setObjectName(QString::fromUtf8("actionSettings_2"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
@@ -913,13 +916,14 @@ public:
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionOpen);
+        menuFile->addAction(actionSettings_2);
         menuHelp->addSeparator();
         menuHelp->addAction(actionHelp_Center);
         menuHelp->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -932,6 +936,7 @@ public:
         actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
         actionHelp_Center->setText(QCoreApplication::translate("MainWindow", "Help Center", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
+        actionSettings_2->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
 #if QT_CONFIG(tooltip)
         tabWidget->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)

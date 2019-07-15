@@ -31,7 +31,7 @@ public:
     {
         if (HelpCenter->objectName().isEmpty())
             HelpCenter->setObjectName(QString::fromUtf8("HelpCenter"));
-        HelpCenter->resize(800, 600);
+        HelpCenter->resize(375, 690);
         centralwidget = new QWidget(HelpCenter);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         label = new QLabel(centralwidget);
@@ -40,7 +40,7 @@ public:
         HelpCenter->setCentralWidget(centralwidget);
         menubar = new QMenuBar(HelpCenter);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 800, 20));
+        menubar->setGeometry(QRect(0, 0, 375, 20));
         HelpCenter->setMenuBar(menubar);
         statusbar = new QStatusBar(HelpCenter);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
