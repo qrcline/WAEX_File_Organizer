@@ -40,6 +40,8 @@ class Ui_MainWindow
 public:
     QAction *actionSettings;
     QAction *actionOpen;
+    QAction *actionHelp_Center;
+    QAction *actionAbout;
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *createFile;
@@ -165,6 +167,7 @@ public:
     QPushButton *archiveCheckButton_2;
     QMenuBar *menuBar;
     QMenu *menuFile;
+    QMenu *menuHelp;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
 
@@ -173,17 +176,27 @@ public:
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
         MainWindow->resize(1198, 638);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
+        MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->setMaximumSize(QSize(1198, 638));
         actionSettings = new QAction(MainWindow);
         actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
         actionOpen = new QAction(MainWindow);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
+        actionHelp_Center = new QAction(MainWindow);
+        actionHelp_Center->setObjectName(QString::fromUtf8("actionHelp_Center"));
+        actionAbout = new QAction(MainWindow);
+        actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
-        centralWidget->setSizePolicy(sizePolicy);
+        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy1);
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setEnabled(true);
@@ -887,6 +900,8 @@ public:
         menuBar->setGeometry(QRect(0, 0, 1198, 20));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        menuHelp = new QMenu(menuBar);
+        menuHelp->setObjectName(QString::fromUtf8("menuHelp"));
         MainWindow->setMenuBar(menuBar);
         mainToolBar = new QToolBar(MainWindow);
         mainToolBar->setObjectName(QString::fromUtf8("mainToolBar"));
@@ -896,11 +911,15 @@ public:
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
+        menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionOpen);
+        menuHelp->addSeparator();
+        menuHelp->addAction(actionHelp_Center);
+        menuHelp->addAction(actionAbout);
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -911,6 +930,8 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
         actionSettings->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
         actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
+        actionHelp_Center->setText(QCoreApplication::translate("MainWindow", "Help Center", nullptr));
+        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
 #if QT_CONFIG(tooltip)
         tabWidget->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
@@ -1031,6 +1052,7 @@ public:
         archiveCheckButton_2->setText(QCoreApplication::translate("MainWindow", "Open Archive Check Excel", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
+        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
 
 };

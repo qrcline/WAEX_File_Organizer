@@ -31,10 +31,10 @@ public:
     ~MainWindow();
 
 protected:
-    void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
+//    void mousePressEvent(QMouseEvent *event);
+//    void mouseReleaseEvent(QMouseEvent *event);
 protected slots:
-    void mouseMoveEvent(QMouseEvent *event);
+//    void mouseMoveEvent(QMouseEvent *event);
 private slots:
 
 
@@ -173,6 +173,8 @@ private slots:
     void on_tableView_doubleClicked(const QModelIndex &index);
 
     void on_archiveCheckButton_2_clicked();
+
+    void on_actionAbout_triggered();
 
 private:
     Ui::MainWindow *ui;

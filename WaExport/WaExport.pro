@@ -25,6 +25,7 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    aboutwindow.cpp \
     dragdrop.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -33,6 +34,7 @@ SOURCES += \
     mytablemodel.cpp
 
 HEADERS += \
+    aboutwindow.h \
     dragdrop.h \
         mainwindow.h \
     folderio.h \
@@ -41,6 +43,7 @@ HEADERS += \
     mytablemodel.h
 
 FORMS += \
+        aboutwindow.ui \
         mainwindow.ui
 
 # Default rules for deployment.

@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/pictures">
-        <file>waExportHeaderLogo.png</file>
         <file>reload.png</file>
+        <file>smalleWAEXLOGO.jpg</file>
+        <file>waExportHeaderLogo.png</file>
+        <file>smalleWAEXLOGO.png</file>
     </qresource>
 </RCC>

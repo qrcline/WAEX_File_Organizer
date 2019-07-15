@@ -16,8 +16,8 @@
 #include <archivecheck.h>
 #include <QSettings>
 #include <QtCore>
-
 #include <thread>
+#include <aboutwindow.h>
 
 
 
@@ -54,21 +54,21 @@ MainWindow::MainWindow(QWidget *parent) :
     //updateWindow();
 }
 
-void MainWindow::mousePressEvent(QMouseEvent *event)
-{
+//void MainWindow::mousePressEvent(QMouseEvent *event)
+//{
 
-};
+//};
 
-void MainWindow::mouseReleaseEvent(QMouseEvent *event)
-{
+//void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+//{
 
-};
+//};
 
 
-void MainWindow::mouseMoveEvent(QMouseEvent *event)
-{
+//void MainWindow::mouseMoveEvent(QMouseEvent *event)
+//{
 
-};
+//};
 
 
 QString MainWindow::getMainDirectory()
@@ -517,7 +517,7 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
 
     //copy(from,to,dest name)
     fIo.copyFile(filePath,mainDirectory+"/"+ui->POInput->text(),destFileName+"_"+QString::number((num+1)));
-    updateWindow();
+    //updateWindow();
 }
 
 void MainWindow:: createShortcut(std::string fileDialog1,std::string fileDialog2,QString destFileName )
@@ -1144,4 +1144,13 @@ void MainWindow::on_archiveCheckButton_2_clicked()
     openFile="\""+openFile+"\"";
     system(openFile.c_str());
     //system("exit");
+}
+
+void MainWindow::on_actionAbout_triggered()
+{
+    AboutWindow aboutWindow;
+    aboutWindow.setModal(true);
+    aboutWindow.exec();
+
+
 }
