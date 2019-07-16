@@ -16,19 +16,16 @@ void setStyleSheet(QApplication * a)
     if(theme=="Dark")
     {
         std::cout<<"The theme is: "+theme.toStdString()<<std::endl;
-        a->setStyleSheet(QPushButton {border: 1px rgb(49, 245, 255);
-                         color: rgb(255, 255, 255);
-                         border-radius: 5px;
-                         background-color: rgb(51, 51, 51);});
-         //a->setStyleSheet("QPushButton {color: rgb(255, 255, 255)}");
-         //a->setStyleSheet("QPushButton { border-color: rgb(49, 245, 255)}");
-        //a->setStyleSheet("QPushButton {border-radius: 5px }");
-        //a->setStyleSheet("QPushButton {background-color: rgb(51, 51, 51)}");
+//        a->setStyleSheet();
+//         //a->setStyleSheet("QPushButton {color: rgb(255, 255, 255)}");
+//         //a->setStyleSheet("QPushButton { border-color: rgb(49, 245, 255)}");
+//        //a->setStyleSheet("QPushButton {border-radius: 5px }");
+//        //a->setStyleSheet("QPushButton {background-color: rgb(51, 51, 51)}");
 
-        a->setStyleSheet("color: blue;"
-                                "background-color: yellow;"
-                                "selection-color: yellow;"
-                                "selection-background-color: blue;");
+//        a->setStyleSheet("color: blue;"
+//                                "background-color: yellow;"
+//                                "selection-color: yellow;"
+//                                "selection-background-color: blue;");
 
     }
     else
