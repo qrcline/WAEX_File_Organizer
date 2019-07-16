@@ -59,8 +59,13 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
     //Main loop that interates over the PO# files
     for(unsigned int i=0;i<foldersToCheck.size();i++)
     {   int errors=0;
+        bool errorChecker=false;
         //Vector that will store the required files in a vector
-        std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]));
+        std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]),errorChecker);
+        if(!errorChecker)
+        {
+            uiPointer->Ache
+        }
         //Gets the files(Folders) in a specific PO#file
         std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
         //Gets the folder to check

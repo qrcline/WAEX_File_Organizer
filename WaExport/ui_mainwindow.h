@@ -18,6 +18,7 @@
 #include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -29,6 +30,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QWidget>
 
@@ -165,6 +167,11 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
+    QTableWidget *ACheck_errors;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QLabel *label_13;
+    QLabel *label_12;
     QMenuBar *menuBar;
     QMenu *menuFile;
     QMenu *menuHelp;
@@ -922,7 +929,7 @@ public:
         reloadButton = new QCommandLinkButton(createFile);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
         reloadButton->setEnabled(true);
-        reloadButton->setGeometry(QRect(254, 59, 30, 25));
+        reloadButton->setGeometry(QRect(254, 53, 31, 31));
         sizePolicy1.setHeightForWidth(reloadButton->sizePolicy().hasHeightForWidth());
         reloadButton->setSizePolicy(sizePolicy1);
         reloadButton->setMinimumSize(QSize(0, 0));
@@ -930,7 +937,7 @@ public:
         reloadButton->setAcceptDrops(true);
         reloadButton->setStyleSheet(QString::fromUtf8(""));
         QIcon icon;
-        icon.addFile(QString::fromUtf8("reload.png"), QSize(), QIcon::Normal, QIcon::Off);
+        icon.addFile(QString::fromUtf8(":/pictures/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         reloadButton->setIcon(icon);
         reloadButton->setIconSize(QSize(20, 20));
         progressBar_save_createFile = new QProgressBar(createFile);
@@ -1047,6 +1054,29 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(20, 200, 171, 21));
+        ACheck_errors = new QTableWidget(runArchiveCheck);
+        ACheck_errors->setObjectName(QString::fromUtf8("ACheck_errors"));
+        ACheck_errors->setGeometry(QRect(10, 270, 221, 192));
+        widget = new QWidget(runArchiveCheck);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(10, 250, 191, 21));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        label_13 = new QLabel(widget);
+        label_13->setObjectName(QString::fromUtf8("label_13"));
+        label_13->setFont(font2);
+
+        horizontalLayout->addWidget(label_13);
+
+        label_12 = new QLabel(widget);
+        label_12->setObjectName(QString::fromUtf8("label_12"));
+        label_12->setFont(font2);
+
+        horizontalLayout->addWidget(label_12);
+
         tabWidget->addTab(runArchiveCheck, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
@@ -1071,7 +1101,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1186,6 +1216,7 @@ public:
         FreightContract_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         ListadeEmpaque_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         reloadButton->setText(QString());
+        reloadButton->setDescription(QString());
         label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
@@ -1203,6 +1234,8 @@ public:
         label_9->setText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
         label_10->setText(QCoreApplication::translate("MainWindow", "Missing Files ->", nullptr));
         archiveCheckButton_2->setText(QCoreApplication::translate("MainWindow", "Open Archive Check Excel", nullptr));
+        label_13->setText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        label_12->setText(QCoreApplication::translate("MainWindow", "Error", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));

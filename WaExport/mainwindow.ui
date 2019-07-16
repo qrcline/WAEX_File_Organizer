@@ -137,7 +137,7 @@ width:20px;
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1441,8 +1441,8 @@ width:20px;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
-        <normaloff>reload.png</normaloff>reload.png</iconset>
+       <iconset resource="resources.qrc">
+        <normaloff>:/pictures/reload.png</normaloff>:/pictures/reload.png</iconset>
       </property>
       <property name="iconSize">
        <size>
@@ -1773,6 +1773,52 @@ width:20px;
        <string>Open Archive Check Excel</string>
       </property>
      </widget>
+     <widget class="QTableWidget" name="ACheck_errors">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>270</y>
+        <width>221</width>
+        <height>192</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>191</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_13">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>PO#</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label_12">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Error</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
     </widget>
    </widget>
   </widget>
@@ -1831,6 +1877,8 @@ width:20px;
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

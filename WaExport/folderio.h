@@ -30,7 +30,7 @@ public:
     QString getNotes(QString directory);
     QString getTemplate(QString directory);
     std::vector<std::string> get_directories(const std::string &mainDirec);
-    std::vector<std::string> get_reqFiles(QString mainDirec);
+    std::vector<std::string> get_reqFiles(QString mainDirec, bool& error);
     bool createLink(QString source, QString destination);
 };
 
