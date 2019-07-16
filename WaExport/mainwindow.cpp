@@ -238,7 +238,8 @@ void MainWindow::updateChecked()
 {
     uncheckAll();
     FolderIO fIo;
-    std::vector<std::string> reqFiles=fIo.get_reqFiles(mainDirectory+"/"+ui->POInput->text());
+    bool errorCheck=false;
+    std::vector<std::string> reqFiles=fIo.get_reqFiles(mainDirectory+"/"+ui->POInput->text(), errorCheck);
 
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Spreadsheets"))
          ui->mexP_Spreadsheets->setChecked(true);
