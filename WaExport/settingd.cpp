@@ -1,6 +1,7 @@
 #include "settingd.h"
 #include "ui_settingd.h"
 #include "QSettings.h"
+#include "mainwindow.h"
 
 settingD::settingD(QWidget *parent) :
     QDialog(parent),
@@ -9,6 +10,7 @@ settingD::settingD(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowTitle("Settings");
     setup();
+
 }
 
 settingD::~settingD()
@@ -29,8 +31,10 @@ void settingD::on_settingsClose_clicked()
     else
         setting.setValue("tTip","False");
     setting.endGroup();
-
+    MainWindow mWindow;
+    mWindow.loadSettings();
     close();
+
 }
 
 
@@ -45,3 +49,13 @@ void settingD::setup()
          ui->settingsToolTips->setChecked(false);
     setting.endGroup();
 }
+
+void settingD::closeEvent(QCloseEvent *bar)
+{
+//    QSettings setting("WAEX","Organizer");
+//    setting.beginGroup("Settings");
+//    setting.setValue("workDirec",mainDirectory);
+//    setting.endGroup();
+    QWidget::closeEvent(bar);
+}
+

@@ -47,23 +47,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setCurrentIndex(0);
     ui->comboBox->setCurrentIndex(1);
     ui->comboBox->setCurrentIndex(0);
+    loadSettings();
 
-    //Grab the settings
-    QSettings setting("WAEX","Organizer");
-    setting.beginGroup("Settings");
-    mainDirectory=setting.value("workDirec","NULL").toString();
-    QString tTip=setting.value("tTip","False").toString();
-    setting.endGroup();
-    //Set working directory labels
-    ui->workingDirectory->setText(mainDirectory);
-    ui->workingDirectory_CreateFile->setText(mainDirectory);
-
-    std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
-    if(tTip=="True")
-    {
-        ui->POInput->setToolTip("Input PO to lookup or create");
-
-    }
 
     //updateWindow();
 }
@@ -84,7 +69,25 @@ MainWindow::MainWindow(QWidget *parent) :
 
 //};
 
+void MainWindow::loadSettings()
+{
+    //Grab the settings
+    QSettings setting("WAEX","Organizer");
+    setting.beginGroup("Settings");
+    mainDirectory=setting.value("workDirec","NULL").toString();
+    QString tTip=setting.value("tTip","False").toString();
+    setting.endGroup();
+    //Set working directory labels
+    ui->workingDirectory->setText(mainDirectory);
+    ui->workingDirectory_CreateFile->setText(mainDirectory);
 
+    std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
+    if(tTip=="True")
+    {
+        ui->POInput->setToolTip("Input PO to lookup or create");
+
+    }
+}
 QString MainWindow::getMainDirectory()
 {
     return mainDirectory;

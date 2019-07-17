@@ -21,6 +21,7 @@ private slots:
 private:
     Ui::settingD *ui;
     void setup();
+    void closeEvent(QCloseEvent *bar);
 };
 
 #endif // SETTINGD_H

@@ -31,6 +31,7 @@ public:
     QString getMainDirectory();
     ~MainWindow();
 
+    void loadSettings();
 protected:
 //    void mousePressEvent(QMouseEvent *event);
 //    void mouseReleaseEvent(QMouseEvent *event);
