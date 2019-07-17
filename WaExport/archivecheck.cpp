@@ -35,6 +35,7 @@ bool fileExists(QString path) {
 QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOutput)
 {
     tableModelPointer->resetTable();//Clear the tableData vector
+    uiPointer->archiveErrorList->clear();
     int folderErrors=0;
     int totalErrors=0;
     int maxErrosForFile=0;
@@ -62,11 +63,15 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
         bool errorChecker=false;
         //Vector that will store the required files in a vector
         std::vector<std::string> filesReq=fIo.get_reqFiles(QString::fromStdString(foldersToCheck[i]),errorChecker);
-        if(!errorChecker)
+        if(errorChecker)
         {
             std::cout<<"There is an error "<<std::endl;
-           // uiPointer->Ache
+            uiPointer->archiveErrorList->addItem(QString::fromStdString(foldersToCheck[i]));
+            folderErrors++;
+            step++;
         }
+        else
+        {
         //Gets the files(Folders) in a specific PO#file
         std::vector<std::string> filesReturn=fIo.list_files_vector(QString::fromStdString(foldersToCheck[i]));
         //Gets the folder to check
@@ -74,7 +79,6 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
         errorData.clear(); //Clear the vector
         po.remove(0,directory.length()+1);
         errorData.push_back(po); //Add the po# to the vector, this vector is sent to the table model
-        //std::cout<<foldersToCheck[i]<<std::endl ;
         step++;//Increase step for progress bar
         uiPointer->archivePBar->setValue(step);//Sets the progress bar
 
@@ -107,13 +111,14 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
         tableModelPointer->addCheckData(errorData); //Adds the missing files to the
 
         //Sleep(10);
-
+        }
     }
     //std::cout<<"Total Errors:"<<totalErrors<<std::endl;
 
     outfile.close();
     filesAffectedOutput=folderErrors;
     totalErrorsOutput=totalErrors;
+    uiPointer->ACheck_TotalFilesChecked->setText(QString::number(foldersToCheck.size()));
 
 
     return "Archive check complete, " +QString::number(totalErrors)+" total errors in "+QString::number(folderErrors)+" files.";

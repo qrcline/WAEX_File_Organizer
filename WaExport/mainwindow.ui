@@ -29,9 +29,9 @@
    <string notr="true"> QPushButton {
 color: #333;
 border: 1px solid #052488;
-font: 8pt &quot;Myriad Pro&quot;;
+/*font: 8pt &quot;Myriad Pro&quot;;*/
 border-radius: 7px;
-padding: 5px;
+/*padding: 3px;*/
 background: qradialgradient(cx: 0.3, cy: -0.4,
 fx: 0.3, fy: -0.4,
 radius: 1.34, stop: 0 #fff, stop: 1 #888);
@@ -48,6 +48,10 @@ radius: 1.34, stop: 0 #fff, stop: 1 #bbb);
 background: qradialgradient(cx: 0.4, cy: -0.1,
 fx: 0.4, fy: -0.1,
 radius: 1.34, stop: 0 #fff, stop: 1 #ddd);
+}
+
+QPushButton:disabled {
+background-color:#727375;
 }
 
 
@@ -100,7 +104,7 @@ border-radius:0;
 text-align:center;
 color:FF0000;;
 background-color:transparent;
-border: 2px solid #0505f7;
+border: 1px solid #0505f7;
 border-radius:7px;
 	font: 75 12pt &quot;Open Sans&quot;;
 
@@ -139,7 +143,7 @@ width:20px;
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -277,271 +281,31 @@ width:20px;
      <widget class="QWidget" name="gridLayoutWidget">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>120</y>
+        <x>0</x>
+        <y>130</y>
         <width>301</width>
-        <height>431</height>
+        <height>421</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout">
        <property name="verticalSpacing">
-        <number>10</number>
+        <number>0</number>
        </property>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="mexP_Invoice_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2">
-        <widget class="QLabel" name="noticeProduceInv">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QCheckBox" name="mexP_Payable_Shipper">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Payables-Shipper</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="2">
+       <item row="13" column="2">
         <widget class="QLabel" name="noticePayableCarriers">
          <property name="text">
           <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="mexP_Phyto_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="acceptDrops">
-          <bool>true</bool>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QPushButton" name="mexP_Pedimento_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="mexP_ShipperConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Shipper Conf</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
-        <widget class="QLabel" name="noticePedimento">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="8" column="1">
-        <widget class="QPushButton" name="mexP_SignedSale_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="0">
-        <widget class="QCheckBox" name="receipts">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Receipts</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="noticeSpreadsheets">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="1">
-        <widget class="QPushButton" name="mexP_Payable_Shipper_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="mexP_CarrierConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Carrier Conf</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QCheckBox" name="mexP_Spreadsheets">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Spreadsheets</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QCheckBox" name="mexP_Passing">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Passing</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="1">
-        <widget class="QPushButton" name="receipts_upload">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="noticeInvoice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_4">
-         <property name="text">
-          <string>Uploaded?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="mexP_Passing_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
        <item row="4" column="2">
-        <widget class="QLabel" name="noticeShipperConf">
+        <widget class="QLabel" name="noticePhyto">
          <property name="text">
           <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="10" column="0">
+       <item row="11" column="0">
         <widget class="QCheckBox" name="mexP_ProduceInv">
          <property name="font">
           <font>
@@ -559,22 +323,34 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QLabel" name="noticeSignedSaleConf">
+       <item row="7" column="1">
+        <widget class="QPushButton" name="mexP_Passing_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Choose File</string>
          </property>
         </widget>
        </item>
-       <item row="18" column="2">
-        <widget class="QLabel" name="receipts_notice">
+       <item row="5" column="1">
+        <widget class="QPushButton" name="mexP_ShipperConf_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Choose File</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="0">
-        <widget class="QCheckBox" name="mexP_SignedSale">
+       <item row="14" column="0">
+        <widget class="QCheckBox" name="receipts">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -584,22 +360,15 @@ width:20px;
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="text">
-          <string>Signed Sale Conf.</string>
+          <string>Receipts</string>
          </property>
          <property name="checked">
           <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="noticePhyto">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="0">
-        <widget class="QCheckBox" name="mexP_Payables_Carriers">
+       <item row="7" column="0">
+        <widget class="QCheckBox" name="mexP_Passing">
          <property name="font">
           <font>
            <pointsize>10</pointsize>
@@ -609,14 +378,14 @@ width:20px;
           <cursorShape>PointingHandCursor</cursorShape>
          </property>
          <property name="text">
-          <string>Payables-Carriers</string>
+          <string>Passing</string>
          </property>
          <property name="checked">
           <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
+       <item row="3" column="0">
         <widget class="QCheckBox" name="mexP_Invoice">
          <property name="font">
           <font>
@@ -634,7 +403,14 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="9" column="0">
+       <item row="12" column="2">
+        <widget class="QLabel" name="noticePayableShipper">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
         <widget class="QCheckBox" name="mexP_Pedimento">
          <property name="font">
           <font>
@@ -652,8 +428,8 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QPushButton" name="mexP_ShipperConf_upload">
+       <item row="6" column="1">
+        <widget class="QPushButton" name="mexP_CarrierConf_upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -665,7 +441,316 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="11" column="2">
+        <widget class="QLabel" name="noticeProduceInv">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLabel" name="noticeShipperConf">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QCheckBox" name="mexP_Spreadsheets">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Spreadsheets</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="0">
+        <widget class="QCheckBox" name="mexP_Payables_Carriers">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Payables-Carriers</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="1">
+        <widget class="QPushButton" name="mexP_Payable_Shipper_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="mexP_CarrierConf">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Carrier Conf</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="13" column="1">
+        <widget class="QPushButton" name="mexP_Payables_Carriers_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QCheckBox" name="mexP_SignedSale">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Signed Sale Conf.</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="2">
+        <widget class="QLabel" name="noticeSaleConf">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QPushButton" name="mexP_SignedSale_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="2">
+        <widget class="QLabel" name="receipts_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLabel" name="noticePassing">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="2">
+        <widget class="QLabel" name="noticeSignedSaleConf">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="mexP_ShipperConf">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Shipper Conf</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="noticeSpreadsheets">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLabel" name="noticePedimento">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLabel" name="noticeCarrierConf">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="14" column="1">
+        <widget class="QPushButton" name="receipts_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="mexP_SaleConf_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="11" column="1">
+        <widget class="QPushButton" name="mexP_ProduceInv_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="12" column="0">
+        <widget class="QCheckBox" name="mexP_Payable_Shipper">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Payables-Shipper</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="0">
+        <widget class="QCheckBox" name="mexP_SaleConf">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Sale Conf</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLabel" name="noticeInvoice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QPushButton" name="mexP_Phyto_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="mexP_Invoice_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
         <widget class="QCheckBox" name="mexP_Phyto">
          <property name="font">
           <font>
@@ -684,7 +769,7 @@ width:20px;
         </widget>
        </item>
        <item row="10" column="1">
-        <widget class="QPushButton" name="mexP_ProduceInv_upload">
+        <widget class="QPushButton" name="mexP_Pedimento_upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -696,95 +781,7 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="noticeCarrierConf">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="1">
-        <widget class="QPushButton" name="mexP_Payables_Carriers_upload">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="2">
-        <widget class="QLabel" name="noticePayableShipper">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="0">
-        <widget class="QCheckBox" name="mexP_SaleConf">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Sale Conf</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QPushButton" name="mexP_SaleConf_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="2">
-        <widget class="QLabel" name="noticePassing">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="1">
-        <widget class="QPushButton" name="mexP_CarrierConf_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QLabel" name="noticeSaleConf">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
+       <item row="2" column="1">
         <widget class="QPushButton" name="mexP_Spreadsheets_upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -803,54 +800,23 @@ width:20px;
       <property name="geometry">
        <rect>
         <x>310</x>
-        <y>50</y>
-        <width>347</width>
-        <height>501</height>
+        <y>90</y>
+        <width>361</width>
+        <height>461</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="gridLayout_2">
        <property name="verticalSpacing">
-        <number>10</number>
+        <number>0</number>
        </property>
-       <item row="9" column="0">
-        <widget class="QCheckBox" name="HarrisEmails">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Harris Emails</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="4" column="2">
-        <widget class="QLabel" name="CertOrigin_notice">
+       <item row="19" column="2">
+        <widget class="QLabel" name="Payables_ShipperWarehouse_notice">
          <property name="text">
           <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="6" column="1">
-        <widget class="QPushButton" name="FreightContract_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="0">
+       <item row="17" column="0">
         <widget class="QCheckBox" name="payables_TruckFreight">
          <property name="font">
           <font>
@@ -868,20 +834,14 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="11" column="1">
-        <widget class="QPushButton" name="OtherEmails_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
+       <item row="0" column="2">
+        <widget class="QLabel" name="ExpInvima_notice">
          <property name="text">
-          <string>Choose File</string>
+          <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="1" column="0">
+       <item row="0" column="0">
         <widget class="QCheckBox" name="ExpInvima">
          <property name="font">
           <font>
@@ -899,97 +859,14 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="2" column="0">
-        <widget class="QCheckBox" name="FacturaComercial">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Factura Comercial</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="0">
-        <widget class="QCheckBox" name="Payables_Harris">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Payables-Harris</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="2">
-        <widget class="QLabel" name="Transloader_notice">
+       <item row="3" column="2">
+        <widget class="QLabel" name="CertOrigin_notice">
          <property name="text">
           <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="4" column="1">
-        <widget class="QPushButton" name="CertOrigin_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="1">
-        <widget class="QPushButton" name="Payables_ShipperWarehouse_upload">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="0">
-        <widget class="QCheckBox" name="Payables_ShipperWarehouse">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Payables-Shipper/Warehouse</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="1">
+       <item row="18" column="1">
         <widget class="QPushButton" name="Payables_Harris_upload">
          <property name="enabled">
           <bool>true</bool>
@@ -1005,240 +882,25 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="4" column="0">
-        <widget class="QCheckBox" name="CertOrigin">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Certificate of Origin</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QPushButton" name="ExpInvima_Upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="2">
-        <widget class="QLabel" name="Payables_Transloader_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="19" column="2">
-        <widget class="QLabel" name="Payables_Harris_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="7" column="1">
-        <widget class="QPushButton" name="Transloader_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="0">
-        <widget class="QCheckBox" name="CustomerPO">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Customer PO</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="17" column="1">
-        <widget class="QPushButton" name="Payables_Transloader_upload">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="1">
-        <widget class="QPushButton" name="HarrisEmails_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="2">
-        <widget class="QLabel" name="payables_TruckFreight_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="ExpInvima_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="2">
-        <widget class="QLabel" name="CustomerPO_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="5" column="2">
-        <widget class="QLabel" name="CaftaNafta_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="18" column="1">
-        <widget class="QPushButton" name="payables_TruckFreight_upload">
-         <property name="enabled">
-          <bool>true</bool>
-         </property>
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="label_5">
-         <property name="text">
-          <string>Uploaded?</string>
-         </property>
-        </widget>
-       </item>
-       <item row="6" column="0">
-        <widget class="QCheckBox" name="FreightContract">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Freight Serv Contract</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="9" column="2">
-        <widget class="QLabel" name="HarrisEmails_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="11" column="0">
-        <widget class="QCheckBox" name="OtherEmails">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>Other Emails</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="3" column="2">
-        <widget class="QLabel" name="ListadeEmpaque_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="2">
-        <widget class="QLabel" name="FacturaComercial_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
-       <item row="2" column="1">
-        <widget class="QPushButton" name="FacturaComercial_upload">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="text">
-          <string>Choose File</string>
-         </property>
-        </widget>
-       </item>
-       <item row="20" column="2">
-        <widget class="QLabel" name="Payables_ShipperWarehouse_notice">
-         <property name="text">
-          <string>No</string>
-         </property>
-        </widget>
-       </item>
        <item row="8" column="0">
+        <widget class="QCheckBox" name="HarrisEmails">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Harris Emails</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="0">
         <widget class="QCheckBox" name="Harris">
          <property name="font">
           <font>
@@ -1256,62 +918,22 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="17" column="0">
-        <widget class="QCheckBox" name="Payables_Transloader">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
+       <item row="18" column="2">
+        <widget class="QLabel" name="Payables_Harris_notice">
          <property name="text">
-          <string>Payables-Transloader</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
+          <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="7" column="0">
-        <widget class="QCheckBox" name="Transloader">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
+       <item row="16" column="2">
+        <widget class="QLabel" name="Payables_Transloader_notice">
          <property name="text">
-          <string>Transloader</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
+          <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="5" column="0">
-        <widget class="QCheckBox" name="CaftaNafta">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="cursor">
-          <cursorShape>PointingHandCursor</cursorShape>
-         </property>
-         <property name="text">
-          <string>CAFTA/NAFTA</string>
-         </property>
-         <property name="checked">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="10" column="1">
-        <widget class="QPushButton" name="CustomerPO_upload">
+       <item row="0" column="1">
+        <widget class="QPushButton" name="ExpInvima_Upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1323,7 +945,21 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="3" column="0">
+       <item row="9" column="2">
+        <widget class="QLabel" name="CustomerPO_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="2">
+        <widget class="QLabel" name="OtherEmails_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
         <widget class="QCheckBox" name="ListadeEmpaque">
          <property name="font">
           <font>
@@ -1341,7 +977,95 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="5" column="1">
+       <item row="4" column="0">
+        <widget class="QCheckBox" name="CaftaNafta">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>CAFTA/NAFTA</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QCheckBox" name="FacturaComercial">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Factura Comercial</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="1">
+        <widget class="QPushButton" name="Payables_Transloader_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="0">
+        <widget class="QCheckBox" name="CustomerPO">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Customer PO</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="0">
+        <widget class="QCheckBox" name="Transloader">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Transloader</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
         <widget class="QPushButton" name="CaftaNafta_upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -1354,14 +1078,93 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="11" column="2">
-        <widget class="QLabel" name="OtherEmails_notice">
+       <item row="8" column="2">
+        <widget class="QLabel" name="HarrisEmails_notice">
          <property name="text">
           <string>No</string>
          </property>
         </widget>
        </item>
-       <item row="8" column="1">
+       <item row="1" column="2">
+        <widget class="QLabel" name="FacturaComercial_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="2">
+        <widget class="QLabel" name="ListadeEmpaque_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QPushButton" name="ListadeEmpaque_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="0">
+        <widget class="QCheckBox" name="FreightContract">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Freight Serv Contract</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="2">
+        <widget class="QLabel" name="Harris_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="1">
+        <widget class="QPushButton" name="FreightContract_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLabel" name="CaftaNafta_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="5" column="2">
+        <widget class="QLabel" name="FreightContract_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="7" column="1">
         <widget class="QPushButton" name="Harris_upload">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
@@ -1374,22 +1177,47 @@ width:20px;
          </property>
         </widget>
        </item>
-       <item row="8" column="2">
-        <widget class="QLabel" name="Harris_notice">
+       <item row="18" column="0">
+        <widget class="QCheckBox" name="Payables_Harris">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Payables-Harris</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="6" column="2">
-        <widget class="QLabel" name="FreightContract_notice">
+       <item row="19" column="0">
+        <widget class="QCheckBox" name="Payables_ShipperWarehouse">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
          <property name="text">
-          <string>No</string>
+          <string>Payables-Shipper/Warehouse</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
-       <item row="3" column="1">
-        <widget class="QPushButton" name="ListadeEmpaque_upload">
+       <item row="17" column="1">
+        <widget class="QPushButton" name="payables_TruckFreight_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
          <property name="sizePolicy">
           <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -1398,6 +1226,168 @@ width:20px;
          </property>
          <property name="text">
           <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="16" column="0">
+        <widget class="QCheckBox" name="Payables_Transloader">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Payables-Transloader</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QPushButton" name="FacturaComercial_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="2">
+        <widget class="QLabel" name="Transloader_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="1">
+        <widget class="QPushButton" name="CertOrigin_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="8" column="1">
+        <widget class="QPushButton" name="HarrisEmails_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="6" column="1">
+        <widget class="QPushButton" name="Transloader_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="9" column="1">
+        <widget class="QPushButton" name="CustomerPO_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QCheckBox" name="CertOrigin">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Certificate of Origin</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="1">
+        <widget class="QPushButton" name="OtherEmails_upload">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="17" column="2">
+        <widget class="QLabel" name="payables_TruckFreight_notice">
+         <property name="text">
+          <string>No</string>
+         </property>
+        </widget>
+       </item>
+       <item row="19" column="1">
+        <widget class="QPushButton" name="Payables_ShipperWarehouse_upload">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="text">
+          <string>Choose File</string>
+         </property>
+        </widget>
+       </item>
+       <item row="10" column="0">
+        <widget class="QCheckBox" name="OtherEmails">
+         <property name="font">
+          <font>
+           <pointsize>10</pointsize>
+          </font>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+         <property name="text">
+          <string>Other Emails</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -1443,7 +1433,7 @@ width:20px;
        <string/>
       </property>
       <property name="icon">
-       <iconset>
+       <iconset resource="resources.qrc">
         <normaloff>:/pictures/reload.png</normaloff>:/pictures/reload.png</iconset>
       </property>
       <property name="iconSize">
@@ -1534,6 +1524,32 @@ width:20px;
        <string>Notes PO# :</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_4">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>110</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Uploaded?</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_5">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>70</y>
+        <width>76</width>
+        <height>13</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Uploaded?</string>
+      </property>
+     </widget>
      <zorder>comboBox</zorder>
      <zorder>notesArea</zorder>
      <zorder>saveButton</zorder>
@@ -1549,6 +1565,8 @@ width:20px;
      <zorder>PoLabel</zorder>
      <zorder>label</zorder>
      <zorder>reloadButton</zorder>
+     <zorder>label_4</zorder>
+     <zorder>label_5</zorder>
     </widget>
     <widget class="QWidget" name="runArchiveCheck">
      <attribute name="title">
@@ -1673,56 +1691,6 @@ width:20px;
        <bool>false</bool>
       </property>
      </widget>
-     <widget class="QWidget" name="layoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>30</x>
-        <y>130</y>
-        <width>131</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <layout class="QFormLayout" name="formLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="label_7">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Total Errors:</string>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="ACheck_TotalErrors">
-         <property name="text">
-          <string>NULL</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="label_8">
-         <property name="font">
-          <font>
-           <pointsize>10</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>Files Affected</string>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="ACheck_FilesAffected">
-         <property name="text">
-          <string>NULL</string>
-         </property>
-        </widget>
-       </item>
-      </layout>
-     </widget>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
@@ -1765,8 +1733,8 @@ width:20px;
       </property>
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>200</y>
+        <x>10</x>
+        <y>520</y>
         <width>171</width>
         <height>21</height>
        </rect>
@@ -1775,37 +1743,76 @@ width:20px;
        <string>Open Archive Check Excel</string>
       </property>
      </widget>
-     <widget class="QTableWidget" name="ACheck_errors">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>270</y>
-        <width>221</width>
-        <height>192</height>
-       </rect>
-      </property>
-     </widget>
      <widget class="QWidget" name="">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>250</y>
-        <width>191</width>
-        <height>21</height>
+        <x>20</x>
+        <y>130</y>
+        <width>201</width>
+        <height>265</height>
        </rect>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QVBoxLayout" name="verticalLayout">
        <item>
-        <widget class="QLabel" name="label_13">
-         <property name="font">
-          <font>
-           <pointsize>12</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string>PO#</string>
-         </property>
-        </widget>
+        <layout class="QFormLayout" name="formLayout">
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_7">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Total Errors:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLabel" name="ACheck_TotalErrors">
+           <property name="text">
+            <string>NULL</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="label_8">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Files Affected</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLabel" name="ACheck_FilesAffected">
+           <property name="text">
+            <string>NULL</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QLabel" name="label_13">
+           <property name="font">
+            <font>
+             <pointsize>10</pointsize>
+            </font>
+           </property>
+           <property name="text">
+            <string>Total Files Checked:</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLabel" name="ACheck_TotalFilesChecked">
+           <property name="text">
+            <string>NULL</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </item>
        <item>
         <widget class="QLabel" name="label_12">
@@ -1815,9 +1822,12 @@ width:20px;
           </font>
          </property>
          <property name="text">
-          <string>Error</string>
+          <string>Error Files: </string>
          </property>
         </widget>
+       </item>
+       <item>
+        <widget class="QListWidget" name="archiveErrorList"/>
        </item>
       </layout>
      </widget>
@@ -1879,6 +1889,8 @@ width:20px;
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

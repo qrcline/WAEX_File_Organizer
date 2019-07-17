@@ -51,12 +51,12 @@ border-radius: 5px; </string>
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QWidget" name="">
+  <widget class="QWidget" name="layoutWidget">
    <property name="geometry">
     <rect>
      <x>230</x>
      <y>30</y>
-     <width>199</width>
+     <width>220</width>
      <height>151</height>
     </rect>
    </property>
@@ -74,7 +74,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>WAEX Filing System  0.3</string>
+       <string>WAEX Filing System  V. 0.3</string>
       </property>
      </widget>
     </item>

@@ -213,7 +213,12 @@ std::vector<std::string> FolderIO::get_reqFiles(QString mainDirec, bool& error)
     std::vector<std::string> requiredFiles;
     QFile file(mainDirec+"/waex.index");
        if (!file.open(QIODevice::ReadOnly | QIODevice::Text))
-          std::cout<<"Errro opening file"<<std::endl;
+       {
+           std::cout<<"Error opening file"<<std::endl;
+           error=true;
+           return requiredFiles;
+       }
+
             //return  nullptr;
 //       while(file.readLine()!="/REQSTART/")
 //           std::cout<<"Next"<<std::endl;
