@@ -1030,7 +1030,7 @@ public:
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
         widget = new QWidget(runArchiveCheck);
         widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 130, 201, 265));
+        widget->setGeometry(QRect(20, 130, 221, 265));
         verticalLayout = new QVBoxLayout(widget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
