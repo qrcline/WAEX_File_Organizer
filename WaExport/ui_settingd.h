@@ -61,11 +61,13 @@ public:
         settingsColorScheme->addItem(QString());
         settingsColorScheme->addItem(QString());
         settingsColorScheme->setObjectName(QString::fromUtf8("settingsColorScheme"));
+        settingsColorScheme->setEnabled(true);
 
         horizontalLayout->addWidget(settingsColorScheme);
 
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setEnabled(false);
 
         horizontalLayout->addWidget(label_2);
 

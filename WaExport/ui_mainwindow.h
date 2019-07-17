@@ -188,6 +188,7 @@ public:
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMaximumSize(QSize(1198, 638));
+        MainWindow->setAcceptDrops(false);
         MainWindow->setStyleSheet(QString::fromUtf8(" QPushButton {\n"
 "color: #333;\n"
 "border: 1px solid #052488;\n"
@@ -1110,7 +1111,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

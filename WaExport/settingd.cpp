@@ -8,6 +8,7 @@ settingD::settingD(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowTitle("Settings");
+    setup();
 }
 
 settingD::~settingD()
@@ -19,12 +20,28 @@ void settingD::on_settingsClose_clicked()
 {
     QString theme= ui->settingsColorScheme->currentText();
 
+
     QSettings setting("WAEX","Organizer");
     setting.beginGroup("Settings");
     setting.setValue("theme",theme);
+    if(ui->settingsToolTips->isChecked())
+        setting.setValue("tTip","True");
+    else
+        setting.setValue("tTip","False");
     setting.endGroup();
 
-
-
     close();
+}
+
+
+void settingD::setup()
+{
+    QSettings setting("WAEX","Organizer");
+    setting.beginGroup("Settings");
+    QString tTip=setting.value("tTip","False").toString();
+    if(tTip=="True")
+        ui->settingsToolTips->setChecked(true);
+    else
+         ui->settingsToolTips->setChecked(false);
+    setting.endGroup();
 }

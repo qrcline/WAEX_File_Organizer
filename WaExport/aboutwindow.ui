@@ -74,7 +74,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>WAEX Filing System  V. 0.3</string>
+       <string>WAEX Filing System  V 0.3</string>
       </property>
      </widget>
     </item>
@@ -84,7 +84,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Based on Qt 5.13.0 (MSVC 2017, 64bit)</string>
+       <string>Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)</string>
       </property>
      </widget>
     </item>

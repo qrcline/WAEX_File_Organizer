@@ -20,6 +20,7 @@ private slots:
 
 private:
     Ui::settingD *ui;
+    void setup();
 };
 
 #endif // SETTINGD_H

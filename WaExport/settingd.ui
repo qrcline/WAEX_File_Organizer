@@ -47,6 +47,9 @@
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
        <widget class="QComboBox" name="settingsColorScheme">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
         <item>
          <property name="text">
           <string>Light</string>
@@ -61,6 +64,9 @@
       </item>
       <item>
        <widget class="QLabel" name="label_2">
+        <property name="enabled">
+         <bool>false</bool>
+        </property>
         <property name="text">
          <string>Color Scheme</string>
         </property>

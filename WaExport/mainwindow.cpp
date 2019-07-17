@@ -31,12 +31,14 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
   tableModel(new myTableModel(this))
 {
+
     ui->setupUi(this);
     ui->tableView->setModel(tableModel);
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
     ui->progressBar_save_createFile->hide();
+
 
 
 
@@ -48,12 +50,20 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //Grab the settings
     QSettings setting("WAEX","Organizer");
-    setting.beginGroup("MainWindow");
+    setting.beginGroup("Settings");
     mainDirectory=setting.value("workDirec","NULL").toString();
+    QString tTip=setting.value("tTip","False").toString();
     setting.endGroup();
     //Set working directory labels
     ui->workingDirectory->setText(mainDirectory);
     ui->workingDirectory_CreateFile->setText(mainDirectory);
+
+    std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
+    if(tTip=="True")
+    {
+        ui->POInput->setToolTip("Input PO to lookup or create");
+
+    }
 
     //updateWindow();
 }
@@ -370,7 +380,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
 void MainWindow::closeEvent(QCloseEvent *bar)
 {
     QSettings setting("WAEX","Organizer");
-    setting.beginGroup("MainWindow");
+    setting.beginGroup("Settings");
     setting.setValue("workDirec",mainDirectory);
     setting.endGroup();
     QWidget::closeEvent(bar);
