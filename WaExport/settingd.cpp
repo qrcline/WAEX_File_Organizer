@@ -3,13 +3,14 @@
 #include "QSettings.h"
 #include "mainwindow.h"
 
-settingD::settingD(QWidget *parent) :
+settingD::settingD(QWidget *parent,Ui::MainWindow* mainWindow) :
     QDialog(parent),
     ui(new Ui::settingD)
 {
     ui->setupUi(this);
     this->setWindowTitle("Settings");
     setup();
+    uiPointer=parent;
 
 }
 
@@ -32,7 +33,7 @@ void settingD::on_settingsClose_clicked()
         setting.setValue("tTip","False");
     setting.endGroup();
     MainWindow mWindow;
-    mWindow.loadSettings();
+    mWindow.loadSettings(); //TODO: Make it so that the settings can be refreshed for the mainwindow
     close();
 
 }

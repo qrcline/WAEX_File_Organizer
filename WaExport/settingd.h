@@ -2,6 +2,7 @@
 #define SETTINGD_H
 
 #include <QDialog>
+#include <mainwindow.h>
 
 namespace Ui {
 class settingD;
@@ -12,7 +13,7 @@ class settingD : public QDialog
     Q_OBJECT
 
 public:
-    explicit settingD(QWidget *parent = nullptr);
+    explicit settingD(QWidget *parent );
     ~settingD();
 
 private slots:
@@ -20,6 +21,7 @@ private slots:
 
 private:
     Ui::settingD *ui;
+    Ui::MainWindow* uiPointer;
     void setup();
     void closeEvent(QCloseEvent *bar);
 };
