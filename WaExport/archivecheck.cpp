@@ -40,6 +40,7 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
     int totalErrors=0;
     int maxErrosForFile=0;
     std::vector<QString> errorData;
+    errorData.clear();
     FolderIO fIo;
     std::vector<std::string> foldersToCheck=fIo.get_directories(directory.toStdString());
 
@@ -100,9 +101,14 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
             if(errors>maxErrosForFile)
                 maxErrosForFile=errors;
 
-            outfile<<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
+           //outfile <<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
             if(totalErrors>0)
+            {
                 folderErrors++;
+                 outfile <<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
+                 errorData.erase(errorData.end()-1);
+            }
+
             tableModelPointer->setColumnCount(maxErrosForFile);
             tableModelPointer->addCheckData(errorData); //Adds the missing files to the
         }

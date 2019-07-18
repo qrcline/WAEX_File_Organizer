@@ -29,17 +29,18 @@ public:
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QHBoxLayout *horizontalLayout;
-    QComboBox *comboBox;
+    QComboBox *settingsColorScheme;
     QLabel *label_2;
-    QCheckBox *checkBox;
-    QCheckBox *checkBox_2;
-    QPushButton *pushButton;
+    QCheckBox *settingsOpenFolder;
+    QCheckBox *settingsToolTips;
+    QPushButton *settingsClose;
+    QLabel *label_3;
 
     void setupUi(QDialog *settingD)
     {
         if (settingD->objectName().isEmpty())
             settingD->setObjectName(QString::fromUtf8("settingD"));
-        settingD->resize(275, 189);
+        settingD->resize(291, 206);
         label = new QLabel(settingD);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(110, 10, 47, 20));
@@ -56,39 +57,44 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        comboBox = new QComboBox(layoutWidget);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        settingsColorScheme = new QComboBox(layoutWidget);
+        settingsColorScheme->addItem(QString());
+        settingsColorScheme->addItem(QString());
+        settingsColorScheme->setObjectName(QString::fromUtf8("settingsColorScheme"));
+        settingsColorScheme->setEnabled(true);
 
-        horizontalLayout->addWidget(comboBox);
+        horizontalLayout->addWidget(settingsColorScheme);
 
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setEnabled(false);
 
         horizontalLayout->addWidget(label_2);
 
 
         verticalLayout->addLayout(horizontalLayout);
 
-        checkBox = new QCheckBox(layoutWidget);
-        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        settingsOpenFolder = new QCheckBox(layoutWidget);
+        settingsOpenFolder->setObjectName(QString::fromUtf8("settingsOpenFolder"));
 
-        verticalLayout->addWidget(checkBox);
+        verticalLayout->addWidget(settingsOpenFolder);
 
-        checkBox_2 = new QCheckBox(layoutWidget);
-        checkBox_2->setObjectName(QString::fromUtf8("checkBox_2"));
+        settingsToolTips = new QCheckBox(layoutWidget);
+        settingsToolTips->setObjectName(QString::fromUtf8("settingsToolTips"));
 
-        verticalLayout->addWidget(checkBox_2);
+        verticalLayout->addWidget(settingsToolTips);
 
-        pushButton = new QPushButton(settingD);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(160, 130, 85, 25));
-        pushButton->setCursor(QCursor(Qt::ArrowCursor));
-        pushButton->setStyleSheet(QString::fromUtf8("border: 1px solid red;\n"
+        settingsClose = new QPushButton(settingD);
+        settingsClose->setObjectName(QString::fromUtf8("settingsClose"));
+        settingsClose->setGeometry(QRect(190, 160, 85, 25));
+        settingsClose->setCursor(QCursor(Qt::ArrowCursor));
+        settingsClose->setStyleSheet(QString::fromUtf8("border: 1px solid red;\n"
 "color: rgb(255, 255, 255);\n"
 "border-color: rgb(49, 245, 255);\n"
 "border-radius: 5px; "));
+        label_3 = new QLabel(settingD);
+        label_3->setObjectName(QString::fromUtf8("label_3"));
+        label_3->setGeometry(QRect(20, 130, 221, 16));
 
         retranslateUi(settingD);
 
@@ -99,13 +105,14 @@ public:
     {
         settingD->setWindowTitle(QCoreApplication::translate("settingD", "Dialog", nullptr));
         label->setText(QCoreApplication::translate("settingD", "Settings", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("settingD", "Light", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("settingD", "Dark", nullptr));
+        settingsColorScheme->setItemText(0, QCoreApplication::translate("settingD", "Light", nullptr));
+        settingsColorScheme->setItemText(1, QCoreApplication::translate("settingD", "Dark", nullptr));
 
         label_2->setText(QCoreApplication::translate("settingD", "Color Scheme", nullptr));
-        checkBox->setText(QCoreApplication::translate("settingD", "Open folder on Enter press", nullptr));
-        checkBox_2->setText(QCoreApplication::translate("settingD", "Enable Tool Tips", nullptr));
-        pushButton->setText(QCoreApplication::translate("settingD", "Close", nullptr));
+        settingsOpenFolder->setText(QCoreApplication::translate("settingD", "Open folder on Enter press", nullptr));
+        settingsToolTips->setText(QCoreApplication::translate("settingD", "Enable Tool Tips", nullptr));
+        settingsClose->setText(QCoreApplication::translate("settingD", "Close", nullptr));
+        label_3->setText(QCoreApplication::translate("settingD", "Note: Restart Application to apply settings. ", nullptr));
     } // retranslateUi
 
 };

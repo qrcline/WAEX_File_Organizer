@@ -24,7 +24,7 @@ class Ui_AboutWindow
 public:
     QLabel *aboutLogo;
     QPushButton *pushButton;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QLabel *label;
     QLabel *label_2;
@@ -49,13 +49,13 @@ public:
 "color: rgb(255, 255, 255);\n"
 "border-color: rgb(49, 245, 255);\n"
 "border-radius: 5px; "));
-        widget = new QWidget(AboutWindow);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(230, 30, 199, 151));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(AboutWindow);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(230, 30, 220, 151));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget);
+        label = new QLabel(layoutWidget);
         label->setObjectName(QString::fromUtf8("label"));
         QFont font;
         font.setPointSize(12);
@@ -66,25 +66,25 @@ public:
 
         verticalLayout->addWidget(label);
 
-        label_2 = new QLabel(widget);
+        label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(label_2);
 
-        label_3 = new QLabel(widget);
+        label_3 = new QLabel(layoutWidget);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(label_3);
 
-        label_4 = new QLabel(widget);
+        label_4 = new QLabel(layoutWidget);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
         verticalLayout->addWidget(label_4);
 
-        label_5 = new QLabel(widget);
+        label_5 = new QLabel(layoutWidget);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setStyleSheet(QString::fromUtf8("color: rgb(255, 255, 255);"));
 
@@ -101,8 +101,8 @@ public:
         AboutWindow->setWindowTitle(QCoreApplication::translate("AboutWindow", "Dialog", nullptr));
         aboutLogo->setText(QString());
         pushButton->setText(QCoreApplication::translate("AboutWindow", "Close", nullptr));
-        label->setText(QCoreApplication::translate("AboutWindow", "WAEX Filing System  0.3", nullptr));
-        label_2->setText(QCoreApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 64bit)", nullptr));
+        label->setText(QCoreApplication::translate("AboutWindow", "WAEX Filing System  V 0.3", nullptr));
+        label_2->setText(QCoreApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)", nullptr));
         label_3->setText(QCoreApplication::translate("AboutWindow", "Built on Date", nullptr));
         label_4->setText(QCoreApplication::translate("AboutWindow", "Created by: Quinton Cline", nullptr));
         label_5->setText(QCoreApplication::translate("AboutWindow", "\302\251 Washington Export LLC", nullptr));

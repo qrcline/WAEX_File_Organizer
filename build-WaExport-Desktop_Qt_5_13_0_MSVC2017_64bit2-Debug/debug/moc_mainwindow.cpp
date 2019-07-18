@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_MainWindow_t {
     QByteArrayData data[75];
-    char stringdata0[2196];
+    char stringdata0[2198];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -106,7 +106,7 @@ QT_MOC_LITERAL(70, 2068, 11), // "QModelIndex"
 QT_MOC_LITERAL(71, 2080, 31), // "on_archiveCheckButton_2_clicked"
 QT_MOC_LITERAL(72, 2112, 24), // "on_actionAbout_triggered"
 QT_MOC_LITERAL(73, 2137, 30), // "on_actionHelp_Center_triggered"
-QT_MOC_LITERAL(74, 2168, 27) // "on_actionSettings_triggered"
+QT_MOC_LITERAL(74, 2168, 29) // "on_actionSettings_2_triggered"
 
     },
     "MainWindow\0on_openFolder_clicked\0\0"
@@ -176,7 +176,7 @@ QT_MOC_LITERAL(74, 2168, 27) // "on_actionSettings_triggered"
     "on_archiveCheckButton_2_clicked\0"
     "on_actionAbout_triggered\0"
     "on_actionHelp_Center_triggered\0"
-    "on_actionSettings_triggered"
+    "on_actionSettings_2_triggered"
 };
 #undef QT_MOC_LITERAL
 
@@ -415,7 +415,7 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         case 66: _t->on_archiveCheckButton_2_clicked(); break;
         case 67: _t->on_actionAbout_triggered(); break;
         case 68: _t->on_actionHelp_Center_triggered(); break;
-        case 69: _t->on_actionSettings_triggered(); break;
+        case 69: _t->on_actionSettings_2_triggered(); break;
         default: ;
         }
     }
