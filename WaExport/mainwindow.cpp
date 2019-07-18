@@ -83,7 +83,11 @@ void MainWindow::loadSettings()
     std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
     if(tTip=="True")
     {
-        ui->POInput->setToolTip("Input PO to lookup or create");
+        ui->POInput->setToolTip("Input PO to lookup or create.");
+        ui->comboBox->setToolTip("Select template for req files.");
+        ui->workingDirectory->setToolTip("The directory were files are saved.");
+        ui->openFolder->setToolTip("Opens the PO# folder in File Explorer");
+        ui->saveButton->setToolTip("Click save to create the index file and save notes. ");
 
     }
 }
