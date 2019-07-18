@@ -17,6 +17,11 @@
 #include "folderio.h"
 #include <mytablemodel.h>
 #include <helpcenter.h>
+#include <archivecheck.h>
+#include <settingd.h>
+#include <aboutwindow.h>
+#include <helpcenter.h>
+#include <settingd.h>
 
 namespace Ui {
 class MainWindow;
@@ -187,7 +192,10 @@ private slots:
 private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;
+
     myTableModel *tableModel;
+   // settingD *settingD;
+   // ArchiveCheck *aCheck;
     //void openDirectory(QString );
     QString mainDirectory="NULL";
     void openFolder(QString folderText,bool winEx);

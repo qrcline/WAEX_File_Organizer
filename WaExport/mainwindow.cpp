@@ -17,9 +17,7 @@
 #include <QSettings>
 #include <QtCore>
 #include <thread>
-#include <aboutwindow.h>
-#include <helpcenter.h>
-#include <settingd.h>
+
 
 
 
@@ -38,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
     ui->progressBar_save_createFile->hide();
-
+    //settingD= new class settingD(this,ui);
 
 
 
@@ -48,6 +46,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setCurrentIndex(1);
     ui->comboBox->setCurrentIndex(0);
     loadSettings();
+
 
 
     //updateWindow();
@@ -985,8 +984,6 @@ void MainWindow::on_receipts_stateChanged(int arg1)
 
 
 
-
-
 void MainWindow::on_reloadButton_clicked()
 {
     updateWindow();
@@ -1103,6 +1100,7 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
 
 void MainWindow::on_archiveCheckButton_clicked()
 {
+    ArchiveCheck *aCheck  =new ArchiveCheck(mainDirectory,ui,tableModel);
     if(mainDirectory=="NULL") //If the maindirectory isn't selected ask user to select it
     {
         if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Error", "Main directory not selected, select now?", QMessageBox::Yes|QMessageBox::No).exec())
@@ -1114,10 +1112,10 @@ void MainWindow::on_archiveCheckButton_clicked()
     //runs the archive check
     std::cout<<"Archive check started"<<std::endl;
 
-    ArchiveCheck* acheck  =new ArchiveCheck(mainDirectory,ui,tableModel);
+
     int totalErrors=0;
     int filesAffected=0;
-    QString response=acheck->checkForArchive(totalErrors,filesAffected);
+    QString response=aCheck->checkForArchive(totalErrors,filesAffected);
 
     if(response=="ERROR/1")
     {
@@ -1182,7 +1180,7 @@ void MainWindow::on_actionHelp_Center_triggered()
 
 void MainWindow::on_actionSettings_2_triggered()
 {
-    settingD settingD;
-    settingD.setModal(true);
-    settingD.exec();
+   settingD setD(this,ui);
+   setD.setModal(true);
+    setD.exec();
 }

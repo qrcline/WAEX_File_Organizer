@@ -3,14 +3,14 @@
 #include "QSettings.h"
 #include "mainwindow.h"
 
-settingD::settingD(QWidget *parent,Ui::MainWindow* mainWindow) :
+settingD::settingD(QWidget *parent,Ui::MainWindow* uiMain) :
     QDialog(parent),
     ui(new Ui::settingD)
 {
     ui->setupUi(this);
     this->setWindowTitle("Settings");
     setup();
-    uiPointer=parent;
+   mainUi=uiMain;
 
 }
 

@@ -13,7 +13,7 @@ class settingD : public QDialog
     Q_OBJECT
 
 public:
-    explicit settingD(QWidget *parent );
+    explicit settingD(QWidget *parent,Ui::MainWindow* uiMain );
     ~settingD();
 
 private slots:
@@ -21,7 +21,7 @@ private slots:
 
 private:
     Ui::settingD *ui;
-    Ui::MainWindow* uiPointer;
+    Ui::MainWindow* mainUi;
     void setup();
     void closeEvent(QCloseEvent *bar);
 };

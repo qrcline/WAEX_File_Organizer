@@ -159,9 +159,9 @@ width:20px;
       <property name="geometry">
        <rect>
         <x>30</x>
-        <y>80</y>
-        <width>111</width>
-        <height>22</height>
+        <y>100</y>
+        <width>102</width>
+        <height>24</height>
        </rect>
       </property>
       <property name="font">
@@ -218,8 +218,8 @@ width:20px;
        <rect>
         <x>30</x>
         <y>50</y>
-        <width>113</width>
-        <height>21</height>
+        <width>108</width>
+        <height>24</height>
        </rect>
       </property>
       <property name="font">
@@ -237,10 +237,10 @@ width:20px;
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>30</y>
-        <width>47</width>
-        <height>13</height>
+        <x>31</x>
+        <y>31</y>
+        <width>30</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="font">
@@ -1553,6 +1553,24 @@ width:20px;
        <string>Uploaded?</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>31</x>
+        <y>81</y>
+        <width>59</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>Template:</string>
+      </property>
+     </widget>
      <zorder>comboBox</zorder>
      <zorder>notesArea</zorder>
      <zorder>saveButton</zorder>
@@ -1570,6 +1588,7 @@ width:20px;
      <zorder>reloadButton</zorder>
      <zorder>label_4</zorder>
      <zorder>label_5</zorder>
+     <zorder>label_14</zorder>
     </widget>
     <widget class="QWidget" name="runArchiveCheck">
      <attribute name="title">
@@ -1746,7 +1765,7 @@ width:20px;
        <string>Open Archive Check Excel</string>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1865,11 +1884,6 @@ width:20px;
    <addaction name="menuHelp"/>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
-  <action name="actionSettings">
-   <property name="text">
-    <string>Settings</string>
-   </property>
-  </action>
   <action name="actionOpen">
    <property name="text">
     <string>Open</string>

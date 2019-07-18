@@ -39,7 +39,6 @@ QT_BEGIN_NAMESPACE
 class Ui_MainWindow
 {
 public:
-    QAction *actionSettings;
     QAction *actionOpen;
     QAction *actionHelp_Center;
     QAction *actionAbout;
@@ -150,6 +149,7 @@ public:
     QLabel *label;
     QLabel *label_4;
     QLabel *label_5;
+    QLabel *label_14;
     QWidget *runArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -161,7 +161,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -279,8 +279,6 @@ public:
 "background-color:#2d89ef;\n"
 "width:20px;\n"
 "}"));
-        actionSettings = new QAction(MainWindow);
-        actionSettings->setObjectName(QString::fromUtf8("actionSettings"));
         actionOpen = new QAction(MainWindow);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
         actionHelp_Center = new QAction(MainWindow);
@@ -312,7 +310,7 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(30, 80, 111, 22));
+        comboBox->setGeometry(QRect(30, 100, 102, 24));
         comboBox->setFont(font);
         notesArea = new QTextEdit(createFile);
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
@@ -322,11 +320,11 @@ public:
         saveButton->setGeometry(QRect(1050, 490, 101, 31));
         POInput = new QLineEdit(createFile);
         POInput->setObjectName(QString::fromUtf8("POInput"));
-        POInput->setGeometry(QRect(30, 50, 113, 21));
+        POInput->setGeometry(QRect(30, 50, 108, 24));
         POInput->setFont(font);
         label_2 = new QLabel(createFile);
         label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 30, 47, 13));
+        label_2->setGeometry(QRect(31, 31, 30, 16));
         label_2->setFont(font);
         openFolder = new QPushButton(createFile);
         openFolder->setObjectName(QString::fromUtf8("openFolder"));
@@ -962,6 +960,10 @@ public:
         label_5 = new QLabel(createFile);
         label_5->setObjectName(QString::fromUtf8("label_5"));
         label_5->setGeometry(QRect(590, 70, 76, 13));
+        label_14 = new QLabel(createFile);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setGeometry(QRect(31, 81, 59, 16));
+        label_14->setFont(font);
         tabWidget->addTab(createFile, QString());
         comboBox->raise();
         notesArea->raise();
@@ -980,6 +982,7 @@ public:
         reloadButton->raise();
         label_4->raise();
         label_5->raise();
+        label_14->raise();
         runArchiveCheck = new QWidget();
         runArchiveCheck->setObjectName(QString::fromUtf8("runArchiveCheck"));
         WAEX_logo_2 = new QLabel(runArchiveCheck);
@@ -1029,10 +1032,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        widget = new QWidget(runArchiveCheck);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(20, 130, 221, 265));
-        verticalLayout = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(runArchiveCheck);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(20, 130, 221, 265));
+        verticalLayout = new QVBoxLayout(layoutWidget);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1040,35 +1043,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(widget);
+        ACheck_TotalErrors = new QLabel(layoutWidget);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(widget);
+        label_8 = new QLabel(layoutWidget);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(widget);
+        ACheck_FilesAffected = new QLabel(layoutWidget);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(widget);
+        label_13 = new QLabel(layoutWidget);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(widget);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1076,13 +1079,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(widget);
+        label_12 = new QLabel(layoutWidget);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font2);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(widget);
+        archiveErrorList = new QListWidget(layoutWidget);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);
@@ -1120,7 +1123,6 @@ public:
     void retranslateUi(QMainWindow *MainWindow)
     {
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        actionSettings->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
         actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
         actionHelp_Center->setText(QCoreApplication::translate("MainWindow", "Help Center", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
@@ -1231,6 +1233,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
         label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         label_5->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
+        label_14->setText(QCoreApplication::translate("MainWindow", "Template:", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
