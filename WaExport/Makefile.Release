@@ -552,6 +552,9 @@ release\moc_mainwindow.cpp: mainwindow.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h \
 		release\moc_predefs.h \
 		C:\Qt\5.13.0\msvc2017_64\bin\moc.exe
 	C:\Qt\5.13.0\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include "D:/GIT/WA Exports/WAEX_File_Organizer/WaExport/release/moc_predefs.h" -IC:/Qt/5.13.0/msvc2017_64/mkspecs/win32-msvc -I"D:/GIT/WA Exports/WAEX_File_Organizer/WaExport" -IC:/Qt/5.13.0/msvc2017_64/include -IC:/Qt/5.13.0/msvc2017_64/include/QtWidgets -IC:/Qt/5.13.0/msvc2017_64/include/QtGui -IC:/Qt/5.13.0/msvc2017_64/include/QtANGLE -IC:/Qt/5.13.0/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" mainwindow.h -o release\moc_mainwindow.cpp
@@ -686,6 +689,8 @@ release\moc_settingd.cpp: settingd.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		aboutwindow.h \
 		release\moc_predefs.h \
 		C:\Qt\5.13.0\msvc2017_64\bin\moc.exe
 	C:\Qt\5.13.0\msvc2017_64\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include "D:/GIT/WA Exports/WAEX_File_Organizer/WaExport/release/moc_predefs.h" -IC:/Qt/5.13.0/msvc2017_64/mkspecs/win32-msvc -I"D:/GIT/WA Exports/WAEX_File_Organizer/WaExport" -IC:/Qt/5.13.0/msvc2017_64/include -IC:/Qt/5.13.0/msvc2017_64/include/QtWidgets -IC:/Qt/5.13.0/msvc2017_64/include/QtGui -IC:/Qt/5.13.0/msvc2017_64/include/QtANGLE -IC:/Qt/5.13.0/msvc2017_64/include/QtCore -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" settingd.h -o release\moc_settingd.cpp
@@ -962,6 +967,9 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QtGui \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QtGuiDepends \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QtCore \
@@ -1423,6 +1431,9 @@ release\main.obj: main.cpp mainwindow.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
@@ -1560,6 +1571,9 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QSettings \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qsettings.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QtCore \
@@ -1678,10 +1692,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qwaitcondition.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qwineventnotifier.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qxmlstream.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtcoreversion.h \
-		aboutwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
-		settingd.h
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtcoreversion.h
 
 release\folderio.obj: folderio.cpp folderio.h \
 		mainwindow.h \
@@ -1810,7 +1821,10 @@ release\folderio.obj: folderio.cpp folderio.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdatetime.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h
 
 release\archivecheck.obj: archivecheck.cpp archivecheck.h \
 		folderio.h \
@@ -1935,6 +1949,9 @@ release\archivecheck.obj: archivecheck.cpp archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
+		settingd.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
+		aboutwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdatetime.h \
 		dirent.h \
@@ -2139,6 +2156,7 @@ release\settingd.obj: settingd.cpp settingd.h \
 		dirent.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextCodec \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
+		aboutwindow.h \
 		ui_settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QSettings.h
 

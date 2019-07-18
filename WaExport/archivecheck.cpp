@@ -50,6 +50,7 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
     std::ofstream outfile(path);		//Creates the file
     if(outfile.fail())
     {
+        QMessageBox(QMessageBox::Information, "Error", "Error opening \"errors.csv\"\nplease make sure this file is closed.").exec();
         return false;
     }
     outfile<<"PO#,Missing files->"<<std::endl;//Sets the header on the csv file

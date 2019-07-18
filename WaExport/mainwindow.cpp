@@ -88,6 +88,8 @@ void MainWindow::loadSettings()
         ui->workingDirectory->setToolTip("The directory were files are saved.");
         ui->openFolder->setToolTip("Opens the PO# folder in File Explorer");
         ui->saveButton->setToolTip("Click save to create the index file and save notes. ");
+        ui->archiveCheckButton->setToolTip("Initiates Archive Check.");
+        ui->archiveErrorList->setToolTip("Files that were unable to be checked.\n This is usually due to a missing index file.\n Open the PO in Create File and hit Save\n to generate the index file. ");
 
     }
 }

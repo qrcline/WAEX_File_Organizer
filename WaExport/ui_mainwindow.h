@@ -150,7 +150,7 @@ public:
     QLabel *label_4;
     QLabel *label_5;
     QLabel *label_14;
-    QWidget *runArchiveCheck;
+    QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
     QLabel *label_3;
@@ -264,20 +264,21 @@ public:
 "\n"
 "\n"
 "QProgressBar{\n"
-"border-radius:0;\n"
+"border-radius:1;\n"
 "text-align:center;\n"
 "color:FF0000;;\n"
 ""
                         "background-color:transparent;\n"
 "border: 1px solid #0505f7;\n"
-"border-radius:7px;\n"
+"border-radius:5px;\n"
 "	font: 75 12pt \"Open Sans\";\n"
 "\n"
 "}\n"
 "\n"
 "QProgressBar::chunk{\n"
 "background-color:#2d89ef;\n"
-"width:20px;\n"
+"width:10px;\n"
+"\n"
 "}"));
         actionOpen = new QAction(MainWindow);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
@@ -983,56 +984,56 @@ public:
         label_4->raise();
         label_5->raise();
         label_14->raise();
-        runArchiveCheck = new QWidget();
-        runArchiveCheck->setObjectName(QString::fromUtf8("runArchiveCheck"));
-        WAEX_logo_2 = new QLabel(runArchiveCheck);
+        ArchiveCheck = new QWidget();
+        ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
+        WAEX_logo_2 = new QLabel(ArchiveCheck);
         WAEX_logo_2->setObjectName(QString::fromUtf8("WAEX_logo_2"));
         WAEX_logo_2->setGeometry(QRect(855, 5, 321, 111));
         WAEX_logo_2->setScaledContents(true);
-        workingDirectory = new QLabel(runArchiveCheck);
+        workingDirectory = new QLabel(ArchiveCheck);
         workingDirectory->setObjectName(QString::fromUtf8("workingDirectory"));
         workingDirectory->setGeometry(QRect(140, 10, 399, 16));
-        label_3 = new QLabel(runArchiveCheck);
+        label_3 = new QLabel(ArchiveCheck);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(30, 10, 111, 16));
         label_3->setFont(font);
-        archiveCheckButton = new QPushButton(runArchiveCheck);
+        archiveCheckButton = new QPushButton(ArchiveCheck);
         archiveCheckButton->setObjectName(QString::fromUtf8("archiveCheckButton"));
         archiveCheckButton->setGeometry(QRect(20, 60, 91, 21));
-        tableView = new QTableView(runArchiveCheck);
+        tableView = new QTableView(ArchiveCheck);
         tableView->setObjectName(QString::fromUtf8("tableView"));
         tableView->setGeometry(QRect(260, 130, 911, 401));
         tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->horizontalHeader()->setVisible(false);
         tableView->verticalHeader()->setVisible(false);
-        label_6 = new QLabel(runArchiveCheck);
+        label_6 = new QLabel(ArchiveCheck);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(66, 100, 71, 21));
         QFont font1;
         font1.setUnderline(true);
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
-        archivePBar = new QProgressBar(runArchiveCheck);
+        archivePBar = new QProgressBar(ArchiveCheck);
         archivePBar->setObjectName(QString::fromUtf8("archivePBar"));
         archivePBar->setGeometry(QRect(210, 60, 151, 23));
         archivePBar->setValue(0);
         archivePBar->setInvertedAppearance(false);
-        label_9 = new QLabel(runArchiveCheck);
+        label_9 = new QLabel(ArchiveCheck);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(270, 110, 61, 16));
         QFont font2;
         font2.setPointSize(12);
         label_9->setFont(font2);
-        label_10 = new QLabel(runArchiveCheck);
+        label_10 = new QLabel(ArchiveCheck);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(360, 110, 131, 21));
         label_10->setFont(font2);
-        archiveCheckButton_2 = new QPushButton(runArchiveCheck);
+        archiveCheckButton_2 = new QPushButton(ArchiveCheck);
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget = new QWidget(runArchiveCheck);
+        layoutWidget = new QWidget(ArchiveCheck);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
         layoutWidget->setGeometry(QRect(20, 130, 221, 265));
         verticalLayout = new QVBoxLayout(layoutWidget);
@@ -1090,7 +1091,7 @@ public:
 
         verticalLayout->addWidget(archiveErrorList);
 
-        tabWidget->addTab(runArchiveCheck, QString());
+        tabWidget->addTab(ArchiveCheck, QString());
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
@@ -1114,7 +1115,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1250,7 +1251,7 @@ public:
         label_13->setText(QCoreApplication::translate("MainWindow", "Total Files Checked:", nullptr));
         ACheck_TotalFilesChecked->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         label_12->setText(QCoreApplication::translate("MainWindow", "Error Files: ", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(runArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(ArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
         menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
         menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi

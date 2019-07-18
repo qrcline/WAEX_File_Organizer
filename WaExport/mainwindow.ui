@@ -103,19 +103,20 @@ QTabBar::tab:!selected {
 
 
 QProgressBar{
-border-radius:0;
+border-radius:1;
 text-align:center;
 color:FF0000;;
 background-color:transparent;
 border: 1px solid #0505f7;
-border-radius:7px;
+border-radius:5px;
 	font: 75 12pt &quot;Open Sans&quot;;
 
 }
 
 QProgressBar::chunk{
 background-color:#2d89ef;
-width:20px;
+width:10px;
+
 }</string>
   </property>
   <widget class="QWidget" name="centralWidget">
@@ -146,7 +147,7 @@ width:20px;
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1590,7 +1591,7 @@ width:20px;
      <zorder>label_5</zorder>
      <zorder>label_14</zorder>
     </widget>
-    <widget class="QWidget" name="runArchiveCheck">
+    <widget class="QWidget" name="ArchiveCheck">
      <attribute name="title">
       <string>Run Archive Check</string>
      </attribute>
