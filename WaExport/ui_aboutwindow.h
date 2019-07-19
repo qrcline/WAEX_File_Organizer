@@ -37,6 +37,13 @@ public:
         if (AboutWindow->objectName().isEmpty())
             AboutWindow->setObjectName(QString::fromUtf8("AboutWindow"));
         AboutWindow->resize(497, 269);
+        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(AboutWindow->sizePolicy().hasHeightForWidth());
+        AboutWindow->setSizePolicy(sizePolicy);
+        AboutWindow->setMinimumSize(QSize(497, 269));
+        AboutWindow->setMaximumSize(QSize(497, 269));
         AboutWindow->setStyleSheet(QString::fromUtf8("background-color: rgb(51, 51, 51);"));
         aboutLogo = new QLabel(AboutWindow);
         aboutLogo->setObjectName(QString::fromUtf8("aboutLogo"));

@@ -37,7 +37,9 @@ public:
     {
         if (HelpCenter->objectName().isEmpty())
             HelpCenter->setObjectName(QString::fromUtf8("HelpCenter"));
-        HelpCenter->resize(1056, 690);
+        HelpCenter->resize(1000, 700);
+        HelpCenter->setMinimumSize(QSize(1000, 700));
+        HelpCenter->setMaximumSize(QSize(1000, 700));
         HelpCenter->setStyleSheet(QString::fromUtf8(" QPushButton {\n"
 "color: #333;\n"
 "border: 1px solid #052488;\n"
@@ -167,7 +169,7 @@ public:
         HelpCenter->setCentralWidget(centralwidget);
         menubar = new QMenuBar(HelpCenter);
         menubar->setObjectName(QString::fromUtf8("menubar"));
-        menubar->setGeometry(QRect(0, 0, 1056, 20));
+        menubar->setGeometry(QRect(0, 0, 1000, 20));
         HelpCenter->setMenuBar(menubar);
         statusbar = new QStatusBar(HelpCenter);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));

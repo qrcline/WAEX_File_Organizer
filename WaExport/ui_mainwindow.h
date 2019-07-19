@@ -281,6 +281,7 @@ public:
 "width:10px;\n"
 "\n"
 "}"));
+        MainWindow->setIconSize(QSize(30, 30));
         actionOpen = new QAction(MainWindow);
         actionOpen->setObjectName(QString::fromUtf8("actionOpen"));
         actionHelp_Center = new QAction(MainWindow);

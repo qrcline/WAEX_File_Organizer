@@ -40,7 +40,9 @@ public:
     {
         if (settingD->objectName().isEmpty())
             settingD->setObjectName(QString::fromUtf8("settingD"));
-        settingD->resize(291, 206);
+        settingD->resize(300, 200);
+        settingD->setMinimumSize(QSize(300, 200));
+        settingD->setMaximumSize(QSize(300, 200));
         label = new QLabel(settingD);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(110, 10, 47, 20));
