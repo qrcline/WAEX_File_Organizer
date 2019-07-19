@@ -106,7 +106,11 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
             {
                 folderErrors++;
                  outfile <<po.toStdString()+","+missingFiles.toStdString()<<std::endl; //Writes the list to the file
-                 errorData.erase(errorData.end()-1);
+
+            }
+            else
+            {
+                errorData.erase(errorData.end()-1);//Deletes the PO# if there isn't any errors
             }
 
             tableModelPointer->setColumnCount(maxErrosForFile);

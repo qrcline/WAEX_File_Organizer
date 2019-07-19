@@ -69,8 +69,12 @@ QVariant myTableModel::data(const QModelIndex &index, int role) const
 
 void myTableModel::addCheckData(std::vector<QString>data)
 {
-    tableData.push_back(data);
-    emit layoutChanged();
+    if(data.size()>0)
+    {
+        tableData.push_back(data);
+        emit layoutChanged();
+    }
+
 }
 
 void myTableModel::resetTable()
