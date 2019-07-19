@@ -16,6 +16,12 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>1198</width>
+    <height>638</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
     <width>1198</width>
@@ -1680,14 +1686,15 @@ width:10px;
      <widget class="QLabel" name="label_6">
       <property name="geometry">
        <rect>
-        <x>66</x>
+        <x>70</x>
         <y>100</y>
-        <width>71</width>
+        <width>101</width>
         <height>21</height>
        </rect>
       </property>
       <property name="font">
        <font>
+        <pointsize>13</pointsize>
         <underline>true</underline>
        </font>
       </property>

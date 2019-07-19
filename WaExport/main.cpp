@@ -35,6 +35,7 @@ int main(int argc, char *argv[])
 {
     #pragma comment(lib, "shell32")
     QApplication a(argc, argv);
+    a.setWindowIcon(QIcon(":/pictures/smalleWAEXLOGO.png"));
     setStyleSheet(&a);
     MainWindow w;
     w.show();

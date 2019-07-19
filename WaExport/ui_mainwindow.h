@@ -187,6 +187,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
+        MainWindow->setMinimumSize(QSize(1198, 638));
         MainWindow->setMaximumSize(QSize(1198, 638));
         MainWindow->setAcceptDrops(false);
         MainWindow->setStyleSheet(QString::fromUtf8(" QPushButton {\n"
@@ -1009,8 +1010,9 @@ public:
         tableView->verticalHeader()->setVisible(false);
         label_6 = new QLabel(ArchiveCheck);
         label_6->setObjectName(QString::fromUtf8("label_6"));
-        label_6->setGeometry(QRect(66, 100, 71, 21));
+        label_6->setGeometry(QRect(70, 100, 101, 21));
         QFont font1;
+        font1.setPointSize(13);
         font1.setUnderline(true);
         label_6->setFont(font1);
         label_6->setAlignment(Qt::AlignCenter);
