@@ -10,6 +10,8 @@ AboutWindow::AboutWindow(QWidget *parent) :
     QPixmap img2=waexPix.scaled(160,190,Qt::KeepAspectRatio);
     ui->aboutLogo->setPixmap(img2);
    this->setWindowTitle("About");
+setWindowFlag(Qt::WindowContextHelpButtonHint,false);
+
 }
 
 AboutWindow::~AboutWindow()

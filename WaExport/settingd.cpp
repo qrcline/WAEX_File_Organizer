@@ -11,7 +11,7 @@ settingD::settingD(QWidget *parent,Ui::MainWindow* uiMain) :
     this->setWindowTitle("Settings");
     setup();
    mainUi=uiMain;
-
+setWindowFlag(Qt::WindowContextHelpButtonHint,false);
 }
 
 settingD::~settingD()

@@ -355,6 +355,10 @@ void MainWindow::openFolder(QString folderText,bool winEx)
                 ui->comboBox->setEnabled(true);
                 //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
                 fIo.createDirectory(mainDirectory+"/"+folderText);
+                ui->comboBox->setCurrentIndex(0);
+                ui->comboBox->setCurrentIndex(1);
+                ui->comboBox->setCurrentIndex(0);
+
             }
         }
     }
@@ -1172,6 +1176,8 @@ void MainWindow::on_actionAbout_triggered()
 {
     AboutWindow aboutWindow;
     aboutWindow.setModal(true);
+   // aboutWindow.setWindowFlag(aboutWindow.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+            ///setWindowFlag(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     aboutWindow.exec();
 
 
