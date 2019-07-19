@@ -189,6 +189,8 @@ private slots:
 
     void on_actionSettings_2_triggered();
 
+    void on_otherFiles_upload_clicked();
+
 private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;

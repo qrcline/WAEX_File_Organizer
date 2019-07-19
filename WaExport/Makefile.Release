@@ -526,79 +526,6 @@ release\moc_mainwindow.cpp: mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -612,6 +539,7 @@ release\moc_mainwindow.cpp: mainwindow.h \
 		mainwindow.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -737,79 +665,6 @@ release\moc_settingd.cpp: settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -821,6 +676,7 @@ release\moc_settingd.cpp: settingd.h \
 		folderio.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -974,28 +830,7 @@ release\aboutwindow.obj: aboutwindow.cpp aboutwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qfiledevice.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvector2d.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtouchdevice.h \
-		ui_aboutwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget
+		ui_aboutwindow.h
 
 release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -1107,78 +942,6 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		mainwindow.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -1191,6 +954,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		folderio.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -1207,6 +971,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QtCoreDepends \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractanimation.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstracteventdispatcher.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractstate.h \
@@ -1222,6 +987,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborarray.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborvalue.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborcommon.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\quuid.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcbormap.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborstream.h \
@@ -1229,6 +995,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcollator.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcommandlineoption.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcommandlineparser.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qconcatenatetablesproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcryptographichash.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdeadlinetimer.h \
@@ -1253,6 +1020,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qhistorystate.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qidentityproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qisenum.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsonarray.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsonvalue.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsondocument.h \
@@ -1319,9 +1087,14 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtcoreversion.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qabstracttextdocumentlayout.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextlayout.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qglyphrun.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qrawfont.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qfontdatabase.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qaccessible.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qaccessiblebridge.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qaccessibleobject.h \
@@ -1340,6 +1113,8 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qgenericmatrix.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qgenericplugin.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qgenericpluginfactory.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qiconengine.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qiconengineplugin.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qimageiohandler.h \
@@ -1411,6 +1186,7 @@ release\dragdrop.obj: dragdrop.cpp dragdrop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocumentwriter.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextlist.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtexttable.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtguiversion.h
 
 release\helpcenter.obj: helpcenter.cpp helpcenter.h \
@@ -1520,34 +1296,7 @@ release\helpcenter.obj: helpcenter.cpp helpcenter.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
-		ui_helpcenter.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextBrowser \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextbrowser.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget
+		ui_helpcenter.h
 
 release\main.obj: main.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMainWindow \
@@ -1657,79 +1406,6 @@ release\main.obj: main.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -1742,6 +1418,7 @@ release\main.obj: main.cpp mainwindow.h \
 		folderio.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -1752,6 +1429,13 @@ release\main.obj: main.cpp mainwindow.h \
 		settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
 		aboutwindow.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qsettings.h
 
 release\mainwindow.obj: mainwindow.cpp mainwindow.h \
@@ -1862,79 +1546,6 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -1947,6 +1558,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		folderio.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -1963,6 +1575,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QtCoreDepends \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractanimation.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstracteventdispatcher.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractnativeeventfilter.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractstate.h \
@@ -1978,6 +1591,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborarray.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborvalue.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborcommon.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\quuid.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcbormap.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcborstream.h \
@@ -1985,6 +1599,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcollator.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcommandlineoption.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcommandlineparser.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qconcatenatetablesproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcryptographichash.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdeadlinetimer.h \
@@ -2009,6 +1624,7 @@ release\mainwindow.obj: mainwindow.cpp mainwindow.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qhistorystate.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qidentityproxymodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qisenum.h \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsonarray.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsonvalue.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qjsondocument.h \
@@ -2182,79 +1798,6 @@ release\folderio.obj: folderio.cpp folderio.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -2266,6 +1809,7 @@ release\folderio.obj: folderio.cpp folderio.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextStream \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -2387,79 +1931,6 @@ release\archivecheck.obj: archivecheck.cpp archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -2471,6 +1942,7 @@ release\archivecheck.obj: archivecheck.cpp archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QTextStream \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QDialog \
@@ -2660,79 +2132,6 @@ release\settingd.obj: settingd.cpp settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qicon.h \
 		ui_mainwindow.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QVariant \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\QIcon \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QAction \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qaction.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qactiongroup.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QApplication \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qcoreapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qeventloop.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qdesktopwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qguiapplication.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qinputmethod.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCheckBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcheckbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QComboBox \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcombobox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemdelegate.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyleoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractspinbox.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qvalidator.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qregularexpression.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractslider.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstyle.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtabbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qrubberband.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qframe.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QCommandLinkButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qcommandlinkbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qpushbutton.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFormLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qformlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlayoutitem.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qboxlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qgridlayout.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QGridLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHeaderView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qheaderview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractitemview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qitemselectionmodel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLabel \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlabel.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QLineEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlineedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextcursor.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextformat.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qpen.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextoption.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QListWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistwidget.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qlistview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenu \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenu.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QMenuBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qmenubar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QProgressBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qprogressbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QPushButton \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QStatusBar \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qstatusbar.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTabWidget \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTableView \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtableview.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QTextEdit \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtGui\qtextdocument.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QVBoxLayout \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QWidget \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QFileDialog \
 		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\qfiledialog.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qdir.h \
@@ -2744,6 +2143,7 @@ release\settingd.obj: settingd.cpp settingd.h \
 		folderio.h \
 		mytablemodel.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QAbstractTableModel \
+		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qabstractitemmodel.h \
 		helpcenter.h \
 		archivecheck.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QDateTime \
@@ -2753,7 +2153,6 @@ release\settingd.obj: settingd.cpp settingd.h \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\qtextcodec.h \
 		aboutwindow.h \
 		ui_settingd.h \
-		C:\Qt\5.13.0\msvc2017_64\include\QtWidgets\QHBoxLayout \
 		C:\Qt\5.13.0\msvc2017_64\include\QtCore\QSettings.h
 
 release\qrc_resources.obj: release\qrc_resources.cpp 

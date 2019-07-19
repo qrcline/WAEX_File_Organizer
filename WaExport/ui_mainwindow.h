@@ -96,51 +96,53 @@ public:
     QPushButton *mexP_Spreadsheets_upload;
     QWidget *gridLayoutWidget_2;
     QGridLayout *gridLayout_2;
-    QLabel *Payables_ShipperWarehouse_notice;
-    QCheckBox *payables_TruckFreight;
-    QLabel *ExpInvima_notice;
+    QPushButton *CustomerPO_upload;
+    QPushButton *HarrisEmails_upload;
+    QCheckBox *Payables_Harris;
     QCheckBox *ExpInvima;
-    QLabel *CertOrigin_notice;
-    QPushButton *Payables_Harris_upload;
-    QCheckBox *HarrisEmails;
-    QCheckBox *Harris;
-    QLabel *Payables_Harris_notice;
+    QPushButton *CaftaNafta_upload;
+    QPushButton *OtherEmails_upload;
+    QLabel *ListadeEmpaque_notice;
+    QPushButton *Payables_Transloader_upload;
+    QPushButton *Payables_ShipperWarehouse_upload;
     QLabel *Payables_Transloader_notice;
+    QCheckBox *Payables_Transloader;
     QPushButton *ExpInvima_Upload;
     QLabel *CustomerPO_notice;
-    QLabel *OtherEmails_notice;
     QCheckBox *ListadeEmpaque;
-    QCheckBox *CaftaNafta;
-    QCheckBox *FacturaComercial;
-    QPushButton *Payables_Transloader_upload;
-    QCheckBox *CustomerPO;
-    QCheckBox *Transloader;
-    QPushButton *CaftaNafta_upload;
-    QLabel *HarrisEmails_notice;
-    QLabel *FacturaComercial_notice;
-    QLabel *ListadeEmpaque_notice;
-    QPushButton *ListadeEmpaque_upload;
-    QCheckBox *FreightContract;
-    QLabel *Harris_notice;
-    QPushButton *FreightContract_upload;
+    QCheckBox *OtherEmails;
     QLabel *CaftaNafta_notice;
-    QLabel *FreightContract_notice;
+    QLabel *ExpInvima_notice;
+    QPushButton *Transloader_upload;
     QPushButton *Harris_upload;
-    QCheckBox *Payables_Harris;
-    QCheckBox *Payables_ShipperWarehouse;
+    QCheckBox *Transloader;
+    QLabel *FacturaComercial_notice;
+    QCheckBox *FreightContract;
+    QCheckBox *payables_TruckFreight;
+    QLabel *Harris_notice;
+    QCheckBox *FacturaComercial;
+    QPushButton *CertOrigin_upload;
     QPushButton *payables_TruckFreight_upload;
-    QCheckBox *Payables_Transloader;
+    QLabel *FreightContract_notice;
     QPushButton *FacturaComercial_upload;
     QLabel *Transloader_notice;
-    QPushButton *CertOrigin_upload;
-    QPushButton *HarrisEmails_upload;
-    QPushButton *Transloader_upload;
-    QPushButton *CustomerPO_upload;
-    QCheckBox *CertOrigin;
-    QPushButton *OtherEmails_upload;
+    QCheckBox *CaftaNafta;
+    QPushButton *ListadeEmpaque_upload;
+    QLabel *HarrisEmails_notice;
+    QLabel *OtherEmails_notice;
+    QCheckBox *HarrisEmails;
+    QCheckBox *Harris;
+    QCheckBox *CustomerPO;
+    QLabel *Payables_Harris_notice;
+    QLabel *CertOrigin_notice;
     QLabel *payables_TruckFreight_notice;
-    QPushButton *Payables_ShipperWarehouse_upload;
-    QCheckBox *OtherEmails;
+    QLabel *Payables_ShipperWarehouse_notice;
+    QCheckBox *CertOrigin;
+    QPushButton *Payables_Harris_upload;
+    QPushButton *FreightContract_upload;
+    QCheckBox *Payables_ShipperWarehouse;
+    QPushButton *otherFiles_upload;
+    QLabel *label_15;
     QCommandLinkButton *reloadButton;
     QProgressBar *progressBar_save_createFile;
     QLabel *label_11;
@@ -613,30 +615,34 @@ public:
 
         gridLayoutWidget_2 = new QWidget(createFile);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(310, 90, 361, 461));
+        gridLayoutWidget_2->setGeometry(QRect(310, 70, 361, 461));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
         gridLayout_2->setObjectName(QString::fromUtf8("gridLayout_2"));
         gridLayout_2->setVerticalSpacing(0);
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
-        Payables_ShipperWarehouse_notice = new QLabel(gridLayoutWidget_2);
-        Payables_ShipperWarehouse_notice->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse_notice"));
+        CustomerPO_upload = new QPushButton(gridLayoutWidget_2);
+        CustomerPO_upload->setObjectName(QString::fromUtf8("CustomerPO_upload"));
+        sizePolicy2.setHeightForWidth(CustomerPO_upload->sizePolicy().hasHeightForWidth());
+        CustomerPO_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(Payables_ShipperWarehouse_notice, 19, 2, 1, 1);
+        gridLayout_2->addWidget(CustomerPO_upload, 9, 1, 1, 1);
 
-        payables_TruckFreight = new QCheckBox(gridLayoutWidget_2);
-        payables_TruckFreight->setObjectName(QString::fromUtf8("payables_TruckFreight"));
-        payables_TruckFreight->setFont(font);
-        payables_TruckFreight->setCursor(QCursor(Qt::PointingHandCursor));
-        payables_TruckFreight->setChecked(true);
+        HarrisEmails_upload = new QPushButton(gridLayoutWidget_2);
+        HarrisEmails_upload->setObjectName(QString::fromUtf8("HarrisEmails_upload"));
+        sizePolicy2.setHeightForWidth(HarrisEmails_upload->sizePolicy().hasHeightForWidth());
+        HarrisEmails_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(payables_TruckFreight, 17, 0, 1, 1);
+        gridLayout_2->addWidget(HarrisEmails_upload, 8, 1, 1, 1);
 
-        ExpInvima_notice = new QLabel(gridLayoutWidget_2);
-        ExpInvima_notice->setObjectName(QString::fromUtf8("ExpInvima_notice"));
+        Payables_Harris = new QCheckBox(gridLayoutWidget_2);
+        Payables_Harris->setObjectName(QString::fromUtf8("Payables_Harris"));
+        Payables_Harris->setFont(font);
+        Payables_Harris->setCursor(QCursor(Qt::PointingHandCursor));
+        Payables_Harris->setChecked(true);
 
-        gridLayout_2->addWidget(ExpInvima_notice, 0, 2, 1, 1);
+        gridLayout_2->addWidget(Payables_Harris, 18, 0, 1, 1);
 
         ExpInvima = new QCheckBox(gridLayoutWidget_2);
         ExpInvima->setObjectName(QString::fromUtf8("ExpInvima"));
@@ -646,18 +652,204 @@ public:
 
         gridLayout_2->addWidget(ExpInvima, 0, 0, 1, 1);
 
-        CertOrigin_notice = new QLabel(gridLayoutWidget_2);
-        CertOrigin_notice->setObjectName(QString::fromUtf8("CertOrigin_notice"));
+        CaftaNafta_upload = new QPushButton(gridLayoutWidget_2);
+        CaftaNafta_upload->setObjectName(QString::fromUtf8("CaftaNafta_upload"));
+        sizePolicy2.setHeightForWidth(CaftaNafta_upload->sizePolicy().hasHeightForWidth());
+        CaftaNafta_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(CertOrigin_notice, 3, 2, 1, 1);
+        gridLayout_2->addWidget(CaftaNafta_upload, 4, 1, 1, 1);
 
-        Payables_Harris_upload = new QPushButton(gridLayoutWidget_2);
-        Payables_Harris_upload->setObjectName(QString::fromUtf8("Payables_Harris_upload"));
-        Payables_Harris_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_Harris_upload->sizePolicy().hasHeightForWidth());
-        Payables_Harris_upload->setSizePolicy(sizePolicy2);
+        OtherEmails_upload = new QPushButton(gridLayoutWidget_2);
+        OtherEmails_upload->setObjectName(QString::fromUtf8("OtherEmails_upload"));
+        sizePolicy2.setHeightForWidth(OtherEmails_upload->sizePolicy().hasHeightForWidth());
+        OtherEmails_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(Payables_Harris_upload, 18, 1, 1, 1);
+        gridLayout_2->addWidget(OtherEmails_upload, 10, 1, 1, 1);
+
+        ListadeEmpaque_notice = new QLabel(gridLayoutWidget_2);
+        ListadeEmpaque_notice->setObjectName(QString::fromUtf8("ListadeEmpaque_notice"));
+
+        gridLayout_2->addWidget(ListadeEmpaque_notice, 2, 2, 1, 1);
+
+        Payables_Transloader_upload = new QPushButton(gridLayoutWidget_2);
+        Payables_Transloader_upload->setObjectName(QString::fromUtf8("Payables_Transloader_upload"));
+        Payables_Transloader_upload->setEnabled(true);
+        sizePolicy2.setHeightForWidth(Payables_Transloader_upload->sizePolicy().hasHeightForWidth());
+        Payables_Transloader_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(Payables_Transloader_upload, 16, 1, 1, 1);
+
+        Payables_ShipperWarehouse_upload = new QPushButton(gridLayoutWidget_2);
+        Payables_ShipperWarehouse_upload->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse_upload"));
+        Payables_ShipperWarehouse_upload->setEnabled(true);
+        sizePolicy2.setHeightForWidth(Payables_ShipperWarehouse_upload->sizePolicy().hasHeightForWidth());
+        Payables_ShipperWarehouse_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(Payables_ShipperWarehouse_upload, 19, 1, 1, 1);
+
+        Payables_Transloader_notice = new QLabel(gridLayoutWidget_2);
+        Payables_Transloader_notice->setObjectName(QString::fromUtf8("Payables_Transloader_notice"));
+
+        gridLayout_2->addWidget(Payables_Transloader_notice, 16, 2, 1, 1);
+
+        Payables_Transloader = new QCheckBox(gridLayoutWidget_2);
+        Payables_Transloader->setObjectName(QString::fromUtf8("Payables_Transloader"));
+        Payables_Transloader->setFont(font);
+        Payables_Transloader->setCursor(QCursor(Qt::PointingHandCursor));
+        Payables_Transloader->setChecked(true);
+
+        gridLayout_2->addWidget(Payables_Transloader, 16, 0, 1, 1);
+
+        ExpInvima_Upload = new QPushButton(gridLayoutWidget_2);
+        ExpInvima_Upload->setObjectName(QString::fromUtf8("ExpInvima_Upload"));
+        sizePolicy2.setHeightForWidth(ExpInvima_Upload->sizePolicy().hasHeightForWidth());
+        ExpInvima_Upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(ExpInvima_Upload, 0, 1, 1, 1);
+
+        CustomerPO_notice = new QLabel(gridLayoutWidget_2);
+        CustomerPO_notice->setObjectName(QString::fromUtf8("CustomerPO_notice"));
+
+        gridLayout_2->addWidget(CustomerPO_notice, 9, 2, 1, 1);
+
+        ListadeEmpaque = new QCheckBox(gridLayoutWidget_2);
+        ListadeEmpaque->setObjectName(QString::fromUtf8("ListadeEmpaque"));
+        ListadeEmpaque->setFont(font);
+        ListadeEmpaque->setCursor(QCursor(Qt::PointingHandCursor));
+        ListadeEmpaque->setChecked(true);
+
+        gridLayout_2->addWidget(ListadeEmpaque, 2, 0, 1, 1);
+
+        OtherEmails = new QCheckBox(gridLayoutWidget_2);
+        OtherEmails->setObjectName(QString::fromUtf8("OtherEmails"));
+        OtherEmails->setFont(font);
+        OtherEmails->setCursor(QCursor(Qt::PointingHandCursor));
+        OtherEmails->setChecked(true);
+
+        gridLayout_2->addWidget(OtherEmails, 10, 0, 1, 1);
+
+        CaftaNafta_notice = new QLabel(gridLayoutWidget_2);
+        CaftaNafta_notice->setObjectName(QString::fromUtf8("CaftaNafta_notice"));
+
+        gridLayout_2->addWidget(CaftaNafta_notice, 4, 2, 1, 1);
+
+        ExpInvima_notice = new QLabel(gridLayoutWidget_2);
+        ExpInvima_notice->setObjectName(QString::fromUtf8("ExpInvima_notice"));
+
+        gridLayout_2->addWidget(ExpInvima_notice, 0, 2, 1, 1);
+
+        Transloader_upload = new QPushButton(gridLayoutWidget_2);
+        Transloader_upload->setObjectName(QString::fromUtf8("Transloader_upload"));
+        sizePolicy2.setHeightForWidth(Transloader_upload->sizePolicy().hasHeightForWidth());
+        Transloader_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(Transloader_upload, 6, 1, 1, 1);
+
+        Harris_upload = new QPushButton(gridLayoutWidget_2);
+        Harris_upload->setObjectName(QString::fromUtf8("Harris_upload"));
+        sizePolicy2.setHeightForWidth(Harris_upload->sizePolicy().hasHeightForWidth());
+        Harris_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(Harris_upload, 7, 1, 1, 1);
+
+        Transloader = new QCheckBox(gridLayoutWidget_2);
+        Transloader->setObjectName(QString::fromUtf8("Transloader"));
+        Transloader->setFont(font);
+        Transloader->setCursor(QCursor(Qt::PointingHandCursor));
+        Transloader->setChecked(true);
+
+        gridLayout_2->addWidget(Transloader, 6, 0, 1, 1);
+
+        FacturaComercial_notice = new QLabel(gridLayoutWidget_2);
+        FacturaComercial_notice->setObjectName(QString::fromUtf8("FacturaComercial_notice"));
+
+        gridLayout_2->addWidget(FacturaComercial_notice, 1, 2, 1, 1);
+
+        FreightContract = new QCheckBox(gridLayoutWidget_2);
+        FreightContract->setObjectName(QString::fromUtf8("FreightContract"));
+        FreightContract->setFont(font);
+        FreightContract->setCursor(QCursor(Qt::PointingHandCursor));
+        FreightContract->setChecked(true);
+
+        gridLayout_2->addWidget(FreightContract, 5, 0, 1, 1);
+
+        payables_TruckFreight = new QCheckBox(gridLayoutWidget_2);
+        payables_TruckFreight->setObjectName(QString::fromUtf8("payables_TruckFreight"));
+        payables_TruckFreight->setFont(font);
+        payables_TruckFreight->setCursor(QCursor(Qt::PointingHandCursor));
+        payables_TruckFreight->setChecked(true);
+
+        gridLayout_2->addWidget(payables_TruckFreight, 17, 0, 1, 1);
+
+        Harris_notice = new QLabel(gridLayoutWidget_2);
+        Harris_notice->setObjectName(QString::fromUtf8("Harris_notice"));
+
+        gridLayout_2->addWidget(Harris_notice, 7, 2, 1, 1);
+
+        FacturaComercial = new QCheckBox(gridLayoutWidget_2);
+        FacturaComercial->setObjectName(QString::fromUtf8("FacturaComercial"));
+        FacturaComercial->setFont(font);
+        FacturaComercial->setCursor(QCursor(Qt::PointingHandCursor));
+        FacturaComercial->setChecked(true);
+
+        gridLayout_2->addWidget(FacturaComercial, 1, 0, 1, 1);
+
+        CertOrigin_upload = new QPushButton(gridLayoutWidget_2);
+        CertOrigin_upload->setObjectName(QString::fromUtf8("CertOrigin_upload"));
+        sizePolicy2.setHeightForWidth(CertOrigin_upload->sizePolicy().hasHeightForWidth());
+        CertOrigin_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(CertOrigin_upload, 3, 1, 1, 1);
+
+        payables_TruckFreight_upload = new QPushButton(gridLayoutWidget_2);
+        payables_TruckFreight_upload->setObjectName(QString::fromUtf8("payables_TruckFreight_upload"));
+        payables_TruckFreight_upload->setEnabled(true);
+        sizePolicy2.setHeightForWidth(payables_TruckFreight_upload->sizePolicy().hasHeightForWidth());
+        payables_TruckFreight_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(payables_TruckFreight_upload, 17, 1, 1, 1);
+
+        FreightContract_notice = new QLabel(gridLayoutWidget_2);
+        FreightContract_notice->setObjectName(QString::fromUtf8("FreightContract_notice"));
+
+        gridLayout_2->addWidget(FreightContract_notice, 5, 2, 1, 1);
+
+        FacturaComercial_upload = new QPushButton(gridLayoutWidget_2);
+        FacturaComercial_upload->setObjectName(QString::fromUtf8("FacturaComercial_upload"));
+        sizePolicy2.setHeightForWidth(FacturaComercial_upload->sizePolicy().hasHeightForWidth());
+        FacturaComercial_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(FacturaComercial_upload, 1, 1, 1, 1);
+
+        Transloader_notice = new QLabel(gridLayoutWidget_2);
+        Transloader_notice->setObjectName(QString::fromUtf8("Transloader_notice"));
+
+        gridLayout_2->addWidget(Transloader_notice, 6, 2, 1, 1);
+
+        CaftaNafta = new QCheckBox(gridLayoutWidget_2);
+        CaftaNafta->setObjectName(QString::fromUtf8("CaftaNafta"));
+        CaftaNafta->setFont(font);
+        CaftaNafta->setCursor(QCursor(Qt::PointingHandCursor));
+        CaftaNafta->setChecked(true);
+
+        gridLayout_2->addWidget(CaftaNafta, 4, 0, 1, 1);
+
+        ListadeEmpaque_upload = new QPushButton(gridLayoutWidget_2);
+        ListadeEmpaque_upload->setObjectName(QString::fromUtf8("ListadeEmpaque_upload"));
+        sizePolicy2.setHeightForWidth(ListadeEmpaque_upload->sizePolicy().hasHeightForWidth());
+        ListadeEmpaque_upload->setSizePolicy(sizePolicy2);
+
+        gridLayout_2->addWidget(ListadeEmpaque_upload, 2, 1, 1, 1);
+
+        HarrisEmails_notice = new QLabel(gridLayoutWidget_2);
+        HarrisEmails_notice->setObjectName(QString::fromUtf8("HarrisEmails_notice"));
+
+        gridLayout_2->addWidget(HarrisEmails_notice, 8, 2, 1, 1);
+
+        OtherEmails_notice = new QLabel(gridLayoutWidget_2);
+        OtherEmails_notice->setObjectName(QString::fromUtf8("OtherEmails_notice"));
+
+        gridLayout_2->addWidget(OtherEmails_notice, 10, 2, 1, 1);
 
         HarrisEmails = new QCheckBox(gridLayoutWidget_2);
         HarrisEmails->setObjectName(QString::fromUtf8("HarrisEmails"));
@@ -675,65 +867,6 @@ public:
 
         gridLayout_2->addWidget(Harris, 7, 0, 1, 1);
 
-        Payables_Harris_notice = new QLabel(gridLayoutWidget_2);
-        Payables_Harris_notice->setObjectName(QString::fromUtf8("Payables_Harris_notice"));
-
-        gridLayout_2->addWidget(Payables_Harris_notice, 18, 2, 1, 1);
-
-        Payables_Transloader_notice = new QLabel(gridLayoutWidget_2);
-        Payables_Transloader_notice->setObjectName(QString::fromUtf8("Payables_Transloader_notice"));
-
-        gridLayout_2->addWidget(Payables_Transloader_notice, 16, 2, 1, 1);
-
-        ExpInvima_Upload = new QPushButton(gridLayoutWidget_2);
-        ExpInvima_Upload->setObjectName(QString::fromUtf8("ExpInvima_Upload"));
-        sizePolicy2.setHeightForWidth(ExpInvima_Upload->sizePolicy().hasHeightForWidth());
-        ExpInvima_Upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(ExpInvima_Upload, 0, 1, 1, 1);
-
-        CustomerPO_notice = new QLabel(gridLayoutWidget_2);
-        CustomerPO_notice->setObjectName(QString::fromUtf8("CustomerPO_notice"));
-
-        gridLayout_2->addWidget(CustomerPO_notice, 9, 2, 1, 1);
-
-        OtherEmails_notice = new QLabel(gridLayoutWidget_2);
-        OtherEmails_notice->setObjectName(QString::fromUtf8("OtherEmails_notice"));
-
-        gridLayout_2->addWidget(OtherEmails_notice, 10, 2, 1, 1);
-
-        ListadeEmpaque = new QCheckBox(gridLayoutWidget_2);
-        ListadeEmpaque->setObjectName(QString::fromUtf8("ListadeEmpaque"));
-        ListadeEmpaque->setFont(font);
-        ListadeEmpaque->setCursor(QCursor(Qt::PointingHandCursor));
-        ListadeEmpaque->setChecked(true);
-
-        gridLayout_2->addWidget(ListadeEmpaque, 2, 0, 1, 1);
-
-        CaftaNafta = new QCheckBox(gridLayoutWidget_2);
-        CaftaNafta->setObjectName(QString::fromUtf8("CaftaNafta"));
-        CaftaNafta->setFont(font);
-        CaftaNafta->setCursor(QCursor(Qt::PointingHandCursor));
-        CaftaNafta->setChecked(true);
-
-        gridLayout_2->addWidget(CaftaNafta, 4, 0, 1, 1);
-
-        FacturaComercial = new QCheckBox(gridLayoutWidget_2);
-        FacturaComercial->setObjectName(QString::fromUtf8("FacturaComercial"));
-        FacturaComercial->setFont(font);
-        FacturaComercial->setCursor(QCursor(Qt::PointingHandCursor));
-        FacturaComercial->setChecked(true);
-
-        gridLayout_2->addWidget(FacturaComercial, 1, 0, 1, 1);
-
-        Payables_Transloader_upload = new QPushButton(gridLayoutWidget_2);
-        Payables_Transloader_upload->setObjectName(QString::fromUtf8("Payables_Transloader_upload"));
-        Payables_Transloader_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_Transloader_upload->sizePolicy().hasHeightForWidth());
-        Payables_Transloader_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(Payables_Transloader_upload, 16, 1, 1, 1);
-
         CustomerPO = new QCheckBox(gridLayoutWidget_2);
         CustomerPO->setObjectName(QString::fromUtf8("CustomerPO"));
         CustomerPO->setFont(font);
@@ -742,151 +875,25 @@ public:
 
         gridLayout_2->addWidget(CustomerPO, 9, 0, 1, 1);
 
-        Transloader = new QCheckBox(gridLayoutWidget_2);
-        Transloader->setObjectName(QString::fromUtf8("Transloader"));
-        Transloader->setFont(font);
-        Transloader->setCursor(QCursor(Qt::PointingHandCursor));
-        Transloader->setChecked(true);
+        Payables_Harris_notice = new QLabel(gridLayoutWidget_2);
+        Payables_Harris_notice->setObjectName(QString::fromUtf8("Payables_Harris_notice"));
 
-        gridLayout_2->addWidget(Transloader, 6, 0, 1, 1);
+        gridLayout_2->addWidget(Payables_Harris_notice, 18, 2, 1, 1);
 
-        CaftaNafta_upload = new QPushButton(gridLayoutWidget_2);
-        CaftaNafta_upload->setObjectName(QString::fromUtf8("CaftaNafta_upload"));
-        sizePolicy2.setHeightForWidth(CaftaNafta_upload->sizePolicy().hasHeightForWidth());
-        CaftaNafta_upload->setSizePolicy(sizePolicy2);
+        CertOrigin_notice = new QLabel(gridLayoutWidget_2);
+        CertOrigin_notice->setObjectName(QString::fromUtf8("CertOrigin_notice"));
 
-        gridLayout_2->addWidget(CaftaNafta_upload, 4, 1, 1, 1);
+        gridLayout_2->addWidget(CertOrigin_notice, 3, 2, 1, 1);
 
-        HarrisEmails_notice = new QLabel(gridLayoutWidget_2);
-        HarrisEmails_notice->setObjectName(QString::fromUtf8("HarrisEmails_notice"));
+        payables_TruckFreight_notice = new QLabel(gridLayoutWidget_2);
+        payables_TruckFreight_notice->setObjectName(QString::fromUtf8("payables_TruckFreight_notice"));
 
-        gridLayout_2->addWidget(HarrisEmails_notice, 8, 2, 1, 1);
+        gridLayout_2->addWidget(payables_TruckFreight_notice, 17, 2, 1, 1);
 
-        FacturaComercial_notice = new QLabel(gridLayoutWidget_2);
-        FacturaComercial_notice->setObjectName(QString::fromUtf8("FacturaComercial_notice"));
+        Payables_ShipperWarehouse_notice = new QLabel(gridLayoutWidget_2);
+        Payables_ShipperWarehouse_notice->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse_notice"));
 
-        gridLayout_2->addWidget(FacturaComercial_notice, 1, 2, 1, 1);
-
-        ListadeEmpaque_notice = new QLabel(gridLayoutWidget_2);
-        ListadeEmpaque_notice->setObjectName(QString::fromUtf8("ListadeEmpaque_notice"));
-
-        gridLayout_2->addWidget(ListadeEmpaque_notice, 2, 2, 1, 1);
-
-        ListadeEmpaque_upload = new QPushButton(gridLayoutWidget_2);
-        ListadeEmpaque_upload->setObjectName(QString::fromUtf8("ListadeEmpaque_upload"));
-        sizePolicy2.setHeightForWidth(ListadeEmpaque_upload->sizePolicy().hasHeightForWidth());
-        ListadeEmpaque_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(ListadeEmpaque_upload, 2, 1, 1, 1);
-
-        FreightContract = new QCheckBox(gridLayoutWidget_2);
-        FreightContract->setObjectName(QString::fromUtf8("FreightContract"));
-        FreightContract->setFont(font);
-        FreightContract->setCursor(QCursor(Qt::PointingHandCursor));
-        FreightContract->setChecked(true);
-
-        gridLayout_2->addWidget(FreightContract, 5, 0, 1, 1);
-
-        Harris_notice = new QLabel(gridLayoutWidget_2);
-        Harris_notice->setObjectName(QString::fromUtf8("Harris_notice"));
-
-        gridLayout_2->addWidget(Harris_notice, 7, 2, 1, 1);
-
-        FreightContract_upload = new QPushButton(gridLayoutWidget_2);
-        FreightContract_upload->setObjectName(QString::fromUtf8("FreightContract_upload"));
-        sizePolicy2.setHeightForWidth(FreightContract_upload->sizePolicy().hasHeightForWidth());
-        FreightContract_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(FreightContract_upload, 5, 1, 1, 1);
-
-        CaftaNafta_notice = new QLabel(gridLayoutWidget_2);
-        CaftaNafta_notice->setObjectName(QString::fromUtf8("CaftaNafta_notice"));
-
-        gridLayout_2->addWidget(CaftaNafta_notice, 4, 2, 1, 1);
-
-        FreightContract_notice = new QLabel(gridLayoutWidget_2);
-        FreightContract_notice->setObjectName(QString::fromUtf8("FreightContract_notice"));
-
-        gridLayout_2->addWidget(FreightContract_notice, 5, 2, 1, 1);
-
-        Harris_upload = new QPushButton(gridLayoutWidget_2);
-        Harris_upload->setObjectName(QString::fromUtf8("Harris_upload"));
-        sizePolicy2.setHeightForWidth(Harris_upload->sizePolicy().hasHeightForWidth());
-        Harris_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(Harris_upload, 7, 1, 1, 1);
-
-        Payables_Harris = new QCheckBox(gridLayoutWidget_2);
-        Payables_Harris->setObjectName(QString::fromUtf8("Payables_Harris"));
-        Payables_Harris->setFont(font);
-        Payables_Harris->setCursor(QCursor(Qt::PointingHandCursor));
-        Payables_Harris->setChecked(true);
-
-        gridLayout_2->addWidget(Payables_Harris, 18, 0, 1, 1);
-
-        Payables_ShipperWarehouse = new QCheckBox(gridLayoutWidget_2);
-        Payables_ShipperWarehouse->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse"));
-        Payables_ShipperWarehouse->setFont(font);
-        Payables_ShipperWarehouse->setCursor(QCursor(Qt::PointingHandCursor));
-        Payables_ShipperWarehouse->setChecked(true);
-
-        gridLayout_2->addWidget(Payables_ShipperWarehouse, 19, 0, 1, 1);
-
-        payables_TruckFreight_upload = new QPushButton(gridLayoutWidget_2);
-        payables_TruckFreight_upload->setObjectName(QString::fromUtf8("payables_TruckFreight_upload"));
-        payables_TruckFreight_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(payables_TruckFreight_upload->sizePolicy().hasHeightForWidth());
-        payables_TruckFreight_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(payables_TruckFreight_upload, 17, 1, 1, 1);
-
-        Payables_Transloader = new QCheckBox(gridLayoutWidget_2);
-        Payables_Transloader->setObjectName(QString::fromUtf8("Payables_Transloader"));
-        Payables_Transloader->setFont(font);
-        Payables_Transloader->setCursor(QCursor(Qt::PointingHandCursor));
-        Payables_Transloader->setChecked(true);
-
-        gridLayout_2->addWidget(Payables_Transloader, 16, 0, 1, 1);
-
-        FacturaComercial_upload = new QPushButton(gridLayoutWidget_2);
-        FacturaComercial_upload->setObjectName(QString::fromUtf8("FacturaComercial_upload"));
-        sizePolicy2.setHeightForWidth(FacturaComercial_upload->sizePolicy().hasHeightForWidth());
-        FacturaComercial_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(FacturaComercial_upload, 1, 1, 1, 1);
-
-        Transloader_notice = new QLabel(gridLayoutWidget_2);
-        Transloader_notice->setObjectName(QString::fromUtf8("Transloader_notice"));
-
-        gridLayout_2->addWidget(Transloader_notice, 6, 2, 1, 1);
-
-        CertOrigin_upload = new QPushButton(gridLayoutWidget_2);
-        CertOrigin_upload->setObjectName(QString::fromUtf8("CertOrigin_upload"));
-        sizePolicy2.setHeightForWidth(CertOrigin_upload->sizePolicy().hasHeightForWidth());
-        CertOrigin_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(CertOrigin_upload, 3, 1, 1, 1);
-
-        HarrisEmails_upload = new QPushButton(gridLayoutWidget_2);
-        HarrisEmails_upload->setObjectName(QString::fromUtf8("HarrisEmails_upload"));
-        sizePolicy2.setHeightForWidth(HarrisEmails_upload->sizePolicy().hasHeightForWidth());
-        HarrisEmails_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(HarrisEmails_upload, 8, 1, 1, 1);
-
-        Transloader_upload = new QPushButton(gridLayoutWidget_2);
-        Transloader_upload->setObjectName(QString::fromUtf8("Transloader_upload"));
-        sizePolicy2.setHeightForWidth(Transloader_upload->sizePolicy().hasHeightForWidth());
-        Transloader_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(Transloader_upload, 6, 1, 1, 1);
-
-        CustomerPO_upload = new QPushButton(gridLayoutWidget_2);
-        CustomerPO_upload->setObjectName(QString::fromUtf8("CustomerPO_upload"));
-        sizePolicy2.setHeightForWidth(CustomerPO_upload->sizePolicy().hasHeightForWidth());
-        CustomerPO_upload->setSizePolicy(sizePolicy2);
-
-        gridLayout_2->addWidget(CustomerPO_upload, 9, 1, 1, 1);
+        gridLayout_2->addWidget(Payables_ShipperWarehouse_notice, 19, 2, 1, 1);
 
         CertOrigin = new QCheckBox(gridLayoutWidget_2);
         CertOrigin->setObjectName(QString::fromUtf8("CertOrigin"));
@@ -896,33 +903,43 @@ public:
 
         gridLayout_2->addWidget(CertOrigin, 3, 0, 1, 1);
 
-        OtherEmails_upload = new QPushButton(gridLayoutWidget_2);
-        OtherEmails_upload->setObjectName(QString::fromUtf8("OtherEmails_upload"));
-        sizePolicy2.setHeightForWidth(OtherEmails_upload->sizePolicy().hasHeightForWidth());
-        OtherEmails_upload->setSizePolicy(sizePolicy2);
+        Payables_Harris_upload = new QPushButton(gridLayoutWidget_2);
+        Payables_Harris_upload->setObjectName(QString::fromUtf8("Payables_Harris_upload"));
+        Payables_Harris_upload->setEnabled(true);
+        sizePolicy2.setHeightForWidth(Payables_Harris_upload->sizePolicy().hasHeightForWidth());
+        Payables_Harris_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(OtherEmails_upload, 10, 1, 1, 1);
+        gridLayout_2->addWidget(Payables_Harris_upload, 18, 1, 1, 1);
 
-        payables_TruckFreight_notice = new QLabel(gridLayoutWidget_2);
-        payables_TruckFreight_notice->setObjectName(QString::fromUtf8("payables_TruckFreight_notice"));
+        FreightContract_upload = new QPushButton(gridLayoutWidget_2);
+        FreightContract_upload->setObjectName(QString::fromUtf8("FreightContract_upload"));
+        sizePolicy2.setHeightForWidth(FreightContract_upload->sizePolicy().hasHeightForWidth());
+        FreightContract_upload->setSizePolicy(sizePolicy2);
 
-        gridLayout_2->addWidget(payables_TruckFreight_notice, 17, 2, 1, 1);
+        gridLayout_2->addWidget(FreightContract_upload, 5, 1, 1, 1);
 
-        Payables_ShipperWarehouse_upload = new QPushButton(gridLayoutWidget_2);
-        Payables_ShipperWarehouse_upload->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse_upload"));
-        Payables_ShipperWarehouse_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_ShipperWarehouse_upload->sizePolicy().hasHeightForWidth());
-        Payables_ShipperWarehouse_upload->setSizePolicy(sizePolicy2);
+        Payables_ShipperWarehouse = new QCheckBox(gridLayoutWidget_2);
+        Payables_ShipperWarehouse->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse"));
+        Payables_ShipperWarehouse->setFont(font);
+        Payables_ShipperWarehouse->setCursor(QCursor(Qt::PointingHandCursor));
+        Payables_ShipperWarehouse->setChecked(true);
 
-        gridLayout_2->addWidget(Payables_ShipperWarehouse_upload, 19, 1, 1, 1);
+        gridLayout_2->addWidget(Payables_ShipperWarehouse, 19, 0, 1, 1);
 
-        OtherEmails = new QCheckBox(gridLayoutWidget_2);
-        OtherEmails->setObjectName(QString::fromUtf8("OtherEmails"));
-        OtherEmails->setFont(font);
-        OtherEmails->setCursor(QCursor(Qt::PointingHandCursor));
-        OtherEmails->setChecked(true);
+        otherFiles_upload = new QPushButton(gridLayoutWidget_2);
+        otherFiles_upload->setObjectName(QString::fromUtf8("otherFiles_upload"));
+        otherFiles_upload->setEnabled(true);
+        sizePolicy2.setHeightForWidth(otherFiles_upload->sizePolicy().hasHeightForWidth());
+        otherFiles_upload->setSizePolicy(sizePolicy2);
+        otherFiles_upload->setMaximumSize(QSize(16777215, 22));
 
-        gridLayout_2->addWidget(OtherEmails, 10, 0, 1, 1);
+        gridLayout_2->addWidget(otherFiles_upload, 20, 1, 1, 1);
+
+        label_15 = new QLabel(gridLayoutWidget_2);
+        label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setAlignment(Qt::AlignCenter);
+
+        gridLayout_2->addWidget(label_15, 20, 0, 1, 1);
 
         reloadButton = new QCommandLinkButton(createFile);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
@@ -962,7 +979,7 @@ public:
         label_4->setGeometry(QRect(220, 110, 80, 21));
         label_5 = new QLabel(createFile);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(590, 70, 76, 13));
+        label_5->setGeometry(QRect(590, 50, 76, 13));
         label_14 = new QLabel(createFile);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(31, 81, 59, 16));
@@ -1118,7 +1135,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1184,51 +1201,53 @@ public:
         mexP_Phyto->setText(QCoreApplication::translate("MainWindow", "Phyto", nullptr));
         mexP_Pedimento_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         mexP_Spreadsheets_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_ShipperWarehouse_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        payables_TruckFreight->setText(QCoreApplication::translate("MainWindow", "Payables-Truck/Freight", nullptr));
-        ExpInvima_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        CustomerPO_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        HarrisEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_Harris->setText(QCoreApplication::translate("MainWindow", "Payables-Harris", nullptr));
         ExpInvima->setText(QCoreApplication::translate("MainWindow", "Exportacion/ INVIMA", nullptr));
-        CertOrigin_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Payables_Harris_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        HarrisEmails->setText(QCoreApplication::translate("MainWindow", "Harris Emails", nullptr));
-        Harris->setText(QCoreApplication::translate("MainWindow", "Harris", nullptr));
-        Payables_Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        CaftaNafta_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        OtherEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        ListadeEmpaque_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        Payables_Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_ShipperWarehouse_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         Payables_Transloader_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        Payables_Transloader->setText(QCoreApplication::translate("MainWindow", "Payables-Transloader", nullptr));
         ExpInvima_Upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         CustomerPO_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        OtherEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         ListadeEmpaque->setText(QCoreApplication::translate("MainWindow", "Lista de Empaque", nullptr));
-        CaftaNafta->setText(QCoreApplication::translate("MainWindow", "CAFTA/NAFTA", nullptr));
-        FacturaComercial->setText(QCoreApplication::translate("MainWindow", "Factura Comercial", nullptr));
-        Payables_Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        CustomerPO->setText(QCoreApplication::translate("MainWindow", "Customer PO", nullptr));
-        Transloader->setText(QCoreApplication::translate("MainWindow", "Transloader", nullptr));
-        CaftaNafta_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        HarrisEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FacturaComercial_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        ListadeEmpaque_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        ListadeEmpaque_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        FreightContract->setText(QCoreApplication::translate("MainWindow", "Freight Serv Contract", nullptr));
-        Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FreightContract_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        OtherEmails->setText(QCoreApplication::translate("MainWindow", "Other Emails", nullptr));
         CaftaNafta_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FreightContract_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        ExpInvima_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         Harris_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_Harris->setText(QCoreApplication::translate("MainWindow", "Payables-Harris", nullptr));
-        Payables_ShipperWarehouse->setText(QCoreApplication::translate("MainWindow", "Payables-Shipper/Warehouse", nullptr));
+        Transloader->setText(QCoreApplication::translate("MainWindow", "Transloader", nullptr));
+        FacturaComercial_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        FreightContract->setText(QCoreApplication::translate("MainWindow", "Freight Serv Contract", nullptr));
+        payables_TruckFreight->setText(QCoreApplication::translate("MainWindow", "Payables-Truck/Freight", nullptr));
+        Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        FacturaComercial->setText(QCoreApplication::translate("MainWindow", "Factura Comercial", nullptr));
+        CertOrigin_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         payables_TruckFreight_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_Transloader->setText(QCoreApplication::translate("MainWindow", "Payables-Transloader", nullptr));
+        FreightContract_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         FacturaComercial_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         Transloader_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        CertOrigin_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        HarrisEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        CustomerPO_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        CertOrigin->setText(QCoreApplication::translate("MainWindow", "Certificate of Origin", nullptr));
-        OtherEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        CaftaNafta->setText(QCoreApplication::translate("MainWindow", "CAFTA/NAFTA", nullptr));
+        ListadeEmpaque_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        HarrisEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        OtherEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        HarrisEmails->setText(QCoreApplication::translate("MainWindow", "Harris Emails", nullptr));
+        Harris->setText(QCoreApplication::translate("MainWindow", "Harris", nullptr));
+        CustomerPO->setText(QCoreApplication::translate("MainWindow", "Customer PO", nullptr));
+        Payables_Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        CertOrigin_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         payables_TruckFreight_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Payables_ShipperWarehouse_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        OtherEmails->setText(QCoreApplication::translate("MainWindow", "Other Emails", nullptr));
+        Payables_ShipperWarehouse_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
+        CertOrigin->setText(QCoreApplication::translate("MainWindow", "Certificate of Origin", nullptr));
+        Payables_Harris_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        FreightContract_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_ShipperWarehouse->setText(QCoreApplication::translate("MainWindow", "Payables-Shipper/Warehouse", nullptr));
+        otherFiles_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
+        label_15->setText(QCoreApplication::translate("MainWindow", "Other Files", nullptr));
         reloadButton->setText(QString());
         reloadButton->setDescription(QString());
         label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));

@@ -410,7 +410,7 @@ void MainWindow::on_openFolder_clicked()
 
 void MainWindow::on_actionOpen_triggered()
 {
-    mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Output Folder"), QDir::currentPath());
+    mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Working Directory"), QDir::currentPath());
     std::cout<<mainDirectory.toStdString()<<std::endl;
     if(mainDirectory!=nullptr)
     ui->notesArea->setEnabled(true);
@@ -731,6 +731,13 @@ void MainWindow::on_Payables_ShipperWarehouse_upload_clicked()
 {
     uploadFile("Open Payables Shipper/Warehouse","Open Payables Shipper/Warehouse (*.pdf)","PayablesSW");
     updateWindow();
+}
+void MainWindow::on_otherFiles_upload_clicked()
+{
+    uploadFile("Open Other Files","Other Files","Other Files");
+      updateWindow();
+
+      //TODO: Make the other files upload work
 }
 
 
@@ -1196,3 +1203,4 @@ void MainWindow::on_actionSettings_2_triggered()
    setD.setModal(true);
     setD.exec();
 }
+
