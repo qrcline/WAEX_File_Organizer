@@ -94,7 +94,7 @@ void MainWindow::dropEvent(QDropEvent *event)
     //if (readFile(fileName))
     std::cout<<fileName.toStdString()<<std::endl;
    QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
-    QString selection=QInputDialog::getItem(this,"Upload","What file is this?",choices);
+    QString selection=QInputDialog::getItem(nullptr,"Upload","What file is this?",choices);
 
     //Checks if the file exists already in the directory
      FolderIO fIo;
