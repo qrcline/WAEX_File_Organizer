@@ -18,6 +18,7 @@
 #include <QtCore>
 #include <thread>
 #include <QtGui>
+#include <QInputDialog>
 
 
 
@@ -75,8 +76,9 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
         event->acceptProposedAction();
     std::cout<<"This is a drag Event"<<std::endl;
 
-
 }
+
+
 
 void MainWindow::dropEvent(QDropEvent *event)
 {
@@ -90,8 +92,19 @@ void MainWindow::dropEvent(QDropEvent *event)
         return;
 
     //if (readFile(fileName))
-        setWindowTitle(tr("%1 - %2").arg(fileName)
-                                    .arg(tr("Drag File")));
+    std::cout<<fileName.toStdString()<<std::endl;
+   QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
+    QString selection=QInputDialog::getItem(this,"Upload","What file is this?",choices);
+
+    //Checks if the file exists already in the directory
+     FolderIO fIo;
+     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
+     int num=0;
+     num=fIo.doesFileExist(selection,filesVec);
+
+     //copy(from,to,dest name)
+     fIo.copyFile(fileName,mainDirectory+"/"+ui->POInput->text(),selection+"_"+QString::number((num+1)));
+
 }
 
 
