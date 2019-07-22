@@ -29,7 +29,7 @@
    </size>
   </property>
   <property name="acceptDrops">
-   <bool>false</bool>
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -211,6 +211,11 @@ width:10px;
         <width>461</width>
         <height>241</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
      </widget>
      <widget class="QPushButton" name="saveButton">

@@ -17,6 +17,7 @@
 #include <QSettings>
 #include <QtCore>
 #include <thread>
+#include <QtGui>
 
 
 
@@ -37,8 +38,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->WAEX_logo_2->setPixmap(waexPix);
     ui->progressBar_save_createFile->hide();
     //settingD= new class settingD(this,ui);
-
-
+    ui->mexP_Invoice->acceptDrops();
+    acceptDrops();
 
     //THis is a test
     //ui->mexP_Spreadsheets->setChecked(false);
@@ -67,6 +68,34 @@ MainWindow::MainWindow(QWidget *parent) :
 //{
 
 //};
+void MainWindow::dragEnterEvent(QDragEnterEvent *event)
+{
+
+    if (event->mimeData()->hasFormat("text/uri-list"))
+        event->acceptProposedAction();
+    std::cout<<"This is a drag Event"<<std::endl;
+
+
+}
+
+void MainWindow::dropEvent(QDropEvent *event)
+{
+        std::cout<<"This is a drop event"<<std::endl;
+    QList<QUrl> urls = event->mimeData()->urls();
+    if (urls.isEmpty())
+        return;
+
+    QString fileName = urls.first().toLocalFile();
+    if (fileName.isEmpty())
+        return;
+
+    //if (readFile(fileName))
+        setWindowTitle(tr("%1 - %2").arg(fileName)
+                                    .arg(tr("Drag File")));
+}
+
+
+
 
 void MainWindow::loadSettings()
 {

@@ -191,7 +191,7 @@ public:
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1198, 638));
         MainWindow->setMaximumSize(QSize(1198, 638));
-        MainWindow->setAcceptDrops(false);
+        MainWindow->setAcceptDrops(true);
         MainWindow->setStyleSheet(QString::fromUtf8(" QPushButton {\n"
 "color: #333;\n"
 "border: 1px solid #052488;\n"
@@ -320,6 +320,7 @@ public:
         notesArea = new QTextEdit(createFile);
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
         notesArea->setGeometry(QRect(690, 240, 461, 241));
+        notesArea->setFont(font);
         saveButton = new QPushButton(createFile);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
         saveButton->setGeometry(QRect(1050, 490, 101, 31));
