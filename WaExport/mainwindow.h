@@ -38,12 +38,11 @@ public:
 
     void loadSettings();
 protected:
-//    void mousePressEvent(QMouseEvent *event);
-//    void mouseReleaseEvent(QMouseEvent *event);
+
     void dragEnterEvent(QDragEnterEvent *event);
       void dropEvent(QDropEvent *event);
 protected slots:
-//    void mouseMoveEvent(QMouseEvent *event);
+
 private slots:
       void on_openFolder_clicked();
       void openDirectory(QString );

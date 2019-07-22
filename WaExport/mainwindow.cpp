@@ -37,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
-    ui->progressBar_save_createFile->hide();
+   // ui->progressBar_save_createFile->hide();
     //settingD= new class settingD(this,ui);
     ui->mexP_Invoice->acceptDrops();
     acceptDrops();
@@ -54,21 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //updateWindow();
 }
 
-//void MainWindow::mousePressEvent(QMouseEvent *event)
-//{
 
-//};
-
-//void MainWindow::mouseReleaseEvent(QMouseEvent *event)
-//{
-
-//};
-
-
-//void MainWindow::mouseMoveEvent(QMouseEvent *event)
-//{
-
-//};
 void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 {
 

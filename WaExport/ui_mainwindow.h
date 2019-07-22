@@ -17,6 +17,7 @@
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QCommandLinkButton>
 #include <QtWidgets/QFormLayout>
+#include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
@@ -46,13 +47,12 @@ public:
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *createFile;
-    QComboBox *comboBox;
+    QLabel *WAEX_logo;
+    QFrame *frame;
+    QLabel *label;
     QTextEdit *notesArea;
     QPushButton *saveButton;
-    QLineEdit *POInput;
-    QLabel *label_2;
-    QPushButton *openFolder;
-    QLabel *WAEX_logo;
+    QLabel *PoLabel;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
     QLabel *noticePayableCarriers;
@@ -143,15 +143,16 @@ public:
     QCheckBox *Payables_ShipperWarehouse;
     QPushButton *otherFiles_upload;
     QLabel *label_15;
-    QCommandLinkButton *reloadButton;
-    QProgressBar *progressBar_save_createFile;
-    QLabel *label_11;
-    QLabel *workingDirectory_CreateFile;
-    QLabel *PoLabel;
-    QLabel *label;
-    QLabel *label_4;
     QLabel *label_5;
+    QCommandLinkButton *reloadButton;
     QLabel *label_14;
+    QLabel *label_11;
+    QComboBox *comboBox;
+    QPushButton *openFolder;
+    QLineEdit *POInput;
+    QLabel *label_4;
+    QLabel *label_2;
+    QLabel *workingDirectory_CreateFile;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -183,14 +184,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1198, 638);
-        QSizePolicy sizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+        MainWindow->resize(1900, 1000);
+        QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(MainWindow->sizePolicy().hasHeightForWidth());
         MainWindow->setSizePolicy(sizePolicy);
         MainWindow->setMinimumSize(QSize(1198, 638));
-        MainWindow->setMaximumSize(QSize(1198, 638));
+        MainWindow->setMaximumSize(QSize(1920, 1080));
         MainWindow->setAcceptDrops(true);
         MainWindow->setStyleSheet(QString::fromUtf8(" QPushButton {\n"
 "color: #333;\n"
@@ -294,54 +295,45 @@ public:
         actionSettings_2->setObjectName(QString::fromUtf8("actionSettings_2"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
-        QSizePolicy sizePolicy1(QSizePolicy::Preferred, QSizePolicy::Preferred);
-        sizePolicy1.setHorizontalStretch(0);
-        sizePolicy1.setVerticalStretch(0);
-        sizePolicy1.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
-        centralWidget->setSizePolicy(sizePolicy1);
+        sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
+        centralWidget->setSizePolicy(sizePolicy);
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setEnabled(true);
-        tabWidget->setGeometry(QRect(10, 10, 1181, 581));
+        tabWidget->setGeometry(QRect(10, 10, 1881, 961));
         QFont font;
         font.setPointSize(10);
         tabWidget->setFont(font);
         tabWidget->setMovable(false);
         createFile = new QWidget();
         createFile->setObjectName(QString::fromUtf8("createFile"));
-        comboBox = new QComboBox(createFile);
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->addItem(QString());
-        comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(30, 100, 102, 24));
-        comboBox->setFont(font);
-        notesArea = new QTextEdit(createFile);
-        notesArea->setObjectName(QString::fromUtf8("notesArea"));
-        notesArea->setGeometry(QRect(690, 240, 461, 241));
-        notesArea->setFont(font);
-        saveButton = new QPushButton(createFile);
-        saveButton->setObjectName(QString::fromUtf8("saveButton"));
-        saveButton->setGeometry(QRect(1050, 490, 101, 31));
-        POInput = new QLineEdit(createFile);
-        POInput->setObjectName(QString::fromUtf8("POInput"));
-        POInput->setGeometry(QRect(30, 50, 108, 24));
-        POInput->setFont(font);
-        label_2 = new QLabel(createFile);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(31, 31, 30, 16));
-        label_2->setFont(font);
-        openFolder = new QPushButton(createFile);
-        openFolder->setObjectName(QString::fromUtf8("openFolder"));
-        openFolder->setGeometry(QRect(160, 50, 84, 21));
         WAEX_logo = new QLabel(createFile);
         WAEX_logo->setObjectName(QString::fromUtf8("WAEX_logo"));
-        WAEX_logo->setGeometry(QRect(855, 5, 321, 111));
+        WAEX_logo->setGeometry(QRect(1560, 5, 321, 111));
         WAEX_logo->setScaledContents(true);
-        gridLayoutWidget = new QWidget(createFile);
+        frame = new QFrame(createFile);
+        frame->setObjectName(QString::fromUtf8("frame"));
+        frame->setGeometry(QRect(0, 10, 701, 901));
+        frame->setFrameShape(QFrame::StyledPanel);
+        frame->setFrameShadow(QFrame::Sunken);
+        frame->setLineWidth(3);
+        label = new QLabel(frame);
+        label->setObjectName(QString::fromUtf8("label"));
+        label->setGeometry(QRect(11, 581, 70, 16));
+        label->setFont(font);
+        notesArea = new QTextEdit(frame);
+        notesArea->setObjectName(QString::fromUtf8("notesArea"));
+        notesArea->setGeometry(QRect(10, 600, 461, 241));
+        notesArea->setFont(font);
+        saveButton = new QPushButton(frame);
+        saveButton->setObjectName(QString::fromUtf8("saveButton"));
+        saveButton->setGeometry(QRect(370, 850, 101, 31));
+        PoLabel = new QLabel(frame);
+        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
+        PoLabel->setGeometry(QRect(96, 581, 281, 16));
+        gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(0, 130, 301, 421));
+        gridLayoutWidget->setGeometry(QRect(10, 150, 301, 421));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -368,18 +360,18 @@ public:
 
         mexP_Passing_upload = new QPushButton(gridLayoutWidget);
         mexP_Passing_upload->setObjectName(QString::fromUtf8("mexP_Passing_upload"));
-        QSizePolicy sizePolicy2(QSizePolicy::Minimum, QSizePolicy::Preferred);
-        sizePolicy2.setHorizontalStretch(0);
-        sizePolicy2.setVerticalStretch(0);
-        sizePolicy2.setHeightForWidth(mexP_Passing_upload->sizePolicy().hasHeightForWidth());
-        mexP_Passing_upload->setSizePolicy(sizePolicy2);
+        QSizePolicy sizePolicy1(QSizePolicy::Minimum, QSizePolicy::Preferred);
+        sizePolicy1.setHorizontalStretch(0);
+        sizePolicy1.setVerticalStretch(0);
+        sizePolicy1.setHeightForWidth(mexP_Passing_upload->sizePolicy().hasHeightForWidth());
+        mexP_Passing_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Passing_upload, 7, 1, 1, 1);
 
         mexP_ShipperConf_upload = new QPushButton(gridLayoutWidget);
         mexP_ShipperConf_upload->setObjectName(QString::fromUtf8("mexP_ShipperConf_upload"));
-        sizePolicy2.setHeightForWidth(mexP_ShipperConf_upload->sizePolicy().hasHeightForWidth());
-        mexP_ShipperConf_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_ShipperConf_upload->sizePolicy().hasHeightForWidth());
+        mexP_ShipperConf_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_ShipperConf_upload, 5, 1, 1, 1);
 
@@ -422,8 +414,8 @@ public:
 
         mexP_CarrierConf_upload = new QPushButton(gridLayoutWidget);
         mexP_CarrierConf_upload->setObjectName(QString::fromUtf8("mexP_CarrierConf_upload"));
-        sizePolicy2.setHeightForWidth(mexP_CarrierConf_upload->sizePolicy().hasHeightForWidth());
-        mexP_CarrierConf_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_CarrierConf_upload->sizePolicy().hasHeightForWidth());
+        mexP_CarrierConf_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_CarrierConf_upload, 6, 1, 1, 1);
 
@@ -455,8 +447,8 @@ public:
 
         mexP_Payable_Shipper_upload = new QPushButton(gridLayoutWidget);
         mexP_Payable_Shipper_upload->setObjectName(QString::fromUtf8("mexP_Payable_Shipper_upload"));
-        sizePolicy2.setHeightForWidth(mexP_Payable_Shipper_upload->sizePolicy().hasHeightForWidth());
-        mexP_Payable_Shipper_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Payable_Shipper_upload->sizePolicy().hasHeightForWidth());
+        mexP_Payable_Shipper_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Payable_Shipper_upload, 12, 1, 1, 1);
 
@@ -471,8 +463,8 @@ public:
         mexP_Payables_Carriers_upload = new QPushButton(gridLayoutWidget);
         mexP_Payables_Carriers_upload->setObjectName(QString::fromUtf8("mexP_Payables_Carriers_upload"));
         mexP_Payables_Carriers_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(mexP_Payables_Carriers_upload->sizePolicy().hasHeightForWidth());
-        mexP_Payables_Carriers_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Payables_Carriers_upload->sizePolicy().hasHeightForWidth());
+        mexP_Payables_Carriers_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Payables_Carriers_upload, 13, 1, 1, 1);
 
@@ -491,8 +483,8 @@ public:
 
         mexP_SignedSale_upload = new QPushButton(gridLayoutWidget);
         mexP_SignedSale_upload->setObjectName(QString::fromUtf8("mexP_SignedSale_upload"));
-        sizePolicy2.setHeightForWidth(mexP_SignedSale_upload->sizePolicy().hasHeightForWidth());
-        mexP_SignedSale_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_SignedSale_upload->sizePolicy().hasHeightForWidth());
+        mexP_SignedSale_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_SignedSale_upload, 9, 1, 1, 1);
 
@@ -537,22 +529,22 @@ public:
         receipts_upload = new QPushButton(gridLayoutWidget);
         receipts_upload->setObjectName(QString::fromUtf8("receipts_upload"));
         receipts_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(receipts_upload->sizePolicy().hasHeightForWidth());
-        receipts_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(receipts_upload->sizePolicy().hasHeightForWidth());
+        receipts_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(receipts_upload, 14, 1, 1, 1);
 
         mexP_SaleConf_upload = new QPushButton(gridLayoutWidget);
         mexP_SaleConf_upload->setObjectName(QString::fromUtf8("mexP_SaleConf_upload"));
-        sizePolicy2.setHeightForWidth(mexP_SaleConf_upload->sizePolicy().hasHeightForWidth());
-        mexP_SaleConf_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_SaleConf_upload->sizePolicy().hasHeightForWidth());
+        mexP_SaleConf_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_SaleConf_upload, 8, 1, 1, 1);
 
         mexP_ProduceInv_upload = new QPushButton(gridLayoutWidget);
         mexP_ProduceInv_upload->setObjectName(QString::fromUtf8("mexP_ProduceInv_upload"));
-        sizePolicy2.setHeightForWidth(mexP_ProduceInv_upload->sizePolicy().hasHeightForWidth());
-        mexP_ProduceInv_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_ProduceInv_upload->sizePolicy().hasHeightForWidth());
+        mexP_ProduceInv_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_ProduceInv_upload, 11, 1, 1, 1);
 
@@ -579,16 +571,16 @@ public:
 
         mexP_Phyto_upload = new QPushButton(gridLayoutWidget);
         mexP_Phyto_upload->setObjectName(QString::fromUtf8("mexP_Phyto_upload"));
-        sizePolicy2.setHeightForWidth(mexP_Phyto_upload->sizePolicy().hasHeightForWidth());
-        mexP_Phyto_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Phyto_upload->sizePolicy().hasHeightForWidth());
+        mexP_Phyto_upload->setSizePolicy(sizePolicy1);
         mexP_Phyto_upload->setAcceptDrops(true);
 
         gridLayout->addWidget(mexP_Phyto_upload, 4, 1, 1, 1);
 
         mexP_Invoice_upload = new QPushButton(gridLayoutWidget);
         mexP_Invoice_upload->setObjectName(QString::fromUtf8("mexP_Invoice_upload"));
-        sizePolicy2.setHeightForWidth(mexP_Invoice_upload->sizePolicy().hasHeightForWidth());
-        mexP_Invoice_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Invoice_upload->sizePolicy().hasHeightForWidth());
+        mexP_Invoice_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Invoice_upload, 3, 1, 1, 1);
 
@@ -602,21 +594,21 @@ public:
 
         mexP_Pedimento_upload = new QPushButton(gridLayoutWidget);
         mexP_Pedimento_upload->setObjectName(QString::fromUtf8("mexP_Pedimento_upload"));
-        sizePolicy2.setHeightForWidth(mexP_Pedimento_upload->sizePolicy().hasHeightForWidth());
-        mexP_Pedimento_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Pedimento_upload->sizePolicy().hasHeightForWidth());
+        mexP_Pedimento_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Pedimento_upload, 10, 1, 1, 1);
 
         mexP_Spreadsheets_upload = new QPushButton(gridLayoutWidget);
         mexP_Spreadsheets_upload->setObjectName(QString::fromUtf8("mexP_Spreadsheets_upload"));
-        sizePolicy2.setHeightForWidth(mexP_Spreadsheets_upload->sizePolicy().hasHeightForWidth());
-        mexP_Spreadsheets_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(mexP_Spreadsheets_upload->sizePolicy().hasHeightForWidth());
+        mexP_Spreadsheets_upload->setSizePolicy(sizePolicy1);
 
         gridLayout->addWidget(mexP_Spreadsheets_upload, 2, 1, 1, 1);
 
-        gridLayoutWidget_2 = new QWidget(createFile);
+        gridLayoutWidget_2 = new QWidget(frame);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(310, 70, 361, 461));
+        gridLayoutWidget_2->setGeometry(QRect(320, 90, 361, 461));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -625,15 +617,15 @@ public:
         gridLayout_2->setContentsMargins(0, 0, 0, 0);
         CustomerPO_upload = new QPushButton(gridLayoutWidget_2);
         CustomerPO_upload->setObjectName(QString::fromUtf8("CustomerPO_upload"));
-        sizePolicy2.setHeightForWidth(CustomerPO_upload->sizePolicy().hasHeightForWidth());
-        CustomerPO_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(CustomerPO_upload->sizePolicy().hasHeightForWidth());
+        CustomerPO_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(CustomerPO_upload, 9, 1, 1, 1);
 
         HarrisEmails_upload = new QPushButton(gridLayoutWidget_2);
         HarrisEmails_upload->setObjectName(QString::fromUtf8("HarrisEmails_upload"));
-        sizePolicy2.setHeightForWidth(HarrisEmails_upload->sizePolicy().hasHeightForWidth());
-        HarrisEmails_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(HarrisEmails_upload->sizePolicy().hasHeightForWidth());
+        HarrisEmails_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(HarrisEmails_upload, 8, 1, 1, 1);
 
@@ -655,15 +647,15 @@ public:
 
         CaftaNafta_upload = new QPushButton(gridLayoutWidget_2);
         CaftaNafta_upload->setObjectName(QString::fromUtf8("CaftaNafta_upload"));
-        sizePolicy2.setHeightForWidth(CaftaNafta_upload->sizePolicy().hasHeightForWidth());
-        CaftaNafta_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(CaftaNafta_upload->sizePolicy().hasHeightForWidth());
+        CaftaNafta_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(CaftaNafta_upload, 4, 1, 1, 1);
 
         OtherEmails_upload = new QPushButton(gridLayoutWidget_2);
         OtherEmails_upload->setObjectName(QString::fromUtf8("OtherEmails_upload"));
-        sizePolicy2.setHeightForWidth(OtherEmails_upload->sizePolicy().hasHeightForWidth());
-        OtherEmails_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(OtherEmails_upload->sizePolicy().hasHeightForWidth());
+        OtherEmails_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(OtherEmails_upload, 10, 1, 1, 1);
 
@@ -675,16 +667,16 @@ public:
         Payables_Transloader_upload = new QPushButton(gridLayoutWidget_2);
         Payables_Transloader_upload->setObjectName(QString::fromUtf8("Payables_Transloader_upload"));
         Payables_Transloader_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_Transloader_upload->sizePolicy().hasHeightForWidth());
-        Payables_Transloader_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(Payables_Transloader_upload->sizePolicy().hasHeightForWidth());
+        Payables_Transloader_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(Payables_Transloader_upload, 16, 1, 1, 1);
 
         Payables_ShipperWarehouse_upload = new QPushButton(gridLayoutWidget_2);
         Payables_ShipperWarehouse_upload->setObjectName(QString::fromUtf8("Payables_ShipperWarehouse_upload"));
         Payables_ShipperWarehouse_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_ShipperWarehouse_upload->sizePolicy().hasHeightForWidth());
-        Payables_ShipperWarehouse_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(Payables_ShipperWarehouse_upload->sizePolicy().hasHeightForWidth());
+        Payables_ShipperWarehouse_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(Payables_ShipperWarehouse_upload, 19, 1, 1, 1);
 
@@ -703,8 +695,8 @@ public:
 
         ExpInvima_Upload = new QPushButton(gridLayoutWidget_2);
         ExpInvima_Upload->setObjectName(QString::fromUtf8("ExpInvima_Upload"));
-        sizePolicy2.setHeightForWidth(ExpInvima_Upload->sizePolicy().hasHeightForWidth());
-        ExpInvima_Upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(ExpInvima_Upload->sizePolicy().hasHeightForWidth());
+        ExpInvima_Upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(ExpInvima_Upload, 0, 1, 1, 1);
 
@@ -741,15 +733,15 @@ public:
 
         Transloader_upload = new QPushButton(gridLayoutWidget_2);
         Transloader_upload->setObjectName(QString::fromUtf8("Transloader_upload"));
-        sizePolicy2.setHeightForWidth(Transloader_upload->sizePolicy().hasHeightForWidth());
-        Transloader_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(Transloader_upload->sizePolicy().hasHeightForWidth());
+        Transloader_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(Transloader_upload, 6, 1, 1, 1);
 
         Harris_upload = new QPushButton(gridLayoutWidget_2);
         Harris_upload->setObjectName(QString::fromUtf8("Harris_upload"));
-        sizePolicy2.setHeightForWidth(Harris_upload->sizePolicy().hasHeightForWidth());
-        Harris_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(Harris_upload->sizePolicy().hasHeightForWidth());
+        Harris_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(Harris_upload, 7, 1, 1, 1);
 
@@ -797,16 +789,16 @@ public:
 
         CertOrigin_upload = new QPushButton(gridLayoutWidget_2);
         CertOrigin_upload->setObjectName(QString::fromUtf8("CertOrigin_upload"));
-        sizePolicy2.setHeightForWidth(CertOrigin_upload->sizePolicy().hasHeightForWidth());
-        CertOrigin_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(CertOrigin_upload->sizePolicy().hasHeightForWidth());
+        CertOrigin_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(CertOrigin_upload, 3, 1, 1, 1);
 
         payables_TruckFreight_upload = new QPushButton(gridLayoutWidget_2);
         payables_TruckFreight_upload->setObjectName(QString::fromUtf8("payables_TruckFreight_upload"));
         payables_TruckFreight_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(payables_TruckFreight_upload->sizePolicy().hasHeightForWidth());
-        payables_TruckFreight_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(payables_TruckFreight_upload->sizePolicy().hasHeightForWidth());
+        payables_TruckFreight_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(payables_TruckFreight_upload, 17, 1, 1, 1);
 
@@ -817,8 +809,8 @@ public:
 
         FacturaComercial_upload = new QPushButton(gridLayoutWidget_2);
         FacturaComercial_upload->setObjectName(QString::fromUtf8("FacturaComercial_upload"));
-        sizePolicy2.setHeightForWidth(FacturaComercial_upload->sizePolicy().hasHeightForWidth());
-        FacturaComercial_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(FacturaComercial_upload->sizePolicy().hasHeightForWidth());
+        FacturaComercial_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(FacturaComercial_upload, 1, 1, 1, 1);
 
@@ -837,8 +829,8 @@ public:
 
         ListadeEmpaque_upload = new QPushButton(gridLayoutWidget_2);
         ListadeEmpaque_upload->setObjectName(QString::fromUtf8("ListadeEmpaque_upload"));
-        sizePolicy2.setHeightForWidth(ListadeEmpaque_upload->sizePolicy().hasHeightForWidth());
-        ListadeEmpaque_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(ListadeEmpaque_upload->sizePolicy().hasHeightForWidth());
+        ListadeEmpaque_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(ListadeEmpaque_upload, 2, 1, 1, 1);
 
@@ -907,15 +899,15 @@ public:
         Payables_Harris_upload = new QPushButton(gridLayoutWidget_2);
         Payables_Harris_upload->setObjectName(QString::fromUtf8("Payables_Harris_upload"));
         Payables_Harris_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(Payables_Harris_upload->sizePolicy().hasHeightForWidth());
-        Payables_Harris_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(Payables_Harris_upload->sizePolicy().hasHeightForWidth());
+        Payables_Harris_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(Payables_Harris_upload, 18, 1, 1, 1);
 
         FreightContract_upload = new QPushButton(gridLayoutWidget_2);
         FreightContract_upload->setObjectName(QString::fromUtf8("FreightContract_upload"));
-        sizePolicy2.setHeightForWidth(FreightContract_upload->sizePolicy().hasHeightForWidth());
-        FreightContract_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(FreightContract_upload->sizePolicy().hasHeightForWidth());
+        FreightContract_upload->setSizePolicy(sizePolicy1);
 
         gridLayout_2->addWidget(FreightContract_upload, 5, 1, 1, 1);
 
@@ -930,8 +922,8 @@ public:
         otherFiles_upload = new QPushButton(gridLayoutWidget_2);
         otherFiles_upload->setObjectName(QString::fromUtf8("otherFiles_upload"));
         otherFiles_upload->setEnabled(true);
-        sizePolicy2.setHeightForWidth(otherFiles_upload->sizePolicy().hasHeightForWidth());
-        otherFiles_upload->setSizePolicy(sizePolicy2);
+        sizePolicy1.setHeightForWidth(otherFiles_upload->sizePolicy().hasHeightForWidth());
+        otherFiles_upload->setSizePolicy(sizePolicy1);
         otherFiles_upload->setMaximumSize(QSize(16777215, 22));
 
         gridLayout_2->addWidget(otherFiles_upload, 20, 1, 1, 1);
@@ -942,12 +934,15 @@ public:
 
         gridLayout_2->addWidget(label_15, 20, 0, 1, 1);
 
-        reloadButton = new QCommandLinkButton(createFile);
+        label_5 = new QLabel(frame);
+        label_5->setObjectName(QString::fromUtf8("label_5"));
+        label_5->setGeometry(QRect(600, 70, 76, 13));
+        reloadButton = new QCommandLinkButton(frame);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
         reloadButton->setEnabled(true);
-        reloadButton->setGeometry(QRect(254, 53, 31, 31));
-        sizePolicy1.setHeightForWidth(reloadButton->sizePolicy().hasHeightForWidth());
-        reloadButton->setSizePolicy(sizePolicy1);
+        reloadButton->setGeometry(QRect(250, 60, 31, 31));
+        sizePolicy.setHeightForWidth(reloadButton->sizePolicy().hasHeightForWidth());
+        reloadButton->setSizePolicy(sizePolicy);
         reloadButton->setMinimumSize(QSize(0, 0));
         reloadButton->setMaximumSize(QSize(999, 999));
         reloadButton->setAcceptDrops(true);
@@ -956,59 +951,45 @@ public:
         icon.addFile(QString::fromUtf8(":/pictures/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         reloadButton->setIcon(icon);
         reloadButton->setIconSize(QSize(20, 20));
-        progressBar_save_createFile = new QProgressBar(createFile);
-        progressBar_save_createFile->setObjectName(QString::fromUtf8("progressBar_save_createFile"));
-        progressBar_save_createFile->setGeometry(QRect(1000, 530, 151, 16));
-        progressBar_save_createFile->setValue(0);
-        progressBar_save_createFile->setTextVisible(false);
-        label_11 = new QLabel(createFile);
+        label_14 = new QLabel(frame);
+        label_14->setObjectName(QString::fromUtf8("label_14"));
+        label_14->setGeometry(QRect(27, 88, 59, 16));
+        label_14->setFont(font);
+        label_11 = new QLabel(frame);
         label_11->setObjectName(QString::fromUtf8("label_11"));
         label_11->setGeometry(QRect(30, 10, 111, 16));
         label_11->setFont(font);
-        workingDirectory_CreateFile = new QLabel(createFile);
+        comboBox = new QComboBox(frame);
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->addItem(QString());
+        comboBox->setObjectName(QString::fromUtf8("comboBox"));
+        comboBox->setGeometry(QRect(26, 107, 102, 24));
+        comboBox->setFont(font);
+        openFolder = new QPushButton(frame);
+        openFolder->setObjectName(QString::fromUtf8("openFolder"));
+        openFolder->setGeometry(QRect(156, 57, 84, 21));
+        POInput = new QLineEdit(frame);
+        POInput->setObjectName(QString::fromUtf8("POInput"));
+        POInput->setGeometry(QRect(26, 57, 108, 24));
+        POInput->setFont(font);
+        label_4 = new QLabel(frame);
+        label_4->setObjectName(QString::fromUtf8("label_4"));
+        label_4->setGeometry(QRect(216, 117, 80, 21));
+        label_2 = new QLabel(frame);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(27, 38, 30, 16));
+        label_2->setFont(font);
+        workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
-        PoLabel = new QLabel(createFile);
-        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
-        PoLabel->setGeometry(QRect(776, 221, 281, 16));
-        label = new QLabel(createFile);
-        label->setObjectName(QString::fromUtf8("label"));
-        label->setGeometry(QRect(691, 221, 70, 16));
-        label->setFont(font);
-        label_4 = new QLabel(createFile);
-        label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(220, 110, 80, 21));
-        label_5 = new QLabel(createFile);
-        label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(590, 50, 76, 13));
-        label_14 = new QLabel(createFile);
-        label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(31, 81, 59, 16));
-        label_14->setFont(font);
         tabWidget->addTab(createFile, QString());
-        comboBox->raise();
-        notesArea->raise();
-        saveButton->raise();
-        POInput->raise();
-        label_2->raise();
-        openFolder->raise();
-        WAEX_logo->raise();
-        gridLayoutWidget->raise();
-        gridLayoutWidget_2->raise();
-        progressBar_save_createFile->raise();
-        label_11->raise();
-        workingDirectory_CreateFile->raise();
-        PoLabel->raise();
-        label->raise();
-        reloadButton->raise();
-        label_4->raise();
-        label_5->raise();
-        label_14->raise();
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
         WAEX_logo_2->setObjectName(QString::fromUtf8("WAEX_logo_2"));
-        WAEX_logo_2->setGeometry(QRect(855, 5, 321, 111));
+        WAEX_logo_2->setGeometry(QRect(1560, 5, 321, 111));
         WAEX_logo_2->setScaledContents(true);
         workingDirectory = new QLabel(ArchiveCheck);
         workingDirectory->setObjectName(QString::fromUtf8("workingDirectory"));
@@ -1116,7 +1097,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1198, 20));
+        menuBar->setGeometry(QRect(0, 0, 1900, 20));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
@@ -1152,17 +1133,10 @@ public:
 #if QT_CONFIG(tooltip)
         tabWidget->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Mex Produce", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Domestic", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Mex Direct", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "Overseas", nullptr));
-
-        saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        POInput->setInputMask(QString());
-        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
-        openFolder->setText(QCoreApplication::translate("MainWindow", "Open Folder", nullptr));
         WAEX_logo->setText(QString());
+        label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
+        saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         noticePayableCarriers->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         noticePhyto->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         mexP_ProduceInv->setText(QCoreApplication::translate("MainWindow", "Produce Inv. ", nullptr));
@@ -1249,15 +1223,22 @@ public:
         Payables_ShipperWarehouse->setText(QCoreApplication::translate("MainWindow", "Payables-Shipper/Warehouse", nullptr));
         otherFiles_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
         label_15->setText(QCoreApplication::translate("MainWindow", "Other Files", nullptr));
+        label_5->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         reloadButton->setText(QString());
         reloadButton->setDescription(QString());
-        label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
-        workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         label_14->setText(QCoreApplication::translate("MainWindow", "Template:", nullptr));
+        label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
+        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Mex Produce", nullptr));
+        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Domestic", nullptr));
+        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Mex Direct", nullptr));
+        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "Overseas", nullptr));
+
+        openFolder->setText(QCoreApplication::translate("MainWindow", "Open Folder", nullptr));
+        POInput->setInputMask(QString());
+        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
+        workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
