@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
   tableModel(new myTableModel(this))
 {
-
+    setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
     ui->tableView->setModel(tableModel);
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");

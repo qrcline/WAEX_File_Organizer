@@ -7,6 +7,7 @@ settingD::settingD(QWidget *parent,Ui::MainWindow* uiMain) :
     QDialog(parent),
     ui(new Ui::settingD)
 {
+    setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
     this->setWindowTitle("Settings");
     setup();

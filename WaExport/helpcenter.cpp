@@ -5,6 +5,7 @@ HelpCenter::HelpCenter(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::HelpCenter)
 {
+    setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
 }
 
