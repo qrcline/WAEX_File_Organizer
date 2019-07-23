@@ -19,6 +19,7 @@
 #include <QtWidgets/QFormLayout>
 #include <QtWidgets/QFrame>
 #include <QtWidgets/QGridLayout>
+#include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
 #include <QtWidgets/QLineEdit>
@@ -28,6 +29,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QProgressBar>
 #include <QtWidgets/QPushButton>
+#include <QtWidgets/QRadioButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
@@ -154,8 +156,16 @@ public:
     QLabel *label_4;
     QLabel *label_2;
     QLabel *workingDirectory_CreateFile;
-    QTextBrowser *textBrowser;
+    QTextBrowser *noteDisplay;
     QPushButton *pushButton;
+    QProgressBar *progressBar;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout;
+    QRadioButton *radioButton;
+    QRadioButton *radioButton_2;
+    QRadioButton *radioButton_3;
+    QRadioButton *radioButton_4;
+    QRadioButton *radioButton_5;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -987,12 +997,55 @@ public:
         workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
-        textBrowser = new QTextBrowser(frame);
-        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
-        textBrowser->setGeometry(QRect(325, 611, 351, 171));
+        noteDisplay = new QTextBrowser(frame);
+        noteDisplay->setObjectName(QString::fromUtf8("noteDisplay"));
+        noteDisplay->setGeometry(QRect(325, 611, 351, 181));
+        noteDisplay->setAcceptDrops(false);
         pushButton = new QPushButton(frame);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(220, 770, 80, 21));
+        progressBar = new QProgressBar(createFile);
+        progressBar->setObjectName(QString::fromUtf8("progressBar"));
+        progressBar->setGeometry(QRect(720, 150, 841, 23));
+        progressBar->setValue(24);
+        widget = new QWidget(createFile);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(720, 180, 841, 41));
+        horizontalLayout = new QHBoxLayout(widget);
+        horizontalLayout->setSpacing(6);
+        horizontalLayout->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
+        horizontalLayout->setContentsMargins(0, 0, 0, 0);
+        radioButton = new QRadioButton(widget);
+        radioButton->setObjectName(QString::fromUtf8("radioButton"));
+        radioButton->setLayoutDirection(Qt::LeftToRight);
+
+        horizontalLayout->addWidget(radioButton);
+
+        radioButton_2 = new QRadioButton(widget);
+        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
+        radioButton_2->setLayoutDirection(Qt::LeftToRight);
+
+        horizontalLayout->addWidget(radioButton_2);
+
+        radioButton_3 = new QRadioButton(widget);
+        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
+        radioButton_3->setLayoutDirection(Qt::LeftToRight);
+
+        horizontalLayout->addWidget(radioButton_3);
+
+        radioButton_4 = new QRadioButton(widget);
+        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
+        radioButton_4->setLayoutDirection(Qt::LeftToRight);
+
+        horizontalLayout->addWidget(radioButton_4);
+
+        radioButton_5 = new QRadioButton(widget);
+        radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
+        radioButton_5->setLayoutDirection(Qt::LeftToRight);
+
+        horizontalLayout->addWidget(radioButton_5);
+
         tabWidget->addTab(createFile, QString());
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
@@ -1249,6 +1302,11 @@ public:
         label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        radioButton->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
+        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
+        radioButton_3->setText(QCoreApplication::translate("MainWindow", "Border", nullptr));
+        radioButton_4->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
+        radioButton_5->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));

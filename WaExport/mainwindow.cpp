@@ -19,7 +19,7 @@
 #include <thread>
 #include <QtGui>
 #include <QInputDialog>
-#include <QGuiApplication>
+
 
 
 
