@@ -2,6 +2,7 @@
 #include "helpcenter.h"
 #include <QApplication>
 #include <qsettings.h>
+#include <QtWebView/QtWebView>
 #pragma once
 
 
@@ -35,6 +36,7 @@ int main(int argc, char *argv[])
 {
     #pragma comment(lib, "shell32")
     QApplication a(argc, argv);
+
     a.setWindowIcon(QIcon(":/pictures/smalleWAEXLOGO.png"));
     setStyleSheet(&a);
     MainWindow w;

@@ -31,6 +31,7 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
+#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -153,6 +154,8 @@ public:
     QLabel *label_4;
     QLabel *label_2;
     QLabel *workingDirectory_CreateFile;
+    QTextBrowser *textBrowser;
+    QPushButton *pushButton;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -184,7 +187,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1900, 1000);
+        MainWindow->resize(1600, 900);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -309,11 +312,11 @@ public:
         createFile->setObjectName(QString::fromUtf8("createFile"));
         WAEX_logo = new QLabel(createFile);
         WAEX_logo->setObjectName(QString::fromUtf8("WAEX_logo"));
-        WAEX_logo->setGeometry(QRect(1560, 5, 321, 111));
+        WAEX_logo->setGeometry(QRect(1260, 5, 321, 111));
         WAEX_logo->setScaledContents(true);
         frame = new QFrame(createFile);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(0, 10, 701, 901));
+        frame->setGeometry(QRect(0, 10, 701, 801));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Sunken);
         frame->setLineWidth(3);
@@ -323,7 +326,7 @@ public:
         label->setFont(font);
         notesArea = new QTextEdit(frame);
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
-        notesArea->setGeometry(QRect(10, 600, 461, 241));
+        notesArea->setGeometry(QRect(10, 610, 291, 141));
         notesArea->setFont(font);
         saveButton = new QPushButton(frame);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
@@ -608,7 +611,7 @@ public:
 
         gridLayoutWidget_2 = new QWidget(frame);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(320, 90, 361, 461));
+        gridLayoutWidget_2->setGeometry(QRect(320, 110, 361, 461));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -936,7 +939,7 @@ public:
 
         label_5 = new QLabel(frame);
         label_5->setObjectName(QString::fromUtf8("label_5"));
-        label_5->setGeometry(QRect(600, 70, 76, 13));
+        label_5->setGeometry(QRect(600, 90, 76, 13));
         reloadButton = new QCommandLinkButton(frame);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
         reloadButton->setEnabled(true);
@@ -976,7 +979,7 @@ public:
         POInput->setFont(font);
         label_4 = new QLabel(frame);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(216, 117, 80, 21));
+        label_4->setGeometry(QRect(230, 120, 80, 21));
         label_2 = new QLabel(frame);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setGeometry(QRect(27, 38, 30, 16));
@@ -984,19 +987,25 @@ public:
         workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
+        textBrowser = new QTextBrowser(frame);
+        textBrowser->setObjectName(QString::fromUtf8("textBrowser"));
+        textBrowser->setGeometry(QRect(325, 611, 351, 171));
+        pushButton = new QPushButton(frame);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(220, 770, 80, 21));
         tabWidget->addTab(createFile, QString());
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
         WAEX_logo_2->setObjectName(QString::fromUtf8("WAEX_logo_2"));
-        WAEX_logo_2->setGeometry(QRect(1560, 5, 321, 111));
+        WAEX_logo_2->setGeometry(QRect(1260, 5, 321, 111));
         WAEX_logo_2->setScaledContents(true);
         workingDirectory = new QLabel(ArchiveCheck);
         workingDirectory->setObjectName(QString::fromUtf8("workingDirectory"));
-        workingDirectory->setGeometry(QRect(140, 10, 399, 16));
+        workingDirectory->setGeometry(QRect(140, 20, 399, 16));
         label_3 = new QLabel(ArchiveCheck);
         label_3->setObjectName(QString::fromUtf8("label_3"));
-        label_3->setGeometry(QRect(30, 10, 111, 16));
+        label_3->setGeometry(QRect(30, 20, 111, 16));
         label_3->setFont(font);
         archiveCheckButton = new QPushButton(ArchiveCheck);
         archiveCheckButton->setObjectName(QString::fromUtf8("archiveCheckButton"));
@@ -1097,7 +1106,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1900, 20));
+        menuBar->setGeometry(QRect(0, 0, 1600, 20));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
@@ -1239,6 +1248,7 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));

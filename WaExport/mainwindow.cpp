@@ -19,7 +19,7 @@
 #include <thread>
 #include <QtGui>
 #include <QInputDialog>
-
+#include <QGuiApplication>
 
 
 
@@ -48,6 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setCurrentIndex(1);
     ui->comboBox->setCurrentIndex(0);
     loadSettings();
+
 
 
 

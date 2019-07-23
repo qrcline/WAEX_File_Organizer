@@ -22,12 +22,12 @@ settingD::~settingD()
 
 void settingD::on_settingsClose_clicked()
 {
-    QString theme= ui->settingsColorScheme->currentText();
+    //QString theme= ui->settingsColorScheme->currentText();
 
 
     QSettings setting("WAEX","Organizer");
     setting.beginGroup("Settings");
-    setting.setValue("theme",theme);
+    //setting.setValue("theme",theme);
     if(ui->settingsToolTips->isChecked())
         setting.setValue("tTip","True");
     else
