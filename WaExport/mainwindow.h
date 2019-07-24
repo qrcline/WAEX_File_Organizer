@@ -22,6 +22,7 @@
 #include <aboutwindow.h>
 #include <helpcenter.h>
 #include <settingd.h>
+#include <QtNetwork>
 
 namespace Ui {
 class MainWindow;
@@ -116,6 +117,21 @@ private slots:
       // void on_actionSettings_triggered();
       void on_actionSettings_2_triggered();
       void on_otherFiles_upload_clicked();
+
+
+      void on_RB_SalesOrder_clicked();
+
+      void on_RB_Shipped_clicked();
+
+      void on_RB_Border_clicked();
+
+      void on_RB_Crossed_clicked();
+
+      void on_RB_Delivered_clicked();
+
+      void on_testSocketButton_clicked();
+       void MainWindow::onFinish(QNetworkReply *rep);
+
 private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;
@@ -139,6 +155,9 @@ private:
     void updateChecked();
 
     //bool readFile(const QString &fileName);
+    void postRequest(QByteArray &postData);
+
+
 };
 
 #endif // MAINWINDOW_H

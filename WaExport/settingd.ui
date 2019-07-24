@@ -121,7 +121,7 @@ border-radius: 5px; </string>
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QWidget" name="">
+   <widget class="QWidget" name="layoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -215,7 +215,7 @@ border-radius: 5px; </string>
         </widget>
        </item>
        <item>
-        <widget class="QLineEdit" name="lineEdit">
+        <widget class="QLineEdit" name="settingsUserName">
          <property name="font">
           <font>
            <pointsize>10</pointsize>

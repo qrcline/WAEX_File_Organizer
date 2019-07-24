@@ -19,6 +19,7 @@
 #include <thread>
 #include <QtGui>
 #include <QInputDialog>
+#include <QtNetwork>
 
 
 
@@ -274,7 +275,7 @@ void MainWindow::updateWindow()
     else ui->receipts_notice->setText("No");
 
     //Fill in the notes section
-    ui->notesArea->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+    ui->noteDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -1233,3 +1234,76 @@ void MainWindow::on_actionSettings_2_triggered()
     setD.exec();
 }
 
+
+void MainWindow::on_RB_SalesOrder_clicked()
+{
+    ui->order_progressBar->setValue(7);
+}
+
+void MainWindow::on_RB_Shipped_clicked()
+{
+    ui->order_progressBar->setValue(29);
+
+}
+
+void MainWindow::on_RB_Border_clicked()
+{
+    ui->order_progressBar->setValue(50);
+}
+
+void MainWindow::on_RB_Crossed_clicked()
+{
+    ui->order_progressBar->setValue(75);
+}
+
+void MainWindow::on_RB_Delivered_clicked()
+{
+    ui->order_progressBar->setValue(100);
+}
+
+void MainWindow::on_testSocketButton_clicked()
+{
+   QByteArray message= "{\"name\":\"test2015\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+    postRequest(message);
+}
+
+void MainWindow::onFinish(QNetworkReply *rep)
+{
+    QByteArray bts = rep->readAll();
+        QString str(bts);
+        QMessageBox::information(this,"sal",str,"ok");
+}
+
+void MainWindow::postRequest(QByteArray & postData)
+{
+    QUrl url;
+            url.setScheme("https");
+            url.setHost("gloapi.gitkraken.com");
+            url.setPath("/v1/glo/boards/5d360413538eed0011572e26/cards");
+
+
+    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
+
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onFinish(QNetworkReply*)));
+    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
+
+    QHttpMultiPart http;
+
+    QHttpPart receiptPart;
+   //receiptPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"data\""));
+    //receiptPart.setRawHeader("content-type","application/json");
+    receiptPart.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+    receiptPart.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
+    receiptPart.setRawHeader("Accept","application/json");
+    receiptPart.setBody(postData);
+
+    http.append(receiptPart);
+
+    mgr->post(QNetworkRequest(url), &http);
+
+
+
+
+
+
+}

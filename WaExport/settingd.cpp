@@ -32,6 +32,7 @@ void settingD::on_settingsClose_clicked()
         setting.setValue("tTip","True");
     else
         setting.setValue("tTip","False");
+    setting.setValue("User",ui->settingsUserName->text());
     setting.endGroup();
     MainWindow mWindow;
     mWindow.loadSettings(); //TODO: Make it so that the settings can be refreshed for the mainwindow
@@ -49,6 +50,7 @@ void settingD::setup()
         ui->settingsToolTips->setChecked(true);
     else
          ui->settingsToolTips->setChecked(false);
+    ui->settingsUserName->setText(setting.value("User","").toString());
     setting.endGroup();
 }
 

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1600</width>
-    <height>900</height>
+    <width>1920</width>
+    <height>912</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -233,19 +233,6 @@ width:10px;
         <font>
          <pointsize>10</pointsize>
         </font>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="saveButton">
-       <property name="geometry">
-        <rect>
-         <x>370</x>
-         <y>850</y>
-         <width>101</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Save</string>
        </property>
       </widget>
       <widget class="QLabel" name="PoLabel">
@@ -1398,6 +1385,11 @@ width:10px;
         </item>
         <item row="20" column="0">
          <widget class="QLabel" name="label_15">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
           <property name="text">
            <string>Other Files</string>
           </property>
@@ -1461,7 +1453,7 @@ width:10px;
         <string/>
        </property>
        <property name="icon">
-        <iconset>
+        <iconset resource="resources.qrc">
          <normaloff>:/pictures/reload.png</normaloff>:/pictures/reload.png</iconset>
        </property>
        <property name="iconSize">
@@ -1646,11 +1638,24 @@ width:10px;
         </rect>
        </property>
        <property name="text">
-        <string>PushButton</string>
+        <string>Add Comment</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="saveButton">
+       <property name="geometry">
+        <rect>
+         <x>580</x>
+         <y>580</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Save</string>
        </property>
       </widget>
      </widget>
-     <widget class="QProgressBar" name="progressBar">
+     <widget class="QProgressBar" name="order_progressBar">
       <property name="geometry">
        <rect>
         <x>720</x>
@@ -1659,11 +1664,17 @@ width:10px;
         <height>23</height>
        </rect>
       </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
       <property name="value">
-       <number>24</number>
+       <number>0</number>
+      </property>
+      <property name="format">
+       <string/>
       </property>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>720</x>
@@ -1673,8 +1684,11 @@ width:10px;
        </rect>
       </property>
       <layout class="QHBoxLayout" name="horizontalLayout">
+       <property name="spacing">
+        <number>120</number>
+       </property>
        <item>
-        <widget class="QRadioButton" name="radioButton">
+        <widget class="QRadioButton" name="RB_SalesOrder">
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
@@ -1684,7 +1698,7 @@ width:10px;
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_2">
+        <widget class="QRadioButton" name="RB_Shipped">
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
@@ -1694,7 +1708,7 @@ width:10px;
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_3">
+        <widget class="QRadioButton" name="RB_Border">
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
@@ -1704,7 +1718,7 @@ width:10px;
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_4">
+        <widget class="QRadioButton" name="RB_Crossed">
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
@@ -1714,7 +1728,7 @@ width:10px;
         </widget>
        </item>
        <item>
-        <widget class="QRadioButton" name="radioButton_5">
+        <widget class="QRadioButton" name="RB_Delivered">
          <property name="layoutDirection">
           <enum>Qt::LeftToRight</enum>
          </property>
@@ -1724,6 +1738,19 @@ width:10px;
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QPushButton" name="testSocketButton">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>410</y>
+        <width>80</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>PushButton</string>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="ArchiveCheck">
@@ -1998,7 +2025,7 @@ width:10px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1600</width>
+     <width>1920</width>
      <height>20</height>
     </rect>
    </property>
@@ -2043,6 +2070,8 @@ width:10px;
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="resources.qrc"/>
+ </resources>
  <connections/>
 </ui>

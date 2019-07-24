@@ -54,7 +54,6 @@ public:
     QFrame *frame;
     QLabel *label;
     QTextEdit *notesArea;
-    QPushButton *saveButton;
     QLabel *PoLabel;
     QWidget *gridLayoutWidget;
     QGridLayout *gridLayout;
@@ -158,14 +157,16 @@ public:
     QLabel *workingDirectory_CreateFile;
     QTextBrowser *noteDisplay;
     QPushButton *pushButton;
-    QProgressBar *progressBar;
-    QWidget *widget;
+    QPushButton *saveButton;
+    QProgressBar *order_progressBar;
+    QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
-    QRadioButton *radioButton;
-    QRadioButton *radioButton_2;
-    QRadioButton *radioButton_3;
-    QRadioButton *radioButton_4;
-    QRadioButton *radioButton_5;
+    QRadioButton *RB_SalesOrder;
+    QRadioButton *RB_Shipped;
+    QRadioButton *RB_Border;
+    QRadioButton *RB_Crossed;
+    QRadioButton *RB_Delivered;
+    QPushButton *testSocketButton;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -177,7 +178,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -197,7 +198,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1600, 900);
+        MainWindow->resize(1920, 912);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -338,9 +339,6 @@ public:
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
         notesArea->setGeometry(QRect(10, 610, 291, 141));
         notesArea->setFont(font);
-        saveButton = new QPushButton(frame);
-        saveButton->setObjectName(QString::fromUtf8("saveButton"));
-        saveButton->setGeometry(QRect(370, 850, 101, 31));
         PoLabel = new QLabel(frame);
         PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
         PoLabel->setGeometry(QRect(96, 581, 281, 16));
@@ -943,6 +941,7 @@ public:
 
         label_15 = new QLabel(gridLayoutWidget_2);
         label_15->setObjectName(QString::fromUtf8("label_15"));
+        label_15->setFont(font);
         label_15->setAlignment(Qt::AlignCenter);
 
         gridLayout_2->addWidget(label_15, 20, 0, 1, 1);
@@ -1004,48 +1003,55 @@ public:
         pushButton = new QPushButton(frame);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(220, 770, 80, 21));
-        progressBar = new QProgressBar(createFile);
-        progressBar->setObjectName(QString::fromUtf8("progressBar"));
-        progressBar->setGeometry(QRect(720, 150, 841, 23));
-        progressBar->setValue(24);
-        widget = new QWidget(createFile);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(720, 180, 841, 41));
-        horizontalLayout = new QHBoxLayout(widget);
-        horizontalLayout->setSpacing(6);
+        saveButton = new QPushButton(frame);
+        saveButton->setObjectName(QString::fromUtf8("saveButton"));
+        saveButton->setGeometry(QRect(580, 580, 80, 21));
+        order_progressBar = new QProgressBar(createFile);
+        order_progressBar->setObjectName(QString::fromUtf8("order_progressBar"));
+        order_progressBar->setGeometry(QRect(720, 150, 841, 23));
+        order_progressBar->setMaximum(100);
+        order_progressBar->setValue(0);
+        layoutWidget = new QWidget(createFile);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(720, 180, 841, 41));
+        horizontalLayout = new QHBoxLayout(layoutWidget);
+        horizontalLayout->setSpacing(120);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
-        radioButton = new QRadioButton(widget);
-        radioButton->setObjectName(QString::fromUtf8("radioButton"));
-        radioButton->setLayoutDirection(Qt::LeftToRight);
+        RB_SalesOrder = new QRadioButton(layoutWidget);
+        RB_SalesOrder->setObjectName(QString::fromUtf8("RB_SalesOrder"));
+        RB_SalesOrder->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout->addWidget(radioButton);
+        horizontalLayout->addWidget(RB_SalesOrder);
 
-        radioButton_2 = new QRadioButton(widget);
-        radioButton_2->setObjectName(QString::fromUtf8("radioButton_2"));
-        radioButton_2->setLayoutDirection(Qt::LeftToRight);
+        RB_Shipped = new QRadioButton(layoutWidget);
+        RB_Shipped->setObjectName(QString::fromUtf8("RB_Shipped"));
+        RB_Shipped->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout->addWidget(radioButton_2);
+        horizontalLayout->addWidget(RB_Shipped);
 
-        radioButton_3 = new QRadioButton(widget);
-        radioButton_3->setObjectName(QString::fromUtf8("radioButton_3"));
-        radioButton_3->setLayoutDirection(Qt::LeftToRight);
+        RB_Border = new QRadioButton(layoutWidget);
+        RB_Border->setObjectName(QString::fromUtf8("RB_Border"));
+        RB_Border->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout->addWidget(radioButton_3);
+        horizontalLayout->addWidget(RB_Border);
 
-        radioButton_4 = new QRadioButton(widget);
-        radioButton_4->setObjectName(QString::fromUtf8("radioButton_4"));
-        radioButton_4->setLayoutDirection(Qt::LeftToRight);
+        RB_Crossed = new QRadioButton(layoutWidget);
+        RB_Crossed->setObjectName(QString::fromUtf8("RB_Crossed"));
+        RB_Crossed->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout->addWidget(radioButton_4);
+        horizontalLayout->addWidget(RB_Crossed);
 
-        radioButton_5 = new QRadioButton(widget);
-        radioButton_5->setObjectName(QString::fromUtf8("radioButton_5"));
-        radioButton_5->setLayoutDirection(Qt::LeftToRight);
+        RB_Delivered = new QRadioButton(layoutWidget);
+        RB_Delivered->setObjectName(QString::fromUtf8("RB_Delivered"));
+        RB_Delivered->setLayoutDirection(Qt::LeftToRight);
 
-        horizontalLayout->addWidget(radioButton_5);
+        horizontalLayout->addWidget(RB_Delivered);
 
+        testSocketButton = new QPushButton(createFile);
+        testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
+        testSocketButton->setGeometry(QRect(820, 410, 80, 21));
         tabWidget->addTab(createFile, QString());
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
@@ -1097,10 +1103,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget = new QWidget(ArchiveCheck);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 130, 221, 265));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        layoutWidget1 = new QWidget(ArchiveCheck);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(20, 130, 221, 265));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1108,35 +1114,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(layoutWidget);
+        label_7 = new QLabel(layoutWidget1);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(layoutWidget);
+        ACheck_TotalErrors = new QLabel(layoutWidget1);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(layoutWidget);
+        label_8 = new QLabel(layoutWidget1);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(layoutWidget);
+        ACheck_FilesAffected = new QLabel(layoutWidget1);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(layoutWidget);
+        label_13 = new QLabel(layoutWidget1);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(layoutWidget);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget1);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1144,13 +1150,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(layoutWidget);
+        label_12 = new QLabel(layoutWidget1);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font2);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(layoutWidget);
+        archiveErrorList = new QListWidget(layoutWidget1);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);
@@ -1159,7 +1165,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1600, 20));
+        menuBar->setGeometry(QRect(0, 0, 1920, 20));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
@@ -1197,7 +1203,6 @@ public:
 #endif // QT_CONFIG(tooltip)
         WAEX_logo->setText(QString());
         label->setText(QCoreApplication::translate("MainWindow", "Notes PO# :", nullptr));
-        saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         noticePayableCarriers->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
         noticePhyto->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
@@ -1301,12 +1306,15 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        radioButton->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
-        radioButton_2->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
-        radioButton_3->setText(QCoreApplication::translate("MainWindow", "Border", nullptr));
-        radioButton_4->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
-        radioButton_5->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Add Comment", nullptr));
+        saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
+        order_progressBar->setFormat(QString());
+        RB_SalesOrder->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
+        RB_Shipped->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
+        RB_Border->setText(QCoreApplication::translate("MainWindow", "Border", nullptr));
+        RB_Crossed->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
+        RB_Delivered->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
+        testSocketButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));

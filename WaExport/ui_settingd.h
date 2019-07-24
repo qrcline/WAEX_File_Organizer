@@ -32,20 +32,20 @@ public:
     QLabel *label_3;
     QFrame *frame;
     QLabel *label_5;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QFormLayout *formLayout;
     QLabel *label_6;
     QLineEdit *lineEdit_2;
     QLabel *label_7;
     QLineEdit *lineEdit_3;
     QFrame *frame_2;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QCheckBox *settingsOpenFolder;
     QCheckBox *settingsToolTips;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
-    QLineEdit *lineEdit;
+    QLineEdit *settingsUserName;
     QLabel *label_8;
 
     void setupUi(QDialog *settingD)
@@ -89,18 +89,18 @@ public:
         font1.setWeight(75);
         label_5->setFont(font1);
         label_5->setAlignment(Qt::AlignCenter);
-        widget = new QWidget(frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 30, 241, 56));
-        formLayout = new QFormLayout(widget);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 30, 241, 56));
+        formLayout = new QFormLayout(layoutWidget);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
         formLayout->setContentsMargins(0, 0, 0, 0);
-        label_6 = new QLabel(widget);
+        label_6 = new QLabel(layoutWidget);
         label_6->setObjectName(QString::fromUtf8("label_6"));
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_6);
 
-        lineEdit_2 = new QLineEdit(widget);
+        lineEdit_2 = new QLineEdit(layoutWidget);
         lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
         QFont font2;
         font2.setPointSize(10);
@@ -108,12 +108,12 @@ public:
 
         formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_2);
 
-        label_7 = new QLabel(widget);
+        label_7 = new QLabel(layoutWidget);
         label_7->setObjectName(QString::fromUtf8("label_7"));
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        lineEdit_3 = new QLineEdit(widget);
+        lineEdit_3 = new QLineEdit(layoutWidget);
         lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
         lineEdit_3->setFont(font2);
 
@@ -124,34 +124,34 @@ public:
         frame_2->setGeometry(QRect(19, 39, 261, 131));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Sunken);
-        layoutWidget = new QWidget(frame_2);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 40, 241, 91));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        layoutWidget1 = new QWidget(frame_2);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 40, 241, 91));
+        verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        settingsOpenFolder = new QCheckBox(layoutWidget);
+        settingsOpenFolder = new QCheckBox(layoutWidget1);
         settingsOpenFolder->setObjectName(QString::fromUtf8("settingsOpenFolder"));
 
         verticalLayout->addWidget(settingsOpenFolder);
 
-        settingsToolTips = new QCheckBox(layoutWidget);
+        settingsToolTips = new QCheckBox(layoutWidget1);
         settingsToolTips->setObjectName(QString::fromUtf8("settingsToolTips"));
 
         verticalLayout->addWidget(settingsToolTips);
 
         horizontalLayout_2 = new QHBoxLayout();
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
-        label_4 = new QLabel(layoutWidget);
+        label_4 = new QLabel(layoutWidget1);
         label_4->setObjectName(QString::fromUtf8("label_4"));
 
         horizontalLayout_2->addWidget(label_4);
 
-        lineEdit = new QLineEdit(layoutWidget);
-        lineEdit->setObjectName(QString::fromUtf8("lineEdit"));
-        lineEdit->setFont(font2);
+        settingsUserName = new QLineEdit(layoutWidget1);
+        settingsUserName->setObjectName(QString::fromUtf8("settingsUserName"));
+        settingsUserName->setFont(font2);
 
-        horizontalLayout_2->addWidget(lineEdit);
+        horizontalLayout_2->addWidget(settingsUserName);
 
 
         verticalLayout->addLayout(horizontalLayout_2);
