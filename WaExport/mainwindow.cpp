@@ -19,8 +19,19 @@
 #include <thread>
 #include <QtGui>
 #include <QInputDialog>
-#include <QtNetwork>
-
+//#include <httprequest.hpp>
+#include <QNetworkAccessManager>
+#include <QJsonValue>
+#include <QJsonObject>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <QCoreApplication>
+#include <QNetworkRequest>
+#include <QNetworkReply>
+#include <QString>
+#include <QVariant>
+#include <QtDebug>
+#include <QSsl>
 
 
 
@@ -104,6 +115,7 @@ void MainWindow::loadSettings()
     QSettings setting("WAEX","Organizer");
     setting.beginGroup("Settings");
     mainDirectory=setting.value("workDirec","NULL").toString();
+    userName=setting.value("User","").toString();
     QString tTip=setting.value("tTip","False").toString();
     setting.endGroup();
     //Set working directory labels
@@ -275,7 +287,7 @@ void MainWindow::updateWindow()
     else ui->receipts_notice->setText("No");
 
     //Fill in the notes section
-    ui->noteDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+    ui->notesDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -529,7 +541,7 @@ void MainWindow::on_saveButton_clicked()
 
     if(mainDirectory!=nullptr && ui->POInput->text()!="")
     {
-        if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesArea->toPlainText(),getRequiredFiles())))
+        if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesDisplay->toPlainText(),getRequiredFiles())))
         {
             std::cout<<"Index file creation failed"<<std::endl;
         }
@@ -1267,12 +1279,7 @@ void MainWindow::on_testSocketButton_clicked()
     postRequest(message);
 }
 
-void MainWindow::onFinish(QNetworkReply *rep)
-{
-    QByteArray bts = rep->readAll();
-        QString str(bts);
-        QMessageBox::information(this,"sal",str,"ok");
-}
+
 
 void MainWindow::postRequest(QByteArray & postData)
 {
@@ -1282,28 +1289,70 @@ void MainWindow::postRequest(QByteArray & postData)
             url.setPath("/v1/glo/boards/5d360413538eed0011572e26/cards");
 
 
-    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
+//    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
 
-    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onFinish(QNetworkReply*)));
-    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
+//    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onFinish(QNetworkReply*)));
+//    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
 
-    QHttpMultiPart http;
+//    QHttpMultiPart http;
 
-    QHttpPart receiptPart;
-   //receiptPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"data\""));
+//    QHttpPart receiptPart;
+//   //receiptPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"data\""));
+//    receiptPart.setRawHeader("content-type","application/json");
+//    //receiptPart.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+//    receiptPart.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
+//    receiptPart.setRawHeader("Accept","application/json");
+//    receiptPart.setBody(postData);
+
+//    http.append(receiptPart);
+
+//    mgr->post(QNetworkRequest(url), &http);
+
+
+
+    //From the tutorial
+
+    QJsonObject jObj;
+    jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));
+    jObj.insert("name",QJsonValue::fromVariant("Test2020"));
+
+
+    QJsonDocument doc(jObj);
+    qDebug()<<doc.toJson();
+
+    QNetworkRequest req(url);
     //receiptPart.setRawHeader("content-type","application/json");
-    receiptPart.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
-    receiptPart.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
-    receiptPart.setRawHeader("Accept","application/json");
-    receiptPart.setBody(postData);
+    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+    req.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
+    req.setRawHeader("Accept","application/json");
 
-    http.append(receiptPart);
+    QNetworkAccessManager man;
 
-    mgr->post(QNetworkRequest(url), &http);
+    QNetworkReply *reply =man.post(req,postData);
+
+    while(!reply->isFinished())
+    {
+        qApp->processEvents();
+    }
+
+
+    QByteArray responseByte=reply->readAll();
+    qDebug()<<responseByte;
 
 
 
 
 
+
+
+
+
+}
+
+void MainWindow::on_addCommentButton_clicked()
+{
+    QString tempNote=ui->notesDisplay->toPlainText();
+    ui->notesDisplay->setText(tempNote+"\n"+userName+": "+ui->notesArea->toPlainText());
+    ui->notesArea->clear();
 
 }

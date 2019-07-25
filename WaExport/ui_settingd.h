@@ -35,9 +35,8 @@ public:
     QWidget *layoutWidget;
     QFormLayout *formLayout;
     QLabel *label_6;
-    QLineEdit *lineEdit_2;
-    QLabel *label_7;
-    QLineEdit *lineEdit_3;
+    QLineEdit *settingsPAT;
+    QPushButton *pushButton;
     QFrame *frame_2;
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
@@ -100,24 +99,18 @@ public:
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_6);
 
-        lineEdit_2 = new QLineEdit(layoutWidget);
-        lineEdit_2->setObjectName(QString::fromUtf8("lineEdit_2"));
+        settingsPAT = new QLineEdit(layoutWidget);
+        settingsPAT->setObjectName(QString::fromUtf8("settingsPAT"));
         QFont font2;
         font2.setPointSize(10);
-        lineEdit_2->setFont(font2);
+        settingsPAT->setFont(font2);
 
-        formLayout->setWidget(0, QFormLayout::FieldRole, lineEdit_2);
+        formLayout->setWidget(0, QFormLayout::FieldRole, settingsPAT);
 
-        label_7 = new QLabel(layoutWidget);
-        label_7->setObjectName(QString::fromUtf8("label_7"));
+        pushButton = new QPushButton(layoutWidget);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
 
-        formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
-
-        lineEdit_3 = new QLineEdit(layoutWidget);
-        lineEdit_3->setObjectName(QString::fromUtf8("lineEdit_3"));
-        lineEdit_3->setFont(font2);
-
-        formLayout->setWidget(1, QFormLayout::FieldRole, lineEdit_3);
+        formLayout->setWidget(1, QFormLayout::FieldRole, pushButton);
 
         frame_2 = new QFrame(settingD);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
@@ -174,8 +167,8 @@ public:
         settingsClose->setText(QCoreApplication::translate("settingD", "Close", nullptr));
         label_3->setText(QCoreApplication::translate("settingD", " Restart Application to apply settings. ", nullptr));
         label_5->setText(QCoreApplication::translate("settingD", "Glo Board Settings", nullptr));
-        label_6->setText(QCoreApplication::translate("settingD", "client_id:", nullptr));
-        label_7->setText(QCoreApplication::translate("settingD", "client_secret:", nullptr));
+        label_6->setText(QCoreApplication::translate("settingD", "PAT:", nullptr));
+        pushButton->setText(QCoreApplication::translate("settingD", "New PAT", nullptr));
         settingsOpenFolder->setText(QCoreApplication::translate("settingD", "Open folder on Enter press", nullptr));
         settingsToolTips->setText(QCoreApplication::translate("settingD", "Enable Tool Tips", nullptr));
         label_4->setText(QCoreApplication::translate("settingD", "User Name:", nullptr));

@@ -33,7 +33,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTextBrowser>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -155,9 +154,9 @@ public:
     QLabel *label_4;
     QLabel *label_2;
     QLabel *workingDirectory_CreateFile;
-    QTextBrowser *noteDisplay;
-    QPushButton *pushButton;
+    QPushButton *addCommentButton;
     QPushButton *saveButton;
+    QTextEdit *notesDisplay;
     QProgressBar *order_progressBar;
     QWidget *layoutWidget;
     QHBoxLayout *horizontalLayout;
@@ -198,7 +197,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1920, 912);
+        MainWindow->resize(1559, 882);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -314,7 +313,7 @@ public:
         tabWidget = new QTabWidget(centralWidget);
         tabWidget->setObjectName(QString::fromUtf8("tabWidget"));
         tabWidget->setEnabled(true);
-        tabWidget->setGeometry(QRect(10, 10, 1881, 961));
+        tabWidget->setGeometry(QRect(10, 10, 1581, 961));
         QFont font;
         font.setPointSize(10);
         tabWidget->setFont(font);
@@ -323,11 +322,11 @@ public:
         createFile->setObjectName(QString::fromUtf8("createFile"));
         WAEX_logo = new QLabel(createFile);
         WAEX_logo->setObjectName(QString::fromUtf8("WAEX_logo"));
-        WAEX_logo->setGeometry(QRect(1260, 5, 321, 111));
+        WAEX_logo->setGeometry(QRect(1230, 0, 321, 111));
         WAEX_logo->setScaledContents(true);
         frame = new QFrame(createFile);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(0, 10, 701, 801));
+        frame->setGeometry(QRect(0, 10, 701, 791));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Sunken);
         frame->setLineWidth(3);
@@ -996,24 +995,24 @@ public:
         workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
-        noteDisplay = new QTextBrowser(frame);
-        noteDisplay->setObjectName(QString::fromUtf8("noteDisplay"));
-        noteDisplay->setGeometry(QRect(325, 611, 351, 181));
-        noteDisplay->setAcceptDrops(false);
-        pushButton = new QPushButton(frame);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(220, 770, 80, 21));
+        addCommentButton = new QPushButton(frame);
+        addCommentButton->setObjectName(QString::fromUtf8("addCommentButton"));
+        addCommentButton->setGeometry(QRect(220, 760, 80, 21));
         saveButton = new QPushButton(frame);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
         saveButton->setGeometry(QRect(580, 580, 80, 21));
+        notesDisplay = new QTextEdit(frame);
+        notesDisplay->setObjectName(QString::fromUtf8("notesDisplay"));
+        notesDisplay->setGeometry(QRect(360, 610, 301, 141));
+        notesDisplay->setReadOnly(true);
         order_progressBar = new QProgressBar(createFile);
         order_progressBar->setObjectName(QString::fromUtf8("order_progressBar"));
-        order_progressBar->setGeometry(QRect(720, 150, 841, 23));
+        order_progressBar->setGeometry(QRect(720, 150, 821, 23));
         order_progressBar->setMaximum(100);
         order_progressBar->setValue(0);
         layoutWidget = new QWidget(createFile);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(720, 180, 841, 41));
+        layoutWidget->setGeometry(QRect(720, 180, 821, 41));
         horizontalLayout = new QHBoxLayout(layoutWidget);
         horizontalLayout->setSpacing(120);
         horizontalLayout->setContentsMargins(11, 11, 11, 11);
@@ -1165,7 +1164,7 @@ public:
         MainWindow->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(MainWindow);
         menuBar->setObjectName(QString::fromUtf8("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 1920, 20));
+        menuBar->setGeometry(QRect(0, 0, 1559, 20));
         menuFile = new QMenu(menuBar);
         menuFile->setObjectName(QString::fromUtf8("menuFile"));
         menuHelp = new QMenu(menuBar);
@@ -1306,7 +1305,7 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Add Comment", nullptr));
+        addCommentButton->setText(QCoreApplication::translate("MainWindow", "Add Comment", nullptr));
         saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         order_progressBar->setFormat(QString());
         RB_SalesOrder->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));

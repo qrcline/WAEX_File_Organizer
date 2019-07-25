@@ -41,6 +41,7 @@ HEADERS += \
     aboutwindow.h \
     dragdrop.h \
     helpcenter.h \
+    httprequest.hpp \
         mainwindow.h \
     folderio.h \
     dirent.h \

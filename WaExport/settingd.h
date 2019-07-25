@@ -19,6 +19,8 @@ public:
 private slots:
     void on_settingsClose_clicked();
 
+    void on_pushButton_clicked();
+
 private:
     Ui::settingD *ui;
     Ui::MainWindow* mainUi;

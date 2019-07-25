@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>912</height>
+    <width>1559</width>
+    <height>882</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -146,7 +146,7 @@ width:10px;
      <rect>
       <x>10</x>
       <y>10</y>
-      <width>1881</width>
+      <width>1581</width>
       <height>961</height>
      </rect>
     </property>
@@ -171,8 +171,8 @@ width:10px;
      <widget class="QLabel" name="WAEX_logo">
       <property name="geometry">
        <rect>
-        <x>1260</x>
-        <y>5</y>
+        <x>1230</x>
+        <y>0</y>
         <width>321</width>
         <height>111</height>
        </rect>
@@ -190,7 +190,7 @@ width:10px;
         <x>0</x>
         <y>10</y>
         <width>701</width>
-        <height>801</height>
+        <height>791</height>
        </rect>
       </property>
       <property name="frameShape">
@@ -1615,24 +1615,11 @@ width:10px;
         <string>NULL</string>
        </property>
       </widget>
-      <widget class="QTextBrowser" name="noteDisplay">
-       <property name="geometry">
-        <rect>
-         <x>325</x>
-         <y>611</y>
-         <width>351</width>
-         <height>181</height>
-        </rect>
-       </property>
-       <property name="acceptDrops">
-        <bool>false</bool>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="addCommentButton">
        <property name="geometry">
         <rect>
          <x>220</x>
-         <y>770</y>
+         <y>760</y>
          <width>80</width>
          <height>21</height>
         </rect>
@@ -1654,13 +1641,26 @@ width:10px;
         <string>Save</string>
        </property>
       </widget>
+      <widget class="QTextEdit" name="notesDisplay">
+       <property name="geometry">
+        <rect>
+         <x>360</x>
+         <y>610</y>
+         <width>301</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+      </widget>
      </widget>
      <widget class="QProgressBar" name="order_progressBar">
       <property name="geometry">
        <rect>
         <x>720</x>
         <y>150</y>
-        <width>841</width>
+        <width>821</width>
         <height>23</height>
        </rect>
       </property>
@@ -1679,7 +1679,7 @@ width:10px;
        <rect>
         <x>720</x>
         <y>180</y>
-        <width>841</width>
+        <width>821</width>
         <height>41</height>
        </rect>
       </property>
@@ -2025,7 +2025,7 @@ width:10px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1920</width>
+     <width>1559</width>
      <height>20</height>
     </rect>
    </property>

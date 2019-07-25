@@ -2,6 +2,7 @@
 #include "ui_settingd.h"
 #include "QSettings.h"
 #include "mainwindow.h"
+#include <qdesktopservices.h>
 
 settingD::settingD(QWidget *parent,Ui::MainWindow* uiMain) :
     QDialog(parent),
@@ -33,6 +34,7 @@ void settingD::on_settingsClose_clicked()
     else
         setting.setValue("tTip","False");
     setting.setValue("User",ui->settingsUserName->text());
+    setting.setValue("PAT",ui->settingsPAT->text());
     setting.endGroup();
     MainWindow mWindow;
     mWindow.loadSettings(); //TODO: Make it so that the settings can be refreshed for the mainwindow
@@ -51,6 +53,7 @@ void settingD::setup()
     else
          ui->settingsToolTips->setChecked(false);
     ui->settingsUserName->setText(setting.value("User","").toString());
+     ui->settingsPAT->setText(setting.value("PAT","").toString());
     setting.endGroup();
 }
 
@@ -63,3 +66,9 @@ void settingD::closeEvent(QCloseEvent *bar)
     QWidget::closeEvent(bar);
 }
 
+
+void settingD::on_pushButton_clicked()
+{
+   // https://app.gitkraken.com/pats/new
+  QDesktopServices::openUrl ( QUrl("https://app.gitkraken.com/pats/new"));
+}

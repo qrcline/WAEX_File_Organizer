@@ -22,7 +22,7 @@
 #include <aboutwindow.h>
 #include <helpcenter.h>
 #include <settingd.h>
-#include <QtNetwork>
+
 
 namespace Ui {
 class MainWindow;
@@ -130,7 +130,9 @@ private slots:
       void on_RB_Delivered_clicked();
 
       void on_testSocketButton_clicked();
-       void MainWindow::onFinish(QNetworkReply *rep);
+
+
+       void on_addCommentButton_clicked();
 
 private:
     Ui::MainWindow *ui;
@@ -141,6 +143,7 @@ private:
    // ArchiveCheck *aCheck;
     //void openDirectory(QString );
     QString mainDirectory="NULL";
+    QString userName="";
     void openFolder(QString folderText,bool winEx);
     QString filesRequired [30]={NULL};
     void closeEvent(QCloseEvent *bar);
