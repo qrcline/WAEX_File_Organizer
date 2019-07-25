@@ -144,6 +144,7 @@ private:
     //void openDirectory(QString );
     QString mainDirectory="NULL";
     QString userName="";
+    QString PAT="";
     void openFolder(QString folderText,bool winEx);
     QString filesRequired [30]={NULL};
     void closeEvent(QCloseEvent *bar);
@@ -158,9 +159,11 @@ private:
     void updateChecked();
 
     //bool readFile(const QString &fileName);
-    void postRequest(QByteArray &postData);
+    QByteArray postRequest(QJsonObject postData, QString path, QString columnId,QString description,QString type,int position=-1);
 
 
+    void gloCreatePO(QString po);
+    void gloMoveCard(QString pO, QString column);
 };
 
 #endif // MAINWINDOW_H

@@ -116,6 +116,7 @@ void MainWindow::loadSettings()
     setting.beginGroup("Settings");
     mainDirectory=setting.value("workDirec","NULL").toString();
     userName=setting.value("User","").toString();
+    PAT=setting.value("PAT","").toString();
     QString tTip=setting.value("tTip","False").toString();
     setting.endGroup();
     //Set working directory labels
@@ -1275,13 +1276,38 @@ void MainWindow::on_RB_Delivered_clicked()
 
 void MainWindow::on_testSocketButton_clicked()
 {
-   QByteArray message= "{\"name\":\"test2015\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+   QByteArray message= "{\"name\":\"test2021\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
     postRequest(message);
 }
 
+void MainWindow::gloCreatePO(QString po)
+{
+    QString message= "{\"name\":\""+po+"\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+     QByteArray sendMessage=message.toUtf8();
+    postRequest(sendMessage);
+
+}
+void MainWindow::gloMoveCard(QString pO,QString column)
+{
+    QJsonObject jObj;
+
+    //Select the column_id
+    if(column=="Sales Order")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    if(column=="Shipped")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));
+    if(column=="Border")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d3604684e1d32000f889e7a"));
+    if(column=="Crossed")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));
+    if(column=="Delivered")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));
+    else
+    jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+}
 
 
-void MainWindow::postRequest(QByteArray & postData)
+QByteArray MainWindow::postRequest(QJsonObject postData, QString path, QString column,QString description,QString type,int position)
 {
     QUrl url;
             url.setScheme("https");
@@ -1289,46 +1315,40 @@ void MainWindow::postRequest(QByteArray & postData)
             url.setPath("/v1/glo/boards/5d360413538eed0011572e26/cards");
 
 
-//    QNetworkAccessManager * mgr = new QNetworkAccessManager(this);
-
-//    connect(mgr,SIGNAL(finished(QNetworkReply*)),this,SLOT(onFinish(QNetworkReply*)));
-//    connect(mgr,SIGNAL(finished(QNetworkReply*)),mgr,SLOT(deleteLater()));
-
-//    QHttpMultiPart http;
-
-//    QHttpPart receiptPart;
-//   //receiptPart.setHeader(QNetworkRequest::ContentDispositionHeader, QVariant("form-data; name=\"data\""));
-//    receiptPart.setRawHeader("content-type","application/json");
-//    //receiptPart.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
-//    receiptPart.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
-//    receiptPart.setRawHeader("Accept","application/json");
-//    receiptPart.setBody(postData);
-
-//    http.append(receiptPart);
-
-//    mgr->post(QNetworkRequest(url), &http);
-
-
-
-    //From the tutorial
-
     QJsonObject jObj;
-    jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));
-    jObj.insert("name",QJsonValue::fromVariant("Test2020"));
 
 
+    //Select the column_id
+    if(column=="Sales Order")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    if(column=="Shipped")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));
+    if(column=="Border")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d3604684e1d32000f889e7a"));
+    if(column=="Crossed")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));
+    if(column=="Delivered")
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));
+    else
+    jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    //Set the name
+    jObj.insert("name",QJsonValue::fromVariant(ui->POInput->text()));
+    //Set the position
+    if(position!=-1)
+    jObj.insert("position",QJsonValue::fromVariant(position));
+
+
+
+    //Formats and sends the packet
     QJsonDocument doc(jObj);
     qDebug()<<doc.toJson();
-
     QNetworkRequest req(url);
-    //receiptPart.setRawHeader("content-type","application/json");
     req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
-    req.setRawHeader("Authorization","Bearer p320e533ba63f256197660890e94329d5f0eb6ffd");  //Take out before git push
+    QString rawAuth= "Bearer "+PAT;
+    req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
     req.setRawHeader("Accept","application/json");
-
     QNetworkAccessManager man;
-
-    QNetworkReply *reply =man.post(req,postData);
+    QNetworkReply *reply =man.post(req,doc.toJson());
 
     while(!reply->isFinished())
     {
@@ -1338,17 +1358,21 @@ void MainWindow::postRequest(QByteArray & postData)
 
     QByteArray responseByte=reply->readAll();
     qDebug()<<responseByte;
+    return responseByte;
+}
 
 
-
-
-
+QByteArray MainWindow::getRequest()
+{
+    QUrl url;
+            url.setScheme("https");
+            url.setHost("gloapi.gitkraken.com");
+            url.setPath("/v1/glo/boards/5d360413538eed0011572e26/cards");
 
 
 
 
 }
-
 void MainWindow::on_addCommentButton_clicked()
 {
     QString tempNote=ui->notesDisplay->toPlainText();
