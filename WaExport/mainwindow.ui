@@ -1711,6 +1711,9 @@ width:10px;
          <property name="text">
           <string>Sales Order</string>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -1721,6 +1724,9 @@ width:10px;
          <property name="text">
           <string>Shipped</string>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -1731,6 +1737,9 @@ width:10px;
          <property name="text">
           <string>Border</string>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -1741,6 +1750,9 @@ width:10px;
          <property name="text">
           <string>Crossed</string>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
        <item>
@@ -1751,6 +1763,9 @@ width:10px;
          <property name="text">
           <string>Delivered</string>
          </property>
+         <attribute name="buttonGroup">
+          <string notr="true">buttonGroup_2</string>
+         </attribute>
         </widget>
        </item>
       </layout>
@@ -2090,4 +2105,7 @@ width:10px;
   <include location="resources.qrc"/>
  </resources>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup_2"/>
+ </buttongroups>
 </ui>

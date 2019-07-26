@@ -164,7 +164,7 @@ private:
 
 
     void gloCreatePO(QString po);
-    void gloMoveCard(QString pO, QString column);
+    void gloMoveCard();
     QJsonArray getRequest( QString path);
     void gloAddComment(QString cardId, QString comment);
     QString gloGetCardId(QString po);

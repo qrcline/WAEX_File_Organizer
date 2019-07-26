@@ -401,6 +401,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
                 ui->comboBox->setCurrentIndex(0);
                 ui->comboBox->setCurrentIndex(1);
                 ui->comboBox->setCurrentIndex(0);
+                gloCreatePO(folderText);
 
             }
         }
@@ -1251,48 +1252,63 @@ void MainWindow::on_actionSettings_2_triggered()
 void MainWindow::on_RB_SalesOrder_clicked()
 {
     ui->order_progressBar->setValue(7);
+    gloMoveCard();
 }
 
 void MainWindow::on_RB_Shipped_clicked()
 {
     ui->order_progressBar->setValue(29);
-
+     gloMoveCard();
 }
 
 void MainWindow::on_RB_Border_clicked()
 {
     ui->order_progressBar->setValue(50);
+     gloMoveCard();
 }
 
 void MainWindow::on_RB_Crossed_clicked()
 {
     ui->order_progressBar->setValue(75);
+     gloMoveCard();
 }
 
 void MainWindow::on_RB_Delivered_clicked()
 {
     ui->order_progressBar->setValue(100);
+    gloMoveCard();
 }
 
 void MainWindow::on_testSocketButton_clicked()
 {
    QByteArray message= "{\"name\":\"test2021\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
-   gloGetCardId(ui->POInput->text());
+  // QString cardId= gloGetCardId(ui->POInput->text());
+   gloAddComment(ui->POInput->text(),"Hi my name is Quinton");
+   //qDebug()<<cardId;
+
     //postRequest(message);
 }
 
 void MainWindow::gloCreatePO(QString po)
 {
-    QString message= "{\"name\":\""+po+"\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+    QString message= "{\"name\":\""+po+"\",\"position\":\"0\",\"column_id\":\"5d36042213853d0011ab778f\"}";
      QByteArray sendMessage=message.toUtf8();
-    //postRequest(sendMessage);
+     QJsonObject jObj;
+     jObj.insert("name",QJsonValue::fromVariant(po));
+     jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+
+    postRequest(jObj,"/cards");
 
 }
-void MainWindow::gloMoveCard(QString pO,QString column)
+void MainWindow::gloMoveCard()
 {
     QJsonObject jObj;
-
+    QString pO=ui->POInput->text();
+    QString cardId=gloGetCardId(pO);
+    //jObj.insert("column_id",cardId);
     //Select the column_id
+   QString column=ui->buttonGroup_2->checkedButton()->text();
+   qDebug()<<column;
     if(column=="Sales Order")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));//Sales Order
     if(column=="Shipped")
@@ -1303,16 +1319,18 @@ void MainWindow::gloMoveCard(QString pO,QString column)
         jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));//Crossed
     if(column=="Delivered")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));//Delivered
-    else
-    jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    jObj.insert("position",QJsonValue::fromVariant(0));//Delivered
+    //jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    postRequest(jObj,"/cards/"+cardId);
 }
 
 void MainWindow::gloAddComment(QString pO,QString comment)
 {
 
 
-    QString cardId;
-    QString path="/cards"+cardId+"/comments";
+
+    QString cardId= gloGetCardId(ui->POInput->text());
+    QString path="/cards/"+cardId+"/comments";
     QJsonObject send;
     send.insert("text",QJsonValue::fromVariant(comment));
     postRequest(send,path);
@@ -1327,7 +1345,7 @@ QString MainWindow::gloGetCardId(QString po)
 
     foreach (const QJsonValue &value,  getRequest("/cards")) {
            QJsonObject json_obj = value.toObject();
-           if(json_obj["name"].toString()==po)
+           if((json_obj["name"].toString())==po)
                returnId= json_obj["id"].toString();
        }
     std::cout<<"The id for po: "+po.toStdString()+": "+returnId.toStdString();
@@ -1424,7 +1442,13 @@ QJsonArray MainWindow::getRequest( QString path)
 void MainWindow::on_addCommentButton_clicked()
 {
     QString tempNote=ui->notesDisplay->toPlainText();
-    ui->notesDisplay->setText(tempNote+"\n"+userName+": "+ui->notesArea->toPlainText());
-    ui->notesArea->clear();
+    if(ui->notesArea->toPlainText().length()>0)
+    {
+        ui->notesDisplay->setText(tempNote+"\n"+userName+": "+ui->notesArea->toPlainText());
+        gloAddComment(ui->POInput->text(),ui->notesArea->toPlainText());
+        ui->notesArea->clear();
+    }
+
+
 
 }

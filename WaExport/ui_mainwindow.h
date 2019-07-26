@@ -13,6 +13,7 @@
 #include <QtGui/QIcon>
 #include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QButtonGroup>
 #include <QtWidgets/QCheckBox>
 #include <QtWidgets/QComboBox>
 #include <QtWidgets/QCommandLinkButton>
@@ -193,6 +194,7 @@ public:
     QMenu *menuFile;
     QMenu *menuHelp;
     QStatusBar *statusBar;
+    QButtonGroup *buttonGroup_2;
 
     void setupUi(QMainWindow *MainWindow)
     {
@@ -1025,30 +1027,37 @@ public:
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
         horizontalLayout->setContentsMargins(0, 0, 0, 0);
         RB_SalesOrder = new QRadioButton(layoutWidget);
+        buttonGroup_2 = new QButtonGroup(MainWindow);
+        buttonGroup_2->setObjectName(QString::fromUtf8("buttonGroup_2"));
+        buttonGroup_2->addButton(RB_SalesOrder);
         RB_SalesOrder->setObjectName(QString::fromUtf8("RB_SalesOrder"));
         RB_SalesOrder->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_SalesOrder);
 
         RB_Shipped = new QRadioButton(layoutWidget);
+        buttonGroup_2->addButton(RB_Shipped);
         RB_Shipped->setObjectName(QString::fromUtf8("RB_Shipped"));
         RB_Shipped->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Shipped);
 
         RB_Border = new QRadioButton(layoutWidget);
+        buttonGroup_2->addButton(RB_Border);
         RB_Border->setObjectName(QString::fromUtf8("RB_Border"));
         RB_Border->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Border);
 
         RB_Crossed = new QRadioButton(layoutWidget);
+        buttonGroup_2->addButton(RB_Crossed);
         RB_Crossed->setObjectName(QString::fromUtf8("RB_Crossed"));
         RB_Crossed->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Crossed);
 
         RB_Delivered = new QRadioButton(layoutWidget);
+        buttonGroup_2->addButton(RB_Delivered);
         RB_Delivered->setObjectName(QString::fromUtf8("RB_Delivered"));
         RB_Delivered->setLayoutDirection(Qt::LeftToRight);
 
