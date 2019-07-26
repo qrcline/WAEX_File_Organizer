@@ -134,6 +134,7 @@ private slots:
 
        void on_addCommentButton_clicked();
 
+
 private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;
@@ -159,11 +160,14 @@ private:
     void updateChecked();
 
     //bool readFile(const QString &fileName);
-    QByteArray postRequest(QJsonObject postData, QString path, QString columnId,QString description,QString type,int position=-1);
+    QByteArray postRequest(QJsonObject postData, QString path);
 
 
     void gloCreatePO(QString po);
     void gloMoveCard(QString pO, QString column);
+    QJsonArray getRequest( QString path);
+    void gloAddComment(QString cardId, QString comment);
+    QString gloGetCardId(QString po);
 };
 
 #endif // MAINWINDOW_H

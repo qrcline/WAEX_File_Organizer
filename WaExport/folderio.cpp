@@ -155,7 +155,7 @@ bool FolderIO::createIndexFile(QString destDirec,QString poNum, QString customer
     //outfile << "Date created:*"+QDate::currentDate().toString() << std::endl;
     outfile<<list_files(destDirec+"/").str();
     //std::cout<< list_files(destDirec+"/").str();
-    outfile<<std::endl<<"Notes:"<<notes.toStdString()<<std::endl;
+    outfile<<std::endl<<"Notes:"<<notes.toStdString();
 
 
 
