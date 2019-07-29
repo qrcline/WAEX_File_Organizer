@@ -1433,6 +1433,8 @@ QString MainWindow::gloGetCardPosition(QString po)
 
     return nullptr;
 }
+//TODO:Make the Glo bords it's own class
+//TODO:Make function to ge the comments for a card
 
 
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)

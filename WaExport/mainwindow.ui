@@ -172,7 +172,7 @@ width:10px;
       <property name="geometry">
        <rect>
         <x>1230</x>
-        <y>0</y>
+        <y>5</y>
         <width>321</width>
         <height>111</height>
        </rect>
@@ -1569,106 +1569,31 @@ width:10px;
         <string>NULL</string>
        </property>
       </widget>
-      <widget class="QFrame" name="frame_2">
+      <widget class="QTextEdit" name="notesDisplay">
        <property name="geometry">
         <rect>
-         <x>10</x>
-         <y>540</y>
-         <width>681</width>
-         <height>231</height>
+         <x>350</x>
+         <y>550</y>
+         <width>341</width>
+         <height>201</height>
         </rect>
        </property>
-       <property name="frameShape">
-        <enum>QFrame::StyledPanel</enum>
+       <property name="readOnly">
+        <bool>false</bool>
        </property>
-       <property name="frameShadow">
-        <enum>QFrame::Raised</enum>
+      </widget>
+      <widget class="QPushButton" name="saveButton">
+       <property name="geometry">
+        <rect>
+         <x>610</x>
+         <y>750</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
        </property>
-       <widget class="QLabel" name="label">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>0</y>
-          <width>70</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>Notes PO# :</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="addCommentButton">
-        <property name="geometry">
-         <rect>
-          <x>130</x>
-          <y>180</y>
-          <width>80</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Add Comment</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="notesDisplay">
-        <property name="geometry">
-         <rect>
-          <x>329</x>
-          <y>19</y>
-          <width>341</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="readOnly">
-         <bool>false</bool>
-        </property>
-       </widget>
-       <widget class="QLabel" name="PoLabel">
-        <property name="geometry">
-         <rect>
-          <x>95</x>
-          <y>0</y>
-          <width>281</width>
-          <height>16</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>NULL</string>
-        </property>
-       </widget>
-       <widget class="QPushButton" name="saveButton">
-        <property name="geometry">
-         <rect>
-          <x>220</x>
-          <y>180</y>
-          <width>80</width>
-          <height>21</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>Save</string>
-        </property>
-       </widget>
-       <widget class="QTextEdit" name="notesArea">
-        <property name="geometry">
-         <rect>
-          <x>10</x>
-          <y>20</y>
-          <width>291</width>
-          <height>141</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>10</pointsize>
-         </font>
-        </property>
-       </widget>
+       <property name="text">
+        <string>Save</string>
+       </property>
       </widget>
      </widget>
      <widget class="QProgressBar" name="order_progressBar">
@@ -1773,8 +1698,8 @@ width:10px;
      <widget class="QPushButton" name="testSocketButton">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>410</y>
+        <x>760</x>
+        <y>660</y>
         <width>80</width>
         <height>21</height>
        </rect>
@@ -1786,8 +1711,8 @@ width:10px;
      <widget class="QFrame" name="frame_3">
       <property name="geometry">
        <rect>
-        <x>1000</x>
-        <y>250</y>
+        <x>710</x>
+        <y>470</y>
         <width>151</width>
         <height>191</height>
        </rect>
@@ -1812,6 +1737,100 @@ width:10px;
        </property>
       </widget>
      </widget>
+     <widget class="QFrame" name="frame_2">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>230</y>
+        <width>311</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>0</y>
+         <width>70</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Notes PO# :</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="addCommentButton">
+       <property name="geometry">
+        <rect>
+         <x>220</x>
+         <y>170</y>
+         <width>80</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Add Comment</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="PoLabel">
+       <property name="geometry">
+        <rect>
+         <x>95</x>
+         <y>0</y>
+         <width>281</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>NULL</string>
+       </property>
+      </widget>
+      <widget class="QTextEdit" name="notesArea">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>20</y>
+         <width>291</width>
+         <height>141</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <pointsize>10</pointsize>
+        </font>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="geometry">
+       <rect>
+        <x>1045</x>
+        <y>230</y>
+        <width>491</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <attribute name="horizontalHeaderVisible">
+       <bool>false</bool>
+      </attribute>
+      <column/>
+      <column/>
+      <column/>
+     </widget>
     </widget>
     <widget class="QWidget" name="ArchiveCheck">
      <attribute name="title">
@@ -1820,7 +1839,7 @@ width:10px;
      <widget class="QLabel" name="WAEX_logo_2">
       <property name="geometry">
        <rect>
-        <x>1260</x>
+        <x>1230</x>
         <y>5</y>
         <width>321</width>
         <height>111</height>
