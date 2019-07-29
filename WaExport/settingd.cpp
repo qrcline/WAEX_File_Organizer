@@ -33,6 +33,11 @@ void settingD::on_settingsClose_clicked()
         setting.setValue("tTip","True");
     else
         setting.setValue("tTip","False");
+
+    if(ui->settingsNoteEnter->isChecked())
+        setting.setValue("noteEnter","True");
+    else
+        setting.setValue("noteEnter","False");
     setting.setValue("User",ui->settingsUserName->text());
     setting.setValue("PAT",ui->settingsPAT->text());
     setting.endGroup();
@@ -52,6 +57,13 @@ void settingD::setup()
         ui->settingsToolTips->setChecked(true);
     else
          ui->settingsToolTips->setChecked(false);
+
+    QString noteEnter=setting.value("noteEnter","False").toString();
+    if(noteEnter=="True")
+        ui->settingsNoteEnter->setChecked(true);
+    else
+         ui->settingsToolTips->setChecked(false);
+
     ui->settingsUserName->setText(setting.value("User","").toString());
      ui->settingsPAT->setText(setting.value("PAT","").toString());
     setting.endGroup();

@@ -41,6 +41,7 @@ public:
     QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout;
     QCheckBox *settingsOpenFolder;
+    QCheckBox *settingsNoteEnter;
     QCheckBox *settingsToolTips;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label_4;
@@ -77,7 +78,7 @@ public:
         label_3->setGeometry(QRect(10, 370, 221, 16));
         frame = new QFrame(settingD);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(20, 180, 261, 171));
+        frame->setGeometry(QRect(20, 220, 261, 131));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Sunken);
         label_5 = new QLabel(frame);
@@ -114,12 +115,12 @@ public:
 
         frame_2 = new QFrame(settingD);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setGeometry(QRect(19, 39, 261, 131));
+        frame_2->setGeometry(QRect(19, 39, 261, 171));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Sunken);
         layoutWidget1 = new QWidget(frame_2);
         layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 40, 241, 91));
+        layoutWidget1->setGeometry(QRect(10, 40, 241, 131));
         verticalLayout = new QVBoxLayout(layoutWidget1);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -127,6 +128,11 @@ public:
         settingsOpenFolder->setObjectName(QString::fromUtf8("settingsOpenFolder"));
 
         verticalLayout->addWidget(settingsOpenFolder);
+
+        settingsNoteEnter = new QCheckBox(layoutWidget1);
+        settingsNoteEnter->setObjectName(QString::fromUtf8("settingsNoteEnter"));
+
+        verticalLayout->addWidget(settingsNoteEnter);
 
         settingsToolTips = new QCheckBox(layoutWidget1);
         settingsToolTips->setObjectName(QString::fromUtf8("settingsToolTips"));
@@ -170,6 +176,7 @@ public:
         label_6->setText(QCoreApplication::translate("settingD", "PAT:", nullptr));
         pushButton->setText(QCoreApplication::translate("settingD", "New PAT", nullptr));
         settingsOpenFolder->setText(QCoreApplication::translate("settingD", "Open folder on Enter press", nullptr));
+        settingsNoteEnter->setText(QCoreApplication::translate("settingD", "Add note on Enter press", nullptr));
         settingsToolTips->setText(QCoreApplication::translate("settingD", "Enable Tool Tips", nullptr));
         label_4->setText(QCoreApplication::translate("settingD", "User Name:", nullptr));
         label_8->setText(QCoreApplication::translate("settingD", "Application Settings", nullptr));

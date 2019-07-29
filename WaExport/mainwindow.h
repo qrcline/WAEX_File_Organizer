@@ -135,6 +135,7 @@ private slots:
        void on_addCommentButton_clicked();
 
 
+       void on_actionDelete_Current_PO_triggered();
 private:
 
     //Pointers

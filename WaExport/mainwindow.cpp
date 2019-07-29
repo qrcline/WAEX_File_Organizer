@@ -1233,8 +1233,6 @@ void MainWindow::on_actionAbout_triggered()
    // aboutWindow.setWindowFlag(aboutWindow.windowFlags() & ~Qt::WindowContextHelpButtonHint);
             ///setWindowFlag(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     aboutWindow.exec();
-
-
 }
 
 void MainWindow::on_actionHelp_Center_triggered()
@@ -1249,6 +1247,48 @@ void MainWindow::on_actionSettings_2_triggered()
    settingD setD(this,ui);
    setD.setModal(true);
     setD.exec();
+}
+
+void MainWindow::on_actionDelete_Current_PO_triggered()
+{
+    QString message="You are going to delete PO#: "+ui->POInput->text()+"\nThis is not reversable and will delete any Glo Board card, continue?";
+ if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Delete File", message, QMessageBox::Yes|QMessageBox::No).exec())
+    {
+     //Delete file
+        std::cout<<"Yes was selected"<<std::endl;
+        QDir dir(mainDirectory+"/"+ui->POInput->text());
+        dir.removeRecursively();
+
+
+        //Delete Glo Boards Card
+        QString path="/cards/"+currentCardid;
+        QUrl url;
+                url.setScheme("https");
+                url.setHost("gloapi.gitkraken.com");
+                url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
+
+
+        QNetworkRequest req(url);
+
+        req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+        QString rawAuth= "Bearer "+PAT;
+        req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
+        req.setRawHeader("Accept","application/json");
+        QNetworkAccessManager man;
+        QNetworkReply *reply =man.deleteResource(req);
+
+        while(!reply->isFinished())
+        {
+            qApp->processEvents();
+        }
+
+
+        QByteArray responseByte=reply->readAll();
+        qDebug()<<responseByte;
+
+
+    }
+
 }
 
 

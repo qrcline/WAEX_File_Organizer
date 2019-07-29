@@ -2095,6 +2095,8 @@ width:10px;
     </property>
     <addaction name="actionOpen"/>
     <addaction name="actionSettings_2"/>
+    <addaction name="separator"/>
+    <addaction name="actionDelete_Current_PO"/>
    </widget>
    <widget class="QMenu" name="menuHelp">
     <property name="title">
@@ -2130,6 +2132,11 @@ width:10px;
   <action name="actionSettings_2">
    <property name="text">
     <string>Settings</string>
+   </property>
+  </action>
+  <action name="actionDelete_Current_PO">
+   <property name="text">
+    <string>Delete Current PO</string>
    </property>
   </action>
  </widget>

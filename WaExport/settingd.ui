@@ -88,9 +88,9 @@ border-radius: 5px; </string>
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>180</y>
+     <y>220</y>
      <width>261</width>
-     <height>171</height>
+     <height>131</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -163,7 +163,7 @@ border-radius: 5px; </string>
      <x>19</x>
      <y>39</y>
      <width>261</width>
-     <height>131</height>
+     <height>171</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -178,7 +178,7 @@ border-radius: 5px; </string>
       <x>10</x>
       <y>40</y>
       <width>241</width>
-      <height>91</height>
+      <height>131</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -186,6 +186,13 @@ border-radius: 5px; </string>
       <widget class="QCheckBox" name="settingsOpenFolder">
        <property name="text">
         <string>Open folder on Enter press</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="settingsNoteEnter">
+       <property name="text">
+        <string>Add note on Enter press</string>
        </property>
       </widget>
      </item>

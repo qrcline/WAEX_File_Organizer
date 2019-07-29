@@ -47,6 +47,7 @@ public:
     QAction *actionHelp_Center;
     QAction *actionAbout;
     QAction *actionSettings_2;
+    QAction *actionDelete_Current_PO;
     QWidget *centralWidget;
     QTabWidget *tabWidget;
     QWidget *createFile;
@@ -311,6 +312,8 @@ public:
         actionAbout->setObjectName(QString::fromUtf8("actionAbout"));
         actionSettings_2 = new QAction(MainWindow);
         actionSettings_2->setObjectName(QString::fromUtf8("actionSettings_2"));
+        actionDelete_Current_PO = new QAction(MainWindow);
+        actionDelete_Current_PO->setObjectName(QString::fromUtf8("actionDelete_Current_PO"));
         centralWidget = new QWidget(MainWindow);
         centralWidget->setObjectName(QString::fromUtf8("centralWidget"));
         sizePolicy.setHeightForWidth(centralWidget->sizePolicy().hasHeightForWidth());
@@ -1204,6 +1207,8 @@ public:
         menuBar->addAction(menuHelp->menuAction());
         menuFile->addAction(actionOpen);
         menuFile->addAction(actionSettings_2);
+        menuFile->addSeparator();
+        menuFile->addAction(actionDelete_Current_PO);
         menuHelp->addSeparator();
         menuHelp->addAction(actionHelp_Center);
         menuHelp->addAction(actionAbout);
@@ -1223,6 +1228,7 @@ public:
         actionHelp_Center->setText(QCoreApplication::translate("MainWindow", "Help Center", nullptr));
         actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
         actionSettings_2->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
+        actionDelete_Current_PO->setText(QCoreApplication::translate("MainWindow", "Delete Current PO", nullptr));
 #if QT_CONFIG(tooltip)
         tabWidget->setToolTip(QString());
 #endif // QT_CONFIG(tooltip)
