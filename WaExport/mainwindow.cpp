@@ -54,6 +54,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mexP_Invoice->acceptDrops();
     acceptDrops();
 
+    ui->statusBar->hide();
     //THis is a test
     //ui->mexP_Spreadsheets->setChecked(false);
     ui->comboBox->setCurrentIndex(0);
@@ -402,6 +403,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
                 ui->comboBox->setCurrentIndex(1);
                 ui->comboBox->setCurrentIndex(0);
                 gloCreatePO(folderText);
+                currentCardid=gloGetCardId(ui->POInput->text());
 
             }
         }
@@ -425,6 +427,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
         if(tempTemplate=="Overseas")
             ui->comboBox->setCurrentIndex(3);
         updateChecked();
+        currentCardid=gloGetCardId(ui->POInput->text());
     }
     ui->PoLabel->setText(folderText);
 
@@ -1303,53 +1306,92 @@ void MainWindow::gloCreatePO(QString po)
 void MainWindow::gloMoveCard()
 {
     QJsonObject jObj;
-    QString pO=ui->POInput->text();
-    QString cardId=gloGetCardId(pO);
+    //QString pO=ui->POInput->text();
+    //QString cardId=gloGetCardId(pO);
     //jObj.insert("column_id",cardId);
     //Select the column_id
    QString column=ui->buttonGroup_2->checkedButton()->text();
-   qDebug()<<column;
+   //qDebug()<<column;
     if(column=="Sales Order")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));//Sales Order
-    if(column=="Shipped")
+    else if(column=="Shipped")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));//Shipped
-    if(column=="Border")
+    else if(column=="Border")
         jObj.insert("column_id",QJsonValue::fromVariant("5d3604684e1d32000f889e7a"));//Border
-    if(column=="Crossed")
+   else if(column=="Crossed")
         jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));//Crossed
-    if(column=="Delivered")
+    else if(column=="Delivered")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));//Delivered
     jObj.insert("position",QJsonValue::fromVariant(0));//Delivered
     //jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
-    postRequest(jObj,"/cards/"+cardId);
+    postRequest(jObj,"/cards/"+currentCardid);
 }
 
 void MainWindow::gloAddComment(QString pO,QString comment)
 {
 
-
-
-    QString cardId= gloGetCardId(ui->POInput->text());
-    QString path="/cards/"+cardId+"/comments";
+    //QString cardId= gloGetCardId(ui->POInput->text());//Gets the cardId for the Po#
+    QString path="/cards/"+currentCardid+"/comments";//Creates the post request url path
     QJsonObject send;
-    send.insert("text",QJsonValue::fromVariant(comment));
-    postRequest(send,path);
+    send.insert("text",QJsonValue::fromVariant(comment));//Makes jsonobject with the message
+    postRequest(send,path);//Call post request with the path and json object
 }
 
 QString MainWindow::gloGetCardId(QString po)
 {
-
     QString returnId="-1";
-
-
-
+    QString columnId;
     foreach (const QJsonValue &value,  getRequest("/cards")) {
            QJsonObject json_obj = value.toObject();
            if((json_obj["name"].toString())==po)
+           {
                returnId= json_obj["id"].toString();
+               columnId=json_obj["column_id"].toString();
+               break;
+           }
+
        }
+    if(columnId=="5d36041b538eed0011572e28")
+    {
+        //column="Sales Order";
+        ui->RB_SalesOrder->setChecked(true);
+        ui->order_progressBar->setValue(7);
+    }
+
+    else if(columnId=="5d36042213853d0011ab778f")
+    {
+       // column="Shipped";
+        ui->RB_Shipped->setChecked(true);
+        ui->order_progressBar->setValue(29);
+    }
+    else if(columnId=="5d3604684e1d32000f889e7a")
+    {
+
+        //column="Border";
+        ui->RB_Border->setChecked(true);
+        ui->order_progressBar->setValue(50);
+    }
+    else if(columnId=="5d360471538eed0011572e35")
+    {
+
+        //column="Crossed";
+        ui->RB_Crossed->setChecked(true);
+        ui->order_progressBar->setValue(75);
+    }
+    else if(columnId=="5d36047613853d0011ab7793")
+    {
+        //column="Delivered";
+        ui->RB_Delivered->setChecked(true);
+        ui->order_progressBar->setValue(100);
+    }
     std::cout<<"The id for po: "+po.toStdString()+": "+returnId.toStdString();
     return returnId;
+}
+
+QString MainWindow::gloGetCardPosition(QString po)
+{
+
+    return nullptr;
 }
 
 
@@ -1360,34 +1402,11 @@ QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
             url.setHost("gloapi.gitkraken.com");
             url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
 
-
-//    QJsonObject jObj;
-
-
-//    //Select the column_id
-//    if(column=="Sales Order")
-//        jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));//Sales Order
-//    if(column=="Shipped")
-//        jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));//Shipped
-//    if(column=="Border")
-//        jObj.insert("column_id",QJsonValue::fromVariant("5d3604684e1d32000f889e7a"));//Border
-//    if(column=="Crossed")
-//        jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));//Crossed
-//    if(column=="Delivered")
-//        jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));//Delivered
-//    else
-//    jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
-//    //Set the name
-//    jObj.insert("name",QJsonValue::fromVariant(ui->POInput->text()));
-//    //Set the position
-//    if(position!=-1)
-//    jObj.insert("position",QJsonValue::fromVariant(position));
-
-
-
     //Formats and sends the packet
     QJsonDocument doc(postData);
-    qDebug()<<doc.toJson();
+
+    //qDebug()<<doc.toJson();
+
     QNetworkRequest req(url);
     req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
     QString rawAuth= "Bearer "+PAT;

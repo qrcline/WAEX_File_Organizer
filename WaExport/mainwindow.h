@@ -136,21 +136,24 @@ private slots:
 
 
 private:
+
+    //Pointers
     Ui::MainWindow *ui;
     HelpCenter *helpP;
-
     myTableModel *tableModel;
-   // settingD *settingD;
-   // ArchiveCheck *aCheck;
-    //void openDirectory(QString );
+
+    //Variables
     QString mainDirectory="NULL";
     QString userName="";
     QString PAT="";
+    QString currentCardid="";
+
+
+
+    //Functions
     void openFolder(QString folderText,bool winEx);
     QString filesRequired [30]={NULL};
     void closeEvent(QCloseEvent *bar);
-
-
     void updateWindow();
     void uploadFile(std::string fileDialog1, std::string fileDialog2, QString destFileName);
     void uncheckAll();
@@ -158,16 +161,22 @@ private:
     void updateWindowT(int num);
     void createShortcut(std::string fileDialog1, std::string fileDialog2, QString destFileName);
     void updateChecked();
-
-    //bool readFile(const QString &fileName);
     QByteArray postRequest(QJsonObject postData, QString path);
-
-
     void gloCreatePO(QString po);
     void gloMoveCard();
     QJsonArray getRequest( QString path);
     void gloAddComment(QString cardId, QString comment);
     QString gloGetCardId(QString po);
+
+   // settingD *settingD;
+   // ArchiveCheck *aCheck;
+    //void openDirectory(QString );
+    //bool readFile(const QString &fileName);
+
+
+
+
+    QString gloGetCardPosition(QString po);
 };
 
 #endif // MAINWINDOW_H

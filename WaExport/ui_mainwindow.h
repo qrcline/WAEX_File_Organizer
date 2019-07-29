@@ -168,6 +168,8 @@ public:
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
     QPushButton *testSocketButton;
+    QFrame *frame_3;
+    QCheckBox *checkBox;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -200,7 +202,7 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName(QString::fromUtf8("MainWindow"));
-        MainWindow->resize(1559, 882);
+        MainWindow->resize(1559, 864);
         QSizePolicy sizePolicy(QSizePolicy::Preferred, QSizePolicy::Preferred);
         sizePolicy.setHorizontalStretch(0);
         sizePolicy.setVerticalStretch(0);
@@ -329,7 +331,7 @@ public:
         WAEX_logo->setScaledContents(true);
         frame = new QFrame(createFile);
         frame->setObjectName(QString::fromUtf8("frame"));
-        frame->setGeometry(QRect(0, 10, 701, 791));
+        frame->setGeometry(QRect(0, 10, 701, 781));
         frame->setFrameShape(QFrame::StyledPanel);
         frame->setFrameShadow(QFrame::Sunken);
         frame->setLineWidth(3);
@@ -989,7 +991,7 @@ public:
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
         frame_2 = new QFrame(frame);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
-        frame_2->setGeometry(QRect(10, 550, 681, 231));
+        frame_2->setGeometry(QRect(10, 540, 681, 231));
         frame_2->setFrameShape(QFrame::StyledPanel);
         frame_2->setFrameShadow(QFrame::Raised);
         label = new QLabel(frame_2);
@@ -1066,6 +1068,14 @@ public:
         testSocketButton = new QPushButton(createFile);
         testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
         testSocketButton->setGeometry(QRect(820, 410, 80, 21));
+        frame_3 = new QFrame(createFile);
+        frame_3->setObjectName(QString::fromUtf8("frame_3"));
+        frame_3->setGeometry(QRect(1000, 250, 151, 191));
+        frame_3->setFrameShape(QFrame::StyledPanel);
+        frame_3->setFrameShadow(QFrame::Raised);
+        checkBox = new QCheckBox(frame_3);
+        checkBox->setObjectName(QString::fromUtf8("checkBox"));
+        checkBox->setGeometry(QRect(10, 10, 72, 19));
         tabWidget->addTab(createFile, QString());
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
@@ -1187,6 +1197,7 @@ public:
         MainWindow->setMenuBar(menuBar);
         statusBar = new QStatusBar(MainWindow);
         statusBar->setObjectName(QString::fromUtf8("statusBar"));
+        statusBar->setEnabled(true);
         MainWindow->setStatusBar(statusBar);
 
         menuBar->addAction(menuFile->menuAction());
@@ -1329,6 +1340,7 @@ public:
         RB_Crossed->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
         RB_Delivered->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
         testSocketButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
+        checkBox->setText(QCoreApplication::translate("MainWindow", "Claim", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
