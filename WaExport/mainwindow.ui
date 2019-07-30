@@ -1708,25 +1708,6 @@ width:10px;
         </layout>
        </widget>
       </widget>
-      <widget class="QTableWidget" name="tableWidget">
-       <property name="geometry">
-        <rect>
-         <x>330</x>
-         <y>180</y>
-         <width>491</width>
-         <height>461</height>
-        </rect>
-       </property>
-       <property name="columnCount">
-        <number>3</number>
-       </property>
-       <attribute name="horizontalHeaderVisible">
-        <bool>false</bool>
-       </attribute>
-       <column/>
-       <column/>
-       <column/>
-      </widget>
       <widget class="QFrame" name="frame_2">
        <property name="geometry">
         <rect>
@@ -1821,6 +1802,22 @@ width:10px;
        </property>
        <property name="text">
         <string>Glo Board Comments</string>
+       </property>
+      </widget>
+      <widget class="QListWidget" name="gloComments">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>180</y>
+         <width>491</width>
+         <height>461</height>
+        </rect>
+       </property>
+       <property name="midLineWidth">
+        <number>2</number>
+       </property>
+       <property name="spacing">
+        <number>5</number>
        </property>
       </widget>
       <widget class="QWidget" name="">

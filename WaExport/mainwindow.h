@@ -186,7 +186,7 @@ private:
 
 
     QString gloGetCardPosition(QString po);
-    void gloLoadComments(QString po);
+    void gloLoadComments();
 };
 
 #endif // MAINWINDOW_H

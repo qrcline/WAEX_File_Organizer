@@ -289,6 +289,7 @@ void MainWindow::updateWindow()
 
     //Fill in the notes section
     ui->notesDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+    gloLoadComments();//loads the globoard comments
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -1435,11 +1436,15 @@ QString MainWindow::gloGetCardPosition(QString po)
 //TODO:Make the Glo bords it's own class
 //TODO:Make function to ge the comments for a card
 
-void MainWindow::gloLoadComments(QString po)
+void MainWindow::gloLoadComments()
 {
-
-
-    getRequest();
+    ui->gloComments->clear();
+    QString path= "/cards/"+currentCardid+"/comments";
+    int index=0;
+    foreach (const QJsonValue &value,  getRequest(path)) {
+           QJsonObject json_obj = value.toObject();
+           ui->gloComments->addItem(json_obj["text"].toString());
+       }
 }
 
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
@@ -1514,7 +1519,7 @@ void MainWindow::on_addCommentButton_clicked()
         gloAddComment(ui->POInput->text(),ui->notesArea->toPlainText());
         ui->notesArea->clear();
     }
-
+updateWindow();
 
 
 }

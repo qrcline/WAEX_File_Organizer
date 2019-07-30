@@ -34,7 +34,6 @@
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableView>
-#include <QtWidgets/QTableWidget>
 #include <QtWidgets/QTextEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
@@ -166,7 +165,6 @@ public:
     QCheckBox *gloLabelsClaimCust;
     QCheckBox *gloLabelsClaimTaged;
     QCheckBox *gloLabelsClaimClosed;
-    QTableWidget *tableWidget;
     QFrame *frame_2;
     QPushButton *addCommentButton;
     QTextEdit *notesArea;
@@ -175,6 +173,7 @@ public:
     QLabel *label;
     QLabel *PoLabel;
     QLabel *label_19;
+    QListWidget *gloComments;
     QWidget *widget2;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_18;
@@ -1064,13 +1063,6 @@ public:
 
         verticalLayout_2->addWidget(gloLabelsClaimClosed);
 
-        tableWidget = new QTableWidget(frame_4);
-        if (tableWidget->columnCount() < 3)
-            tableWidget->setColumnCount(3);
-        tableWidget->setObjectName(QString::fromUtf8("tableWidget"));
-        tableWidget->setGeometry(QRect(330, 180, 491, 461));
-        tableWidget->setColumnCount(3);
-        tableWidget->horizontalHeader()->setVisible(false);
         frame_2 = new QFrame(frame_4);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
         frame_2->setGeometry(QRect(10, 160, 311, 211));
@@ -1107,6 +1099,11 @@ public:
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(330, 160, 141, 16));
         label_19->setFont(font);
+        gloComments = new QListWidget(frame_4);
+        gloComments->setObjectName(QString::fromUtf8("gloComments"));
+        gloComments->setGeometry(QRect(330, 180, 491, 461));
+        gloComments->setMidLineWidth(2);
+        gloComments->setSpacing(5);
         widget2 = new QWidget(frame_4);
         widget2->setObjectName(QString::fromUtf8("widget2"));
         widget2->setGeometry(QRect(10, 10, 811, 100));
