@@ -136,6 +136,14 @@ private slots:
 
 
        void on_actionDelete_Current_PO_triggered();
+
+
+       void on_gloLabelsClaimCust_stateChanged(int arg1);
+
+       void on_gloLabelsClaimTaged_stateChanged(int arg1);
+
+       void on_gloLabelsClaimClosed_stateChanged(int arg1);
+
 private:
 
     //Pointers
@@ -178,6 +186,7 @@ private:
 
 
     QString gloGetCardPosition(QString po);
+    void gloLoadComments(QString po);
 };
 
 #endif // MAINWINDOW_H

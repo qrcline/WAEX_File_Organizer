@@ -19,7 +19,6 @@
 #include <thread>
 #include <QtGui>
 #include <QInputDialog>
-//#include <httprequest.hpp>
 #include <QNetworkAccessManager>
 #include <QJsonValue>
 #include <QJsonObject>
@@ -1436,6 +1435,12 @@ QString MainWindow::gloGetCardPosition(QString po)
 //TODO:Make the Glo bords it's own class
 //TODO:Make function to ge the comments for a card
 
+void MainWindow::gloLoadComments(QString po)
+{
+
+
+    getRequest();
+}
 
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 {
@@ -1512,4 +1517,87 @@ void MainWindow::on_addCommentButton_clicked()
 
 
 
+}
+
+void MainWindow::on_gloLabelsClaimCust_stateChanged(int arg1)
+{
+    if(arg1==2)
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
+        label.insert(0,temp);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
+    else
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
+        //label.insert(0,temp);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
+
+}
+
+void MainWindow::on_gloLabelsClaimTaged_stateChanged(int arg1)
+{
+
+    if(arg1==2)
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
+        label.insert(0,temp);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
+    else
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
+        //label.insert(0,temp);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
+
+}
+
+void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
+{
+    if(arg1==2)
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
+        label.append(temp);
+        if(ui->gloLabelsClaimCust->isChecked())
+
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
+    else
+    {
+        QJsonObject jObj;
+        QJsonArray label;
+        QJsonObject temp;
+        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
+        //label.insert(0,temp);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
+    }
 }
