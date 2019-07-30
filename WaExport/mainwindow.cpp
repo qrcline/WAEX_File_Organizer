@@ -1531,8 +1531,18 @@ void MainWindow::on_gloLabelsClaimCust_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
-        label.insert(0,temp);
+        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//Customer
+        label.append(temp);
+        if(ui->gloLabelsClaimTaged->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimClosed->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//closed
+            label.append(temp);
+        }
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
         postRequest(jObj,path);
@@ -1542,8 +1552,19 @@ void MainWindow::on_gloLabelsClaimCust_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
-        //label.insert(0,temp);
+        //temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
+
+        if(ui->gloLabelsClaimTaged->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimClosed->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//Closed
+            label.append(temp);
+        }
+        label.insert(0,temp);
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
         postRequest(jObj,path);
@@ -1559,8 +1580,18 @@ void MainWindow::on_gloLabelsClaimTaged_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
-        label.insert(0,temp);
+        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Taged
+        label.append(temp);
+        if(ui->gloLabelsClaimCust->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//customer
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimClosed->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//closed
+            label.append(temp);
+        }
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
         postRequest(jObj,path);
@@ -1570,8 +1601,18 @@ void MainWindow::on_gloLabelsClaimTaged_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
+        //temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
         //label.insert(0,temp);
+        if(ui->gloLabelsClaimCust->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//customer
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimClosed->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//closed
+            label.append(temp);
+        }
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
         postRequest(jObj,path);
@@ -1586,9 +1627,18 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
-        label.append(temp);
+        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//Claim closed
+           label.append(temp);
         if(ui->gloLabelsClaimCust->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//ClaimCustomer
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimTaged->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//taged
+            label.append(temp);
+        }
 
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
@@ -1599,8 +1649,18 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
-        //label.insert(0,temp);
+       // temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
+        if(ui->gloLabelsClaimCust->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
+            label.append(temp);
+        }
+        if(ui->gloLabelsClaimTaged->isChecked())
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
+            label.append(temp);
+        }
+
         jObj.insert("labels",label);
         QString path="/cards/"+currentCardid;
         postRequest(jObj,path);

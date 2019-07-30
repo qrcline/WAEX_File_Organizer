@@ -123,6 +123,8 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
     filesAffectedOutput=folderErrors;
     totalErrorsOutput=totalErrors;
     uiPointer->ACheck_TotalFilesChecked->setText(QString::number(foldersToCheck.size()));
+    uiPointer->archivePBar->setValue(uiPointer->archivePBar->maximum());
+   // uiPointer->archivePBar->setValue(uiPointer->archivePBar->setMaximum())
 
 
     return "Archive check complete, " +QString::number(totalErrors)+" total errors in "+QString::number(folderErrors)+" files.";
