@@ -1,6 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
-
+#pragma once
 #include <QMainWindow>
 #include <windows.h>
 #include <shellapi.h>
@@ -22,6 +22,7 @@
 #include <aboutwindow.h>
 #include <helpcenter.h>
 #include <settingd.h>
+#include <globoard.h>
 
 
 namespace Ui {
@@ -150,6 +151,7 @@ private:
     Ui::MainWindow *ui;
     HelpCenter *helpP;
     myTableModel *tableModel;
+    gloBoard *glo;
 
     //Variables
     QString mainDirectory="NULL";

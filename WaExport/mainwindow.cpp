@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#pragma once
 #include "ui_mainwindow.h"
 #include <Windows.h>
 #include <shellapi.h>
@@ -53,6 +53,9 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->mexP_Invoice->acceptDrops();
     acceptDrops();
 
+   //gloBoard *glotemp= new gloBoard(PAT,ui);
+
+
     ui->statusBar->hide();
     //THis is a test
     //ui->mexP_Spreadsheets->setChecked(false);
@@ -63,7 +66,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->notesDisplay->hide();
     ui->testSocketButton->hide();
 
-
+  gloBoard gloTemp(PAT,ui);
+  glo=&gloTemp;
 
     //updateWindow();
 }
