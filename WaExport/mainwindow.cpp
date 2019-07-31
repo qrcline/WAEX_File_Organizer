@@ -40,7 +40,7 @@
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
-  tableModel(new myTableModel(this))
+    tableModel(new myTableModel(this))
 {
     setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
@@ -48,7 +48,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QPixmap waexPix(":/pictures/waExportHeaderLogo.png");
     ui->WAEX_logo->setPixmap(waexPix);
     ui->WAEX_logo_2->setPixmap(waexPix);
-   // ui->progressBar_save_createFile->hide();
+    // ui->progressBar_save_createFile->hide();
     //settingD= new class settingD(this,ui);
     ui->mexP_Invoice->acceptDrops();
     acceptDrops();
@@ -60,7 +60,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->comboBox->setCurrentIndex(1);
     ui->comboBox->setCurrentIndex(0);
     loadSettings();
-
+    ui->notesDisplay->hide();
+    ui->testSocketButton->hide();
 
 
 
@@ -81,7 +82,7 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 
 void MainWindow::dropEvent(QDropEvent *event)
 {
-        std::cout<<"This is a drop event"<<std::endl;
+    std::cout<<"This is a drop event"<<std::endl;
     QList<QUrl> urls = event->mimeData()->urls();
     if (urls.isEmpty())
         return;
@@ -92,17 +93,17 @@ void MainWindow::dropEvent(QDropEvent *event)
 
     //if (readFile(fileName))
     std::cout<<fileName.toStdString()<<std::endl;
-   QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
+    QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
     QString selection=QInputDialog::getItem(nullptr,"Upload","What file is this?",choices);
 
     //Checks if the file exists already in the directory
-     FolderIO fIo;
-     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
-     int num=0;
-     num=fIo.doesFileExist(selection,filesVec);
+    FolderIO fIo;
+    std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
+    int num=0;
+    num=fIo.doesFileExist(selection,filesVec);
 
-     //copy(from,to,dest name)
-     fIo.copyFile(fileName,mainDirectory+"/"+ui->POInput->text(),selection+"_"+QString::number((num+1)));
+    //copy(from,to,dest name)
+    fIo.copyFile(fileName,mainDirectory+"/"+ui->POInput->text(),selection+"_"+QString::number((num+1)));
 
 }
 
@@ -155,7 +156,7 @@ MainWindow::~MainWindow()
 void MainWindow::updateWindow()
 {//This function refreshes the window
     QElapsedTimer timer;
-       timer.start();
+    timer.start();
 
     FolderIO fIo;
     if(mainDirectory=="NULL"||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
@@ -304,61 +305,61 @@ void MainWindow::updateChecked()
     std::vector<std::string> reqFiles=fIo.get_reqFiles(mainDirectory+"/"+ui->POInput->text(), errorCheck);
 
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Spreadsheets"))
-         ui->mexP_Spreadsheets->setChecked(true);
+        ui->mexP_Spreadsheets->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Invoice"))
-         ui->mexP_Invoice->setChecked(true);
+        ui->mexP_Invoice->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Phyto"))
-         ui->mexP_Phyto->setChecked(true);
+        ui->mexP_Phyto->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "ShipperConf"))
-         ui->mexP_ShipperConf->setChecked(true);
+        ui->mexP_ShipperConf->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "CarrierConf"))
-         ui->mexP_CarrierConf->setChecked(true);
+        ui->mexP_CarrierConf->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Passing"))
-         ui->mexP_Passing->setChecked(true);
+        ui->mexP_Passing->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "SaleConf"))
-         ui->mexP_SaleConf->setChecked(true);
+        ui->mexP_SaleConf->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "SignedSaleConf"))
-         ui->mexP_SignedSale->setChecked(true);
+        ui->mexP_SignedSale->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Pedimento"))
-         ui->mexP_Pedimento->setChecked(true);
+        ui->mexP_Pedimento->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "ProduceInv"))
-         ui->mexP_ProduceInv->setChecked(true);
+        ui->mexP_ProduceInv->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesShipper"))
-         ui->mexP_Payable_Shipper->setChecked(true);
+        ui->mexP_Payable_Shipper->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesCarrier"))
-         ui->mexP_Payables_Carriers->setChecked(true);
+        ui->mexP_Payables_Carriers->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Receipts"))
-         ui->receipts->setChecked(true);
+        ui->receipts->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "ExpInvima"))
-         ui->ExpInvima->setChecked(true);
+        ui->ExpInvima->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "FacturaComercial"))
-         ui->FacturaComercial->setChecked(true);
+        ui->FacturaComercial->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "ListaEmpaque"))
-         ui->ListadeEmpaque->setChecked(true);
+        ui->ListadeEmpaque->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "CertOrigin"))
-         ui->CertOrigin->setChecked(true);
+        ui->CertOrigin->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "CaftaNafta"))
-         ui->CaftaNafta->setChecked(true);
+        ui->CaftaNafta->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "FreightContract"))
-         ui->FreightContract->setChecked(true);
+        ui->FreightContract->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Transloader"))
-         ui->Transloader->setChecked(true);
+        ui->Transloader->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Harris"))
-         ui->Harris->setChecked(true);
+        ui->Harris->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "HarEmails"))
-         ui->HarrisEmails->setChecked(true);
+        ui->HarrisEmails->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "CustomerPO"))
-         ui->CustomerPO->setChecked(true);
+        ui->CustomerPO->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "OtherEmails"))
-         ui->OtherEmails->setChecked(true);
+        ui->OtherEmails->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTransloader"))
-         ui->Payables_Transloader->setChecked(true);
+        ui->Payables_Transloader->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTruckFreight"))
-         ui->payables_TruckFreight->setChecked(true);
+        ui->payables_TruckFreight->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesHarris"))
-         ui->Payables_ShipperWarehouse->setChecked(true);
+        ui->Payables_ShipperWarehouse->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesSW"))
-         ui->Payables_ShipperWarehouse->setChecked(true);
+        ui->Payables_ShipperWarehouse->setChecked(true);
     ui->comboBox->setEnabled(false);
 }
 
@@ -413,7 +414,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
     else
     {
         if(winEx)
-        openDirectory(mainDirectory+"/"+folderText);
+            openDirectory(mainDirectory+"/"+folderText);
         //Grabbing the template from the file
         QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
 
@@ -460,76 +461,76 @@ void MainWindow::on_actionOpen_triggered()
     mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Working Directory"), QDir::currentPath());
     std::cout<<mainDirectory.toStdString()<<std::endl;
     if(mainDirectory!=nullptr)
-    ui->notesArea->setEnabled(true);
+        ui->notesArea->setEnabled(true);
     ui->workingDirectory->setText(mainDirectory);
     ui->workingDirectory_CreateFile->setText(mainDirectory);
 }
 
 std::ostringstream MainWindow::getRequiredFiles()
 {
-      std::ostringstream fileStream;
-      ui->comboBox->currentIndex();
-      std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
-         fileStream<<"Template:"+ui->comboBox->currentText().toStdString()+"/TEND"<<std::endl;
-         fileStream<<"/REQSTART/"<<std::endl;
+    std::ostringstream fileStream;
+    ui->comboBox->currentIndex();
+    std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
+    fileStream<<"Template:"+ui->comboBox->currentText().toStdString()+"/TEND"<<std::endl;
+    fileStream<<"/REQSTART/"<<std::endl;
 
-         if(ui->CaftaNafta->isChecked())
-             fileStream<<"CaftaNafta"<<std::endl;
-         if(ui->mexP_CarrierConf->isChecked())
-             fileStream<<"CarrierConf"<<std::endl;
-         if(ui->CertOrigin->isChecked())
-             fileStream<<"CertOrigin"<<std::endl;
-         if(ui->CustomerPO->isChecked())
-             fileStream<<"CustomerPO"<<std::endl;
-         if(ui->ExpInvima->isChecked())
-             fileStream<<"ExpInvima"<<std::endl;
-         if(ui->FacturaComercial->isChecked())
-             fileStream<<"FacturaComercial"<<std::endl;
-         if(ui->FreightContract->isChecked())
-             fileStream<<"FreightContract"<<std::endl;
-         if(ui->HarrisEmails->isChecked())
-             fileStream<<"HarEmails"<<std::endl;
-         if(ui->Harris->isChecked())
-             fileStream<<"Harris"<<std::endl;
-         if(ui->mexP_Invoice->isChecked())
-             fileStream<<"Invoice"<<std::endl;
-         if(ui->ListadeEmpaque->isChecked())
-             fileStream<<"ListaEmpaque"<<std::endl;
-         if(ui->OtherEmails->isChecked())
-             fileStream<<"OtherEmails"<<std::endl;
-         if(ui->mexP_Passing->isChecked())
-             fileStream<<"Passing"<<std::endl;
-         if(ui->mexP_Payables_Carriers->isChecked())
-             fileStream<<"PayablesCarrier"<<std::endl;
-         if(ui->Payables_Harris->isChecked())
-             fileStream<<"PayablesHarris"<<std::endl;
-         if(ui->mexP_Payable_Shipper->isChecked())
-             fileStream<<"PayablesShipper"<<std::endl;
-         if(ui->Payables_ShipperWarehouse->isChecked())
-             fileStream<<"PayablesSW"<<std::endl;
-         if(ui->Payables_Transloader->isChecked())
-             fileStream<<"PayablesTransloader"<<std::endl;
-         if(ui->payables_TruckFreight->isChecked())
-             fileStream<<"PayablesTruckFreight"<<std::endl;
-         if(ui->mexP_Pedimento->isChecked())
-             fileStream<<"Pedimento"<<std::endl;
-         if(ui->mexP_Phyto->isChecked())
-             fileStream<<"Phyto"<<std::endl;
-         if(ui->mexP_ProduceInv->isChecked())
-             fileStream<<"ProduceInv"<<std::endl;
-         if(ui->receipts->isChecked())
-             fileStream<<"Receipt"<<std::endl;
-         if(ui->mexP_SaleConf->isChecked())
-             fileStream<<"SaleConf"<<std::endl;
-         if(ui->mexP_ShipperConf->isChecked())
-             fileStream<<"ShipperConf"<<std::endl;
-         if(ui->mexP_SignedSale->isChecked())
-             fileStream<<"SignedSaleConf"<<std::endl;
-         if(ui->mexP_Spreadsheets->isChecked())
-             fileStream<<"Spreadsheets"<<std::endl;
-         if(ui->Transloader->isChecked())
-             fileStream<<"Transloader"<<std::endl;
-          fileStream<<"/REQEND/"<<std::endl;
+    if(ui->CaftaNafta->isChecked())
+        fileStream<<"CaftaNafta"<<std::endl;
+    if(ui->mexP_CarrierConf->isChecked())
+        fileStream<<"CarrierConf"<<std::endl;
+    if(ui->CertOrigin->isChecked())
+        fileStream<<"CertOrigin"<<std::endl;
+    if(ui->CustomerPO->isChecked())
+        fileStream<<"CustomerPO"<<std::endl;
+    if(ui->ExpInvima->isChecked())
+        fileStream<<"ExpInvima"<<std::endl;
+    if(ui->FacturaComercial->isChecked())
+        fileStream<<"FacturaComercial"<<std::endl;
+    if(ui->FreightContract->isChecked())
+        fileStream<<"FreightContract"<<std::endl;
+    if(ui->HarrisEmails->isChecked())
+        fileStream<<"HarEmails"<<std::endl;
+    if(ui->Harris->isChecked())
+        fileStream<<"Harris"<<std::endl;
+    if(ui->mexP_Invoice->isChecked())
+        fileStream<<"Invoice"<<std::endl;
+    if(ui->ListadeEmpaque->isChecked())
+        fileStream<<"ListaEmpaque"<<std::endl;
+    if(ui->OtherEmails->isChecked())
+        fileStream<<"OtherEmails"<<std::endl;
+    if(ui->mexP_Passing->isChecked())
+        fileStream<<"Passing"<<std::endl;
+    if(ui->mexP_Payables_Carriers->isChecked())
+        fileStream<<"PayablesCarrier"<<std::endl;
+    if(ui->Payables_Harris->isChecked())
+        fileStream<<"PayablesHarris"<<std::endl;
+    if(ui->mexP_Payable_Shipper->isChecked())
+        fileStream<<"PayablesShipper"<<std::endl;
+    if(ui->Payables_ShipperWarehouse->isChecked())
+        fileStream<<"PayablesSW"<<std::endl;
+    if(ui->Payables_Transloader->isChecked())
+        fileStream<<"PayablesTransloader"<<std::endl;
+    if(ui->payables_TruckFreight->isChecked())
+        fileStream<<"PayablesTruckFreight"<<std::endl;
+    if(ui->mexP_Pedimento->isChecked())
+        fileStream<<"Pedimento"<<std::endl;
+    if(ui->mexP_Phyto->isChecked())
+        fileStream<<"Phyto"<<std::endl;
+    if(ui->mexP_ProduceInv->isChecked())
+        fileStream<<"ProduceInv"<<std::endl;
+    if(ui->receipts->isChecked())
+        fileStream<<"Receipt"<<std::endl;
+    if(ui->mexP_SaleConf->isChecked())
+        fileStream<<"SaleConf"<<std::endl;
+    if(ui->mexP_ShipperConf->isChecked())
+        fileStream<<"ShipperConf"<<std::endl;
+    if(ui->mexP_SignedSale->isChecked())
+        fileStream<<"SignedSaleConf"<<std::endl;
+    if(ui->mexP_Spreadsheets->isChecked())
+        fileStream<<"Spreadsheets"<<std::endl;
+    if(ui->Transloader->isChecked())
+        fileStream<<"Transloader"<<std::endl;
+    fileStream<<"/REQEND/"<<std::endl;
 
 
     return fileStream;
@@ -538,7 +539,7 @@ std::ostringstream MainWindow::getRequiredFiles()
 void MainWindow::on_saveButton_clicked()
 {
     std::cout<<"Save Button Pushed- Initiating Save"<<std::endl;
-   // ui->progressBar_save_createFile->show();
+    // ui->progressBar_save_createFile->show();
     FolderIO fIo;
 
     //Fetches the required fields based on the check boxes
@@ -583,7 +584,7 @@ void MainWindow:: uploadFile(std::string fileDialog1,std::string fileDialog2,QSt
     std::string fileD2=fileDialog2+";; All Files(*)";
     QString filePath= QFileDialog::getOpenFileName(this,tr(fileDialog1.c_str()), "",tr(fileD2.c_str()));
 
-   //Checks if the file exists already in the directory
+    //Checks if the file exists already in the directory
     FolderIO fIo;
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
@@ -600,7 +601,7 @@ void MainWindow:: createShortcut(std::string fileDialog1,std::string fileDialog2
     std::string fileD2=fileDialog2+";; All Files(*)";
     QString filePath= QFileDialog::getOpenFileName(this,tr(fileDialog1.c_str()), "",tr(fileD2.c_str()));
 
-   //Checks if the file exists already in the directory
+    //Checks if the file exists already in the directory
     FolderIO fIo;
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
@@ -616,7 +617,7 @@ void MainWindow:: createShortcut(std::string fileDialog1,std::string fileDialog2
 
 void MainWindow::on_mexP_Spreadsheets_upload_clicked()
 {
-   //uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
+    //uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
     createShortcut("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
     updateWindow();
 }
@@ -781,10 +782,21 @@ void MainWindow::on_Payables_ShipperWarehouse_upload_clicked()
 }
 void MainWindow::on_otherFiles_upload_clicked()
 {
-    uploadFile("Open Other Files","Other Files","Other Files");
-      updateWindow();
+    //uploadFile("Open Other Files","Other Files","Other Files");
 
-      //TODO: Make the other files upload work
+
+
+    //Get the excell file location
+    //std::string fileD2=fileDialog2+";; All Files(*)";
+    QString filePath= QFileDialog::getOpenFileName(this,tr("Open File"), "",tr("All Files(*)"));
+
+    std::cout<<filePath.toStdString()<<std::endl;
+    QString fileName=filePath.right(filePath.length()-filePath.lastIndexOf("/")-1);
+    std::cout<<fileName.toStdString()<<std::endl;
+    QFile::copy(filePath, mainDirectory+"/"+ui->POInput->text()+"/"+fileName);//This copies the file with the new destination name
+    updateWindow();
+
+    //TODO: Make the other files upload work
 }
 
 
@@ -827,7 +839,7 @@ void MainWindow::on_mexP_ShipperConf_stateChanged(int arg1)
         ui->mexP_ShipperConf_upload->setEnabled(false);
     else
         ui->mexP_ShipperConf_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_mexP_CarrierConf_stateChanged(int arg1)
@@ -890,7 +902,7 @@ void MainWindow::on_mexP_Payable_Shipper_stateChanged(int arg1)
         ui->mexP_Payable_Shipper_upload->setEnabled(false);
     else
         ui->mexP_Payable_Shipper_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
@@ -899,7 +911,7 @@ void MainWindow::on_mexP_Payables_Carriers_stateChanged(int arg1)
         ui->mexP_Payables_Carriers_upload->setEnabled(false);
     else
         ui->mexP_Payables_Carriers_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_ExpInvima_stateChanged(int arg1)
@@ -908,7 +920,7 @@ void MainWindow::on_ExpInvima_stateChanged(int arg1)
         ui->ExpInvima_Upload->setEnabled(false);
     else
         ui->ExpInvima_Upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_FacturaComercial_stateChanged(int arg1)
@@ -917,7 +929,7 @@ void MainWindow::on_FacturaComercial_stateChanged(int arg1)
         ui->FacturaComercial_upload->setEnabled(false);
     else
         ui->FacturaComercial_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_ListadeEmpaque_stateChanged(int arg1)
@@ -926,7 +938,7 @@ void MainWindow::on_ListadeEmpaque_stateChanged(int arg1)
         ui->ListadeEmpaque_upload->setEnabled(false);
     else
         ui->ListadeEmpaque_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_CertOrigin_stateChanged(int arg1)
@@ -935,7 +947,7 @@ void MainWindow::on_CertOrigin_stateChanged(int arg1)
         ui->CertOrigin_upload->setEnabled(false);
     else
         ui->CertOrigin_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_CaftaNafta_stateChanged(int arg1)
@@ -944,7 +956,7 @@ void MainWindow::on_CaftaNafta_stateChanged(int arg1)
         ui->CaftaNafta_upload->setEnabled(false);
     else
         ui->CaftaNafta_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_FreightContract_stateChanged(int arg1)
@@ -953,7 +965,7 @@ void MainWindow::on_FreightContract_stateChanged(int arg1)
         ui->FreightContract_upload->setEnabled(false);
     else
         ui->FreightContract_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_Transloader_stateChanged(int arg1)
@@ -962,7 +974,7 @@ void MainWindow::on_Transloader_stateChanged(int arg1)
         ui->Transloader_upload->setEnabled(false);
     else
         ui->Transloader_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_Harris_stateChanged(int arg1)
@@ -971,7 +983,7 @@ void MainWindow::on_Harris_stateChanged(int arg1)
         ui->Harris_upload->setEnabled(false);
     else
         ui->Harris_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_HarrisEmails_stateChanged(int arg1)
@@ -980,7 +992,7 @@ void MainWindow::on_HarrisEmails_stateChanged(int arg1)
         ui->HarrisEmails_upload->setEnabled(false);
     else
         ui->HarrisEmails_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_CustomerPO_stateChanged(int arg1)
@@ -989,7 +1001,7 @@ void MainWindow::on_CustomerPO_stateChanged(int arg1)
         ui->CustomerPO_upload->setEnabled(false);
     else
         ui->CustomerPO_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_OtherEmails_stateChanged(int arg1)
@@ -998,7 +1010,7 @@ void MainWindow::on_OtherEmails_stateChanged(int arg1)
         ui->OtherEmails_upload->setEnabled(false);
     else
         ui->OtherEmails_upload->setEnabled(true);
-   //updateWindow();
+    //updateWindow();
 }
 
 void MainWindow::on_Payables_Transloader_stateChanged(int arg1)
@@ -1016,7 +1028,7 @@ void MainWindow::on_payables_TruckFreight_stateChanged(int arg1)
         ui->payables_TruckFreight_upload->setEnabled(false);
     else
         ui->payables_TruckFreight_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_Payables_Harris_stateChanged(int arg1)
@@ -1025,7 +1037,7 @@ void MainWindow::on_Payables_Harris_stateChanged(int arg1)
         ui->Payables_Harris_upload->setEnabled(false);
     else
         ui->Payables_Harris_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_Payables_ShipperWarehouse_stateChanged(int arg1)
@@ -1034,7 +1046,7 @@ void MainWindow::on_Payables_ShipperWarehouse_stateChanged(int arg1)
         ui->Payables_ShipperWarehouse_upload->setEnabled(false);
     else
         ui->Payables_ShipperWarehouse_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 void MainWindow::on_receipts_stateChanged(int arg1)
@@ -1043,7 +1055,7 @@ void MainWindow::on_receipts_stateChanged(int arg1)
         ui->receipts_upload->setEnabled(false);
     else
         ui->receipts_upload->setEnabled(true);
-   // updateWindow();
+    // updateWindow();
 }
 
 
@@ -1098,66 +1110,66 @@ void MainWindow::on_comboBox_currentIndexChanged(int index)
     //std::cout<<"Combo box:" +QString::number(index).toStdString()<<std::endl;
     //ui->mexP_Spreadsheets_upload->setChecked(true);
     switch(index) {
-        case 0 : uncheckAll();
-                    ui->mexP_Spreadsheets->setChecked(true);
-                    ui->mexP_Invoice->setChecked(true);
-                    ui->mexP_Phyto->setChecked(true);
-                    ui->mexP_ShipperConf->setChecked(true);
-                    ui->mexP_CarrierConf->setChecked(true);
-                    ui->mexP_Passing->setChecked(true);
-                    ui->mexP_SaleConf->setChecked(true);
-                    ui->mexP_SignedSale->setChecked(true);
-                    ui->mexP_Pedimento->setChecked(true);
-                    ui->mexP_ProduceInv->setChecked(true);
-                    ui->mexP_Payable_Shipper->setChecked(true);
-                    ui->mexP_Payables_Carriers->setChecked(true);
-                 break;
-        case 1 : uncheckAll();
-                    ui->mexP_Spreadsheets->setChecked(true);
-                    ui->mexP_Invoice->setChecked(true);
-                    ui->mexP_ShipperConf->setChecked(true);
-                    ui->mexP_CarrierConf->setChecked(true);
-                    ui->mexP_SaleConf->setChecked(true);
-                    ui->mexP_SignedSale->setChecked(true);
-                    ui->mexP_Payable_Shipper->setChecked(true);
-                    ui->mexP_Payables_Carriers->setChecked(true);
-                 break;
-        case 2 : uncheckAll();
-                    ui->mexP_Spreadsheets->setChecked(true);
-                    ui->mexP_Invoice->setChecked(true);
-                    ui->mexP_Phyto->setChecked(true);
-                    ui->mexP_ShipperConf->setChecked(true);
-                    ui->mexP_CarrierConf->setChecked(true);
-                    ui->mexP_Passing->setChecked(true);
-                    ui->mexP_SaleConf->setChecked(true);
-                    ui->mexP_SignedSale->setChecked(true);
-                    ui->mexP_Pedimento->setChecked(true);
-                    ui->mexP_Payable_Shipper->setChecked(true);
-                    ui->mexP_Payables_Carriers->setChecked(true);
-                 break;
-        case 3 : uncheckAll();
-                    ui->mexP_Spreadsheets->setChecked(true);
-                    ui->mexP_Invoice->setChecked(true);
-                    ui->mexP_Phyto->setChecked(true);
-                    ui->mexP_ShipperConf->setChecked(true);
-                    ui->mexP_Passing->setChecked(true);
-                    ui->ExpInvima->setChecked(true);
-                    ui->FacturaComercial->setChecked(true);
-                    ui->ListadeEmpaque->setChecked(true);
-                    ui->CertOrigin->setChecked(true);
-                    ui->CaftaNafta->setChecked(true);
-                    ui->FreightContract->setChecked(true);
-                    ui->Transloader->setChecked(true);
-                    ui->Harris->setChecked(true);
-                    ui->HarrisEmails->setChecked(true);
-                    ui->CustomerPO->setChecked(true);
-                    ui->OtherEmails->setChecked(true);
-                    ui->Payables_Transloader->setChecked(true);
-                    ui->payables_TruckFreight->setChecked(true);
-                    ui->Payables_Harris->setChecked(true);
-                    ui->Payables_ShipperWarehouse->setChecked(true);
+    case 0 : uncheckAll();
+        ui->mexP_Spreadsheets->setChecked(true);
+        ui->mexP_Invoice->setChecked(true);
+        ui->mexP_Phyto->setChecked(true);
+        ui->mexP_ShipperConf->setChecked(true);
+        ui->mexP_CarrierConf->setChecked(true);
+        ui->mexP_Passing->setChecked(true);
+        ui->mexP_SaleConf->setChecked(true);
+        ui->mexP_SignedSale->setChecked(true);
+        ui->mexP_Pedimento->setChecked(true);
+        ui->mexP_ProduceInv->setChecked(true);
+        ui->mexP_Payable_Shipper->setChecked(true);
+        ui->mexP_Payables_Carriers->setChecked(true);
+        break;
+    case 1 : uncheckAll();
+        ui->mexP_Spreadsheets->setChecked(true);
+        ui->mexP_Invoice->setChecked(true);
+        ui->mexP_ShipperConf->setChecked(true);
+        ui->mexP_CarrierConf->setChecked(true);
+        ui->mexP_SaleConf->setChecked(true);
+        ui->mexP_SignedSale->setChecked(true);
+        ui->mexP_Payable_Shipper->setChecked(true);
+        ui->mexP_Payables_Carriers->setChecked(true);
+        break;
+    case 2 : uncheckAll();
+        ui->mexP_Spreadsheets->setChecked(true);
+        ui->mexP_Invoice->setChecked(true);
+        ui->mexP_Phyto->setChecked(true);
+        ui->mexP_ShipperConf->setChecked(true);
+        ui->mexP_CarrierConf->setChecked(true);
+        ui->mexP_Passing->setChecked(true);
+        ui->mexP_SaleConf->setChecked(true);
+        ui->mexP_SignedSale->setChecked(true);
+        ui->mexP_Pedimento->setChecked(true);
+        ui->mexP_Payable_Shipper->setChecked(true);
+        ui->mexP_Payables_Carriers->setChecked(true);
+        break;
+    case 3 : uncheckAll();
+        ui->mexP_Spreadsheets->setChecked(true);
+        ui->mexP_Invoice->setChecked(true);
+        ui->mexP_Phyto->setChecked(true);
+        ui->mexP_ShipperConf->setChecked(true);
+        ui->mexP_Passing->setChecked(true);
+        ui->ExpInvima->setChecked(true);
+        ui->FacturaComercial->setChecked(true);
+        ui->ListadeEmpaque->setChecked(true);
+        ui->CertOrigin->setChecked(true);
+        ui->CaftaNafta->setChecked(true);
+        ui->FreightContract->setChecked(true);
+        ui->Transloader->setChecked(true);
+        ui->Harris->setChecked(true);
+        ui->HarrisEmails->setChecked(true);
+        ui->CustomerPO->setChecked(true);
+        ui->OtherEmails->setChecked(true);
+        ui->Payables_Transloader->setChecked(true);
+        ui->payables_TruckFreight->setChecked(true);
+        ui->Payables_Harris->setChecked(true);
+        ui->Payables_ShipperWarehouse->setChecked(true);
 
-                 break;
+        break;
     }
 
 }
@@ -1198,8 +1210,8 @@ void MainWindow::updateWindowT(int num)
 {
     //std::thread t1(updateWindow);
 
-        //t1.join();
-   //updateWindow();
+    //t1.join();
+    //updateWindow();
 }
 
 void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
@@ -1230,8 +1242,8 @@ void MainWindow::on_actionAbout_triggered()
 {
     AboutWindow aboutWindow;
     aboutWindow.setModal(true);
-   // aboutWindow.setWindowFlag(aboutWindow.windowFlags() & ~Qt::WindowContextHelpButtonHint);
-            ///setWindowFlag(windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    // aboutWindow.setWindowFlag(aboutWindow.windowFlags() & ~Qt::WindowContextHelpButtonHint);
+    ///setWindowFlag(windowFlags() & ~Qt::WindowContextHelpButtonHint);
     aboutWindow.exec();
 }
 
@@ -1244,17 +1256,17 @@ void MainWindow::on_actionHelp_Center_triggered()
 
 void MainWindow::on_actionSettings_2_triggered()
 {
-   settingD setD(this,ui);
-   setD.setModal(true);
+    settingD setD(this,ui);
+    setD.setModal(true);
     setD.exec();
 }
 
 void MainWindow::on_actionDelete_Current_PO_triggered()
 {
     QString message="You are going to delete PO#: "+ui->POInput->text()+"\nThis is not reversable and will delete any Glo Board card, continue?";
- if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Delete File", message, QMessageBox::Yes|QMessageBox::No).exec())
+    if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Delete File", message, QMessageBox::Yes|QMessageBox::No).exec())
     {
-     //Delete file
+        //Delete file
         std::cout<<"Yes was selected"<<std::endl;
         QDir dir(mainDirectory+"/"+ui->POInput->text());
         dir.removeRecursively();
@@ -1263,9 +1275,9 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
         //Delete Glo Boards Card
         QString path="/cards/"+currentCardid;
         QUrl url;
-                url.setScheme("https");
-                url.setHost("gloapi.gitkraken.com");
-                url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
+        url.setScheme("https");
+        url.setHost("gloapi.gitkraken.com");
+        url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
 
 
         QNetworkRequest req(url);
@@ -1301,19 +1313,19 @@ void MainWindow::on_RB_SalesOrder_clicked()
 void MainWindow::on_RB_Shipped_clicked()
 {
     ui->order_progressBar->setValue(29);
-     gloMoveCard();
+    gloMoveCard();
 }
 
 void MainWindow::on_RB_Border_clicked()
 {
     ui->order_progressBar->setValue(50);
-     gloMoveCard();
+    gloMoveCard();
 }
 
 void MainWindow::on_RB_Crossed_clicked()
 {
     ui->order_progressBar->setValue(75);
-     gloMoveCard();
+    gloMoveCard();
 }
 
 void MainWindow::on_RB_Delivered_clicked()
@@ -1324,10 +1336,10 @@ void MainWindow::on_RB_Delivered_clicked()
 
 void MainWindow::on_testSocketButton_clicked()
 {
-   QByteArray message= "{\"name\":\"test2021\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
-  // QString cardId= gloGetCardId(ui->POInput->text());
-   gloAddComment(ui->POInput->text(),"Hi my name is Quinton");
-   //qDebug()<<cardId;
+    QByteArray message= "{\"name\":\"test2021\",\"position\":\"15\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+    // QString cardId= gloGetCardId(ui->POInput->text());
+    gloAddComment(ui->POInput->text(),"Hi my name is Quinton");
+    //qDebug()<<cardId;
 
     //postRequest(message);
 }
@@ -1335,10 +1347,10 @@ void MainWindow::on_testSocketButton_clicked()
 void MainWindow::gloCreatePO(QString po)
 {
     QString message= "{\"name\":\""+po+"\",\"position\":\"0\",\"column_id\":\"5d36042213853d0011ab778f\"}";
-     QByteArray sendMessage=message.toUtf8();
-     QJsonObject jObj;
-     jObj.insert("name",QJsonValue::fromVariant(po));
-     jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
+    QByteArray sendMessage=message.toUtf8();
+    QJsonObject jObj;
+    jObj.insert("name",QJsonValue::fromVariant(po));
+    jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
 
     postRequest(jObj,"/cards");
 
@@ -1350,15 +1362,15 @@ void MainWindow::gloMoveCard()
     //QString cardId=gloGetCardId(pO);
     //jObj.insert("column_id",cardId);
     //Select the column_id
-   QString column=ui->buttonGroup_2->checkedButton()->text();
-   //qDebug()<<column;
+    QString column=ui->buttonGroup_2->checkedButton()->text();
+    //qDebug()<<column;
     if(column=="Sales Order")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));//Sales Order
     else if(column=="Shipped")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));//Shipped
     else if(column=="Border")
         jObj.insert("column_id",QJsonValue::fromVariant("5d3604684e1d32000f889e7a"));//Border
-   else if(column=="Crossed")
+    else if(column=="Crossed")
         jObj.insert("column_id",QJsonValue::fromVariant("5d360471538eed0011572e35"));//Crossed
     else if(column=="Delivered")
         jObj.insert("column_id",QJsonValue::fromVariant("5d36047613853d0011ab7793"));//Delivered
@@ -1382,15 +1394,15 @@ QString MainWindow::gloGetCardId(QString po)
     QString returnId="-1";
     QString columnId;
     foreach (const QJsonValue &value,  getRequest("/cards")) {
-           QJsonObject json_obj = value.toObject();
-           if((json_obj["name"].toString())==po)
-           {
-               returnId= json_obj["id"].toString();
-               columnId=json_obj["column_id"].toString();
-               break;
-           }
+        QJsonObject json_obj = value.toObject();
+        if((json_obj["name"].toString())==po)
+        {
+            returnId= json_obj["id"].toString();
+            columnId=json_obj["column_id"].toString();
+            break;
+        }
 
-       }
+    }
     if(columnId=="5d36041b538eed0011572e28")
     {
         //column="Sales Order";
@@ -1400,7 +1412,7 @@ QString MainWindow::gloGetCardId(QString po)
 
     else if(columnId=="5d36042213853d0011ab778f")
     {
-       // column="Shipped";
+        // column="Shipped";
         ui->RB_Shipped->setChecked(true);
         ui->order_progressBar->setValue(29);
     }
@@ -1442,17 +1454,23 @@ void MainWindow::gloLoadComments()
     QString path= "/cards/"+currentCardid+"/comments";
     int index=0;
     foreach (const QJsonValue &value,  getRequest(path)) {
-           QJsonObject json_obj = value.toObject();
-           ui->gloComments->addItem(json_obj["text"].toString());
-       }
+        QJsonObject json_obj = value.toObject();
+        ui->gloComments->addItem(json_obj["text"].toString());
+    }
+}
+
+void MainWindow::gloLoadLabels()
+{
+
+    QJsonArray response=getRequest("/cards/"+currentCardid);
 }
 
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 {
     QUrl url;
-            url.setScheme("https");
-            url.setHost("gloapi.gitkraken.com");
-            url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
+    url.setScheme("https");
+    url.setHost("gloapi.gitkraken.com");
+    url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
 
     //Formats and sends the packet
     QJsonDocument doc(postData);
@@ -1482,31 +1500,31 @@ QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 QJsonArray MainWindow::getRequest( QString path)
 {
     QUrl url;
-            url.setScheme("https");
-            url.setHost("gloapi.gitkraken.com");
-            url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
+    url.setScheme("https");
+    url.setHost("gloapi.gitkraken.com");
+    url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
 
 
-            QNetworkRequest req(url);
-            req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
-            QString rawAuth= "Bearer "+PAT;
-            req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
-            req.setRawHeader("Accept","application/json");
-            QNetworkAccessManager man;
-            QNetworkReply *reply =man.get(req);
+    QNetworkRequest req(url);
+    req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+    QString rawAuth= "Bearer "+PAT;
+    req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
+    req.setRawHeader("Accept","application/json");
+    QNetworkAccessManager man;
+    QNetworkReply *reply =man.get(req);
 
-            while(!reply->isFinished())
-            {
-                qApp->processEvents();
-            }
+    while(!reply->isFinished())
+    {
+        qApp->processEvents();
+    }
 
-             //Converts the get response into a json array
-            QString strReply = (QString)reply->readAll();
-            QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
-            QJsonArray json_array = jsonResponse.array();
-            QByteArray responseByte=reply->readAll();
-            qDebug()<<responseByte;
-            return json_array;
+    //Converts the get response into a json array
+    QString strReply = (QString)reply->readAll();
+    QJsonDocument jsonResponse = QJsonDocument::fromJson(strReply.toUtf8());
+    QJsonArray json_array = jsonResponse.array();
+    QByteArray responseByte=reply->readAll();
+    qDebug()<<responseByte;
+    return json_array;
 
 
 }
@@ -1519,7 +1537,7 @@ void MainWindow::on_addCommentButton_clicked()
         gloAddComment(ui->POInput->text(),ui->notesArea->toPlainText());
         ui->notesArea->clear();
     }
-updateWindow();
+    updateWindow();
 
 
 }
@@ -1628,7 +1646,7 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
         QJsonArray label;
         QJsonObject temp;
         temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//Claim closed
-           label.append(temp);
+        label.append(temp);
         if(ui->gloLabelsClaimCust->isChecked())
         {
             temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//ClaimCustomer
@@ -1649,7 +1667,7 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
         QJsonObject jObj;
         QJsonArray label;
         QJsonObject temp;
-       // temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
+        // temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
         if(ui->gloLabelsClaimCust->isChecked())
         {
             temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));

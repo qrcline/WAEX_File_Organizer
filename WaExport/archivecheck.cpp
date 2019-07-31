@@ -68,7 +68,9 @@ QString ArchiveCheck::checkForArchive(int&totalErrorsOutput,int&filesAffectedOut
         if(errorChecker)//If the erroChecker is true there is an error reading the index file or doesn't exist.
         {
             std::cout<<"There is an error "<<std::endl;
-            uiPointer->archiveErrorList->addItem(QString::fromStdString(foldersToCheck[i]));
+            QString fileName=QString::fromStdString(foldersToCheck[i]);
+           // fileName=fileName.right(fileName.length()-fileName.lastIndexOf("\\")-1);
+            uiPointer->archiveErrorList->addItem(fileName);
             folderErrors++;
             step++;
         }

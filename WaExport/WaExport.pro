@@ -29,6 +29,7 @@ CONFIG += c++11
 SOURCES += \
     aboutwindow.cpp \
     dragdrop.cpp \
+    globoard.cpp \
     helpcenter.cpp \
         main.cpp \
         mainwindow.cpp \
@@ -40,6 +41,7 @@ SOURCES += \
 HEADERS += \
     aboutwindow.h \
     dragdrop.h \
+    globoard.h \
     helpcenter.h \
         mainwindow.h \
     folderio.h \

@@ -159,7 +159,7 @@ public:
     QPushButton *testSocketButton;
     QFrame *frame_4;
     QFrame *frame_3;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_16;
     QCheckBox *gloLabelsClaimCust;
@@ -168,13 +168,13 @@ public:
     QFrame *frame_2;
     QPushButton *addCommentButton;
     QTextEdit *notesArea;
-    QWidget *widget1;
+    QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
     QLabel *PoLabel;
     QLabel *label_19;
     QListWidget *gloComments;
-    QWidget *widget2;
+    QWidget *layoutWidget2;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_18;
     QProgressBar *order_progressBar;
@@ -195,7 +195,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -1034,31 +1034,31 @@ public:
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Sunken);
         frame_3->setLineWidth(3);
-        widget = new QWidget(frame_3);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 0, 131, 90));
-        verticalLayout_2 = new QVBoxLayout(widget);
+        layoutWidget = new QWidget(frame_3);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 0, 131, 90));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_16 = new QLabel(widget);
+        label_16 = new QLabel(layoutWidget);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(label_16);
 
-        gloLabelsClaimCust = new QCheckBox(widget);
+        gloLabelsClaimCust = new QCheckBox(layoutWidget);
         gloLabelsClaimCust->setObjectName(QString::fromUtf8("gloLabelsClaimCust"));
 
         verticalLayout_2->addWidget(gloLabelsClaimCust);
 
-        gloLabelsClaimTaged = new QCheckBox(widget);
+        gloLabelsClaimTaged = new QCheckBox(layoutWidget);
         gloLabelsClaimTaged->setObjectName(QString::fromUtf8("gloLabelsClaimTaged"));
 
         verticalLayout_2->addWidget(gloLabelsClaimTaged);
 
-        gloLabelsClaimClosed = new QCheckBox(widget);
+        gloLabelsClaimClosed = new QCheckBox(layoutWidget);
         gloLabelsClaimClosed->setObjectName(QString::fromUtf8("gloLabelsClaimClosed"));
 
         verticalLayout_2->addWidget(gloLabelsClaimClosed);
@@ -1076,21 +1076,21 @@ public:
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
         notesArea->setGeometry(QRect(10, 20, 291, 141));
         notesArea->setFont(font);
-        widget1 = new QWidget(frame_2);
-        widget1->setObjectName(QString::fromUtf8("widget1"));
-        widget1->setGeometry(QRect(10, 0, 211, 18));
-        horizontalLayout_2 = new QHBoxLayout(widget1);
+        layoutWidget1 = new QWidget(frame_2);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 0, 211, 18));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(widget1);
+        label = new QLabel(layoutWidget1);
         label->setObjectName(QString::fromUtf8("label"));
         label->setFont(font);
 
         horizontalLayout_2->addWidget(label);
 
-        PoLabel = new QLabel(widget1);
+        PoLabel = new QLabel(layoutWidget1);
         PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
 
         horizontalLayout_2->addWidget(PoLabel);
@@ -1104,22 +1104,22 @@ public:
         gloComments->setGeometry(QRect(330, 180, 491, 461));
         gloComments->setMidLineWidth(2);
         gloComments->setSpacing(5);
-        widget2 = new QWidget(frame_4);
-        widget2->setObjectName(QString::fromUtf8("widget2"));
-        widget2->setGeometry(QRect(10, 10, 811, 100));
-        verticalLayout_3 = new QVBoxLayout(widget2);
+        layoutWidget2 = new QWidget(frame_4);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(10, 10, 819, 100));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_18 = new QLabel(widget2);
+        label_18 = new QLabel(layoutWidget2);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setFont(font1);
         label_18->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(label_18);
 
-        order_progressBar = new QProgressBar(widget2);
+        order_progressBar = new QProgressBar(layoutWidget2);
         order_progressBar->setObjectName(QString::fromUtf8("order_progressBar"));
         order_progressBar->setMaximum(100);
         order_progressBar->setValue(0);
@@ -1129,7 +1129,7 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(120);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        RB_SalesOrder = new QRadioButton(widget2);
+        RB_SalesOrder = new QRadioButton(layoutWidget2);
         buttonGroup_2 = new QButtonGroup(MainWindow);
         buttonGroup_2->setObjectName(QString::fromUtf8("buttonGroup_2"));
         buttonGroup_2->addButton(RB_SalesOrder);
@@ -1138,28 +1138,28 @@ public:
 
         horizontalLayout->addWidget(RB_SalesOrder);
 
-        RB_Shipped = new QRadioButton(widget2);
+        RB_Shipped = new QRadioButton(layoutWidget2);
         buttonGroup_2->addButton(RB_Shipped);
         RB_Shipped->setObjectName(QString::fromUtf8("RB_Shipped"));
         RB_Shipped->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Shipped);
 
-        RB_Border = new QRadioButton(widget2);
+        RB_Border = new QRadioButton(layoutWidget2);
         buttonGroup_2->addButton(RB_Border);
         RB_Border->setObjectName(QString::fromUtf8("RB_Border"));
         RB_Border->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Border);
 
-        RB_Crossed = new QRadioButton(widget2);
+        RB_Crossed = new QRadioButton(layoutWidget2);
         buttonGroup_2->addButton(RB_Crossed);
         RB_Crossed->setObjectName(QString::fromUtf8("RB_Crossed"));
         RB_Crossed->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Crossed);
 
-        RB_Delivered = new QRadioButton(widget2);
+        RB_Delivered = new QRadioButton(layoutWidget2);
         buttonGroup_2->addButton(RB_Delivered);
         RB_Delivered->setObjectName(QString::fromUtf8("RB_Delivered"));
         RB_Delivered->setLayoutDirection(Qt::LeftToRight);
@@ -1224,10 +1224,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget = new QWidget(ArchiveCheck);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(20, 130, 221, 265));
-        verticalLayout = new QVBoxLayout(layoutWidget);
+        layoutWidget3 = new QWidget(ArchiveCheck);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(20, 130, 221, 265));
+        verticalLayout = new QVBoxLayout(layoutWidget3);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1235,35 +1235,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(layoutWidget);
+        label_7 = new QLabel(layoutWidget3);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(layoutWidget);
+        ACheck_TotalErrors = new QLabel(layoutWidget3);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(layoutWidget);
+        label_8 = new QLabel(layoutWidget3);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(layoutWidget);
+        ACheck_FilesAffected = new QLabel(layoutWidget3);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(layoutWidget);
+        label_13 = new QLabel(layoutWidget3);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(layoutWidget);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget3);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1271,13 +1271,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(layoutWidget);
+        label_12 = new QLabel(layoutWidget3);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font3);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(layoutWidget);
+        archiveErrorList = new QListWidget(layoutWidget3);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);

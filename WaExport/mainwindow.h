@@ -156,6 +156,13 @@ private:
     QString userName="";
     QString PAT="";
     QString currentCardid="";
+    template <typename T>
+    struct labels
+    {
+        bool customer;
+        bool taged;
+        bool closed;
+    };
 
 
 
@@ -187,6 +194,7 @@ private:
 
     QString gloGetCardPosition(QString po);
     void gloLoadComments();
+    void gloLoadLabels();
 };
 
 #endif // MAINWINDOW_H

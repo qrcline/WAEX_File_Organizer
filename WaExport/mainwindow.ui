@@ -1664,7 +1664,7 @@ width:10px;
        <property name="lineWidth">
         <number>3</number>
        </property>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1754,7 +1754,7 @@ width:10px;
          </font>
         </property>
        </widget>
-       <widget class="QWidget" name="">
+       <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
          <rect>
           <x>10</x>
@@ -1820,12 +1820,12 @@ width:10px;
         <number>5</number>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>10</y>
-         <width>811</width>
+         <width>819</width>
          <height>100</height>
         </rect>
        </property>
@@ -1839,7 +1839,7 @@ width:10px;
            </font>
           </property>
           <property name="text">
-           <string>Glo Boards</string>
+           <string>Glo Board</string>
           </property>
           <property name="alignment">
            <set>Qt::AlignCenter</set>
