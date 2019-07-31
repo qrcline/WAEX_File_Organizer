@@ -1440,7 +1440,7 @@ public:
         label->setText(QCoreApplication::translate("MainWindow", "Comment PO# :", nullptr));
         PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         label_19->setText(QCoreApplication::translate("MainWindow", "Glo Board Comments", nullptr));
-        label_18->setText(QCoreApplication::translate("MainWindow", "Glo Boards", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "Glo Board", nullptr));
         order_progressBar->setFormat(QString());
         RB_SalesOrder->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
         RB_Shipped->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
