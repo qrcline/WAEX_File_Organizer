@@ -156,13 +156,16 @@ private:
     QString userName="";
     QString PAT="";
     QString currentCardid="";
-    template <typename T>
-    struct labels
+
+    struct label
     {
         bool customer;
         bool taged;
         bool closed;
-    };
+    }labels;
+
+    bool updateBlock=false; //Used to make flags to stop the push of data, true blocks
+
 
 
 
@@ -180,7 +183,7 @@ private:
     QByteArray postRequest(QJsonObject postData, QString path);
     void gloCreatePO(QString po);
     void gloMoveCard();
-    QJsonArray getRequest( QString path);
+    QJsonArray getRequest( QString path,QJsonDocument& docResponse);
     void gloAddComment(QString cardId, QString comment);
     QString gloGetCardId(QString po);
 
@@ -195,6 +198,7 @@ private:
     QString gloGetCardPosition(QString po);
     void gloLoadComments();
     void gloLoadLabels();
+    void gloPushLabels();
 };
 
 #endif // MAINWINDOW_H
