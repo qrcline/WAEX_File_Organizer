@@ -1268,11 +1268,14 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
     QString message="You are going to delete PO#: "+ui->POInput->text()+"\nThis is not reversable and will delete any Glo Board card, continue?";
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Delete File", message, QMessageBox::Yes|QMessageBox::No).exec())
     {
+       if(ui->POInput->text().length()>0)
+       {
         //Delete file
         std::cout<<"Yes was selected"<<std::endl;
         QDir dir(mainDirectory+"/"+ui->POInput->text());
-        dir.removeRecursively();
 
+        if(dir.removeRecursively())
+        {
 
         //Delete Glo Boards Card
         QString path="/cards/"+currentCardid;
@@ -1299,6 +1302,12 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
 
         QByteArray responseByte=reply->readAll();
         qDebug()<<responseByte;
+       }
+       }
+       else
+       {
+           QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
+       }
 
 
     }
