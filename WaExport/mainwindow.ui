@@ -1753,6 +1753,9 @@ width:10px;
           <pointsize>10</pointsize>
          </font>
         </property>
+        <property name="placeholderText">
+         <string>Enter a Comment, click Add Comment to save</string>
+        </property>
        </widget>
        <widget class="QWidget" name="layoutWidget">
         <property name="geometry">
@@ -1772,14 +1775,7 @@ width:10px;
             </font>
            </property>
            <property name="text">
-            <string>Comment PO# :</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QLabel" name="PoLabel">
-           <property name="text">
-            <string>NULL</string>
+            <string>Comment</string>
            </property>
           </widget>
          </item>
@@ -1934,10 +1930,48 @@ width:10px;
        </layout>
       </widget>
      </widget>
+     <widget class="QWidget" name="">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>90</y>
+        <width>241</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label_20">
+         <property name="font">
+          <font>
+           <pointsize>17</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>Current Po#:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="PoLabel">
+         <property name="font">
+          <font>
+           <pointsize>17</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>NULL</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
      <zorder>frame_4</zorder>
      <zorder>WAEX_logo</zorder>
      <zorder>frame</zorder>
      <zorder>testSocketButton</zorder>
+     <zorder>PoLabel</zorder>
+     <zorder>label_20</zorder>
     </widget>
     <widget class="QWidget" name="ArchiveCheck">
      <attribute name="title">

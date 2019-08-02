@@ -223,6 +223,7 @@ Makefile: ..\WaExport\WaExport.pro C:\Qt\5.13.0\msvc2017\mkspecs\win32-msvc\qmak
 		C:\Qt\5.13.0\msvc2017\mkspecs\features\qt_config.prf \
 		C:\Qt\5.13.0\msvc2017\mkspecs\win32-msvc\qmake.conf \
 		C:\Qt\5.13.0\msvc2017\mkspecs\features\spec_post.prf \
+		.qmake.stash \
 		C:\Qt\5.13.0\msvc2017\mkspecs\features\exclusive_builds.prf \
 		C:\Qt\5.13.0\msvc2017\mkspecs\common\msvc-version.conf \
 		C:\Qt\5.13.0\msvc2017\mkspecs\features\toolchain.prf \
@@ -249,6 +250,7 @@ Makefile: ..\WaExport\WaExport.pro C:\Qt\5.13.0\msvc2017\mkspecs\win32-msvc\qmak
 		..\WaExport\WaExport.pro \
 		C:\Qt\5.13.0\msvc2017\lib\Qt5Widgets.prl \
 		C:\Qt\5.13.0\msvc2017\lib\Qt5Gui.prl \
+		C:\Qt\5.13.0\msvc2017\lib\Qt5Network.prl \
 		C:\Qt\5.13.0\msvc2017\lib\Qt5Core.prl \
 		C:\Qt\5.13.0\msvc2017\lib\qtmain.prl
 	$(QMAKE) -o Makefile ..\WaExport\WaExport.pro -spec win32-msvc "CONFIG+=qtquickcompiler"
@@ -398,6 +400,7 @@ C:\Qt\5.13.0\msvc2017\mkspecs\features\qt_functions.prf:
 C:\Qt\5.13.0\msvc2017\mkspecs\features\qt_config.prf:
 C:\Qt\5.13.0\msvc2017\mkspecs\win32-msvc\qmake.conf:
 C:\Qt\5.13.0\msvc2017\mkspecs\features\spec_post.prf:
+.qmake.stash:
 C:\Qt\5.13.0\msvc2017\mkspecs\features\exclusive_builds.prf:
 C:\Qt\5.13.0\msvc2017\mkspecs\common\msvc-version.conf:
 C:\Qt\5.13.0\msvc2017\mkspecs\features\toolchain.prf:
@@ -424,6 +427,7 @@ C:\Qt\5.13.0\msvc2017\mkspecs\features\lex.prf:
 ..\WaExport\WaExport.pro:
 C:\Qt\5.13.0\msvc2017\lib\Qt5Widgets.prl:
 C:\Qt\5.13.0\msvc2017\lib\Qt5Gui.prl:
+C:\Qt\5.13.0\msvc2017\lib\Qt5Network.prl:
 C:\Qt\5.13.0\msvc2017\lib\Qt5Core.prl:
 C:\Qt\5.13.0\msvc2017\lib\qtmain.prl:
 qmake: FORCE

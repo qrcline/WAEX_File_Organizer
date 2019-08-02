@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     tableModel(new myTableModel(this))
 {
-
+    std::cout<<"In mainWindow construct"<<std::endl;
     setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
     ui->tableView->setModel(tableModel);
@@ -1301,7 +1301,7 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
 
 
         QByteArray responseByte=reply->readAll();
-        qDebug()<<responseByte;
+        //qDebug()<<responseByte;
        }
        }
        else
@@ -1536,7 +1536,7 @@ QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 
 
     QByteArray responseByte=reply->readAll();
-    qDebug()<<responseByte;
+    //qDebug()<<responseByte;
     return responseByte;
 }
 

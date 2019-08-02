@@ -171,7 +171,6 @@ public:
     QWidget *layoutWidget1;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
-    QLabel *PoLabel;
     QLabel *label_19;
     QListWidget *gloComments;
     QWidget *layoutWidget2;
@@ -184,6 +183,10 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
+    QWidget *widget;
+    QHBoxLayout *horizontalLayout_3;
+    QLabel *label_20;
+    QLabel *PoLabel;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -1090,11 +1093,6 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        PoLabel = new QLabel(layoutWidget1);
-        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
-
-        horizontalLayout_2->addWidget(PoLabel);
-
         label_19 = new QLabel(frame_4);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(330, 160, 141, 16));
@@ -1169,11 +1167,35 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
+        widget = new QWidget(createFile);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(710, 90, 241, 30));
+        horizontalLayout_3 = new QHBoxLayout(widget);
+        horizontalLayout_3->setSpacing(6);
+        horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
+        horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
+        horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_20 = new QLabel(widget);
+        label_20->setObjectName(QString::fromUtf8("label_20"));
+        QFont font2;
+        font2.setPointSize(17);
+        label_20->setFont(font2);
+
+        horizontalLayout_3->addWidget(label_20);
+
+        PoLabel = new QLabel(widget);
+        PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
+        PoLabel->setFont(font2);
+
+        horizontalLayout_3->addWidget(PoLabel);
+
         tabWidget->addTab(createFile, QString());
         frame_4->raise();
         WAEX_logo->raise();
         frame->raise();
         testSocketButton->raise();
+        PoLabel->raise();
+        label_20->raise();
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
@@ -1200,10 +1222,10 @@ public:
         label_6 = new QLabel(ArchiveCheck);
         label_6->setObjectName(QString::fromUtf8("label_6"));
         label_6->setGeometry(QRect(70, 100, 101, 21));
-        QFont font2;
-        font2.setPointSize(13);
-        font2.setUnderline(true);
-        label_6->setFont(font2);
+        QFont font3;
+        font3.setPointSize(13);
+        font3.setUnderline(true);
+        label_6->setFont(font3);
         label_6->setAlignment(Qt::AlignCenter);
         archivePBar = new QProgressBar(ArchiveCheck);
         archivePBar->setObjectName(QString::fromUtf8("archivePBar"));
@@ -1213,13 +1235,13 @@ public:
         label_9 = new QLabel(ArchiveCheck);
         label_9->setObjectName(QString::fromUtf8("label_9"));
         label_9->setGeometry(QRect(270, 110, 61, 16));
-        QFont font3;
-        font3.setPointSize(12);
-        label_9->setFont(font3);
+        QFont font4;
+        font4.setPointSize(12);
+        label_9->setFont(font4);
         label_10 = new QLabel(ArchiveCheck);
         label_10->setObjectName(QString::fromUtf8("label_10"));
         label_10->setGeometry(QRect(360, 110, 131, 21));
-        label_10->setFont(font3);
+        label_10->setFont(font4);
         archiveCheckButton_2 = new QPushButton(ArchiveCheck);
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
@@ -1273,7 +1295,7 @@ public:
 
         label_12 = new QLabel(layoutWidget3);
         label_12->setObjectName(QString::fromUtf8("label_12"));
-        label_12->setFont(font3);
+        label_12->setFont(font4);
 
         verticalLayout->addWidget(label_12);
 
@@ -1437,16 +1459,18 @@ public:
         gloLabelsClaimTaged->setText(QCoreApplication::translate("MainWindow", "Claim-Taged", nullptr));
         gloLabelsClaimClosed->setText(QCoreApplication::translate("MainWindow", "Claim-Closed", nullptr));
         addCommentButton->setText(QCoreApplication::translate("MainWindow", "Add Comment", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Comment PO# :", nullptr));
-        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
+        notesArea->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter a Comment, click Add Comment to save", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "Comment", nullptr));
         label_19->setText(QCoreApplication::translate("MainWindow", "Glo Board Comments", nullptr));
-        label_18->setText(QCoreApplication::translate("MainWindow", "Glo Boards", nullptr));
+        label_18->setText(QCoreApplication::translate("MainWindow", "Glo Board", nullptr));
         order_progressBar->setFormat(QString());
         RB_SalesOrder->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
         RB_Shipped->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
         RB_Border->setText(QCoreApplication::translate("MainWindow", "Border", nullptr));
         RB_Crossed->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
         RB_Delivered->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
+        label_20->setText(QCoreApplication::translate("MainWindow", "Current Po#:", nullptr));
+        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
