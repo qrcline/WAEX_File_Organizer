@@ -291,7 +291,9 @@ void MainWindow::updateWindow()
 
     //Fill in the notes section
     ui->notesDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
+    gloGetCardId(ui->POInput->text());
     gloLoadComments();//loads the globoard comments
+    gloLoadLabels();
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
