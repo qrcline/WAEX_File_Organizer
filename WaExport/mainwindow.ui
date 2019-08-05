@@ -1585,10 +1585,10 @@ width:10px;
       <widget class="QPushButton" name="saveButton">
        <property name="geometry">
         <rect>
-         <x>610</x>
-         <y>750</y>
-         <width>80</width>
-         <height>21</height>
+         <x>569</x>
+         <y>730</y>
+         <width>121</width>
+         <height>41</height>
         </rect>
        </property>
        <property name="text">
@@ -1930,7 +1930,7 @@ width:10px;
        </layout>
       </widget>
      </widget>
-     <widget class="QWidget" name="">
+     <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
        <rect>
         <x>710</x>
@@ -1966,12 +1966,11 @@ width:10px;
        </item>
       </layout>
      </widget>
+     <zorder>layoutWidget</zorder>
      <zorder>frame_4</zorder>
      <zorder>WAEX_logo</zorder>
      <zorder>frame</zorder>
      <zorder>testSocketButton</zorder>
-     <zorder>PoLabel</zorder>
-     <zorder>label_20</zorder>
     </widget>
     <widget class="QWidget" name="ArchiveCheck">
      <attribute name="title">
@@ -2042,8 +2041,8 @@ width:10px;
        <rect>
         <x>260</x>
         <y>130</y>
-        <width>911</width>
-        <height>401</height>
+        <width>1251</width>
+        <height>641</height>
        </rect>
       </property>
       <property name="verticalScrollBarPolicy">

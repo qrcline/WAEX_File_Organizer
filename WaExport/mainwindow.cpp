@@ -79,8 +79,6 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 
 }
 
-
-
 void MainWindow::dropEvent(QDropEvent *event)
 {
     std::cout<<"This is a drop event"<<std::endl;
@@ -128,6 +126,7 @@ void MainWindow::loadSettings()
     std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
     if(tTip=="True")
     {
+
         ui->POInput->setToolTip("Input PO to lookup or create.");
         ui->comboBox->setToolTip("Select template for req files.");
         ui->workingDirectory->setToolTip("The directory were files are saved.");
@@ -163,16 +162,12 @@ void MainWindow::updateWindow()
     if(mainDirectory=="NULL"||!fIo.checkForDirect(mainDirectory,ui->POInput->text()))
         return;
 
-
-
-
     std::vector<std::string> filesVec=fIo.list_files_vector(mainDirectory+"/"+ui->POInput->text()); //Gets list of files in a directory
     int num=0;
     num=fIo.doesFileExist("Spreadsheets",filesVec);
     if(num>0)
     {
         ui->noticeSpreadsheets->setText("YES X"+QString::number(num));
-
     }
 
     else
@@ -443,6 +438,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
 
 void MainWindow::closeEvent(QCloseEvent *bar)
 {
+    //Saves the working directory to settings
     QSettings setting("WAEX","Organizer");
     setting.beginGroup("Settings");
     setting.setValue("workDirec",mainDirectory);
@@ -1090,6 +1086,7 @@ void MainWindow::uncheckAll()
     ui->mexP_ProduceInv->setChecked(false);
     ui->mexP_Payable_Shipper->setChecked(false);
     ui->mexP_Payables_Carriers->setChecked(false);
+    //ui->receipts->setChecked(false);
 
     //Overseas
     ui->ExpInvima->setChecked(false);
@@ -1270,46 +1267,51 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
     QString message="You are going to delete PO#: "+ui->POInput->text()+"\nThis is not reversable and will delete any Glo Board card, continue?";
     if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "Delete File", message, QMessageBox::Yes|QMessageBox::No).exec())
     {
-       if(ui->POInput->text().length()>0)
-       {
-        //Delete file
-        std::cout<<"Yes was selected"<<std::endl;
-        QDir dir(mainDirectory+"/"+ui->POInput->text());
-
-        if(dir.removeRecursively())
+        if(ui->POInput->text().length()>0)
         {
+            //Delete file
+            std::cout<<"Yes was selected"<<std::endl;
+            QDir dir(mainDirectory+"/"+ui->POInput->text());
 
-        //Delete Glo Boards Card
-        QString path="/cards/"+currentCardid;
-        QUrl url;
-        url.setScheme("https");
-        url.setHost("gloapi.gitkraken.com");
-        url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
+            if(dir.removeRecursively())
+            {
+
+                //Delete Glo Boards Card
+                QString path="/cards/"+currentCardid;
+                QUrl url;
+                url.setScheme("https");
+                url.setHost("gloapi.gitkraken.com");
+                url.setPath("/v1/glo/boards/5d360413538eed0011572e26"+path);
 
 
-        QNetworkRequest req(url);
+                QNetworkRequest req(url);
 
-        req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
-        QString rawAuth= "Bearer "+PAT;
-        req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
-        req.setRawHeader("Accept","application/json");
-        QNetworkAccessManager man;
-        QNetworkReply *reply =man.deleteResource(req);
+                req.setHeader(QNetworkRequest::ContentTypeHeader,"application/json");
+                QString rawAuth= "Bearer "+PAT;
+                req.setRawHeader("Authorization",rawAuth.toUtf8());  //Take out before git push
+                req.setRawHeader("Accept","application/json");
+                QNetworkAccessManager man;
+                QNetworkReply *reply =man.deleteResource(req);
 
-        while(!reply->isFinished())
-        {
-            qApp->processEvents();
+                while(!reply->isFinished())
+                {
+                    qApp->processEvents();
+                }
+
+
+                QByteArray responseByte=reply->readAll();
+                //qDebug()<<responseByte;
+                ui->POInput->clear();
+                ui->notesArea->clear();
+                ui->notesDisplay->clear();
+                ui->order_progressBar->setValue(0);
+                updateWindow();
+            }
         }
-
-
-        QByteArray responseByte=reply->readAll();
-        //qDebug()<<responseByte;
-       }
-       }
-       else
-       {
-           QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
-       }
+        else
+        {
+            QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
+        }
 
 
     }
@@ -1592,184 +1594,54 @@ void MainWindow::on_addCommentButton_clicked()
 void MainWindow::gloPushLabels()
 {
     if(updateBlock)
-     {
+    {
         QJsonObject jObj;
-    QJsonArray label;
-    QJsonObject temp;
-    if(labels.customer)
-    {
-        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//Customer
-        label.append(temp);
-    }
-    if(labels.taged)
-    {
-        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
-        label.append(temp);
-    }
-    if(labels.closed)
-    {
-        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//closed
-        label.append(temp);
-    }
+        QJsonArray label;
+        QJsonObject temp;
+        if(labels.customer)
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//Customer
+            label.append(temp);
+        }
+        if(labels.taged)
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
+            label.append(temp);
+        }
+        if(labels.closed)
+        {
+            temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//closed
+            label.append(temp);
+        }
 
-    jObj.insert("labels",label);
-    QString path="/cards/"+currentCardid;
-    postRequest(jObj,path);
+        jObj.insert("labels",label);
+        QString path="/cards/"+currentCardid;
+        postRequest(jObj,path);
     }
 }
 void MainWindow::on_gloLabelsClaimCust_stateChanged(int arg1)
 {
     if(arg1==2)
-       labels.customer=true;
+        labels.customer=true;
     else
         labels.customer=false;
     gloPushLabels();
-//    if(arg1==2)
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//Customer
-//        label.append(temp);
-//        if(ui->gloLabelsClaimTaged->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimClosed->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//closed
-//            label.append(temp);
-//        }
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
-//    else
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        //temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
-
-//        if(ui->gloLabelsClaimTaged->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Tagged
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimClosed->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//Closed
-//            label.append(temp);
-//        }
-//        label.insert(0,temp);
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
-
 }
 
 void MainWindow::on_gloLabelsClaimTaged_stateChanged(int arg1)
 {
     if(arg1==2)
-       labels.taged=true;
+        labels.taged=true;
     else
         labels.taged=false;
-     gloPushLabels();
-//    if(arg1==2)
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//Taged
-//        label.append(temp);
-//        if(ui->gloLabelsClaimCust->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//customer
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimClosed->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("55d372579538eed0011574725"));//closed
-//            label.append(temp);
-//        }
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
-//    else
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        //temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
-//        //label.insert(0,temp);
-//        if(ui->gloLabelsClaimCust->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//customer
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimClosed->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//closed
-//            label.append(temp);
-//        }
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
-
+    gloPushLabels();
 }
 
 void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
 {
     if(arg1==2)
-       labels.closed=true;
+        labels.closed=true;
     else
         labels.closed=false;
-     gloPushLabels();
-//    if(arg1==2)
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));//Claim closed
-//        label.append(temp);
-//        if(ui->gloLabelsClaimCust->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));//ClaimCustomer
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimTaged->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));//taged
-//            label.append(temp);
-//        }
-
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
-//    else
-//    {
-//        QJsonObject jObj;
-//        QJsonArray label;
-//        QJsonObject temp;
-//        // temp.insert("id",QJsonValue::fromVariant("5d372579538eed0011574725"));
-//        if(ui->gloLabelsClaimCust->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d37256d13853d0011ab9008"));
-//            label.append(temp);
-//        }
-//        if(ui->gloLabelsClaimTaged->isChecked())
-//        {
-//            temp.insert("id",QJsonValue::fromVariant("5d3b821e5afb5f000f3fd36f"));
-//            label.append(temp);
-//        }
-
-//        jObj.insert("labels",label);
-//        QString path="/cards/"+currentCardid;
-//        postRequest(jObj,path);
-//    }
+    gloPushLabels();
 }

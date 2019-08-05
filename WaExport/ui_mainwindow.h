@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.13.0
+** Created by: Qt User Interface Compiler version 5.12.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -183,7 +183,7 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_20;
     QLabel *PoLabel;
@@ -198,7 +198,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *layoutWidget3;
+    QWidget *layoutWidget4;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -1014,7 +1014,7 @@ public:
         notesDisplay->setReadOnly(false);
         saveButton = new QPushButton(frame);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
-        saveButton->setGeometry(QRect(610, 750, 80, 21));
+        saveButton->setGeometry(QRect(569, 730, 121, 41));
         label_17 = new QLabel(frame);
         label_17->setObjectName(QString::fromUtf8("label_17"));
         label_17->setGeometry(QRect(230, 40, 191, 31));
@@ -1167,15 +1167,15 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        widget = new QWidget(createFile);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(710, 90, 241, 30));
-        horizontalLayout_3 = new QHBoxLayout(widget);
+        layoutWidget3 = new QWidget(createFile);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(710, 90, 241, 30));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_20 = new QLabel(widget);
+        label_20 = new QLabel(layoutWidget3);
         label_20->setObjectName(QString::fromUtf8("label_20"));
         QFont font2;
         font2.setPointSize(17);
@@ -1183,19 +1183,18 @@ public:
 
         horizontalLayout_3->addWidget(label_20);
 
-        PoLabel = new QLabel(widget);
+        PoLabel = new QLabel(layoutWidget3);
         PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
         PoLabel->setFont(font2);
 
         horizontalLayout_3->addWidget(PoLabel);
 
         tabWidget->addTab(createFile, QString());
+        layoutWidget->raise();
         frame_4->raise();
         WAEX_logo->raise();
         frame->raise();
         testSocketButton->raise();
-        PoLabel->raise();
-        label_20->raise();
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
@@ -1214,7 +1213,7 @@ public:
         archiveCheckButton->setGeometry(QRect(20, 60, 91, 21));
         tableView = new QTableView(ArchiveCheck);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(260, 130, 911, 401));
+        tableView->setGeometry(QRect(260, 130, 1251, 641));
         tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->horizontalHeader()->setVisible(false);
@@ -1246,10 +1245,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget3 = new QWidget(ArchiveCheck);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(20, 130, 221, 265));
-        verticalLayout = new QVBoxLayout(layoutWidget3);
+        layoutWidget4 = new QWidget(ArchiveCheck);
+        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(20, 130, 221, 265));
+        verticalLayout = new QVBoxLayout(layoutWidget4);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1257,35 +1256,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(layoutWidget3);
+        label_7 = new QLabel(layoutWidget4);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(layoutWidget3);
+        ACheck_TotalErrors = new QLabel(layoutWidget4);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(layoutWidget3);
+        label_8 = new QLabel(layoutWidget4);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(layoutWidget3);
+        ACheck_FilesAffected = new QLabel(layoutWidget4);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(layoutWidget3);
+        label_13 = new QLabel(layoutWidget4);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(layoutWidget3);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget4);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1293,13 +1292,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(layoutWidget3);
+        label_12 = new QLabel(layoutWidget4);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font4);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(layoutWidget3);
+        archiveErrorList = new QListWidget(layoutWidget4);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);
@@ -1339,157 +1338,157 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
-        actionOpen->setText(QCoreApplication::translate("MainWindow", "Open", nullptr));
-        actionHelp_Center->setText(QCoreApplication::translate("MainWindow", "Help Center", nullptr));
-        actionAbout->setText(QCoreApplication::translate("MainWindow", "About", nullptr));
-        actionSettings_2->setText(QCoreApplication::translate("MainWindow", "Settings", nullptr));
-        actionDelete_Current_PO->setText(QCoreApplication::translate("MainWindow", "Delete Current PO", nullptr));
-#if QT_CONFIG(tooltip)
+        MainWindow->setWindowTitle(QApplication::translate("MainWindow", "MainWindow", nullptr));
+        actionOpen->setText(QApplication::translate("MainWindow", "Open", nullptr));
+        actionHelp_Center->setText(QApplication::translate("MainWindow", "Help Center", nullptr));
+        actionAbout->setText(QApplication::translate("MainWindow", "About", nullptr));
+        actionSettings_2->setText(QApplication::translate("MainWindow", "Settings", nullptr));
+        actionDelete_Current_PO->setText(QApplication::translate("MainWindow", "Delete Current PO", nullptr));
+#ifndef QT_NO_TOOLTIP
         tabWidget->setToolTip(QString());
-#endif // QT_CONFIG(tooltip)
+#endif // QT_NO_TOOLTIP
         WAEX_logo->setText(QString());
-        noticePayableCarriers->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticePhyto->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_ProduceInv->setText(QCoreApplication::translate("MainWindow", "Produce Inv. ", nullptr));
-        mexP_Passing_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_ShipperConf_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        receipts->setText(QCoreApplication::translate("MainWindow", "Receipts", nullptr));
-        mexP_Passing->setText(QCoreApplication::translate("MainWindow", "Passing", nullptr));
-        mexP_Invoice->setText(QCoreApplication::translate("MainWindow", "Invoice", nullptr));
-        noticePayableShipper->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_Pedimento->setText(QCoreApplication::translate("MainWindow", "Pedimento", nullptr));
-        mexP_CarrierConf_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        noticeProduceInv->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticeShipperConf->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_Spreadsheets->setText(QCoreApplication::translate("MainWindow", "Spreadsheets", nullptr));
-        mexP_Payables_Carriers->setText(QCoreApplication::translate("MainWindow", "Payables-Carriers", nullptr));
-        mexP_Payable_Shipper_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_CarrierConf->setText(QCoreApplication::translate("MainWindow", "Carrier Conf", nullptr));
-        mexP_Payables_Carriers_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_SignedSale->setText(QCoreApplication::translate("MainWindow", "Signed Sale Conf.", nullptr));
-        noticeSaleConf->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_SignedSale_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        receipts_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticePassing->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticeSignedSaleConf->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_ShipperConf->setText(QCoreApplication::translate("MainWindow", "Shipper Conf", nullptr));
-        noticeSpreadsheets->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticePedimento->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        noticeCarrierConf->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        receipts_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_SaleConf_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_ProduceInv_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Payable_Shipper->setText(QCoreApplication::translate("MainWindow", "Payables-Shipper", nullptr));
-        mexP_SaleConf->setText(QCoreApplication::translate("MainWindow", "Sale Conf", nullptr));
-        noticeInvoice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        mexP_Phyto_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Invoice_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Phyto->setText(QCoreApplication::translate("MainWindow", "Phyto", nullptr));
-        mexP_Pedimento_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        mexP_Spreadsheets_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        CustomerPO_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        HarrisEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_Harris->setText(QCoreApplication::translate("MainWindow", "Payables-Harris", nullptr));
-        ExpInvima->setText(QCoreApplication::translate("MainWindow", "Exportacion/ INVIMA", nullptr));
-        CaftaNafta_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        OtherEmails_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        ListadeEmpaque_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Payables_Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_ShipperWarehouse_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_Transloader_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Payables_Transloader->setText(QCoreApplication::translate("MainWindow", "Payables-Transloader", nullptr));
-        ExpInvima_Upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        CustomerPO_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        ListadeEmpaque->setText(QCoreApplication::translate("MainWindow", "Lista de Empaque", nullptr));
-        OtherEmails->setText(QCoreApplication::translate("MainWindow", "Other Emails", nullptr));
-        CaftaNafta_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        ExpInvima_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Transloader_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Harris_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Transloader->setText(QCoreApplication::translate("MainWindow", "Transloader", nullptr));
-        FacturaComercial_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FreightContract->setText(QCoreApplication::translate("MainWindow", "Freight Serv Contract", nullptr));
-        payables_TruckFreight->setText(QCoreApplication::translate("MainWindow", "Payables-Truck/Freight", nullptr));
-        Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FacturaComercial->setText(QCoreApplication::translate("MainWindow", "Factura Comercial", nullptr));
-        CertOrigin_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        payables_TruckFreight_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        FreightContract_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        FacturaComercial_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Transloader_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        CaftaNafta->setText(QCoreApplication::translate("MainWindow", "CAFTA/NAFTA", nullptr));
-        ListadeEmpaque_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        HarrisEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        OtherEmails_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        HarrisEmails->setText(QCoreApplication::translate("MainWindow", "Harris Emails", nullptr));
-        Harris->setText(QCoreApplication::translate("MainWindow", "Harris", nullptr));
-        CustomerPO->setText(QCoreApplication::translate("MainWindow", "Customer PO", nullptr));
-        Payables_Harris_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        CertOrigin_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        payables_TruckFreight_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        Payables_ShipperWarehouse_notice->setText(QCoreApplication::translate("MainWindow", "No", nullptr));
-        CertOrigin->setText(QCoreApplication::translate("MainWindow", "Certificate of Origin", nullptr));
-        Payables_Harris_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        FreightContract_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_ShipperWarehouse->setText(QCoreApplication::translate("MainWindow", "Payables-Shipper/Warehouse", nullptr));
-        otherFiles_upload->setText(QCoreApplication::translate("MainWindow", "Choose File", nullptr));
-        label_15->setText(QCoreApplication::translate("MainWindow", "Other Files", nullptr));
-        label_5->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
+        noticePayableCarriers->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticePhyto->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_ProduceInv->setText(QApplication::translate("MainWindow", "Produce Inv. ", nullptr));
+        mexP_Passing_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_ShipperConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        receipts->setText(QApplication::translate("MainWindow", "Receipts", nullptr));
+        mexP_Passing->setText(QApplication::translate("MainWindow", "Passing", nullptr));
+        mexP_Invoice->setText(QApplication::translate("MainWindow", "Invoice", nullptr));
+        noticePayableShipper->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Pedimento->setText(QApplication::translate("MainWindow", "Pedimento", nullptr));
+        mexP_CarrierConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        noticeProduceInv->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticeShipperConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Spreadsheets->setText(QApplication::translate("MainWindow", "Spreadsheets", nullptr));
+        mexP_Payables_Carriers->setText(QApplication::translate("MainWindow", "Payables-Carriers", nullptr));
+        mexP_Payable_Shipper_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_CarrierConf->setText(QApplication::translate("MainWindow", "Carrier Conf", nullptr));
+        mexP_Payables_Carriers_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_SignedSale->setText(QApplication::translate("MainWindow", "Signed Sale Conf.", nullptr));
+        noticeSaleConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_SignedSale_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        receipts_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticePassing->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticeSignedSaleConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_ShipperConf->setText(QApplication::translate("MainWindow", "Shipper Conf", nullptr));
+        noticeSpreadsheets->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticePedimento->setText(QApplication::translate("MainWindow", "No", nullptr));
+        noticeCarrierConf->setText(QApplication::translate("MainWindow", "No", nullptr));
+        receipts_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_SaleConf_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_ProduceInv_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_Payable_Shipper->setText(QApplication::translate("MainWindow", "Payables-Shipper", nullptr));
+        mexP_SaleConf->setText(QApplication::translate("MainWindow", "Sale Conf", nullptr));
+        noticeInvoice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        mexP_Phyto_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_Invoice_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_Phyto->setText(QApplication::translate("MainWindow", "Phyto", nullptr));
+        mexP_Pedimento_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        mexP_Spreadsheets_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        CustomerPO_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        HarrisEmails_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_Harris->setText(QApplication::translate("MainWindow", "Payables-Harris", nullptr));
+        ExpInvima->setText(QApplication::translate("MainWindow", "Exportacion/ INVIMA", nullptr));
+        CaftaNafta_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        OtherEmails_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        ListadeEmpaque_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        Payables_Transloader_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_ShipperWarehouse_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_Transloader_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        Payables_Transloader->setText(QApplication::translate("MainWindow", "Payables-Transloader", nullptr));
+        ExpInvima_Upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        CustomerPO_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        ListadeEmpaque->setText(QApplication::translate("MainWindow", "Lista de Empaque", nullptr));
+        OtherEmails->setText(QApplication::translate("MainWindow", "Other Emails", nullptr));
+        CaftaNafta_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        ExpInvima_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        Transloader_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Harris_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Transloader->setText(QApplication::translate("MainWindow", "Transloader", nullptr));
+        FacturaComercial_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        FreightContract->setText(QApplication::translate("MainWindow", "Freight Serv Contract", nullptr));
+        payables_TruckFreight->setText(QApplication::translate("MainWindow", "Payables-Truck/Freight", nullptr));
+        Harris_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        FacturaComercial->setText(QApplication::translate("MainWindow", "Factura Comercial", nullptr));
+        CertOrigin_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        payables_TruckFreight_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        FreightContract_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        FacturaComercial_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Transloader_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        CaftaNafta->setText(QApplication::translate("MainWindow", "CAFTA/NAFTA", nullptr));
+        ListadeEmpaque_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        HarrisEmails_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        OtherEmails_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        HarrisEmails->setText(QApplication::translate("MainWindow", "Harris Emails", nullptr));
+        Harris->setText(QApplication::translate("MainWindow", "Harris", nullptr));
+        CustomerPO->setText(QApplication::translate("MainWindow", "Customer PO", nullptr));
+        Payables_Harris_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        CertOrigin_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        payables_TruckFreight_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        Payables_ShipperWarehouse_notice->setText(QApplication::translate("MainWindow", "No", nullptr));
+        CertOrigin->setText(QApplication::translate("MainWindow", "Certificate of Origin", nullptr));
+        Payables_Harris_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        FreightContract_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        Payables_ShipperWarehouse->setText(QApplication::translate("MainWindow", "Payables-Shipper/Warehouse", nullptr));
+        otherFiles_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
+        label_15->setText(QApplication::translate("MainWindow", "Other Files", nullptr));
+        label_5->setText(QApplication::translate("MainWindow", "Uploaded?", nullptr));
         reloadButton->setText(QString());
         reloadButton->setDescription(QString());
-        label_14->setText(QCoreApplication::translate("MainWindow", "Template:", nullptr));
-        label_11->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
-        comboBox->setItemText(0, QCoreApplication::translate("MainWindow", "Mex Produce", nullptr));
-        comboBox->setItemText(1, QCoreApplication::translate("MainWindow", "Domestic", nullptr));
-        comboBox->setItemText(2, QCoreApplication::translate("MainWindow", "Mex Direct", nullptr));
-        comboBox->setItemText(3, QCoreApplication::translate("MainWindow", "Overseas", nullptr));
+        label_14->setText(QApplication::translate("MainWindow", "Template:", nullptr));
+        label_11->setText(QApplication::translate("MainWindow", "Working Directory:", nullptr));
+        comboBox->setItemText(0, QApplication::translate("MainWindow", "Mex Produce", nullptr));
+        comboBox->setItemText(1, QApplication::translate("MainWindow", "Domestic", nullptr));
+        comboBox->setItemText(2, QApplication::translate("MainWindow", "Mex Direct", nullptr));
+        comboBox->setItemText(3, QApplication::translate("MainWindow", "Overseas", nullptr));
 
-        openFolder->setText(QCoreApplication::translate("MainWindow", "Open Folder", nullptr));
+        openFolder->setText(QApplication::translate("MainWindow", "Open Folder", nullptr));
         POInput->setInputMask(QString());
-        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
-        label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "PO#:", nullptr));
-        workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        label_17->setText(QCoreApplication::translate("MainWindow", "File Managment", nullptr));
-        testSocketButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        label_16->setText(QCoreApplication::translate("MainWindow", "Labels", nullptr));
-        gloLabelsClaimCust->setText(QCoreApplication::translate("MainWindow", "Claim-Customer", nullptr));
-        gloLabelsClaimTaged->setText(QCoreApplication::translate("MainWindow", "Claim-Taged", nullptr));
-        gloLabelsClaimClosed->setText(QCoreApplication::translate("MainWindow", "Claim-Closed", nullptr));
-        addCommentButton->setText(QCoreApplication::translate("MainWindow", "Add Comment", nullptr));
-        notesArea->setPlaceholderText(QCoreApplication::translate("MainWindow", "Enter a Comment, click Add Comment to save", nullptr));
-        label->setText(QCoreApplication::translate("MainWindow", "Comment", nullptr));
-        label_19->setText(QCoreApplication::translate("MainWindow", "Glo Board Comments", nullptr));
-        label_18->setText(QCoreApplication::translate("MainWindow", "Glo Board", nullptr));
+        POInput->setPlaceholderText(QApplication::translate("MainWindow", "PO#", nullptr));
+        label_4->setText(QApplication::translate("MainWindow", "Uploaded?", nullptr));
+        label_2->setText(QApplication::translate("MainWindow", "PO#:", nullptr));
+        workingDirectory_CreateFile->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        saveButton->setText(QApplication::translate("MainWindow", "Save", nullptr));
+        label_17->setText(QApplication::translate("MainWindow", "File Managment", nullptr));
+        testSocketButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
+        label_16->setText(QApplication::translate("MainWindow", "Labels", nullptr));
+        gloLabelsClaimCust->setText(QApplication::translate("MainWindow", "Claim-Customer", nullptr));
+        gloLabelsClaimTaged->setText(QApplication::translate("MainWindow", "Claim-Taged", nullptr));
+        gloLabelsClaimClosed->setText(QApplication::translate("MainWindow", "Claim-Closed", nullptr));
+        addCommentButton->setText(QApplication::translate("MainWindow", "Add Comment", nullptr));
+        notesArea->setPlaceholderText(QApplication::translate("MainWindow", "Enter a Comment, click Add Comment to save", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Comment", nullptr));
+        label_19->setText(QApplication::translate("MainWindow", "Glo Board Comments", nullptr));
+        label_18->setText(QApplication::translate("MainWindow", "Glo Board", nullptr));
         order_progressBar->setFormat(QString());
-        RB_SalesOrder->setText(QCoreApplication::translate("MainWindow", "Sales Order", nullptr));
-        RB_Shipped->setText(QCoreApplication::translate("MainWindow", "Shipped", nullptr));
-        RB_Border->setText(QCoreApplication::translate("MainWindow", "Border", nullptr));
-        RB_Crossed->setText(QCoreApplication::translate("MainWindow", "Crossed", nullptr));
-        RB_Delivered->setText(QCoreApplication::translate("MainWindow", "Delivered", nullptr));
-        label_20->setText(QCoreApplication::translate("MainWindow", "Current Po#:", nullptr));
-        PoLabel->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(createFile), QCoreApplication::translate("MainWindow", "Create File", nullptr));
+        RB_SalesOrder->setText(QApplication::translate("MainWindow", "Sales Order", nullptr));
+        RB_Shipped->setText(QApplication::translate("MainWindow", "Shipped", nullptr));
+        RB_Border->setText(QApplication::translate("MainWindow", "Border", nullptr));
+        RB_Crossed->setText(QApplication::translate("MainWindow", "Crossed", nullptr));
+        RB_Delivered->setText(QApplication::translate("MainWindow", "Delivered", nullptr));
+        label_20->setText(QApplication::translate("MainWindow", "Current Po#:", nullptr));
+        PoLabel->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(createFile), QApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
-        workingDirectory->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        label_3->setText(QCoreApplication::translate("MainWindow", "Working Directory:", nullptr));
-        archiveCheckButton->setText(QCoreApplication::translate("MainWindow", "Run Check", nullptr));
-        label_6->setText(QCoreApplication::translate("MainWindow", "Summary", nullptr));
-        label_9->setText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
-        label_10->setText(QCoreApplication::translate("MainWindow", "Missing Files ->", nullptr));
-        archiveCheckButton_2->setText(QCoreApplication::translate("MainWindow", "Open Archive Check Excel", nullptr));
-        label_7->setText(QCoreApplication::translate("MainWindow", "Total Errors:", nullptr));
-        ACheck_TotalErrors->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        label_8->setText(QCoreApplication::translate("MainWindow", "Files Affected", nullptr));
-        ACheck_FilesAffected->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        label_13->setText(QCoreApplication::translate("MainWindow", "Total Files Checked:", nullptr));
-        ACheck_TotalFilesChecked->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
-        label_12->setText(QCoreApplication::translate("MainWindow", "Error Files: ", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(ArchiveCheck), QCoreApplication::translate("MainWindow", "Run Archive Check", nullptr));
-        menuFile->setTitle(QCoreApplication::translate("MainWindow", "File", nullptr));
-        menuHelp->setTitle(QCoreApplication::translate("MainWindow", "Help", nullptr));
+        workingDirectory->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_3->setText(QApplication::translate("MainWindow", "Working Directory:", nullptr));
+        archiveCheckButton->setText(QApplication::translate("MainWindow", "Run Check", nullptr));
+        label_6->setText(QApplication::translate("MainWindow", "Summary", nullptr));
+        label_9->setText(QApplication::translate("MainWindow", "PO#", nullptr));
+        label_10->setText(QApplication::translate("MainWindow", "Missing Files ->", nullptr));
+        archiveCheckButton_2->setText(QApplication::translate("MainWindow", "Open Archive Check Excel", nullptr));
+        label_7->setText(QApplication::translate("MainWindow", "Total Errors:", nullptr));
+        ACheck_TotalErrors->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_8->setText(QApplication::translate("MainWindow", "Files Affected", nullptr));
+        ACheck_FilesAffected->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_13->setText(QApplication::translate("MainWindow", "Total Files Checked:", nullptr));
+        ACheck_TotalFilesChecked->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        label_12->setText(QApplication::translate("MainWindow", "Error Files: ", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(ArchiveCheck), QApplication::translate("MainWindow", "Run Archive Check", nullptr));
+        menuFile->setTitle(QApplication::translate("MainWindow", "File", nullptr));
+        menuHelp->setTitle(QApplication::translate("MainWindow", "Help", nullptr));
     } // retranslateUi
 
 };

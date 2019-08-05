@@ -183,7 +183,7 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
-    QWidget *widget;
+    QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_20;
     QLabel *PoLabel;
@@ -198,7 +198,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *layoutWidget3;
+    QWidget *layoutWidget4;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -1167,15 +1167,15 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        widget = new QWidget(createFile);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(710, 90, 241, 30));
-        horizontalLayout_3 = new QHBoxLayout(widget);
+        layoutWidget3 = new QWidget(createFile);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(710, 90, 241, 30));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget3);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_20 = new QLabel(widget);
+        label_20 = new QLabel(layoutWidget3);
         label_20->setObjectName(QString::fromUtf8("label_20"));
         QFont font2;
         font2.setPointSize(17);
@@ -1183,19 +1183,18 @@ public:
 
         horizontalLayout_3->addWidget(label_20);
 
-        PoLabel = new QLabel(widget);
+        PoLabel = new QLabel(layoutWidget3);
         PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
         PoLabel->setFont(font2);
 
         horizontalLayout_3->addWidget(PoLabel);
 
         tabWidget->addTab(createFile, QString());
+        layoutWidget->raise();
         frame_4->raise();
         WAEX_logo->raise();
         frame->raise();
         testSocketButton->raise();
-        PoLabel->raise();
-        label_20->raise();
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
@@ -1214,7 +1213,7 @@ public:
         archiveCheckButton->setGeometry(QRect(20, 60, 91, 21));
         tableView = new QTableView(ArchiveCheck);
         tableView->setObjectName(QString::fromUtf8("tableView"));
-        tableView->setGeometry(QRect(260, 130, 911, 401));
+        tableView->setGeometry(QRect(260, 130, 1251, 641));
         tableView->setVerticalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->setHorizontalScrollBarPolicy(Qt::ScrollBarAsNeeded);
         tableView->horizontalHeader()->setVisible(false);
@@ -1246,10 +1245,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget3 = new QWidget(ArchiveCheck);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(20, 130, 221, 265));
-        verticalLayout = new QVBoxLayout(layoutWidget3);
+        layoutWidget4 = new QWidget(ArchiveCheck);
+        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(20, 130, 221, 265));
+        verticalLayout = new QVBoxLayout(layoutWidget4);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1257,35 +1256,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(layoutWidget3);
+        label_7 = new QLabel(layoutWidget4);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(layoutWidget3);
+        ACheck_TotalErrors = new QLabel(layoutWidget4);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(layoutWidget3);
+        label_8 = new QLabel(layoutWidget4);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(layoutWidget3);
+        ACheck_FilesAffected = new QLabel(layoutWidget4);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(layoutWidget3);
+        label_13 = new QLabel(layoutWidget4);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(layoutWidget3);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget4);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1293,13 +1292,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(layoutWidget3);
+        label_12 = new QLabel(layoutWidget4);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font4);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(layoutWidget3);
+        archiveErrorList = new QListWidget(layoutWidget4);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);
@@ -1331,7 +1330,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
