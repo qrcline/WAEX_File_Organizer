@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'aboutwindow.ui'
 **
-** Created by: Qt User Interface Compiler version 5.13.0
+** Created by: Qt User Interface Compiler version 5.12.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -105,14 +105,14 @@ public:
 
     void retranslateUi(QDialog *AboutWindow)
     {
-        AboutWindow->setWindowTitle(QCoreApplication::translate("AboutWindow", "Dialog", nullptr));
+        AboutWindow->setWindowTitle(QApplication::translate("AboutWindow", "Dialog", nullptr));
         aboutLogo->setText(QString());
-        pushButton->setText(QCoreApplication::translate("AboutWindow", "Close", nullptr));
-        label->setText(QCoreApplication::translate("AboutWindow", "WAEX Filing System  V 0.3", nullptr));
-        label_2->setText(QCoreApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)", nullptr));
-        label_3->setText(QCoreApplication::translate("AboutWindow", "Built on Date", nullptr));
-        label_4->setText(QCoreApplication::translate("AboutWindow", "Created by: Quinton Cline", nullptr));
-        label_5->setText(QCoreApplication::translate("AboutWindow", "\302\251 Washington Export LLC", nullptr));
+        pushButton->setText(QApplication::translate("AboutWindow", "Close", nullptr));
+        label->setText(QApplication::translate("AboutWindow", "WAEX Filing System  V 0.4", nullptr));
+        label_2->setText(QApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)", nullptr));
+        label_3->setText(QApplication::translate("AboutWindow", "Built on Date", nullptr));
+        label_4->setText(QApplication::translate("AboutWindow", "Created by: Quinton Cline", nullptr));
+        label_5->setText(QApplication::translate("AboutWindow", "\302\251 Washington Export LLC", nullptr));
     } // retranslateUi
 
 };

@@ -30,6 +30,7 @@ public:
     QTextBrowser *textBrowser_2;
     QTextBrowser *textBrowser_3;
     QTextBrowser *textBrowser_4;
+    QTextBrowser *textBrowser_5;
     QWidget *tab_2;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -170,6 +171,13 @@ public:
         textBrowser_4->setAcceptDrops(false);
         textBrowser_4->setFrameShape(QFrame::NoFrame);
         textBrowser_4->setFrameShadow(QFrame::Plain);
+        textBrowser_5 = new QTextBrowser(tab);
+        textBrowser_5->setObjectName(QString::fromUtf8("textBrowser_5"));
+        textBrowser_5->setGeometry(QRect(280, 320, 256, 301));
+        textBrowser_5->setFont(font);
+        textBrowser_5->setAcceptDrops(false);
+        textBrowser_5->setFrameShape(QFrame::NoFrame);
+        textBrowser_5->setFrameShadow(QFrame::Plain);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
@@ -223,6 +231,13 @@ public:
 "<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2,sans-serif'; font-weight:600;\">Uploading Files</span><span style=\" font-weight:600;\"> </span></p>\n"
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2,sans-serif'; font-size:10pt;\">Once the user has checked a file to be a required the upload button will allow the user to upload a document to the system for that specific file. The user does not need to name the document a speci"
                         "fic name the program will copy and rename it to the correct formatting. </span></p></body></html>", nullptr));
+        textBrowser_5->setHtml(QApplication::translate("HelpCenter", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600;\">Glo Board </span></p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2,sans-serif'; font-size:10pt;\">This shows the status of the card on the Glo Board as well as allowing the user to add comments and labels to the card. Make sure you have generated a Personal Access Token (PAT) in the settings and copied it to the correct field in the settings. If a PAT is not generated the Glo Board"
+                        "s section will not work. </span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QApplication::translate("HelpCenter", "File", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QApplication::translate("HelpCenter", "Archive Check", nullptr));
     } // retranslateUi

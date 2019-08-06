@@ -159,7 +159,7 @@ width:10px;
      <string/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1775,7 +1775,7 @@ width:10px;
             </font>
            </property>
            <property name="text">
-            <string>Comment</string>
+            <string>Comment entry</string>
            </property>
           </widget>
          </item>
@@ -2154,7 +2154,7 @@ width:10px;
         <x>20</x>
         <y>130</y>
         <width>221</width>
-        <height>265</height>
+        <height>331</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="verticalLayout">

@@ -1247,7 +1247,7 @@ public:
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
         layoutWidget4 = new QWidget(ArchiveCheck);
         layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 130, 221, 265));
+        layoutWidget4->setGeometry(QRect(20, 130, 221, 331));
         verticalLayout = new QVBoxLayout(layoutWidget4);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
@@ -1330,7 +1330,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1459,7 +1459,7 @@ public:
         gloLabelsClaimClosed->setText(QApplication::translate("MainWindow", "Claim-Closed", nullptr));
         addCommentButton->setText(QApplication::translate("MainWindow", "Add Comment", nullptr));
         notesArea->setPlaceholderText(QApplication::translate("MainWindow", "Enter a Comment, click Add Comment to save", nullptr));
-        label->setText(QApplication::translate("MainWindow", "Comment", nullptr));
+        label->setText(QApplication::translate("MainWindow", "Comment entry", nullptr));
         label_19->setText(QApplication::translate("MainWindow", "Glo Board Comments", nullptr));
         label_18->setText(QApplication::translate("MainWindow", "Glo Board", nullptr));
         order_progressBar->setFormat(QString());
