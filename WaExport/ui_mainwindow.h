@@ -157,7 +157,7 @@ public:
     QPushButton *saveButton;
     QLabel *label_17;
     QPushButton *testSocketButton;
-    QFrame *frame_4;
+    QFrame *gloFrame;
     QFrame *frame_3;
     QWidget *layoutWidget;
     QVBoxLayout *verticalLayout_2;
@@ -974,7 +974,7 @@ public:
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/pictures/reload.png"), QSize(), QIcon::Normal, QIcon::Off);
         reloadButton->setIcon(icon);
-        reloadButton->setIconSize(QSize(20, 20));
+        reloadButton->setIconSize(QSize(20, 16));
         label_14 = new QLabel(frame);
         label_14->setObjectName(QString::fromUtf8("label_14"));
         label_14->setGeometry(QRect(30, 150, 59, 16));
@@ -1025,13 +1025,14 @@ public:
         testSocketButton = new QPushButton(createFile);
         testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
         testSocketButton->setGeometry(QRect(780, 730, 80, 21));
-        frame_4 = new QFrame(createFile);
-        frame_4->setObjectName(QString::fromUtf8("frame_4"));
-        frame_4->setGeometry(QRect(710, 130, 831, 661));
-        frame_4->setFrameShape(QFrame::StyledPanel);
-        frame_4->setFrameShadow(QFrame::Sunken);
-        frame_4->setLineWidth(3);
-        frame_3 = new QFrame(frame_4);
+        gloFrame = new QFrame(createFile);
+        gloFrame->setObjectName(QString::fromUtf8("gloFrame"));
+        gloFrame->setEnabled(false);
+        gloFrame->setGeometry(QRect(710, 130, 831, 661));
+        gloFrame->setFrameShape(QFrame::StyledPanel);
+        gloFrame->setFrameShadow(QFrame::Sunken);
+        gloFrame->setLineWidth(3);
+        frame_3 = new QFrame(gloFrame);
         frame_3->setObjectName(QString::fromUtf8("frame_3"));
         frame_3->setGeometry(QRect(10, 380, 151, 101));
         frame_3->setFrameShape(QFrame::StyledPanel);
@@ -1066,7 +1067,7 @@ public:
 
         verticalLayout_2->addWidget(gloLabelsClaimClosed);
 
-        frame_2 = new QFrame(frame_4);
+        frame_2 = new QFrame(gloFrame);
         frame_2->setObjectName(QString::fromUtf8("frame_2"));
         frame_2->setGeometry(QRect(10, 160, 311, 211));
         frame_2->setFrameShape(QFrame::StyledPanel);
@@ -1093,16 +1094,16 @@ public:
 
         horizontalLayout_2->addWidget(label);
 
-        label_19 = new QLabel(frame_4);
+        label_19 = new QLabel(gloFrame);
         label_19->setObjectName(QString::fromUtf8("label_19"));
         label_19->setGeometry(QRect(330, 160, 141, 16));
         label_19->setFont(font);
-        gloComments = new QListWidget(frame_4);
+        gloComments = new QListWidget(gloFrame);
         gloComments->setObjectName(QString::fromUtf8("gloComments"));
         gloComments->setGeometry(QRect(330, 180, 491, 461));
         gloComments->setMidLineWidth(2);
         gloComments->setSpacing(5);
-        layoutWidget2 = new QWidget(frame_4);
+        layoutWidget2 = new QWidget(gloFrame);
         layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
         layoutWidget2->setGeometry(QRect(10, 10, 819, 100));
         verticalLayout_3 = new QVBoxLayout(layoutWidget2);
@@ -1191,7 +1192,7 @@ public:
 
         tabWidget->addTab(createFile, QString());
         layoutWidget->raise();
-        frame_4->raise();
+        gloFrame->raise();
         WAEX_logo->raise();
         frame->raise();
         testSocketButton->raise();
@@ -1330,7 +1331,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(1);
+        tabWidget->setCurrentIndex(0);
 
 
         QMetaObject::connectSlotsByName(MainWindow);

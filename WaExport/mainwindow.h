@@ -144,6 +144,8 @@ private slots:
 
        void on_gloLabelsClaimClosed_stateChanged(int arg1);
 
+       void on_POInput_textChanged(const QString &arg1);
+
 private:
 
     //Pointers

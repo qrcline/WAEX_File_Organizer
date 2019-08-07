@@ -430,6 +430,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
         gloLoadLabels();
     }
     ui->PoLabel->setText(folderText);
+    ui->gloFrame->setEnabled(true);
 
 
 
@@ -1644,4 +1645,10 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
     else
         labels.closed=false;
     gloPushLabels();
+}
+
+
+void MainWindow::on_POInput_textChanged(const QString &arg1)
+{
+    ui->gloFrame->setEnabled(false) ;
 }

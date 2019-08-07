@@ -19,13 +19,13 @@ CXXFLAGS      = -nologo -Zc:wchar_t -FS -Zc:rvalueCast -Zc:inline -Zc:strictStri
 INCPATH       = -I..\WaExport -I. -IC:\Qt\5.12.4\msvc2017\include -IC:\Qt\5.12.4\msvc2017\include\QtWidgets -IC:\Qt\5.12.4\msvc2017\include\QtGui -IC:\Qt\5.12.4\msvc2017\include\QtANGLE -IC:\Qt\5.12.4\msvc2017\include\QtNetwork -IC:\Qt\5.12.4\msvc2017\include\QtCore -Idebug -I. -I\include -IC:\Qt\5.12.4\msvc2017\mkspecs\win32-msvc 
 LINKER        = link
 LFLAGS        = /NOLOGO /DYNAMICBASE /NXCOMPAT /DEBUG /SUBSYSTEM:WINDOWS "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"
-LIBS          = C:\Qt\5.12.4\msvc2017\lib\Qt5Widgetsd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Guid.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Networkd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Cored.lib  C:\Qt\5.12.4\msvc2017\lib\qtmaind.lib /LIBPATH:C:\opensslx86\lib /LIBPATH:C:\Utils\my_sql\mysql-5.6.11-win32\lib /LIBPATH:C:\Utils\postgresqlx86\pgsql\lib shell32.lib 
+LIBS          = C:\Qt\5.12.4\msvc2017\lib\Qt5Widgetsd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Guid.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Networkd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Cored.lib debug\WaExport_resource.res  C:\Qt\5.12.4\msvc2017\lib\qtmaind.lib /LIBPATH:C:\opensslx86\lib /LIBPATH:C:\Utils\my_sql\mysql-5.6.11-win32\lib /LIBPATH:C:\Utils\postgresqlx86\pgsql\lib shell32.lib 
 QMAKE         = C:\Qt\5.12.4\msvc2017\bin\qmake.exe
 IDC           = idc
 IDL           = midl
 ZIP           = zip -r -9
 DEF_FILE      = 
-RES_FILE      = 
+RES_FILE      = debug\WaExport_resource.res
 COPY          = copy /y
 SED           = $(QMAKE) -install sed
 COPY_FILE     = copy /y
@@ -166,11 +166,14 @@ DESTDIR_TARGET = debug\WaExport.exe
 first: all
 all: Makefile.Debug  debug\WaExport.exe
 
-debug\WaExport.exe: C:\Qt\5.12.4\msvc2017\lib\Qt5Widgetsd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Guid.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Networkd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Cored.lib C:\Qt\5.12.4\msvc2017\lib\qtmaind.lib ui_aboutwindow.h ui_helpcenter.h ui_mainwindow.h ui_settingd.h $(OBJECTS) 
+debug\WaExport.exe: C:\Qt\5.12.4\msvc2017\lib\Qt5Widgetsd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Guid.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Networkd.lib C:\Qt\5.12.4\msvc2017\lib\Qt5Cored.lib C:\Qt\5.12.4\msvc2017\lib\qtmaind.lib ui_aboutwindow.h ui_helpcenter.h ui_mainwindow.h ui_settingd.h $(OBJECTS) debug\WaExport_resource.res
 	$(LINKER) $(LFLAGS) /MANIFEST:embed /OUT:$(DESTDIR_TARGET) @<<
 debug\aboutwindow.obj debug\globoard.obj debug\helpcenter.obj debug\main.obj debug\mainwindow.obj debug\folderio.obj debug\archivecheck.obj debug\mytablemodel.obj debug\settingd.obj debug\qrc_resources.obj debug\moc_aboutwindow.obj debug\moc_helpcenter.obj debug\moc_mainwindow.obj debug\moc_settingd.obj
 $(LIBS)
 <<
+
+debug\WaExport_resource.res: WaExport_resource.rc
+	rc /NOLOGO -D_DEBUG $(DEFINES) -fo debug\WaExport_resource.res WaExport_resource.rc
 
 qmake: FORCE
 	@$(QMAKE) -o Makefile.Debug ..\WaExport\WaExport.pro -spec win32-msvc "CONFIG+=qtquickcompiler"
@@ -183,6 +186,7 @@ dist:
 clean: compiler_clean 
 	-$(DEL_FILE) debug\aboutwindow.obj debug\globoard.obj debug\helpcenter.obj debug\main.obj debug\mainwindow.obj debug\folderio.obj debug\archivecheck.obj debug\mytablemodel.obj debug\settingd.obj debug\qrc_resources.obj debug\moc_aboutwindow.obj debug\moc_helpcenter.obj debug\moc_mainwindow.obj debug\moc_settingd.obj
 	-$(DEL_FILE) debug\WaExport.vc.pdb debug\WaExport.ilk debug\WaExport.idb
+	-$(DEL_FILE) debug\WaExport_resource.res
 
 distclean: clean 
 	-$(DEL_FILE) .qmake.stash debug\WaExport.pdb

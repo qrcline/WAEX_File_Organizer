@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'settingd.ui'
 **
-** Created by: Qt User Interface Compiler version 5.13.0
+** Created by: Qt User Interface Compiler version 5.12.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -71,8 +71,7 @@ public:
         settingsClose->setCursor(QCursor(Qt::ArrowCursor));
         settingsClose->setStyleSheet(QString::fromUtf8("border: 1px solid red;\n"
 "color: rgb(255, 255, 255);\n"
-"border-color: rgb(49, 245, 255);\n"
-"border-radius: 5px; "));
+"border: 1px solid #052488;"));
         label_3 = new QLabel(settingD);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(10, 370, 221, 16));
@@ -126,11 +125,13 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         settingsOpenFolder = new QCheckBox(layoutWidget1);
         settingsOpenFolder->setObjectName(QString::fromUtf8("settingsOpenFolder"));
+        settingsOpenFolder->setEnabled(false);
 
         verticalLayout->addWidget(settingsOpenFolder);
 
         settingsNoteEnter = new QCheckBox(layoutWidget1);
         settingsNoteEnter->setObjectName(QString::fromUtf8("settingsNoteEnter"));
+        settingsNoteEnter->setEnabled(false);
 
         verticalLayout->addWidget(settingsNoteEnter);
 
@@ -168,18 +169,18 @@ public:
 
     void retranslateUi(QDialog *settingD)
     {
-        settingD->setWindowTitle(QCoreApplication::translate("settingD", "Dialog", nullptr));
-        label->setText(QCoreApplication::translate("settingD", "Settings", nullptr));
-        settingsClose->setText(QCoreApplication::translate("settingD", "Close", nullptr));
-        label_3->setText(QCoreApplication::translate("settingD", " Restart Application to apply settings. ", nullptr));
-        label_5->setText(QCoreApplication::translate("settingD", "Glo Board Settings", nullptr));
-        label_6->setText(QCoreApplication::translate("settingD", "PAT:", nullptr));
-        pushButton->setText(QCoreApplication::translate("settingD", "New PAT", nullptr));
-        settingsOpenFolder->setText(QCoreApplication::translate("settingD", "Open folder on Enter press", nullptr));
-        settingsNoteEnter->setText(QCoreApplication::translate("settingD", "Add note on Enter press", nullptr));
-        settingsToolTips->setText(QCoreApplication::translate("settingD", "Enable Tool Tips", nullptr));
-        label_4->setText(QCoreApplication::translate("settingD", "User Name:", nullptr));
-        label_8->setText(QCoreApplication::translate("settingD", "Application Settings", nullptr));
+        settingD->setWindowTitle(QApplication::translate("settingD", "Dialog", nullptr));
+        label->setText(QApplication::translate("settingD", "Settings", nullptr));
+        settingsClose->setText(QApplication::translate("settingD", "Close", nullptr));
+        label_3->setText(QApplication::translate("settingD", " Restart Application to apply settings. ", nullptr));
+        label_5->setText(QApplication::translate("settingD", "Glo Board Settings", nullptr));
+        label_6->setText(QApplication::translate("settingD", "PAT:", nullptr));
+        pushButton->setText(QApplication::translate("settingD", "New PAT", nullptr));
+        settingsOpenFolder->setText(QApplication::translate("settingD", "Open folder on Enter press", nullptr));
+        settingsNoteEnter->setText(QApplication::translate("settingD", "Add note on Enter press", nullptr));
+        settingsToolTips->setText(QApplication::translate("settingD", "Enable Tool Tips", nullptr));
+        label_4->setText(QApplication::translate("settingD", "User Name:", nullptr));
+        label_8->setText(QApplication::translate("settingD", "Application Settings", nullptr));
     } // retranslateUi
 
 };

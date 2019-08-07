@@ -71,8 +71,7 @@ public:
         settingsClose->setCursor(QCursor(Qt::ArrowCursor));
         settingsClose->setStyleSheet(QString::fromUtf8("border: 1px solid red;\n"
 "color: rgb(255, 255, 255);\n"
-"border-color: rgb(49, 245, 255);\n"
-"border-radius: 5px; "));
+"border: 1px solid #052488;"));
         label_3 = new QLabel(settingD);
         label_3->setObjectName(QString::fromUtf8("label_3"));
         label_3->setGeometry(QRect(10, 370, 221, 16));
@@ -126,11 +125,13 @@ public:
         verticalLayout->setContentsMargins(0, 0, 0, 0);
         settingsOpenFolder = new QCheckBox(layoutWidget1);
         settingsOpenFolder->setObjectName(QString::fromUtf8("settingsOpenFolder"));
+        settingsOpenFolder->setEnabled(false);
 
         verticalLayout->addWidget(settingsOpenFolder);
 
         settingsNoteEnter = new QCheckBox(layoutWidget1);
         settingsNoteEnter->setObjectName(QString::fromUtf8("settingsNoteEnter"));
+        settingsNoteEnter->setEnabled(false);
 
         verticalLayout->addWidget(settingsNoteEnter);
 

@@ -64,8 +64,7 @@
    <property name="styleSheet">
     <string notr="true">border: 1px solid red;
 color: rgb(255, 255, 255);
-border-color: rgb(49, 245, 255);
-border-radius: 5px; </string>
+border: 1px solid #052488;</string>
    </property>
    <property name="text">
     <string>Close</string>
@@ -184,6 +183,9 @@ border-radius: 5px; </string>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
       <widget class="QCheckBox" name="settingsOpenFolder">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Open folder on Enter press</string>
        </property>
@@ -191,6 +193,9 @@ border-radius: 5px; </string>
      </item>
      <item>
       <widget class="QCheckBox" name="settingsNoteEnter">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="text">
         <string>Add note on Enter press</string>
        </property>
