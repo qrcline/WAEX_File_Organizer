@@ -1652,3 +1652,17 @@ void MainWindow::on_POInput_textChanged(const QString &arg1)
 {
     ui->gloFrame->setEnabled(false) ;
 }
+
+void MainWindow::on_archiveErrorList_itemDoubleClicked(QListWidgetItem *item)
+{
+    QString text=item->text();
+    QString poNum=text.right(text.length()-mainDirectory.length()-1);
+    std::cout<<poNum.toStdString()<<std::endl;
+    ui->POInput->setText(poNum);
+    ui->tabWidget->setCurrentIndex(0);
+    openFolder(poNum,false);
+}
+void MainWindow::on_pushButton_clicked()
+{
+     QDesktopServices::openUrl ( QUrl("https://app.gitkraken.com/glo/board/XTYEE1OO7QARVy4m"));
+}

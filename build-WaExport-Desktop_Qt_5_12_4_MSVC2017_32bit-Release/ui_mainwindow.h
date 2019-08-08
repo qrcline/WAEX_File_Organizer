@@ -1331,7 +1331,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -1456,7 +1456,7 @@ public:
         testSocketButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
         label_16->setText(QApplication::translate("MainWindow", "Labels", nullptr));
         gloLabelsClaimCust->setText(QApplication::translate("MainWindow", "Claim-Customer", nullptr));
-        gloLabelsClaimTaged->setText(QApplication::translate("MainWindow", "Claim-Taged", nullptr));
+        gloLabelsClaimTaged->setText(QApplication::translate("MainWindow", "Claim-Tagged", nullptr));
         gloLabelsClaimClosed->setText(QApplication::translate("MainWindow", "Claim-Closed", nullptr));
         addCommentButton->setText(QApplication::translate("MainWindow", "Add Comment", nullptr));
         notesArea->setPlaceholderText(QApplication::translate("MainWindow", "Enter a Comment, click Add Comment to save", nullptr));

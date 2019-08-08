@@ -146,6 +146,10 @@ private slots:
 
        void on_POInput_textChanged(const QString &arg1);
 
+       void on_archiveErrorList_itemDoubleClicked(QListWidgetItem *item);
+
+       void on_pushButton_clicked();
+
 private:
 
     //Pointers
@@ -204,6 +208,9 @@ private:
 };
 
 #endif // MAINWINDOW_H
+
+
+
 
 
 

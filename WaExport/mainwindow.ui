@@ -1697,7 +1697,7 @@ width:10px;
          <item>
           <widget class="QCheckBox" name="gloLabelsClaimTaged">
            <property name="text">
-            <string>Claim-Taged</string>
+            <string>Claim-Tagged</string>
            </property>
           </widget>
          </item>
@@ -1931,6 +1931,19 @@ width:10px;
          </layout>
         </item>
        </layout>
+      </widget>
+      <widget class="QPushButton" name="pushButton">
+       <property name="geometry">
+        <rect>
+         <x>719</x>
+         <y>130</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string>Open Glo Board</string>
+       </property>
       </widget>
      </widget>
      <widget class="QWidget" name="layoutWidget">
