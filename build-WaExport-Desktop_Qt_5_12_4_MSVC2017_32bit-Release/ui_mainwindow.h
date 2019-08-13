@@ -183,6 +183,7 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
+    QPushButton *pushButton;
     QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_20;
@@ -1168,6 +1169,9 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
+        pushButton = new QPushButton(gloFrame);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(719, 130, 91, 31));
         layoutWidget3 = new QWidget(createFile);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
         layoutWidget3->setGeometry(QRect(710, 90, 241, 30));
@@ -1469,6 +1473,7 @@ public:
         RB_Border->setText(QApplication::translate("MainWindow", "Border", nullptr));
         RB_Crossed->setText(QApplication::translate("MainWindow", "Crossed", nullptr));
         RB_Delivered->setText(QApplication::translate("MainWindow", "Delivered", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Open Glo Board", nullptr));
         label_20->setText(QApplication::translate("MainWindow", "Current Po#:", nullptr));
         PoLabel->setText(QApplication::translate("MainWindow", "NULL", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QApplication::translate("MainWindow", "Create File", nullptr));
