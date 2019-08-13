@@ -32,6 +32,7 @@ public:
     QTextBrowser *textBrowser_4;
     QTextBrowser *textBrowser_5;
     QWidget *tab_2;
+    QTextBrowser *textBrowser_6;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -181,6 +182,13 @@ public:
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName(QString::fromUtf8("tab_2"));
+        textBrowser_6 = new QTextBrowser(tab_2);
+        textBrowser_6->setObjectName(QString::fromUtf8("textBrowser_6"));
+        textBrowser_6->setGeometry(QRect(10, 10, 256, 271));
+        textBrowser_6->setFont(font);
+        textBrowser_6->setAcceptDrops(false);
+        textBrowser_6->setFrameShape(QFrame::NoFrame);
+        textBrowser_6->setFrameShadow(QFrame::Plain);
         tabWidget->addTab(tab_2, QString());
         HelpCenter->setCentralWidget(centralwidget);
         menubar = new QMenuBar(HelpCenter);
@@ -193,7 +201,7 @@ public:
 
         retranslateUi(HelpCenter);
 
-        tabWidget->setCurrentIndex(0);
+        tabWidget->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(HelpCenter);
@@ -239,6 +247,12 @@ public:
 "<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-family:'MS Shell Dlg 2,sans-serif'; font-size:10pt;\">This shows the status of the card on the Glo Board as well as allowing the user to add comments and labels to the card. Make sure you have generated a Personal Access Token (PAT) in the settings and copied it to the correct field in the settings. If a PAT is not generated the Glo Board"
                         "s section will not work. </span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("HelpCenter", "File", nullptr));
+        textBrowser_6->setHtml(QCoreApplication::translate("HelpCenter", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:'MS Shell Dlg 2'; font-size:12pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">Running Archive Check</p>\n"
+"<p style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:10pt;\">Click &quot;Run </span></p></body></html>", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("HelpCenter", "Archive Check", nullptr));
     } // retranslateUi
 
