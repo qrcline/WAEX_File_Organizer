@@ -159,7 +159,7 @@ width:10px;
      <string/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="movable">
      <bool>false</bool>
@@ -1373,8 +1373,8 @@ width:10px;
        </property>
        <property name="geometry">
         <rect>
-         <x>253</x>
-         <y>122</y>
+         <x>660</x>
+         <y>10</y>
          <width>31</width>
          <height>31</height>
         </rect>
@@ -1932,19 +1932,6 @@ width:10px;
         </item>
        </layout>
       </widget>
-      <widget class="QPushButton" name="pushButton">
-       <property name="geometry">
-        <rect>
-         <x>719</x>
-         <y>130</y>
-         <width>91</width>
-         <height>31</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>Open Glo Board</string>
-       </property>
-      </widget>
      </widget>
      <widget class="QWidget" name="layoutWidget">
       <property name="geometry">
@@ -1982,11 +1969,25 @@ width:10px;
        </item>
       </layout>
      </widget>
+     <widget class="QPushButton" name="pushButton">
+      <property name="geometry">
+       <rect>
+        <x>960</x>
+        <y>90</y>
+        <width>91</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Open Glo Board</string>
+      </property>
+     </widget>
      <zorder>layoutWidget</zorder>
      <zorder>gloFrame</zorder>
      <zorder>WAEX_logo</zorder>
      <zorder>frame</zorder>
      <zorder>testSocketButton</zorder>
+     <zorder>pushButton</zorder>
     </widget>
     <widget class="QWidget" name="ArchiveCheck">
      <attribute name="title">

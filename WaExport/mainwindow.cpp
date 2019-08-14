@@ -103,6 +103,7 @@ void MainWindow::dropEvent(QDropEvent *event)
 
     //copy(from,to,dest name)
     fIo.copyFile(fileName,mainDirectory+"/"+ui->POInput->text(),selection+"_"+QString::number((num+1)));
+    updateWindow();
 
 }
 
@@ -1541,7 +1542,7 @@ QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 
 
     QByteArray responseByte=reply->readAll();
-    //qDebug()<<responseByte;
+    qDebug()<<responseByte;
     return responseByte;
 }
 

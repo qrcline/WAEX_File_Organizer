@@ -112,7 +112,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Built on Date</string>
+       <string>Built on Date: 5/14/2019</string>
       </property>
      </widget>
     </item>
