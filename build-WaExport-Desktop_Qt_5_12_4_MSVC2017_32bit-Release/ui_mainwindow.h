@@ -183,11 +183,11 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
-    QPushButton *pushButton;
     QWidget *layoutWidget3;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_20;
     QLabel *PoLabel;
+    QPushButton *pushButton;
     QWidget *ArchiveCheck;
     QLabel *WAEX_logo_2;
     QLabel *workingDirectory;
@@ -965,7 +965,7 @@ public:
         reloadButton = new QCommandLinkButton(frame);
         reloadButton->setObjectName(QString::fromUtf8("reloadButton"));
         reloadButton->setEnabled(true);
-        reloadButton->setGeometry(QRect(253, 122, 31, 31));
+        reloadButton->setGeometry(QRect(660, 10, 31, 31));
         sizePolicy.setHeightForWidth(reloadButton->sizePolicy().hasHeightForWidth());
         reloadButton->setSizePolicy(sizePolicy);
         reloadButton->setMinimumSize(QSize(0, 0));
@@ -1169,9 +1169,6 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        pushButton = new QPushButton(gloFrame);
-        pushButton->setObjectName(QString::fromUtf8("pushButton"));
-        pushButton->setGeometry(QRect(719, 130, 91, 31));
         layoutWidget3 = new QWidget(createFile);
         layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
         layoutWidget3->setGeometry(QRect(710, 90, 241, 30));
@@ -1194,12 +1191,16 @@ public:
 
         horizontalLayout_3->addWidget(PoLabel);
 
+        pushButton = new QPushButton(createFile);
+        pushButton->setObjectName(QString::fromUtf8("pushButton"));
+        pushButton->setGeometry(QRect(960, 90, 91, 31));
         tabWidget->addTab(createFile, QString());
         layoutWidget->raise();
         gloFrame->raise();
         WAEX_logo->raise();
         frame->raise();
         testSocketButton->raise();
+        pushButton->raise();
         ArchiveCheck = new QWidget();
         ArchiveCheck->setObjectName(QString::fromUtf8("ArchiveCheck"));
         WAEX_logo_2 = new QLabel(ArchiveCheck);
@@ -1473,9 +1474,9 @@ public:
         RB_Border->setText(QApplication::translate("MainWindow", "Border", nullptr));
         RB_Crossed->setText(QApplication::translate("MainWindow", "Crossed", nullptr));
         RB_Delivered->setText(QApplication::translate("MainWindow", "Delivered", nullptr));
-        pushButton->setText(QApplication::translate("MainWindow", "Open Glo Board", nullptr));
         label_20->setText(QApplication::translate("MainWindow", "Current Po#:", nullptr));
         PoLabel->setText(QApplication::translate("MainWindow", "NULL", nullptr));
+        pushButton->setText(QApplication::translate("MainWindow", "Open Glo Board", nullptr));
         tabWidget->setTabText(tabWidget->indexOf(createFile), QApplication::translate("MainWindow", "Create File", nullptr));
         WAEX_logo_2->setText(QString());
         workingDirectory->setText(QApplication::translate("MainWindow", "NULL", nullptr));
