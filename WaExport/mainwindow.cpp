@@ -94,6 +94,15 @@ void MainWindow::dropEvent(QDropEvent *event)
     std::cout<<fileName.toStdString()<<std::endl;
     QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
     QString selection=QInputDialog::getItem(nullptr,"Upload","What file is this?",choices);
+    if(selection=="Passing")
+    {
+        if(ui->buttonGroup_2->checkedButton()->text()=="Sales Order")
+        {
+            QJsonObject jObj;
+            jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));//Shipped
+            postRequest(jObj,"/cards/"+currentCardid);
+        }
+    }
 
     //Checks if the file exists already in the directory
     FolderIO fIo;
@@ -649,6 +658,12 @@ void MainWindow::on_mexP_CarrierConf_upload_clicked()
 void MainWindow::on_mexP_Passing_upload_clicked()
 {
     uploadFile("Open Passing","Passing Confirmation (*.pdf)","Passing");
+    if(ui->buttonGroup_2->checkedButton()->text()=="Sales Order")
+    {
+        QJsonObject jObj;
+        jObj.insert("column_id",QJsonValue::fromVariant("5d36042213853d0011ab778f"));//Shipped
+        postRequest(jObj,"/cards/"+currentCardid);
+    }
     updateWindow();
 }
 
