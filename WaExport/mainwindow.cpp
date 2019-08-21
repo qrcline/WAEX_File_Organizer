@@ -375,6 +375,7 @@ void MainWindow::updateChecked()
 //This funtion opens a directory in windows File Explorer
 void    MainWindow::openDirectory(QString input)
 {
+    std::cout<<input.toStdString()<<std::endl;
     long result = (long)ShellExecute(0, 0, reinterpret_cast<const WCHAR*>(input.utf16()), 0, 0, SW_NORMAL);
 
 }
