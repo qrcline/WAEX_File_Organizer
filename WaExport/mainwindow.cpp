@@ -630,7 +630,7 @@ void MainWindow:: createShortcut(std::string fileDialog1,std::string fileDialog2
 void MainWindow::on_mexP_Spreadsheets_upload_clicked()
 {
     //uploadFile("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
-    createShortcut("Open Spreadsheets","Excel Spreadsheet (*.xlsx)","Spreadsheets");
+    createShortcut("Open Spreadsheets","Excel Spreadsheet (*.xlsx *.xls)","Spreadsheets");
     updateWindow();
 }
 
