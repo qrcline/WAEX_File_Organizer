@@ -407,13 +407,28 @@ void MainWindow::openFolder(QString folderText,bool winEx)
             {
                 std::cout<<"Yes was selected"<<std::endl;
                 ui->comboBox->setEnabled(true);
+
+                if(ui->POInput->text().length()==6
+                   &&ui->customerInput->text().length()>0
+                   &&ui->supplierInput->text().length()>0
+                   &&ui->productInput->text().length()>0
+                   &&ui->supplierInput->text().length()>0
+                   )
+                {
+                    fIo.createDirectory(mainDirectory+"/"+folderText);
+                    ui->comboBox->setCurrentIndex(0);
+                    ui->comboBox->setCurrentIndex(1);
+                    ui->comboBox->setCurrentIndex(0);
+                    QString gloName= folderText+" "+ui->customerInput->text()+"|"+ui->productInput->text()+"|"+ui->supplierInput->text()+"|"+ui->truckInput->text();
+                    gloCreatePO(gloName);
+                    currentCardid=gloGetCardId(ui->POInput->text());
+                }
+                else
+                {
+                   QMessageBox(QMessageBox::Information, "Error", "Please fill in all required fields").exec();
+                }
                 //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
-                fIo.createDirectory(mainDirectory+"/"+folderText);
-                ui->comboBox->setCurrentIndex(0);
-                ui->comboBox->setCurrentIndex(1);
-                ui->comboBox->setCurrentIndex(0);
-                gloCreatePO(folderText);
-                currentCardid=gloGetCardId(ui->POInput->text());
+
 
             }
         }
@@ -579,10 +594,37 @@ void MainWindow::on_saveButton_clicked()
     }
 }
 
+
+//Return slots for order info input
 void MainWindow::on_POInput_returnPressed()
 {
+    //orderAdd();
     openFolder(ui->POInput->text(),false);
     //updateWindow();
+}
+
+
+void MainWindow::on_customerInput_returnPressed()
+{
+    openFolder(ui->POInput->text(),false);
+}
+
+
+
+
+
+
+void MainWindow::orderAdd()
+{
+    if(ui->POInput->text().length()==6
+       &&ui->customerInput->text().length()>0
+       &&ui->supplierInput->text().length()>0
+       &&ui->productInput->text().length()>0
+       &&ui->supplierInput->text().length()>0
+       )
+    {
+       openFolder(ui->POInput->text(),false);
+    }
 }
 
 
@@ -1322,6 +1364,10 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
                 ui->POInput->clear();
                 ui->notesArea->clear();
                 ui->notesDisplay->clear();
+                ui->customerInput->clear();
+                ui->supplierInput->clear();
+                ui->truckInput->clear();
+                ui->productInput->clear();
                 ui->order_progressBar->setValue(0);
                 updateWindow();
             }
@@ -1379,12 +1425,15 @@ void MainWindow::on_testSocketButton_clicked()
 
 void MainWindow::gloCreatePO(QString po)
 {
-    QString message= "{\"name\":\""+po+"\",\"position\":\"0\",\"column_id\":\"5d36042213853d0011ab778f\"}";
-    QByteArray sendMessage=message.toUtf8();
+    //QString message= "{\"name\":\""+po+"\",\"position\":\"0\",\"column_id\":\"5d36042213853d0011ab778f\"}";
+    //QByteArray sendMessage=message.toUtf8();
     QJsonObject jObj;
     jObj.insert("name",QJsonValue::fromVariant(po));
     jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
-
+    QString descriptionText= "Customer: "+ui->customerInput->text()+"\n"+"Product:"+ui->productInput->text()+"\n"+"Supplier:"+ui->supplierInput->text()+"\n"+"Truck:"+ui->truckInput->text();
+    QJsonObject description;
+    description.insert("text",QJsonValue::fromVariant(descriptionText));
+    jObj.insert("description",description);
     postRequest(jObj,"/cards");
 
 }
@@ -1429,7 +1478,7 @@ QString MainWindow::gloGetCardId(QString po)
     QJsonDocument temp;
     foreach (const QJsonValue &value,  getRequest("/cards",temp)) {
         QJsonObject json_obj = value.toObject();
-        if((json_obj["name"].toString())==po)
+        if((json_obj["name"].toString().left(6))==po)
         {
             returnId= json_obj["id"].toString();
             columnId=json_obj["column_id"].toString();

@@ -1494,35 +1494,14 @@ width:10px;
       <widget class="QPushButton" name="openFolder">
        <property name="geometry">
         <rect>
-         <x>159</x>
-         <y>119</y>
+         <x>280</x>
+         <y>120</y>
          <width>84</width>
          <height>21</height>
         </rect>
        </property>
        <property name="text">
         <string>Open Folder</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="POInput">
-       <property name="geometry">
-        <rect>
-         <x>29</x>
-         <y>119</y>
-         <width>108</width>
-         <height>24</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="inputMask">
-        <string/>
-       </property>
-       <property name="placeholderText">
-        <string>PO#</string>
        </property>
       </widget>
       <widget class="QLabel" name="label_4">
@@ -1536,24 +1515,6 @@ width:10px;
        </property>
        <property name="text">
         <string>Uploaded?</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_2">
-       <property name="geometry">
-        <rect>
-         <x>30</x>
-         <y>100</y>
-         <width>30</width>
-         <height>16</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <pointsize>10</pointsize>
-        </font>
-       </property>
-       <property name="text">
-        <string>PO#:</string>
        </property>
       </widget>
       <widget class="QLabel" name="workingDirectory_CreateFile">
@@ -1598,8 +1559,8 @@ width:10px;
       <widget class="QLabel" name="label_17">
        <property name="geometry">
         <rect>
-         <x>230</x>
-         <y>40</y>
+         <x>410</x>
+         <y>10</y>
          <width>191</width>
          <height>31</height>
         </rect>
@@ -1613,6 +1574,96 @@ width:10px;
        <property name="text">
         <string>File Managment</string>
        </property>
+      </widget>
+      <widget class="QWidget" name="">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>251</width>
+         <height>91</height>
+        </rect>
+       </property>
+       <layout class="QGridLayout" name="gridLayout_3">
+        <item row="1" column="0">
+         <widget class="QLineEdit" name="customerInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Customer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLineEdit" name="supplierInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Supplier</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QLineEdit" name="productInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Product</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="truckInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Truck</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLineEdit" name="POInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string notr="true"/>
+          </property>
+          <property name="maxLength">
+           <number>6</number>
+          </property>
+          <property name="placeholderText">
+           <string>PO#</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
      <widget class="QPushButton" name="testSocketButton">

@@ -149,13 +149,18 @@ public:
     QLabel *label_11;
     QComboBox *comboBox;
     QPushButton *openFolder;
-    QLineEdit *POInput;
     QLabel *label_4;
-    QLabel *label_2;
     QLabel *workingDirectory_CreateFile;
     QTextEdit *notesDisplay;
     QPushButton *saveButton;
     QLabel *label_17;
+    QWidget *widget;
+    QGridLayout *gridLayout_3;
+    QLineEdit *customerInput;
+    QLineEdit *supplierInput;
+    QLineEdit *productInput;
+    QLineEdit *truckInput;
+    QLineEdit *POInput;
     QPushButton *testSocketButton;
     QFrame *gloFrame;
     QFrame *frame_3;
@@ -994,18 +999,10 @@ public:
         comboBox->setFont(font);
         openFolder = new QPushButton(frame);
         openFolder->setObjectName(QString::fromUtf8("openFolder"));
-        openFolder->setGeometry(QRect(159, 119, 84, 21));
-        POInput = new QLineEdit(frame);
-        POInput->setObjectName(QString::fromUtf8("POInput"));
-        POInput->setGeometry(QRect(29, 119, 108, 24));
-        POInput->setFont(font);
+        openFolder->setGeometry(QRect(280, 120, 84, 21));
         label_4 = new QLabel(frame);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(233, 182, 80, 21));
-        label_2 = new QLabel(frame);
-        label_2->setObjectName(QString::fromUtf8("label_2"));
-        label_2->setGeometry(QRect(30, 100, 30, 16));
-        label_2->setFont(font);
         workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
@@ -1018,11 +1015,51 @@ public:
         saveButton->setGeometry(QRect(569, 730, 121, 41));
         label_17 = new QLabel(frame);
         label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setGeometry(QRect(230, 40, 191, 31));
+        label_17->setGeometry(QRect(410, 10, 191, 31));
         QFont font1;
         font1.setPointSize(20);
         font1.setUnderline(true);
         label_17->setFont(font1);
+        widget = new QWidget(frame);
+        widget->setObjectName(QString::fromUtf8("widget"));
+        widget->setGeometry(QRect(10, 40, 251, 91));
+        gridLayout_3 = new QGridLayout(widget);
+        gridLayout_3->setSpacing(6);
+        gridLayout_3->setContentsMargins(11, 11, 11, 11);
+        gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
+        gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        customerInput = new QLineEdit(widget);
+        customerInput->setObjectName(QString::fromUtf8("customerInput"));
+        customerInput->setFont(font);
+
+        gridLayout_3->addWidget(customerInput, 1, 0, 1, 1);
+
+        supplierInput = new QLineEdit(widget);
+        supplierInput->setObjectName(QString::fromUtf8("supplierInput"));
+        supplierInput->setFont(font);
+
+        gridLayout_3->addWidget(supplierInput, 2, 0, 1, 1);
+
+        productInput = new QLineEdit(widget);
+        productInput->setObjectName(QString::fromUtf8("productInput"));
+        productInput->setFont(font);
+
+        gridLayout_3->addWidget(productInput, 0, 1, 1, 1);
+
+        truckInput = new QLineEdit(widget);
+        truckInput->setObjectName(QString::fromUtf8("truckInput"));
+        truckInput->setFont(font);
+
+        gridLayout_3->addWidget(truckInput, 1, 1, 1, 1);
+
+        POInput = new QLineEdit(widget);
+        POInput->setObjectName(QString::fromUtf8("POInput"));
+        POInput->setFont(font);
+        POInput->setInputMask(QString::fromUtf8(""));
+        POInput->setMaxLength(6);
+
+        gridLayout_3->addWidget(POInput, 0, 0, 1, 1);
+
         testSocketButton = new QPushButton(createFile);
         testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
         testSocketButton->setGeometry(QRect(780, 730, 80, 21));
@@ -1451,13 +1488,19 @@ public:
         comboBox->setItemText(3, QApplication::translate("MainWindow", "Overseas", nullptr));
 
         openFolder->setText(QApplication::translate("MainWindow", "Open Folder", nullptr));
-        POInput->setInputMask(QString());
-        POInput->setPlaceholderText(QApplication::translate("MainWindow", "PO#", nullptr));
         label_4->setText(QApplication::translate("MainWindow", "Uploaded?", nullptr));
-        label_2->setText(QApplication::translate("MainWindow", "PO#:", nullptr));
         workingDirectory_CreateFile->setText(QApplication::translate("MainWindow", "NULL", nullptr));
         saveButton->setText(QApplication::translate("MainWindow", "Save", nullptr));
         label_17->setText(QApplication::translate("MainWindow", "File Managment", nullptr));
+        customerInput->setInputMask(QString());
+        customerInput->setPlaceholderText(QApplication::translate("MainWindow", "Customer", nullptr));
+        supplierInput->setInputMask(QString());
+        supplierInput->setPlaceholderText(QApplication::translate("MainWindow", "Supplier", nullptr));
+        productInput->setInputMask(QString());
+        productInput->setPlaceholderText(QApplication::translate("MainWindow", "Product", nullptr));
+        truckInput->setInputMask(QString());
+        truckInput->setPlaceholderText(QApplication::translate("MainWindow", "Truck", nullptr));
+        POInput->setPlaceholderText(QApplication::translate("MainWindow", "PO#", nullptr));
         testSocketButton->setText(QApplication::translate("MainWindow", "PushButton", nullptr));
         label_16->setText(QApplication::translate("MainWindow", "Labels", nullptr));
         gloLabelsClaimCust->setText(QApplication::translate("MainWindow", "Claim-Customer", nullptr));

@@ -110,7 +110,7 @@ public:
         pushButton->setText(QCoreApplication::translate("AboutWindow", "Close", nullptr));
         label->setText(QCoreApplication::translate("AboutWindow", "WAEX Filing System  V 0.4", nullptr));
         label_2->setText(QCoreApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)", nullptr));
-        label_3->setText(QCoreApplication::translate("AboutWindow", "Built on Date: 5/14/2019", nullptr));
+        label_3->setText(QCoreApplication::translate("AboutWindow", "Built on Date: 8/21/2019", nullptr));
         label_4->setText(QCoreApplication::translate("AboutWindow", "Created by: Quinton Cline", nullptr));
         label_5->setText(QCoreApplication::translate("AboutWindow", "\302\251 Washington Export LLC", nullptr));
     } // retranslateUi

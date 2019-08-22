@@ -150,6 +150,8 @@ private slots:
 
        void on_pushButton_clicked();
 
+       void on_customerInput_returnPressed();
+
 private:
 
     //Pointers
@@ -205,6 +207,7 @@ private:
     void gloLoadComments();
     void gloLoadLabels();
     void gloPushLabels();
+    void orderAdd();
 };
 
 #endif // MAINWINDOW_H
