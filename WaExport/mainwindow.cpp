@@ -299,6 +299,7 @@ void MainWindow::updateWindow()
     gloGetCardId(ui->POInput->text());
     gloLoadComments();//loads the globoard comments
     gloLoadLabels();
+    gloGetDescription();
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -1650,7 +1651,7 @@ QJsonArray MainWindow::getRequest( QString path,QJsonDocument& docResponse)
     docResponse=jsonResponse;
     QJsonArray json_array = jsonResponse.array();
     QByteArray responseByte=reply->readAll();
-    //qDebug()<<"The get data is: "+responseByte;
+    qDebug()<<"The get data is: "+responseByte;
     return json_array;
 
 
@@ -1724,6 +1725,19 @@ void MainWindow::on_gloLabelsClaimClosed_stateChanged(int arg1)
     gloPushLabels();
 }
 
+void MainWindow::gloGetDescription()
+{
+    QString path= "/cards/"+currentCardid+"?fields=description";
+    int index=0;
+    QJsonDocument temp;
+    QString description;
+    foreach (const QJsonValue &value,  getRequest(path,temp)) {
+        QJsonObject json_obj = value.toObject();
+       // ui->gloComments->addItem(json_obj["text"].toString());
+        description=json_obj["text"].toString();
+    }
+    std::cout<<description.toStdString()<<std::endl;
+}
 
 void MainWindow::on_POInput_textChanged(const QString &arg1)
 {

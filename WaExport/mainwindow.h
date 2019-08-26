@@ -214,6 +214,7 @@ private:
     void gloLoadLabels();
     void gloPushLabels();
     void orderAdd();
+    void gloGetDescription();
 };
 
 #endif // MAINWINDOW_H
