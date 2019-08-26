@@ -608,8 +608,19 @@ void MainWindow::on_customerInput_returnPressed()
 {
     openFolder(ui->POInput->text(),false);
 }
+void MainWindow::on_supplierInput_returnPressed()
+{
+     openFolder(ui->POInput->text(),false);
+}
+void MainWindow::on_productInput_returnPressed()
+{
+    openFolder(ui->POInput->text(),false);
+}
 
-
+void MainWindow::on_truckInput_returnPressed()
+{
+    openFolder(ui->POInput->text(),false);
+}
 
 
 
@@ -1732,3 +1743,7 @@ void MainWindow::on_pushButton_clicked()
 {
      QDesktopServices::openUrl ( QUrl("https://app.gitkraken.com/glo/board/XTYEE1OO7QARVy4m"));
 }
+
+
+
+

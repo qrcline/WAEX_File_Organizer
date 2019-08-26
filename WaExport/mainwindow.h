@@ -152,6 +152,12 @@ private slots:
 
        void on_customerInput_returnPressed();
 
+       void on_supplierInput_returnPressed();
+
+       void on_productInput_returnPressed();
+
+       void on_truckInput_returnPressed();
+
 private:
 
     //Pointers
