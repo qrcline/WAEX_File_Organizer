@@ -154,17 +154,18 @@ public:
     QTextEdit *notesDisplay;
     QPushButton *saveButton;
     QLabel *label_17;
-    QWidget *widget;
+    QWidget *layoutWidget;
     QGridLayout *gridLayout_3;
-    QLineEdit *customerInput;
-    QLineEdit *supplierInput;
     QLineEdit *productInput;
-    QLineEdit *truckInput;
+    QLineEdit *supplierInput;
     QLineEdit *POInput;
+    QLineEdit *customerInput;
+    QLineEdit *truckInput;
+    QLabel *descriptionLabel;
     QPushButton *testSocketButton;
     QFrame *gloFrame;
     QFrame *frame_3;
-    QWidget *layoutWidget;
+    QWidget *layoutWidget1;
     QVBoxLayout *verticalLayout_2;
     QLabel *label_16;
     QCheckBox *gloLabelsClaimCust;
@@ -173,12 +174,12 @@ public:
     QFrame *frame_2;
     QPushButton *addCommentButton;
     QTextEdit *notesArea;
-    QWidget *layoutWidget1;
+    QWidget *layoutWidget2;
     QHBoxLayout *horizontalLayout_2;
     QLabel *label;
     QLabel *label_19;
     QListWidget *gloComments;
-    QWidget *layoutWidget2;
+    QWidget *layoutWidget3;
     QVBoxLayout *verticalLayout_3;
     QLabel *label_18;
     QProgressBar *order_progressBar;
@@ -188,7 +189,7 @@ public:
     QRadioButton *RB_Border;
     QRadioButton *RB_Crossed;
     QRadioButton *RB_Delivered;
-    QWidget *layoutWidget3;
+    QWidget *layoutWidget4;
     QHBoxLayout *horizontalLayout_3;
     QLabel *label_20;
     QLabel *PoLabel;
@@ -204,7 +205,7 @@ public:
     QLabel *label_9;
     QLabel *label_10;
     QPushButton *archiveCheckButton_2;
-    QWidget *layoutWidget4;
+    QWidget *layoutWidget5;
     QVBoxLayout *verticalLayout;
     QFormLayout *formLayout;
     QLabel *label_7;
@@ -362,7 +363,7 @@ public:
         frame->setLineWidth(3);
         gridLayoutWidget = new QWidget(frame);
         gridLayoutWidget->setObjectName(QString::fromUtf8("gridLayoutWidget"));
-        gridLayoutWidget->setGeometry(QRect(13, 212, 301, 381));
+        gridLayoutWidget->setGeometry(QRect(10, 330, 301, 381));
         gridLayout = new QGridLayout(gridLayoutWidget);
         gridLayout->setSpacing(6);
         gridLayout->setContentsMargins(11, 11, 11, 11);
@@ -983,7 +984,7 @@ public:
         reloadButton->setIconSize(QSize(20, 16));
         label_14 = new QLabel(frame);
         label_14->setObjectName(QString::fromUtf8("label_14"));
-        label_14->setGeometry(QRect(30, 150, 59, 16));
+        label_14->setGeometry(QRect(20, 260, 59, 16));
         label_14->setFont(font);
         label_11 = new QLabel(frame);
         label_11->setObjectName(QString::fromUtf8("label_11"));
@@ -995,14 +996,14 @@ public:
         comboBox->addItem(QString());
         comboBox->addItem(QString());
         comboBox->setObjectName(QString::fromUtf8("comboBox"));
-        comboBox->setGeometry(QRect(29, 169, 102, 24));
+        comboBox->setGeometry(QRect(20, 290, 102, 24));
         comboBox->setFont(font);
         openFolder = new QPushButton(frame);
         openFolder->setObjectName(QString::fromUtf8("openFolder"));
         openFolder->setGeometry(QRect(280, 120, 84, 21));
         label_4 = new QLabel(frame);
         label_4->setObjectName(QString::fromUtf8("label_4"));
-        label_4->setGeometry(QRect(233, 182, 80, 21));
+        label_4->setGeometry(QRect(230, 300, 80, 21));
         workingDirectory_CreateFile = new QLabel(frame);
         workingDirectory_CreateFile->setObjectName(QString::fromUtf8("workingDirectory_CreateFile"));
         workingDirectory_CreateFile->setGeometry(QRect(140, 10, 399, 16));
@@ -1020,39 +1021,27 @@ public:
         font1.setPointSize(20);
         font1.setUnderline(true);
         label_17->setFont(font1);
-        widget = new QWidget(frame);
-        widget->setObjectName(QString::fromUtf8("widget"));
-        widget->setGeometry(QRect(10, 40, 251, 91));
-        gridLayout_3 = new QGridLayout(widget);
+        layoutWidget = new QWidget(frame);
+        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
+        layoutWidget->setGeometry(QRect(10, 40, 111, 146));
+        gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
-        customerInput = new QLineEdit(widget);
-        customerInput->setObjectName(QString::fromUtf8("customerInput"));
-        customerInput->setFont(font);
+        productInput = new QLineEdit(layoutWidget);
+        productInput->setObjectName(QString::fromUtf8("productInput"));
+        productInput->setFont(font);
 
-        gridLayout_3->addWidget(customerInput, 1, 0, 1, 1);
+        gridLayout_3->addWidget(productInput, 3, 0, 1, 1);
 
-        supplierInput = new QLineEdit(widget);
+        supplierInput = new QLineEdit(layoutWidget);
         supplierInput->setObjectName(QString::fromUtf8("supplierInput"));
         supplierInput->setFont(font);
 
         gridLayout_3->addWidget(supplierInput, 2, 0, 1, 1);
 
-        productInput = new QLineEdit(widget);
-        productInput->setObjectName(QString::fromUtf8("productInput"));
-        productInput->setFont(font);
-
-        gridLayout_3->addWidget(productInput, 0, 1, 1, 1);
-
-        truckInput = new QLineEdit(widget);
-        truckInput->setObjectName(QString::fromUtf8("truckInput"));
-        truckInput->setFont(font);
-
-        gridLayout_3->addWidget(truckInput, 1, 1, 1, 1);
-
-        POInput = new QLineEdit(widget);
+        POInput = new QLineEdit(layoutWidget);
         POInput->setObjectName(QString::fromUtf8("POInput"));
         POInput->setFont(font);
         POInput->setInputMask(QString::fromUtf8(""));
@@ -1060,6 +1049,21 @@ public:
 
         gridLayout_3->addWidget(POInput, 0, 0, 1, 1);
 
+        customerInput = new QLineEdit(layoutWidget);
+        customerInput->setObjectName(QString::fromUtf8("customerInput"));
+        customerInput->setFont(font);
+
+        gridLayout_3->addWidget(customerInput, 1, 0, 1, 1);
+
+        truckInput = new QLineEdit(layoutWidget);
+        truckInput->setObjectName(QString::fromUtf8("truckInput"));
+        truckInput->setFont(font);
+
+        gridLayout_3->addWidget(truckInput, 4, 0, 1, 1);
+
+        descriptionLabel = new QLabel(frame);
+        descriptionLabel->setObjectName(QString::fromUtf8("descriptionLabel"));
+        descriptionLabel->setGeometry(QRect(130, 70, 121, 111));
         testSocketButton = new QPushButton(createFile);
         testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
         testSocketButton->setGeometry(QRect(780, 730, 80, 21));
@@ -1076,31 +1080,31 @@ public:
         frame_3->setFrameShape(QFrame::StyledPanel);
         frame_3->setFrameShadow(QFrame::Sunken);
         frame_3->setLineWidth(3);
-        layoutWidget = new QWidget(frame_3);
-        layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 0, 131, 90));
-        verticalLayout_2 = new QVBoxLayout(layoutWidget);
+        layoutWidget1 = new QWidget(frame_3);
+        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
+        layoutWidget1->setGeometry(QRect(10, 0, 131, 90));
+        verticalLayout_2 = new QVBoxLayout(layoutWidget1);
         verticalLayout_2->setSpacing(6);
         verticalLayout_2->setContentsMargins(11, 11, 11, 11);
         verticalLayout_2->setObjectName(QString::fromUtf8("verticalLayout_2"));
         verticalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label_16 = new QLabel(layoutWidget);
+        label_16 = new QLabel(layoutWidget1);
         label_16->setObjectName(QString::fromUtf8("label_16"));
         label_16->setAlignment(Qt::AlignCenter);
 
         verticalLayout_2->addWidget(label_16);
 
-        gloLabelsClaimCust = new QCheckBox(layoutWidget);
+        gloLabelsClaimCust = new QCheckBox(layoutWidget1);
         gloLabelsClaimCust->setObjectName(QString::fromUtf8("gloLabelsClaimCust"));
 
         verticalLayout_2->addWidget(gloLabelsClaimCust);
 
-        gloLabelsClaimTaged = new QCheckBox(layoutWidget);
+        gloLabelsClaimTaged = new QCheckBox(layoutWidget1);
         gloLabelsClaimTaged->setObjectName(QString::fromUtf8("gloLabelsClaimTaged"));
 
         verticalLayout_2->addWidget(gloLabelsClaimTaged);
 
-        gloLabelsClaimClosed = new QCheckBox(layoutWidget);
+        gloLabelsClaimClosed = new QCheckBox(layoutWidget1);
         gloLabelsClaimClosed->setObjectName(QString::fromUtf8("gloLabelsClaimClosed"));
 
         verticalLayout_2->addWidget(gloLabelsClaimClosed);
@@ -1118,15 +1122,15 @@ public:
         notesArea->setObjectName(QString::fromUtf8("notesArea"));
         notesArea->setGeometry(QRect(10, 20, 291, 141));
         notesArea->setFont(font);
-        layoutWidget1 = new QWidget(frame_2);
-        layoutWidget1->setObjectName(QString::fromUtf8("layoutWidget1"));
-        layoutWidget1->setGeometry(QRect(10, 0, 211, 18));
-        horizontalLayout_2 = new QHBoxLayout(layoutWidget1);
+        layoutWidget2 = new QWidget(frame_2);
+        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
+        layoutWidget2->setGeometry(QRect(10, 0, 211, 18));
+        horizontalLayout_2 = new QHBoxLayout(layoutWidget2);
         horizontalLayout_2->setSpacing(6);
         horizontalLayout_2->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_2->setObjectName(QString::fromUtf8("horizontalLayout_2"));
         horizontalLayout_2->setContentsMargins(0, 0, 0, 0);
-        label = new QLabel(layoutWidget1);
+        label = new QLabel(layoutWidget2);
         label->setObjectName(QString::fromUtf8("label"));
         label->setFont(font);
 
@@ -1141,22 +1145,22 @@ public:
         gloComments->setGeometry(QRect(330, 180, 491, 461));
         gloComments->setMidLineWidth(2);
         gloComments->setSpacing(5);
-        layoutWidget2 = new QWidget(gloFrame);
-        layoutWidget2->setObjectName(QString::fromUtf8("layoutWidget2"));
-        layoutWidget2->setGeometry(QRect(10, 10, 819, 100));
-        verticalLayout_3 = new QVBoxLayout(layoutWidget2);
+        layoutWidget3 = new QWidget(gloFrame);
+        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
+        layoutWidget3->setGeometry(QRect(10, 10, 819, 100));
+        verticalLayout_3 = new QVBoxLayout(layoutWidget3);
         verticalLayout_3->setSpacing(6);
         verticalLayout_3->setContentsMargins(11, 11, 11, 11);
         verticalLayout_3->setObjectName(QString::fromUtf8("verticalLayout_3"));
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_18 = new QLabel(layoutWidget2);
+        label_18 = new QLabel(layoutWidget3);
         label_18->setObjectName(QString::fromUtf8("label_18"));
         label_18->setFont(font1);
         label_18->setAlignment(Qt::AlignCenter);
 
         verticalLayout_3->addWidget(label_18);
 
-        order_progressBar = new QProgressBar(layoutWidget2);
+        order_progressBar = new QProgressBar(layoutWidget3);
         order_progressBar->setObjectName(QString::fromUtf8("order_progressBar"));
         order_progressBar->setMaximum(100);
         order_progressBar->setValue(0);
@@ -1166,7 +1170,7 @@ public:
         horizontalLayout = new QHBoxLayout();
         horizontalLayout->setSpacing(120);
         horizontalLayout->setObjectName(QString::fromUtf8("horizontalLayout"));
-        RB_SalesOrder = new QRadioButton(layoutWidget2);
+        RB_SalesOrder = new QRadioButton(layoutWidget3);
         buttonGroup_2 = new QButtonGroup(MainWindow);
         buttonGroup_2->setObjectName(QString::fromUtf8("buttonGroup_2"));
         buttonGroup_2->addButton(RB_SalesOrder);
@@ -1175,28 +1179,28 @@ public:
 
         horizontalLayout->addWidget(RB_SalesOrder);
 
-        RB_Shipped = new QRadioButton(layoutWidget2);
+        RB_Shipped = new QRadioButton(layoutWidget3);
         buttonGroup_2->addButton(RB_Shipped);
         RB_Shipped->setObjectName(QString::fromUtf8("RB_Shipped"));
         RB_Shipped->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Shipped);
 
-        RB_Border = new QRadioButton(layoutWidget2);
+        RB_Border = new QRadioButton(layoutWidget3);
         buttonGroup_2->addButton(RB_Border);
         RB_Border->setObjectName(QString::fromUtf8("RB_Border"));
         RB_Border->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Border);
 
-        RB_Crossed = new QRadioButton(layoutWidget2);
+        RB_Crossed = new QRadioButton(layoutWidget3);
         buttonGroup_2->addButton(RB_Crossed);
         RB_Crossed->setObjectName(QString::fromUtf8("RB_Crossed"));
         RB_Crossed->setLayoutDirection(Qt::LeftToRight);
 
         horizontalLayout->addWidget(RB_Crossed);
 
-        RB_Delivered = new QRadioButton(layoutWidget2);
+        RB_Delivered = new QRadioButton(layoutWidget3);
         buttonGroup_2->addButton(RB_Delivered);
         RB_Delivered->setObjectName(QString::fromUtf8("RB_Delivered"));
         RB_Delivered->setLayoutDirection(Qt::LeftToRight);
@@ -1206,15 +1210,15 @@ public:
 
         verticalLayout_3->addLayout(horizontalLayout);
 
-        layoutWidget3 = new QWidget(createFile);
-        layoutWidget3->setObjectName(QString::fromUtf8("layoutWidget3"));
-        layoutWidget3->setGeometry(QRect(710, 90, 241, 30));
-        horizontalLayout_3 = new QHBoxLayout(layoutWidget3);
+        layoutWidget4 = new QWidget(createFile);
+        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
+        layoutWidget4->setGeometry(QRect(710, 90, 241, 30));
+        horizontalLayout_3 = new QHBoxLayout(layoutWidget4);
         horizontalLayout_3->setSpacing(6);
         horizontalLayout_3->setContentsMargins(11, 11, 11, 11);
         horizontalLayout_3->setObjectName(QString::fromUtf8("horizontalLayout_3"));
         horizontalLayout_3->setContentsMargins(0, 0, 0, 0);
-        label_20 = new QLabel(layoutWidget3);
+        label_20 = new QLabel(layoutWidget4);
         label_20->setObjectName(QString::fromUtf8("label_20"));
         QFont font2;
         font2.setPointSize(17);
@@ -1222,7 +1226,7 @@ public:
 
         horizontalLayout_3->addWidget(label_20);
 
-        PoLabel = new QLabel(layoutWidget3);
+        PoLabel = new QLabel(layoutWidget4);
         PoLabel->setObjectName(QString::fromUtf8("PoLabel"));
         PoLabel->setFont(font2);
 
@@ -1288,10 +1292,10 @@ public:
         archiveCheckButton_2->setObjectName(QString::fromUtf8("archiveCheckButton_2"));
         archiveCheckButton_2->setEnabled(false);
         archiveCheckButton_2->setGeometry(QRect(10, 520, 171, 21));
-        layoutWidget4 = new QWidget(ArchiveCheck);
-        layoutWidget4->setObjectName(QString::fromUtf8("layoutWidget4"));
-        layoutWidget4->setGeometry(QRect(20, 130, 221, 331));
-        verticalLayout = new QVBoxLayout(layoutWidget4);
+        layoutWidget5 = new QWidget(ArchiveCheck);
+        layoutWidget5->setObjectName(QString::fromUtf8("layoutWidget5"));
+        layoutWidget5->setGeometry(QRect(20, 130, 221, 331));
+        verticalLayout = new QVBoxLayout(layoutWidget5);
         verticalLayout->setSpacing(6);
         verticalLayout->setContentsMargins(11, 11, 11, 11);
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
@@ -1299,35 +1303,35 @@ public:
         formLayout = new QFormLayout();
         formLayout->setSpacing(6);
         formLayout->setObjectName(QString::fromUtf8("formLayout"));
-        label_7 = new QLabel(layoutWidget4);
+        label_7 = new QLabel(layoutWidget5);
         label_7->setObjectName(QString::fromUtf8("label_7"));
         label_7->setFont(font);
 
         formLayout->setWidget(1, QFormLayout::LabelRole, label_7);
 
-        ACheck_TotalErrors = new QLabel(layoutWidget4);
+        ACheck_TotalErrors = new QLabel(layoutWidget5);
         ACheck_TotalErrors->setObjectName(QString::fromUtf8("ACheck_TotalErrors"));
 
         formLayout->setWidget(1, QFormLayout::FieldRole, ACheck_TotalErrors);
 
-        label_8 = new QLabel(layoutWidget4);
+        label_8 = new QLabel(layoutWidget5);
         label_8->setObjectName(QString::fromUtf8("label_8"));
         label_8->setFont(font);
 
         formLayout->setWidget(2, QFormLayout::LabelRole, label_8);
 
-        ACheck_FilesAffected = new QLabel(layoutWidget4);
+        ACheck_FilesAffected = new QLabel(layoutWidget5);
         ACheck_FilesAffected->setObjectName(QString::fromUtf8("ACheck_FilesAffected"));
 
         formLayout->setWidget(2, QFormLayout::FieldRole, ACheck_FilesAffected);
 
-        label_13 = new QLabel(layoutWidget4);
+        label_13 = new QLabel(layoutWidget5);
         label_13->setObjectName(QString::fromUtf8("label_13"));
         label_13->setFont(font);
 
         formLayout->setWidget(0, QFormLayout::LabelRole, label_13);
 
-        ACheck_TotalFilesChecked = new QLabel(layoutWidget4);
+        ACheck_TotalFilesChecked = new QLabel(layoutWidget5);
         ACheck_TotalFilesChecked->setObjectName(QString::fromUtf8("ACheck_TotalFilesChecked"));
 
         formLayout->setWidget(0, QFormLayout::FieldRole, ACheck_TotalFilesChecked);
@@ -1335,13 +1339,13 @@ public:
 
         verticalLayout->addLayout(formLayout);
 
-        label_12 = new QLabel(layoutWidget4);
+        label_12 = new QLabel(layoutWidget5);
         label_12->setObjectName(QString::fromUtf8("label_12"));
         label_12->setFont(font4);
 
         verticalLayout->addWidget(label_12);
 
-        archiveErrorList = new QListWidget(layoutWidget4);
+        archiveErrorList = new QListWidget(layoutWidget5);
         archiveErrorList->setObjectName(QString::fromUtf8("archiveErrorList"));
 
         verticalLayout->addWidget(archiveErrorList);
@@ -1492,15 +1496,16 @@ public:
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
         label_17->setText(QCoreApplication::translate("MainWindow", "File Managment", nullptr));
-        customerInput->setInputMask(QString());
-        customerInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Customer", nullptr));
-        supplierInput->setInputMask(QString());
-        supplierInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Supplier", nullptr));
         productInput->setInputMask(QString());
         productInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Product", nullptr));
+        supplierInput->setInputMask(QString());
+        supplierInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Supplier", nullptr));
+        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        customerInput->setInputMask(QString());
+        customerInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Customer", nullptr));
         truckInput->setInputMask(QString());
         truckInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Truck", nullptr));
-        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        descriptionLabel->setText(QString());
         testSocketButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "Labels", nullptr));
         gloLabelsClaimCust->setText(QCoreApplication::translate("MainWindow", "Claim-Customer", nullptr));

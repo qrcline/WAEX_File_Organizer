@@ -205,8 +205,8 @@ width:10px;
       <widget class="QWidget" name="gridLayoutWidget">
        <property name="geometry">
         <rect>
-         <x>13</x>
-         <y>212</y>
+         <x>10</x>
+         <y>330</y>
          <width>301</width>
          <height>381</height>
         </rect>
@@ -1423,8 +1423,8 @@ width:10px;
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>30</x>
-         <y>150</y>
+         <x>20</x>
+         <y>260</y>
          <width>59</width>
          <height>16</height>
         </rect>
@@ -1459,8 +1459,8 @@ width:10px;
       <widget class="QComboBox" name="comboBox">
        <property name="geometry">
         <rect>
-         <x>29</x>
-         <y>169</y>
+         <x>20</x>
+         <y>290</y>
          <width>102</width>
          <height>24</height>
         </rect>
@@ -1507,8 +1507,8 @@ width:10px;
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>233</x>
-         <y>182</y>
+         <x>230</x>
+         <y>300</y>
          <width>80</width>
          <height>21</height>
         </rect>
@@ -1575,47 +1575,17 @@ width:10px;
         <string>File Managment</string>
        </property>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
          <y>40</y>
-         <width>251</width>
-         <height>91</height>
+         <width>171</width>
+         <height>168</height>
         </rect>
        </property>
        <layout class="QGridLayout" name="gridLayout_3">
-        <item row="1" column="0">
-         <widget class="QLineEdit" name="customerInput">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>Customer</string>
-          </property>
-         </widget>
-        </item>
-        <item row="2" column="0">
-         <widget class="QLineEdit" name="supplierInput">
-          <property name="font">
-           <font>
-            <pointsize>10</pointsize>
-           </font>
-          </property>
-          <property name="inputMask">
-           <string/>
-          </property>
-          <property name="placeholderText">
-           <string>Supplier</string>
-          </property>
-         </widget>
-        </item>
-        <item row="0" column="1">
+        <item row="3" column="1">
          <widget class="QLineEdit" name="productInput">
           <property name="font">
            <font>
@@ -1630,7 +1600,7 @@ width:10px;
           </property>
          </widget>
         </item>
-        <item row="1" column="1">
+        <item row="4" column="1">
          <widget class="QLineEdit" name="truckInput">
           <property name="font">
            <font>
@@ -1646,6 +1616,30 @@ width:10px;
          </widget>
         </item>
         <item row="0" column="0">
+         <widget class="QLabel" name="label_2">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Po:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_21">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Customer:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="1">
          <widget class="QLineEdit" name="POInput">
           <property name="font">
            <font>
@@ -1663,7 +1657,86 @@ width:10px;
           </property>
          </widget>
         </item>
+        <item row="1" column="1">
+         <widget class="QLineEdit" name="customerInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Customer</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QLineEdit" name="supplierInput">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="inputMask">
+           <string/>
+          </property>
+          <property name="placeholderText">
+           <string>Supplier</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <widget class="QLabel" name="label_22">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Supplier:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_23">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Product:</string>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_24">
+          <property name="font">
+           <font>
+            <pointsize>10</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Truck:</string>
+          </property>
+         </widget>
+        </item>
        </layout>
+      </widget>
+      <widget class="QLabel" name="descriptionLabel">
+       <property name="geometry">
+        <rect>
+         <x>390</x>
+         <y>60</y>
+         <width>121</width>
+         <height>111</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
       </widget>
      </widget>
      <widget class="QPushButton" name="testSocketButton">

@@ -158,6 +158,7 @@ private slots:
 
        void on_truckInput_returnPressed();
 
+       void gloLoadInfo();
 private:
 
     //Pointers

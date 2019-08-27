@@ -297,9 +297,9 @@ void MainWindow::updateWindow()
     //Fill in the notes section
     ui->notesDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
     gloGetCardId(ui->POInput->text());
-    gloLoadComments();//loads the globoard comments
-    gloLoadLabels();
-    gloGetDescription();
+   // gloLoadComments();//loads the globoard comments
+    //gloLoadLabels();      //TODO: Optimize and make these three lines one function and get request
+//    gloGetDescription();
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -1442,7 +1442,7 @@ void MainWindow::gloCreatePO(QString po)
     QJsonObject jObj;
     jObj.insert("name",QJsonValue::fromVariant(po));
     jObj.insert("column_id",QJsonValue::fromVariant("5d36041b538eed0011572e28"));
-    QString descriptionText= "Customer: "+ui->customerInput->text()+"\n"+"Product:"+ui->productInput->text()+"\n"+"Supplier:"+ui->supplierInput->text()+"\n"+"Truck:"+ui->truckInput->text();
+    QString descriptionText= "Customer:"+ui->customerInput->text()+"\n"+"Product:"+ui->productInput->text()+"\n"+"Supplier:"+ui->supplierInput->text()+"\n"+"Truck:"+ui->truckInput->text();
     QJsonObject description;
     description.insert("text",QJsonValue::fromVariant(descriptionText));
     jObj.insert("description",description);
@@ -1592,6 +1592,14 @@ void MainWindow::gloLoadLabels()
     updateBlock=true;
 }
 
+void MainWindow::gloLoadInfo()
+{
+    QJsonDocument responseDoc;
+    QJsonArray response=getRequest(("/cards/"+currentCardid+"?fields=labels"),responseDoc);
+
+    //TODO:Combine labels and description load
+}
+
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)
 {
     QUrl url;
@@ -1731,12 +1739,13 @@ void MainWindow::gloGetDescription()
     int index=0;
     QJsonDocument temp;
     QString description;
-    foreach (const QJsonValue &value,  getRequest(path,temp)) {
-        QJsonObject json_obj = value.toObject();
-       // ui->gloComments->addItem(json_obj["text"].toString());
-        description=json_obj["text"].toString();
-    }
+    getRequest(path,temp);
+  description=  temp["description"]["text"].toString();
+
     std::cout<<description.toStdString()<<std::endl;
+
+   ui->descriptionLabel->setText(description);
+
 }
 
 void MainWindow::on_POInput_textChanged(const QString &arg1)
