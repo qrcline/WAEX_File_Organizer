@@ -297,9 +297,11 @@ void MainWindow::updateWindow()
     //Fill in the notes section
     ui->notesDisplay->setText( fIo.getNotes(mainDirectory+"/"+ui->POInput->text()+"/waex.index"));
     gloGetCardId(ui->POInput->text());
-   // gloLoadComments();//loads the globoard comments
+    gloLoadComments();//loads the globoard comments
+    gloLoadInfo();
     //gloLoadLabels();      //TODO: Optimize and make these three lines one function and get request
 //    gloGetDescription();
+
 
     std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
@@ -1593,11 +1595,53 @@ void MainWindow::gloLoadLabels()
 }
 
 void MainWindow::gloLoadInfo()
-{
+{//TODO:Combine labels and description load
     QJsonDocument responseDoc;
-    QJsonArray response=getRequest(("/cards/"+currentCardid+"?fields=labels"),responseDoc);
+    QJsonArray response=getRequest(("/cards/"+currentCardid+"?fields=labels&fields=description"),responseDoc);
 
-    //TODO:Combine labels and description load
+    //Setting the labels
+    QJsonArray labelsArray =responseDoc["labels"].toArray();
+    updateBlock=false;//block updates
+    ui->gloLabelsClaimCust->setChecked(false);
+    ui->gloLabelsClaimTaged->setChecked(false);
+    ui->gloLabelsClaimClosed->setChecked(false);
+    foreach (const QJsonValue &value, labelsArray ) {
+        QJsonObject json_obj = value.toObject();
+        QString name=json_obj["name"].toString();
+        if(name=="Claim-Customer")
+        {
+            labels.customer=true;
+            ui->gloLabelsClaimCust->setChecked(true);
+        }
+
+        else if(name=="Claim-Taged")
+        {
+            labels.taged=true;
+            ui->gloLabelsClaimTaged->setChecked(true);
+        }
+
+        else if(name=="Claim-Closed")
+        {
+            labels.closed=true;
+            ui->gloLabelsClaimClosed->setChecked(true);
+        }
+
+
+        //ui->gloComments->addItem(json_obj["text"].toString());
+    }
+    updateBlock=true;
+
+
+    QJsonValue description=responseDoc["description"]["text"];
+    QStringList desLines=description.toString().split("\n");
+    ui->customerInput->setText(desLines[0].right(desLines[0].length()-9));
+    ui->productInput->setText(desLines[1].right(desLines[1].length()-8));
+    ui->supplierInput->setText(desLines[2].right(desLines[2].length()-9));
+    ui->truckInput->setText(desLines[3].right(desLines[3].length()-6));
+    //ui->descriptionLabel->setText(description);
+
+
+
 }
 
 QByteArray MainWindow::postRequest(QJsonObject postData, QString path)

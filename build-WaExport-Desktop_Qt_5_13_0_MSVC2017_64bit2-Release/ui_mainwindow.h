@@ -153,19 +153,18 @@ public:
     QLabel *workingDirectory_CreateFile;
     QTextEdit *notesDisplay;
     QPushButton *saveButton;
-    QLabel *label_17;
     QWidget *layoutWidget;
     QGridLayout *gridLayout_3;
-    QLineEdit *productInput;
-    QLineEdit *truckInput;
-    QLabel *label_2;
-    QLabel *label_21;
-    QLineEdit *POInput;
+    QLabel *label_24;
     QLineEdit *customerInput;
+    QLineEdit *productInput;
+    QLabel *label_2;
+    QLineEdit *POInput;
+    QLabel *label_21;
+    QLabel *label_23;
     QLineEdit *supplierInput;
     QLabel *label_22;
-    QLabel *label_23;
-    QLabel *label_24;
+    QLineEdit *truckInput;
     QLabel *descriptionLabel;
     QPushButton *testSocketButton;
     QFrame *gloFrame;
@@ -643,7 +642,7 @@ public:
 
         gridLayoutWidget_2 = new QWidget(frame);
         gridLayoutWidget_2->setObjectName(QString::fromUtf8("gridLayoutWidget_2"));
-        gridLayoutWidget_2->setGeometry(QRect(323, 172, 361, 421));
+        gridLayoutWidget_2->setGeometry(QRect(330, 170, 361, 421));
         gridLayout_2 = new QGridLayout(gridLayoutWidget_2);
         gridLayout_2->setSpacing(6);
         gridLayout_2->setContentsMargins(11, 11, 11, 11);
@@ -1005,7 +1004,7 @@ public:
         comboBox->setFont(font);
         openFolder = new QPushButton(frame);
         openFolder->setObjectName(QString::fromUtf8("openFolder"));
-        openFolder->setGeometry(QRect(280, 120, 84, 21));
+        openFolder->setGeometry(QRect(250, 110, 84, 21));
         label_4 = new QLabel(frame);
         label_4->setObjectName(QString::fromUtf8("label_4"));
         label_4->setGeometry(QRect(230, 300, 80, 21));
@@ -1019,44 +1018,37 @@ public:
         saveButton = new QPushButton(frame);
         saveButton->setObjectName(QString::fromUtf8("saveButton"));
         saveButton->setGeometry(QRect(569, 730, 121, 41));
-        label_17 = new QLabel(frame);
-        label_17->setObjectName(QString::fromUtf8("label_17"));
-        label_17->setGeometry(QRect(410, 10, 191, 31));
-        QFont font1;
-        font1.setPointSize(20);
-        font1.setUnderline(true);
-        label_17->setFont(font1);
         layoutWidget = new QWidget(frame);
         layoutWidget->setObjectName(QString::fromUtf8("layoutWidget"));
-        layoutWidget->setGeometry(QRect(10, 40, 171, 168));
+        layoutWidget->setGeometry(QRect(10, 40, 331, 101));
         gridLayout_3 = new QGridLayout(layoutWidget);
         gridLayout_3->setSpacing(6);
         gridLayout_3->setContentsMargins(11, 11, 11, 11);
         gridLayout_3->setObjectName(QString::fromUtf8("gridLayout_3"));
         gridLayout_3->setContentsMargins(0, 0, 0, 0);
+        label_24 = new QLabel(layoutWidget);
+        label_24->setObjectName(QString::fromUtf8("label_24"));
+        label_24->setFont(font);
+
+        gridLayout_3->addWidget(label_24, 3, 0, 1, 1);
+
+        customerInput = new QLineEdit(layoutWidget);
+        customerInput->setObjectName(QString::fromUtf8("customerInput"));
+        customerInput->setFont(font);
+
+        gridLayout_3->addWidget(customerInput, 0, 3, 1, 1);
+
         productInput = new QLineEdit(layoutWidget);
         productInput->setObjectName(QString::fromUtf8("productInput"));
         productInput->setFont(font);
 
-        gridLayout_3->addWidget(productInput, 3, 1, 1, 1);
-
-        truckInput = new QLineEdit(layoutWidget);
-        truckInput->setObjectName(QString::fromUtf8("truckInput"));
-        truckInput->setFont(font);
-
-        gridLayout_3->addWidget(truckInput, 4, 1, 1, 1);
+        gridLayout_3->addWidget(productInput, 2, 3, 1, 1);
 
         label_2 = new QLabel(layoutWidget);
         label_2->setObjectName(QString::fromUtf8("label_2"));
         label_2->setFont(font);
 
         gridLayout_3->addWidget(label_2, 0, 0, 1, 1);
-
-        label_21 = new QLabel(layoutWidget);
-        label_21->setObjectName(QString::fromUtf8("label_21"));
-        label_21->setFont(font);
-
-        gridLayout_3->addWidget(label_21, 1, 0, 1, 1);
 
         POInput = new QLineEdit(layoutWidget);
         POInput->setObjectName(QString::fromUtf8("POInput"));
@@ -1066,11 +1058,17 @@ public:
 
         gridLayout_3->addWidget(POInput, 0, 1, 1, 1);
 
-        customerInput = new QLineEdit(layoutWidget);
-        customerInput->setObjectName(QString::fromUtf8("customerInput"));
-        customerInput->setFont(font);
+        label_21 = new QLabel(layoutWidget);
+        label_21->setObjectName(QString::fromUtf8("label_21"));
+        label_21->setFont(font);
 
-        gridLayout_3->addWidget(customerInput, 1, 1, 1, 1);
+        gridLayout_3->addWidget(label_21, 0, 2, 1, 1);
+
+        label_23 = new QLabel(layoutWidget);
+        label_23->setObjectName(QString::fromUtf8("label_23"));
+        label_23->setFont(font);
+
+        gridLayout_3->addWidget(label_23, 2, 2, 1, 1);
 
         supplierInput = new QLineEdit(layoutWidget);
         supplierInput->setObjectName(QString::fromUtf8("supplierInput"));
@@ -1084,21 +1082,15 @@ public:
 
         gridLayout_3->addWidget(label_22, 2, 0, 1, 1);
 
-        label_23 = new QLabel(layoutWidget);
-        label_23->setObjectName(QString::fromUtf8("label_23"));
-        label_23->setFont(font);
+        truckInput = new QLineEdit(layoutWidget);
+        truckInput->setObjectName(QString::fromUtf8("truckInput"));
+        truckInput->setFont(font);
 
-        gridLayout_3->addWidget(label_23, 3, 0, 1, 1);
-
-        label_24 = new QLabel(layoutWidget);
-        label_24->setObjectName(QString::fromUtf8("label_24"));
-        label_24->setFont(font);
-
-        gridLayout_3->addWidget(label_24, 4, 0, 1, 1);
+        gridLayout_3->addWidget(truckInput, 3, 1, 1, 1);
 
         descriptionLabel = new QLabel(frame);
         descriptionLabel->setObjectName(QString::fromUtf8("descriptionLabel"));
-        descriptionLabel->setGeometry(QRect(390, 60, 121, 111));
+        descriptionLabel->setGeometry(QRect(190, 80, 121, 111));
         testSocketButton = new QPushButton(createFile);
         testSocketButton->setObjectName(QString::fromUtf8("testSocketButton"));
         testSocketButton->setGeometry(QRect(780, 730, 80, 21));
@@ -1190,6 +1182,9 @@ public:
         verticalLayout_3->setContentsMargins(0, 0, 0, 0);
         label_18 = new QLabel(layoutWidget3);
         label_18->setObjectName(QString::fromUtf8("label_18"));
+        QFont font1;
+        font1.setPointSize(20);
+        font1.setUnderline(true);
         label_18->setFont(font1);
         label_18->setAlignment(Qt::AlignCenter);
 
@@ -1530,21 +1525,20 @@ public:
         label_4->setText(QCoreApplication::translate("MainWindow", "Uploaded?", nullptr));
         workingDirectory_CreateFile->setText(QCoreApplication::translate("MainWindow", "NULL", nullptr));
         saveButton->setText(QCoreApplication::translate("MainWindow", "Save", nullptr));
-        label_17->setText(QCoreApplication::translate("MainWindow", "File Managment", nullptr));
-        productInput->setInputMask(QString());
-        productInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Product", nullptr));
-        truckInput->setInputMask(QString());
-        truckInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Truck", nullptr));
-        label_2->setText(QCoreApplication::translate("MainWindow", "Po:", nullptr));
-        label_21->setText(QCoreApplication::translate("MainWindow", "Customer:", nullptr));
-        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        label_24->setText(QCoreApplication::translate("MainWindow", "Truck:", nullptr));
         customerInput->setInputMask(QString());
         customerInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Customer", nullptr));
+        productInput->setInputMask(QString());
+        productInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Product", nullptr));
+        label_2->setText(QCoreApplication::translate("MainWindow", "Po:", nullptr));
+        POInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "PO#", nullptr));
+        label_21->setText(QCoreApplication::translate("MainWindow", "Customer:", nullptr));
+        label_23->setText(QCoreApplication::translate("MainWindow", "Product:", nullptr));
         supplierInput->setInputMask(QString());
         supplierInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Supplier", nullptr));
         label_22->setText(QCoreApplication::translate("MainWindow", "Supplier:", nullptr));
-        label_23->setText(QCoreApplication::translate("MainWindow", "Product:", nullptr));
-        label_24->setText(QCoreApplication::translate("MainWindow", "Truck:", nullptr));
+        truckInput->setInputMask(QString());
+        truckInput->setPlaceholderText(QCoreApplication::translate("MainWindow", "Truck", nullptr));
         descriptionLabel->setText(QString());
         testSocketButton->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
         label_16->setText(QCoreApplication::translate("MainWindow", "Labels", nullptr));
