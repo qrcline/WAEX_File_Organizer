@@ -92,7 +92,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>WAEX Filing System  V 0.4</string>
+       <string>WAEX Filing System  V 0.5</string>
       </property>
      </widget>
     </item>
@@ -112,7 +112,7 @@ border-radius: 5px; </string>
        <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
-       <string>Built on Date: 8/21/2019</string>
+       <string>Built on Date: 8/29/2019</string>
       </property>
      </widget>
     </item>

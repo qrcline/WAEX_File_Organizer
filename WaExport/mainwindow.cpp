@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow),
     tableModel(new myTableModel(this))
 {
-    std::cout<<"In mainWindow construct"<<std::endl;
+    ////std::cout<<"In mainWindow construct"<<std::endl;
     setWindowFlag(Qt::MSWindowsFixedSizeDialogHint);
     ui->setupUi(this);
     ui->tableView->setModel(tableModel);
@@ -75,13 +75,13 @@ void MainWindow::dragEnterEvent(QDragEnterEvent *event)
 
     if (event->mimeData()->hasFormat("text/uri-list"))
         event->acceptProposedAction();
-    std::cout<<"This is a drag Event"<<std::endl;
+    //std::cout<<"This is a drag Event"<<std::endl;
 
 }
 
 void MainWindow::dropEvent(QDropEvent *event)
 {
-    std::cout<<"This is a drop event"<<std::endl;
+    //std::cout<<"This is a drop event"<<std::endl;
     QList<QUrl> urls = event->mimeData()->urls();
     if (urls.isEmpty())
         return;
@@ -91,8 +91,8 @@ void MainWindow::dropEvent(QDropEvent *event)
         return;
 
     //if (readFile(fileName))
-    std::cout<<fileName.toStdString()<<std::endl;
-    QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","HarEmails","Harris","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesHarris","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
+    //std::cout<<fileName.toStdString()<<std::endl;
+    QStringList choices = {"CaftaNafta","CarrierConf","CertOrigin","CustomerPO","ExpInvima","FacturaComercial","FreightContract","ForEmails","Forwarder","Invoice","ListaEmpaque","OtherEmails","Passing","PayablesCarrier","PayablesForwarder","PayablesShipper","PayablesSW","PayablesTransloader","PayablesTruckFreight","Pedimento","Phyto","ProduceInv","Receipt","SaleConf","ShipperConf","SignedSaleConf","Spreadsheets","Transloader"};
     QString selection=QInputDialog::getItem(nullptr,"Upload","What file is this?",choices);
     if(selection=="Passing")
     {
@@ -133,7 +133,7 @@ void MainWindow::loadSettings()
     ui->workingDirectory->setText(mainDirectory);
     ui->workingDirectory_CreateFile->setText(mainDirectory);
 
-    std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
+    //std::cout<<"The tTip value is: "<<tTip.toStdString()<<std::endl;
     if(tTip=="True")
     {
 
@@ -253,11 +253,11 @@ void MainWindow::updateWindow()
         ui->FreightContract_notice->setText("YES X"+QString::number(num));
     else ui->FreightContract_notice->setText("No");
 
-    if((num=fIo.doesFileExist("Harris",filesVec))>0)
+    if((num=fIo.doesFileExist("Forwarder",filesVec))>0)
         ui->Harris_notice->setText("YES X"+QString::number(num));
     else ui->Harris_notice->setText("No");
 
-    if((num=fIo.doesFileExist("HarEmails",filesVec))>0)
+    if((num=fIo.doesFileExist("ForEmails",filesVec))>0)
         ui->HarrisEmails_notice->setText("YES X"+QString::number(num));
     else ui->HarrisEmails_notice->setText("No");
 
@@ -269,7 +269,7 @@ void MainWindow::updateWindow()
         ui->OtherEmails_notice->setText("YES X"+QString::number(num));
     else ui->OtherEmails_notice->setText("No");
 
-    if((num=fIo.doesFileExist("PayablesHarris",filesVec))>0)
+    if((num=fIo.doesFileExist("PayablesForwarder",filesVec))>0)
         ui->Payables_Harris_notice->setText("YES X"+QString::number(num));
     else ui->Payables_Harris_notice->setText("No");
 
@@ -303,7 +303,7 @@ void MainWindow::updateWindow()
 //    gloGetDescription();
 
 
-    std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
+    //std::cout<<"Time to complete window update: "+std::to_string(timer.elapsed())<<std::endl;
 
 
 }
@@ -355,9 +355,9 @@ void MainWindow::updateChecked()
         ui->FreightContract->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "Transloader"))
         ui->Transloader->setChecked(true);
-    if (binary_search(reqFiles.begin(), reqFiles.end(), "Harris"))
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "Forwarder"))
         ui->Harris->setChecked(true);
-    if (binary_search(reqFiles.begin(), reqFiles.end(), "HarEmails"))
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "ForEmails"))
         ui->HarrisEmails->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "CustomerPO"))
         ui->CustomerPO->setChecked(true);
@@ -367,7 +367,7 @@ void MainWindow::updateChecked()
         ui->Payables_Transloader->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTruckFreight"))
         ui->payables_TruckFreight->setChecked(true);
-    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesHarris"))
+    if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesForwarder"))
         ui->Payables_ShipperWarehouse->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesSW"))
         ui->Payables_ShipperWarehouse->setChecked(true);
@@ -378,7 +378,7 @@ void MainWindow::updateChecked()
 //This funtion opens a directory in windows File Explorer
 void    MainWindow::openDirectory(QString input)
 {
-    std::cout<<input.toStdString()<<std::endl;
+    //std::cout<<input.toStdString()<<std::endl;
     long result = (long)ShellExecute(0, 0, reinterpret_cast<const WCHAR*>(input.utf16()), 0, 0, SW_NORMAL);
 
 }
@@ -399,7 +399,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
     }
     else if (!fIo.checkForDirect(mainDirectory,folderText)) //If the main directory is selected check the PO# that is input
     {
-        std::cout<<"This directory doe not exist"<<std::endl;
+        //std::cout<<"This directory doe not exist"<<std::endl;
         if(folderText=="")
         {
             QMessageBox(QMessageBox::Information, "Error", "Please input a valid PO#.").exec();
@@ -408,7 +408,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
         {
             if (QMessageBox::Yes == QMessageBox(QMessageBox::Information, "ERROR", "This file doesn't exist, create it now?", QMessageBox::Yes|QMessageBox::No).exec())
             {
-                std::cout<<"Yes was selected"<<std::endl;
+                //std::cout<<"Yes was selected"<<std::endl;
                 ui->comboBox->setEnabled(true);
 
                 if(ui->POInput->text().length()==6
@@ -430,7 +430,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
                 {
                    QMessageBox(QMessageBox::Information, "Error", "Please fill in all required fields").exec();
                 }
-                //std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
+                ////std::cout<<"Directory to be created: "<<mainDirectory.toStdString()+"/"+folderText.toStdString()<<std::endl;
 
 
             }
@@ -445,7 +445,7 @@ void MainWindow::openFolder(QString folderText,bool winEx)
         //Grabbing the template from the file
         QString tempTemplate=fIo.getTemplate(mainDirectory+"/"+folderText+"/waex.index");
 
-        std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
+        //std::cout<<"Update window, fetch template:"+tempTemplate.toStdString()<<std::endl;
         if(tempTemplate=="Mex Produce")
             ui->comboBox->setCurrentIndex(0);
         else if(tempTemplate=="Domestic")
@@ -489,7 +489,7 @@ void MainWindow::on_openFolder_clicked()
 void MainWindow::on_actionOpen_triggered()
 {
     mainDirectory = QFileDialog::getExistingDirectory(0, ("Select Working Directory"), QDir::currentPath());
-    std::cout<<mainDirectory.toStdString()<<std::endl;
+    //std::cout<<mainDirectory.toStdString()<<std::endl;
     if(mainDirectory!=nullptr)
         ui->notesArea->setEnabled(true);
     ui->workingDirectory->setText(mainDirectory);
@@ -500,7 +500,7 @@ std::ostringstream MainWindow::getRequiredFiles()
 {
     std::ostringstream fileStream;
     ui->comboBox->currentIndex();
-    std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
+    //std::cout<<"Get required files, current indedx: "+ui->comboBox->currentText().toStdString()<<std::endl;
     fileStream<<"Template:"+ui->comboBox->currentText().toStdString()+"/TEND"<<std::endl;
     fileStream<<"/REQSTART/"<<std::endl;
 
@@ -519,9 +519,9 @@ std::ostringstream MainWindow::getRequiredFiles()
     if(ui->FreightContract->isChecked())
         fileStream<<"FreightContract"<<std::endl;
     if(ui->HarrisEmails->isChecked())
-        fileStream<<"HarEmails"<<std::endl;
+        fileStream<<"ForEmails"<<std::endl;
     if(ui->Harris->isChecked())
-        fileStream<<"Harris"<<std::endl;
+        fileStream<<"Forwarder"<<std::endl;
     if(ui->mexP_Invoice->isChecked())
         fileStream<<"Invoice"<<std::endl;
     if(ui->ListadeEmpaque->isChecked())
@@ -533,7 +533,7 @@ std::ostringstream MainWindow::getRequiredFiles()
     if(ui->mexP_Payables_Carriers->isChecked())
         fileStream<<"PayablesCarrier"<<std::endl;
     if(ui->Payables_Harris->isChecked())
-        fileStream<<"PayablesHarris"<<std::endl;
+        fileStream<<"PayablesForwarder"<<std::endl;
     if(ui->mexP_Payable_Shipper->isChecked())
         fileStream<<"PayablesShipper"<<std::endl;
     if(ui->Payables_ShipperWarehouse->isChecked())
@@ -568,7 +568,7 @@ std::ostringstream MainWindow::getRequiredFiles()
 
 void MainWindow::on_saveButton_clicked()
 {
-    std::cout<<"Save Button Pushed- Initiating Save"<<std::endl;
+    //std::cout<<"Save Button Pushed- Initiating Save"<<std::endl;
     // ui->progressBar_save_createFile->show();
     FolderIO fIo;
 
@@ -579,7 +579,7 @@ void MainWindow::on_saveButton_clicked()
     {
         if(!(fIo.createIndexFile((mainDirectory+"/"+ui->POInput->text()),ui->POInput->text(),"Quinton Cline Test",ui->notesDisplay->toPlainText(),getRequiredFiles())))
         {
-            std::cout<<"Index file creation failed"<<std::endl;
+            //std::cout<<"Index file creation failed"<<std::endl;
         }
         updateWindow();
         return;
@@ -808,13 +808,13 @@ void MainWindow::on_Transloader_upload_clicked()
 
 void MainWindow::on_Harris_upload_clicked()
 {
-    uploadFile("Open Harris","Harris (*.pdf)","Harris");
+    uploadFile("Open Forwarder","Forwarder (*.pdf)","Forwarder");
     updateWindow();
 }
 
 void MainWindow::on_HarrisEmails_upload_clicked()
 {
-    uploadFile("Open Harris Emails","Harris Emails (*.pdf)","HarEmails");
+    uploadFile("Open Forwarder Emails","Forwarder Emails (*.pdf)","ForEmails");
     updateWindow();
 }
 
@@ -844,7 +844,7 @@ void MainWindow::on_payables_TruckFreight_upload_clicked()
 
 void MainWindow::on_Payables_Harris_upload_clicked()
 {
-    uploadFile("Open Payables Harris","Payables Harris (*.pdf)","PayablesHarris");
+    uploadFile("Open Payables Forwarder","Payables Forwarder (*.pdf)","PayablesForwarder");
     updateWindow();
 
 }
@@ -864,9 +864,9 @@ void MainWindow::on_otherFiles_upload_clicked()
     //std::string fileD2=fileDialog2+";; All Files(*)";
     QString filePath= QFileDialog::getOpenFileName(this,tr("Open File"), "",tr("All Files(*)"));
 
-    std::cout<<filePath.toStdString()<<std::endl;
+    //std::cout<<filePath.toStdString()<<std::endl;
     QString fileName=filePath.right(filePath.length()-filePath.lastIndexOf("/")-1);
-    std::cout<<fileName.toStdString()<<std::endl;
+    //std::cout<<fileName.toStdString()<<std::endl;
     QFile::copy(filePath, mainDirectory+"/"+ui->POInput->text()+"/"+fileName);//This copies the file with the new destination name
     updateWindow();
 
@@ -1182,7 +1182,7 @@ void MainWindow::uncheckAll()
 }
 void MainWindow::on_comboBox_currentIndexChanged(int index)
 {
-    //std::cout<<"Combo box:" +QString::number(index).toStdString()<<std::endl;
+    ////std::cout<<"Combo box:" +QString::number(index).toStdString()<<std::endl;
     //ui->mexP_Spreadsheets_upload->setChecked(true);
     switch(index) {
     case 0 : uncheckAll();
@@ -1261,7 +1261,7 @@ void MainWindow::on_archiveCheckButton_clicked()
 
     }
     //runs the archive check
-    std::cout<<"Archive check started"<<std::endl;
+    //std::cout<<"Archive check started"<<std::endl;
 
 
     int totalErrors=0;
@@ -1270,15 +1270,15 @@ void MainWindow::on_archiveCheckButton_clicked()
 
     if(response=="ERROR/1")
     {
-        std::cout<<response.toStdString()<<std::endl;
+        //std::cout<<response.toStdString()<<std::endl;
     }
-    std::cout<<response.toStdString()<<std::endl;
+    //std::cout<<response.toStdString()<<std::endl;
     ui->ACheck_TotalErrors->setNum(totalErrors);
     ui->ACheck_FilesAffected->setNum(filesAffected);
 
     ui->archiveCheckButton_2->setEnabled(true);
 
-    std::cout<<"Archive check finished"<<std::endl;
+    //std::cout<<"Archive check finished"<<std::endl;
 }
 
 void MainWindow::updateWindowT(int num)
@@ -1298,7 +1298,7 @@ void MainWindow::on_tableView_doubleClicked(const QModelIndex &index)
     //updateWindow();
     //std::thread t1(MainWindow::updateWindow);
     //t1.join();
-    std::cout<<QString::number(index.row()).toStdString()+"--"+tableModel->getPo(index.row()).toStdString()<<std::endl;
+    //std::cout<<QString::number(index.row()).toStdString()+"--"+tableModel->getPo(index.row()).toStdString()<<std::endl;
 }
 
 
@@ -1344,7 +1344,7 @@ void MainWindow::on_actionDelete_Current_PO_triggered()
         if(ui->POInput->text().length()>0)
         {
             //Delete file
-            std::cout<<"Yes was selected"<<std::endl;
+            //std::cout<<"Yes was selected"<<std::endl;
             QDir dir(mainDirectory+"/"+ui->POInput->text());
 
             if(dir.removeRecursively())
@@ -1533,7 +1533,7 @@ QString MainWindow::gloGetCardId(QString po)
         ui->RB_Delivered->setChecked(true);
         ui->order_progressBar->setValue(100);
     }
-    std::cout<<"The id for po: "+po.toStdString()+": "+returnId.toStdString();
+    //std::cout<<"The id for po: "+po.toStdString()+": "+returnId.toStdString();
     return returnId;
 }
 
@@ -1786,7 +1786,7 @@ void MainWindow::gloGetDescription()
     getRequest(path,temp);
   description=  temp["description"]["text"].toString();
 
-    std::cout<<description.toStdString()<<std::endl;
+    //std::cout<<description.toStdString()<<std::endl;
 
    ui->descriptionLabel->setText(description);
 
@@ -1801,7 +1801,7 @@ void MainWindow::on_archiveErrorList_itemDoubleClicked(QListWidgetItem *item)
 {
     QString text=item->text();
     QString poNum=text.right(text.length()-mainDirectory.length()-1);
-    std::cout<<poNum.toStdString()<<std::endl;
+    //std::cout<<poNum.toStdString()<<std::endl;
     ui->POInput->setText(poNum);
     ui->tabWidget->setCurrentIndex(0);
     openFolder(poNum,false);

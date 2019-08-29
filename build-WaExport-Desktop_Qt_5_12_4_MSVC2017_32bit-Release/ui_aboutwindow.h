@@ -108,9 +108,9 @@ public:
         AboutWindow->setWindowTitle(QApplication::translate("AboutWindow", "Dialog", nullptr));
         aboutLogo->setText(QString());
         pushButton->setText(QApplication::translate("AboutWindow", "Close", nullptr));
-        label->setText(QApplication::translate("AboutWindow", "WAEX Filing System  V 0.4", nullptr));
+        label->setText(QApplication::translate("AboutWindow", "WAEX Filing System  V 0.5", nullptr));
         label_2->setText(QApplication::translate("AboutWindow", "Based on Qt 5.13.0 (MSVC 2017, 32/64 bit)", nullptr));
-        label_3->setText(QApplication::translate("AboutWindow", "Built on Date: 8/21/2019", nullptr));
+        label_3->setText(QApplication::translate("AboutWindow", "Built on Date: 8/29/2019", nullptr));
         label_4->setText(QApplication::translate("AboutWindow", "Created by: Quinton Cline", nullptr));
         label_5->setText(QApplication::translate("AboutWindow", "\302\251 Washington Export LLC", nullptr));
     } // retranslateUi
