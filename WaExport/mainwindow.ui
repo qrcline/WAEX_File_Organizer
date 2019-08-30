@@ -770,7 +770,7 @@ width:10px;
            <cursorShape>PointingHandCursor</cursorShape>
           </property>
           <property name="text">
-           <string>Payables-Harris</string>
+           <string>Payables-Forwarder</string>
           </property>
           <property name="checked">
            <bool>true</bool>

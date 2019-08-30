@@ -555,7 +555,7 @@ debug\moc_mainwindow.cpp: ..\WaExport\mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -772,7 +772,7 @@ debug\moc_settingd.cpp: ..\WaExport\settingd.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -1016,7 +1016,7 @@ debug\aboutwindow.obj: ..\WaExport\aboutwindow.cpp ..\WaExport\aboutwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\qfiledevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qvector2d.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
-		..\WaExport\ui_aboutwindow.h \
+		ui_aboutwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QApplication \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qapplication.h \
@@ -1148,7 +1148,7 @@ debug\helpcenter.obj: ..\WaExport\helpcenter.cpp ..\WaExport\helpcenter.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_helpcenter.h \
+		ui_helpcenter.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QApplication \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qapplication.h \
@@ -1284,7 +1284,7 @@ debug\main.obj: ..\WaExport\main.cpp ..\WaExport\mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -1708,7 +1708,7 @@ debug\mainwindow.obj: ..\WaExport\mainwindow.cpp ..\WaExport\mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -2162,7 +2162,7 @@ debug\folderio.obj: ..\WaExport\folderio.cpp ..\WaExport\folderio.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -2373,7 +2373,7 @@ debug\archivecheck.obj: ..\WaExport\archivecheck.cpp ..\WaExport\archivecheck.h 
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -2652,7 +2652,7 @@ debug\settingd.obj: ..\WaExport\settingd.cpp ..\WaExport\settingd.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qmainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\qtabwidget.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qicon.h \
-		..\WaExport\ui_mainwindow.h \
+		ui_mainwindow.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QVariant \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\QIcon \
 		C:\Qt\5.12.4\msvc2017\include\QtWidgets\QAction \
@@ -2751,7 +2751,7 @@ debug\settingd.obj: ..\WaExport\settingd.cpp ..\WaExport\settingd.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QTextCodec \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\qtextcodec.h \
 		..\WaExport\aboutwindow.h \
-		..\WaExport\ui_settingd.h \
+		ui_settingd.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\QSettings.h \
 		C:\Qt\5.12.4\msvc2017\include\QtGui\qdesktopservices.h \
 		C:\Qt\5.12.4\msvc2017\include\QtCore\qstandardpaths.h

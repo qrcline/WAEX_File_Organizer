@@ -516,12 +516,12 @@ std::ostringstream MainWindow::getRequiredFiles()
         fileStream<<"ExpInvima"<<std::endl;
     if(ui->FacturaComercial->isChecked())
         fileStream<<"FacturaComercial"<<std::endl;
-    if(ui->FreightContract->isChecked())
-        fileStream<<"FreightContract"<<std::endl;
     if(ui->HarrisEmails->isChecked())
         fileStream<<"ForEmails"<<std::endl;
     if(ui->Harris->isChecked())
         fileStream<<"Forwarder"<<std::endl;
+    if(ui->FreightContract->isChecked())
+        fileStream<<"FreightContract"<<std::endl;
     if(ui->mexP_Invoice->isChecked())
         fileStream<<"Invoice"<<std::endl;
     if(ui->ListadeEmpaque->isChecked())
