@@ -368,7 +368,7 @@ void MainWindow::updateChecked()
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesTruckFreight"))
         ui->payables_TruckFreight->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesForwarder"))
-        ui->Payables_ShipperWarehouse->setChecked(true);
+        ui->Payables_Harris->setChecked(true);
     if (binary_search(reqFiles.begin(), reqFiles.end(), "PayablesSW"))
         ui->Payables_ShipperWarehouse->setChecked(true);
     ui->comboBox->setEnabled(false);

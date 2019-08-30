@@ -1436,7 +1436,7 @@ public:
         mexP_Spreadsheets_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
         CustomerPO_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
         HarrisEmails_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
-        Payables_Harris->setText(QApplication::translate("MainWindow", "Payables-Harris", nullptr));
+        Payables_Harris->setText(QApplication::translate("MainWindow", "Payables-Forwarder", nullptr));
         ExpInvima->setText(QApplication::translate("MainWindow", "Exportacion/ INVIMA", nullptr));
         CaftaNafta_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
         OtherEmails_upload->setText(QApplication::translate("MainWindow", "Choose File", nullptr));
