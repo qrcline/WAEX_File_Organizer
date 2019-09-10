@@ -174,9 +174,9 @@ private:
 
     struct label
     {
-        bool customer;
-        bool taged;
-        bool closed;
+        bool customer=false;
+        bool taged=false;
+        bool closed=false;
     }labels;
 
     bool updateBlock=false; //Used to make flags to stop the push of data, true blocks

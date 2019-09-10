@@ -182,26 +182,6 @@ border: 1px solid #052488;</string>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QCheckBox" name="settingsOpenFolder">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>Open folder on Enter press</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QCheckBox" name="settingsNoteEnter">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-       <property name="text">
-        <string>Add note on Enter press</string>
-       </property>
-      </widget>
-     </item>
-     <item>
       <widget class="QCheckBox" name="settingsToolTips">
        <property name="text">
         <string>Enable Tool Tips</string>

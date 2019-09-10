@@ -29,6 +29,7 @@
 #include <QNetworkReply>
 #include <QString>
 #include <QVariant>
+
 #include <QtDebug>
 #include <QSsl>
 
@@ -534,10 +535,11 @@ std::ostringstream MainWindow::getRequiredFiles()
         fileStream<<"PayablesCarrier"<<std::endl;
     if(ui->Payables_Harris->isChecked())
         fileStream<<"PayablesForwarder"<<std::endl;
-    if(ui->mexP_Payable_Shipper->isChecked())
-        fileStream<<"PayablesShipper"<<std::endl;
     if(ui->Payables_ShipperWarehouse->isChecked())
         fileStream<<"PayablesSW"<<std::endl;
+    if(ui->mexP_Payable_Shipper->isChecked())
+        fileStream<<"PayablesShipper"<<std::endl;
+
     if(ui->Payables_Transloader->isChecked())
         fileStream<<"PayablesTransloader"<<std::endl;
     if(ui->payables_TruckFreight->isChecked())
