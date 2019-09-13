@@ -1410,7 +1410,7 @@ width:10px;
       <widget class="QLabel" name="label_14">
        <property name="geometry">
         <rect>
-         <x>370</x>
+         <x>380</x>
          <y>50</y>
          <width>59</width>
          <height>16</height>
@@ -1446,7 +1446,7 @@ width:10px;
       <widget class="QComboBox" name="comboBox">
        <property name="geometry">
         <rect>
-         <x>370</x>
+         <x>380</x>
          <y>80</y>
          <width>102</width>
          <height>24</height>
@@ -1559,7 +1559,7 @@ width:10px;
       <widget class="QPushButton" name="openFolder">
        <property name="geometry">
         <rect>
-         <x>230</x>
+         <x>240</x>
          <y>104</y>
          <width>101</width>
          <height>21</height>
@@ -1572,7 +1572,7 @@ width:10px;
       <widget class="QLineEdit" name="customerInput">
        <property name="geometry">
         <rect>
-         <x>230</x>
+         <x>240</x>
          <y>34</y>
          <width>100</width>
          <height>24</height>
@@ -1593,7 +1593,7 @@ width:10px;
       <widget class="QLineEdit" name="productInput">
        <property name="geometry">
         <rect>
-         <x>230</x>
+         <x>240</x>
          <y>67</y>
          <width>100</width>
          <height>24</height>
@@ -1614,7 +1614,7 @@ width:10px;
       <widget class="QLabel" name="label_24">
        <property name="geometry">
         <rect>
-         <x>1</x>
+         <x>11</x>
          <y>100</y>
          <width>37</width>
          <height>16</height>
@@ -1632,7 +1632,7 @@ width:10px;
       <widget class="QLabel" name="label_21">
        <property name="geometry">
         <rect>
-         <x>164</x>
+         <x>174</x>
          <y>34</y>
          <width>60</width>
          <height>16</height>
@@ -1650,7 +1650,7 @@ width:10px;
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>1</x>
+         <x>11</x>
          <y>34</y>
          <width>19</width>
          <height>16</height>
@@ -1668,7 +1668,7 @@ width:10px;
       <widget class="QLineEdit" name="POInput">
        <property name="geometry">
         <rect>
-         <x>59</x>
+         <x>69</x>
          <y>34</y>
          <width>99</width>
          <height>24</height>
@@ -1692,7 +1692,7 @@ width:10px;
       <widget class="QLineEdit" name="supplierInput">
        <property name="geometry">
         <rect>
-         <x>59</x>
+         <x>69</x>
          <y>67</y>
          <width>99</width>
          <height>24</height>
@@ -1713,7 +1713,7 @@ width:10px;
       <widget class="QLabel" name="label_22">
        <property name="geometry">
         <rect>
-         <x>1</x>
+         <x>11</x>
          <y>67</y>
          <width>52</width>
          <height>16</height>
@@ -1731,7 +1731,7 @@ width:10px;
       <widget class="QLabel" name="label_23">
        <property name="geometry">
         <rect>
-         <x>164</x>
+         <x>174</x>
          <y>67</y>
          <width>48</width>
          <height>16</height>
@@ -1749,7 +1749,7 @@ width:10px;
       <widget class="QLineEdit" name="truckInput">
        <property name="geometry">
         <rect>
-         <x>59</x>
+         <x>69</x>
          <y>100</y>
          <width>99</width>
          <height>24</height>
